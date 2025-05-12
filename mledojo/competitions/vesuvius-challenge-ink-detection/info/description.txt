@@ -1,0 +1,54 @@
+### Description
+
+Join the $1,000,000+ Vesuvius Challenge to uncover the secrets of an ancient library buried by a volcanic eruption nearly 2000 years ago. Your mission is to detect ink from 3D X-ray scans of carbonized scrolls that were part of a Roman villa in Herculaneum. These scrolls, discovered centuries ago, are impossible to open without destruction, but modern techniques offer a chance to read their contents. A grand prize of $700,000 awaits the first team to successfully read these scrolls, alongside additional prizes for various achievements in the competition.
+
+This Kaggle competition features the Ink Detection Progress Prize, focusing on the challenge of detecting ink from 3D X-ray scans of papyrus fragments. The ink used in these scrolls is difficult to identify in X-ray scans, but machine learning models have shown promise in detecting it. Ground truth data is available, as some ink is visible on broken fragments under infrared light.
+
+The dataset includes 3D X-ray scans of four fragments at 4µm resolution, captured using a particle accelerator, along with infrared photographs that reveal visible ink. Hand-labeled binary masks indicating ink presence are also provided.
+
+### Evaluation
+
+We evaluate how well your output image matches our reference image using a modified version of the Sørensen–Dice coefficient, where instead of using the F1 score, we are using the F0.5 score. The F0.5 score is given by:
+
+\frac{(1 + \beta^2) pr}{\beta^2 p+r}\ \ \mathrm{where}\ \ p = \frac{tp}{tp+fp},\ \ r = \frac{tp}{tp+fn},\ \beta = 0.5
+
+The F0.5 score weights precision higher than recall, which improves the ability to form coherent characters out of detected ink areas.
+
+In order to reduce the submission file size, our metric uses run-length encoding on the pixel values. Instead of submitting an exhaustive list of indices for your segmentation, you will submit pairs of values that contain a start position and a run length. E.g. '1 3' implies starting at pixel 1 and running a total of 3 pixels (1,2,3).
+
+Note that, at the time of encoding, the output should be binary, with 0 indicating "no ink" and 1 indicating "ink".
+
+The competition format requires a space delimited list of pairs. For example, '1 3 10 5' implies pixels 1,2,3,10,11,12,13,14 are to be included in the mask. The metric checks that the pairs are sorted, positive, and the decoded pixel values are not duplicated. The pixels are numbered from left to right, then top to bottom: 1 is pixel (1,1), 2 is pixel (1,2), etc.
+
+Your output should be a single file, submission.csv, with this run-length encoded information. This should have a header with two columns, Id and Predicted, and with one row for every directory under test/. For example:
+
+```
+Id,Predicted
+a,1 1 5 1 etc.
+b,10 20 etc.
+```
+
+For a real-world example of what these files look like, see inklabels_rce.csv in the data directories, which have been generated with this script. We also show how to output a file of this format in the Ink Detection tutorial.
+
+### Submission File
+
+### Dataset Description
+
+Your challenge is to recover where ink is present from 3D X-ray scans of detached fragments of ancient papyrus scrolls. This is an important subproblem in the overall task of solving the Vesuvius Challenge.
+
+This is a Code Competition. When your submitted notebook is scored, the actual test data will be made available to your notebook. Before that, the test/ directory will contain dummy data. This is done to keep the actual test data secret.
+
+### Files
+
+- [train/test]/[fragment_id]/surface_volume/[image_id].tif: Slices from the 3D X-ray surface volume. Each file contains a greyscale slice in the z-direction. Each fragment contains 65 slices. Combined, this image stack gives us width * height * 65 number of voxels per fragment. You can expect two fragments in the hidden test set, which together are roughly the same size as a single training fragment. The sample slices available to download in the test folders are simply copied from training fragment one, but when you submit your notebook they will be substituted with the real test data.
+- [train/test]/[fragment_id]/mask.png: A binary mask of which pixels contain data.
+- train/[fragment_id]/inklabels.png: A binary mask of the ink vs no-ink labels.
+- train/[fragment_id]/inklabels_rle.csv: A run-length-encoded version of the labels, generated using this script. This is the same format as you should make your submission in.
+- train/[fragment_id]/ir.png: The infrared photo on which the binary mask is based.
+- sample_submission.csv: An example of a submission file in the correct format. You need to output the following file in the home directory: submission.csv. See the evaluation page for information.
+
+For an example program, see the tutorial notebook.
+
+### Other Important Information
+
+This is a Code Competition. Ensure your submitted notebook meets the specified conditions for submission, including runtime limits and reproducibility requirements.

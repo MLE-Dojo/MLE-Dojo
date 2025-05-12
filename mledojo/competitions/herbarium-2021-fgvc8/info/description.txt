@@ -1,0 +1,117 @@
+### Description
+
+The Herbarium 2021: Half-Earth Challenge invites participants to identify vascular plant specimens sourced from prestigious institutions such as the New York Botanical Garden and Bishop Museum. This competition features a dataset of over 2.5 million images representing nearly 65,000 species from the Americas and Oceania, all aligned to a standardized plant list (LCVP v1.0.2). 
+
+With a minimum of three images per species and some species having over 100 images, the dataset focuses exclusively on vascular land plants, including lycophytes, ferns, gymnosperms, and flowering plants. These plants play crucial roles in ecosystems, from providing habitats to being essential for food production. The most accurate models developed during this competition will be utilized on unidentified specimens in the NYBG herbarium and evaluated by plant specialists for accuracy.
+
+This initiative is vital as it addresses the urgent need for new tools to accelerate species discovery amidst the ongoing threats of climate change and biodiversity loss, with over one million species at risk of extinction.
+
+### Evaluation
+
+Submissions are evaluated using the macro F1 score.
+
+The F1 score is given by
+
+F_1 = 2\frac{precision \cdot recall}{precision+recall}
+
+where:
+
+precision = \frac{TP}{TP+FP},
+
+recall = \frac{TP}{TP+FN}.
+
+In "macro" F1 a separate F1 score is calculated for each species value and then averaged.
+
+### Submission File
+
+For each image Id, you should predict the corresponding image label (category_id) in the Predicted column. The submission file should have the following format:
+
+```
+Id,Predicted
+0,1
+1,27
+2,42
+...
+```
+
+### Dataset Description
+
+# Data Overview
+
+The training and test set contain images of herbarium specimens from nearly 65,000 species of vascular plants. Each image contains exactly one specimen. The text labels on the specimen images have been blurred to remove category information in the image.
+
+The data has been approximately split 80%/20% for training/test. Each category has at least 1 instance in both the training and test datasets. Note that the test set distribution is slightly different from the training set distribution. The training set contains species with hundreds of examples, but the test set has the number of examples per species capped at a maximum of 10.
+
+# Dataset Details
+
+Each image has different image dimensions, with a maximum of 1000 pixels in the larger dimension. These have been resized from the original image resolution. All images are in JPEG format.
+
+# Dataset Format
+
+This dataset uses the COCO dataset format with additional annotation fields. In addition to the species category labels, we also provide region and supercategory information.
+
+The training set metadata (train/metadata.json) and test set metadata (test/metadata.json) are JSON files in the format below. Naturally, the test set metadata file omits the "annotations", "categories," and "regions" elements.
+
+```
+{ 
+  "annotations" : [annotation], 
+  "categories" : [category],
+  "images" : [image],
+  "info" : info,
+  "licenses": [license],
+  "institutions": [region]
+}
+
+info {
+  "year" : int,
+  "version" : str,
+  "url": str,
+  "description" : str,
+  "contributor" : str,
+  "date_created" : datetime
+}
+
+image {
+  "id" : int,
+  "width" : int,
+  "height" : int,
+  "file_name" : str,
+  "license" : int
+}
+
+annotation {
+  "id": int,
+  "image_id": int,
+  "category_id": int,
+  # Region where this specimen was collected.
+  "region_id": int
+}
+
+category {
+  "id" : int,
+  # Species name
+  "name" : str,
+  # We also provide the super-categories for each species.
+  "family": str,
+  "order": str
+}
+
+institution {
+  "id": int
+  "name": str
+}
+
+license {
+  "id": 1,
+  "name": str,
+  "url": str
+}
+```
+
+The training set images are organized in subfolders train/images/<subfolder1>/<subfolder2>/<image id>.jpg, where <subfolder1> combined with <subfolder2> corresponds to the category_id. For example, a training image with an image_id of 1104517 and a category_id of 00001, can be found at train/images/000/01/1104517.jpg.
+
+The test set images are organized in subfolders test/images/<subfolder>/<image id>.jpg, where <subfolder> corresponds to the integer division of the image_id by 1000. For example, a test image with an image_id of 8005, can be found at test/images/008/8005.jpg.
+
+### Other Important Information
+
+This competition is part of the FGVC8 workshop at CVPR 2021. Participants are encouraged to post in the forum or open an issue for any questions or problems regarding the dataset.

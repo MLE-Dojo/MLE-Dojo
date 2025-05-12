@@ -1,0 +1,67 @@
+### Description
+
+Dive into the Random Acts of Pizza competition, where participants will harness machine learning to predict the success of pizza requests made on Reddit. With a dataset of 5,671 requests, each accompanied by its outcome (successful or unsuccessful) and relevant meta-data, the challenge is to develop an algorithm that can accurately forecast which requests will receive a pizza. 
+
+This competition, hosted by Kaggle, is designed for the machine learning community to engage in a fun and practical exercise. The dataset, collected by Althoff et al., provides a unique opportunity to explore the dynamics of altruistic requests. 
+
+### Evaluation
+
+Submissions are evaluated on area under the ROC curve between the predicted probability that a request will get pizza and the observed outcomes.
+
+## Submission File
+
+For each request in the test set, you should predict a real-valued probability that it resulted in a pizza. The file should contain a header and have the following format:
+
+```
+request_id,requester_received_pizza
+t3_i8iy4,0
+t3_1mfqi0,0
+t3_lclka,0
+...
+...
+```
+
+### Dataset Description
+
+This dataset includes 5,671 requests collected from the Reddit community Random Acts of Pizza between December 8, 2010, and September 29, 2013. Each request seeks a free pizza, and the outcome of whether the requester received a pizza is known. Meta-data includes the time of the request, the activity level of the requester, and the community age of the requester.
+
+Each JSON entry corresponds to one request, with fields removed from the test set that would not be available at the time of posting.
+
+## Data fields
+
+- "giver_username_if_known": Reddit username of giver if known, i.e., the person satisfying the request ("N/A" otherwise).
+- "number_of_downvotes_of_request_at_retrieval": Number of downvotes at the time the request was collected.
+- "number_of_upvotes_of_request_at_retrieval": Number of upvotes at the time the request was collected.
+- "post_was_edited": Boolean indicating whether this post was edited (from Reddit).
+- "request_id": Identifier of the post on Reddit, e.g., "t3_w5491".
+- "request_number_of_comments_at_retrieval": Number of comments for the request at time of retrieval.
+- "request_text": Full text of the request.
+- "request_text_edit_aware": Edit aware version of "request_text".
+- "request_title": Title of the request.
+- "requester_account_age_in_days_at_request": Account age of requester in days at time of request.
+- "requester_account_age_in_days_at_retrieval": Account age of requester in days at time of retrieval.
+- "requester_days_since_first_post_on_raop_at_request": Number of days between requesters first post on RAOP and this request.
+- "requester_days_since_first_post_on_raop_at_retrieval": Number of days between requesters first post on RAOP and time of retrieval.
+- "requester_number_of_comments_at_request": Total number of comments on Reddit by requester at time of request.
+- "requester_number_of_comments_at_retrieval": Total number of comments on Reddit by requester at time of retrieval.
+- "requester_number_of_comments_in_raop_at_request": Total number of comments in RAOP by requester at time of request.
+- "requester_number_of_comments_in_raop_at_retrieval": Total number of comments in RAOP by requester at time of retrieval.
+- "requester_number_of_posts_at_request": Total number of posts on Reddit by requester at time of request.
+- "requester_number_of_posts_at_retrieval": Total number of posts on Reddit by requester at time of retrieval.
+- "requester_number_of_posts_on_raop_at_request": Total number of posts in RAOP by requester at time of request.
+- "requester_number_of_posts_on_raop_at_retrieval": Total number of posts in RAOP by requester at time of retrieval.
+- "requester_number_of_subreddits_at_request": The number of subreddits in which the author had already posted in at the time of request.
+- "requester_received_pizza": Boolean indicating the success of the request.
+- "requester_subreddits_at_request": The list of subreddits in which the author had already posted in at the time of request.
+- "requester_upvotes_minus_downvotes_at_request": Difference of total upvotes and total downvotes of requester at time of request.
+- "requester_upvotes_minus_downvotes_at_retrieval": Difference of total upvotes and total downvotes of requester at time of retrieval.
+- "requester_upvotes_plus_downvotes_at_request": Sum of total upvotes and total downvotes of requester at time of request.
+- "requester_upvotes_plus_downvotes_at_retrieval": Sum of total upvotes and total downvotes of requester at time of retrieval.
+- "requester_user_flair": Users on RAOP receive badges (flairs) which indicate their status.
+- "requester_username": Reddit username of requester.
+- "unix_timestamp_of_request": Unix timestamp of request.
+- "unix_timestamp_of_request_utc": Unix timestamp of request in UTC.
+
+### Files
+
+See, fork, and run a random forest benchmark model through Kaggle Scripts.

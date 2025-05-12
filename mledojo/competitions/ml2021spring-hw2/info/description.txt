@@ -1,0 +1,22 @@
+
+# Task Description
+Framewise phoneme classification of TIMIT dataset
+
+1229932 training samples
+451552 testing samples
+Evaluation metric: catagorization accuracy
+
+# Submission File
+Id,ClassId
+0,0
+1,0
+2,0
+...
+
+# Data
+Dataset Description
+complete data : timit_11/
+
+training data: training_11.npy
+training label: trainin_label_11.npy
+testing data: testing_label_11.npy

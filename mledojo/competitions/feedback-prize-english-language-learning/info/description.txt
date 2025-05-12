@@ -1,0 +1,49 @@
+Description
+
+Goal of the Competition
+
+The goal of this competition is to assess the language proficiency of 8th-12th grade English Language Learners (ELLs). Utilizing a dataset of essays written by ELLs will help to develop proficiency models that better support all students. Your work will help ELLs receive more accurate feedback on their language development and expedite the grading cycle for teachers. These outcomes could enable ELLs to receive more appropriate learning tasks that will help them improve their English language proficiency.
+
+Context
+
+Writing is a foundational skill. Sadly, it's one few students are able to hone, often because writing tasks are infrequently assigned in school. A rapidly growing student population, students learning English as a second language, known as English Language Learners (ELLs), are especially affected by the lack of practice. While automated feedback tools make it easier for teachers to assign more writing tasks, they are not designed with ELLs in mind. Existing tools are unable to provide feedback based on the language proficiency of the student, resulting in a final evaluation that may be skewed against the learner. Data science may be able to improve automated feedback tools to better support the unique needs of these learners.
+
+Competition host
+
+Vanderbilt University is a private research university in Nashville, Tennessee. It offers 70 undergraduate majors and a full range of graduate and professional degrees across 10 schools and colleges, all on a beautiful campus—an accredited arboretum—complete with athletic facilities and state-of-the-art laboratories. Vanderbilt is optimized to inspire and nurture cross-disciplinary research that fosters discoveries that have global impact. Vanderbilt and co-host, The Learning Agency Lab, an independent nonprofit based in Arizona, are focused on developing science of learning-based tools and programs for social good. Vanderbilt and The Learning Agency Lab have partnered together to offer data scientists the opportunity to support ELLs using data science skills in machine learning, natural language processing, and educational data analytics. You can improve automated feedback tools for ELLs by sensitizing them to language proficiency. The resulting tools could serve teachers by alleviating the grading burden and support ELLs by ensuring their work is evaluated within the context of their current language level.
+
+Acknowledgments
+
+Vanderbilt University and the Learning Agency Lab would like to thank the Bill & Melinda Gates Foundation, Schmidt Futures, and Chan Zuckerberg Initiative for their support in making this work possible.
+
+This is a Code Competition. Refer to Code Requirements for details.
+
+Evaluation
+
+Submissions are scored using MCRMSE, mean columnwise root mean squared error:
+\[ \textrm{MCRMSE} = \frac{1}{N_{t}}\sum_{j=1}^{N_{t}}\sqrt{\frac{1}{n} \sum_{i=1}^{n} (y_{ij} - \hat{y}_{ij})^2} \]
+
+where \( N_t \) is the number of scored ground truth target columns, and \( y \) and \( \hat{y} \) are the actual and predicted values, respectively.
+
+Submission File
+
+For each text_id in the test set, you must predict a value for each of the six analytic measures (described on the Data page). The file should contain a header and have the following format:
+
+text_id,cohesion,syntax,vocabulary,phraseology,grammar,conventions  
+0000C359D63E,3.0,3.0,3.0,3.0,3.0,3.0  
+000BAD50D026,3.0,3.0,3.0,3.0,3.0,3.0  
+00367BB2546B,3.0,3.0,3.0,3.0,3.0,3.0  
+003969F4EDB6,3.0,3.0,3.0,3.0,3.0,3.0  
+...
+
+Dataset Description
+
+The dataset presented here (the ELLIPSE corpus) comprises argumentative essays written by 8th-12th grade English Language Learners (ELLs). The essays have been scored according to six analytic measures: cohesion, syntax, vocabulary, phraseology, grammar, and conventions. Each measure represents a component of proficiency in essay writing, with greater scores corresponding to greater proficiency in that measure. The scores range from 1.0 to 5.0 in increments of 0.5. Your task is to predict the score of each of the six measures for the essays given in the test set. Some of these essays have appeared in the datasets for the Feedback Prize - Evaluating Student Writing and Feedback Prize - Predicting Effective Arguments competitions. You are welcome to make use of these earlier datasets in this competition.
+
+File and Field Information
+
+- train.csv - The training set, comprising the full_text of each essay, identified by a unique text_id. The essays are also given a score for each of the six analytic measures above: cohesion, etc. These analytic measures comprise the target for the competition.
+- test.csv - For the test data we give only the full_text of an essay together with its text_id.
+- sample_submission.csv - A submission file in the correct format. See the Evaluation page for details.
+
+Please note that this is a Code Competition. We give a few sample essays in test.csv to help you author your solutions. When your submission is scored, this example test data will be replaced with the full test set. The full test set comprises about 2700 essays.

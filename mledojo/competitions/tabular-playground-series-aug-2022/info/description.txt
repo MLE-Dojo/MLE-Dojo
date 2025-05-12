@@ -1,0 +1,29 @@
+Description  
+The August 2022 edition of the Tabular Playground Series is an opportunity to help the fictional company Keep It Dry improve its main product, Super Soaker. The product is used in factories to absorb spills and leaks. The company has just completed a large testing study for different product prototypes. Can you use this data to build a model that predicts product failures?
+
+About the Tabular Playground Series  
+Kaggle competitions are incredibly fun and rewarding, but they can also be intimidating for people who are relatively new to their data science journey. In the past, we've launched many Playground competitions that are more approachable than our Featured competitions and thus, more beginner-friendly. The goal of these competitions is to provide a fun and approachable-for-anyone tabular dataset to model. These competitions are a great choice for people looking for something in between the Titanic Getting Started competition and the Featured competitions. If you're an established competitions master or grandmaster, these probably won't be much of a challenge for you; thus, we encourage you to avoid saturating the leaderboard. For each monthly competition, we'll be offering Kaggle Merchandise for the top three teams. And finally, because we want these competitions to be more about learning, we're limiting team sizes to 3 individuals.
+
+Getting Started  
+For ideas on how to improve your score, check out the Intro to Machine Learning and Intermediate Machine Learning courses on Kaggle Learn. Good luck and have fun! Photo above by freestocks on Unsplash
+
+Evaluation  
+Submissions are evaluated on area under the ROC curve between the predicted probability and the observed target.
+
+Submission File  
+For each id in the test set, you must predict a probability of failure. The file should contain a header and have the following format:  
+```
+id,failure  
+26570,0.2  
+26571,0.1  
+26572,0.9  
+etc.
+```
+
+Dataset Description  
+This data represents the results of a large product testing study. For each product_code, you are given a number of product attributes (fixed for the code) as well as a number of measurement values for each individual product, representing various lab testing methods. Each product is used in a simulated real-world environment experiment and absorbs a certain amount of fluid (loading) to see whether or not it fails. Your task is to use the data to predict individual product failures of new codes with their individual lab test results.
+
+Files  
+- train.csv - the training data, which includes the target `failure`
+- test.csv - the test set; your task is to predict the likelihood each `id` will experience a failure
+- sample_submission.csv - a sample submission file in the correct format

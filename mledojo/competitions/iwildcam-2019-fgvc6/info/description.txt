@@ -1,0 +1,57 @@
+### Description
+
+The iWildCam 2019 competition invites participants to tackle the challenge of classifying animal species in camera trap images from different regions, specifically the American Southwest and Northwest. With the goal of advancing species classification models, competitors will train on data from CaltechCameraTraps, iNaturalist 2017/2018, and simulated data from Microsoft AirSim. The challenge lies in accurately classifying species that may not have been included in the training datasets. Participants will have access to a taxonomy file that maps classes to the iNaturalist taxonomy. This competition is part of the FGVC6 workshop at CVPR 2019, organized in collaboration with Microsoft AI for Earth.
+
+### Evaluation
+
+Submissions will be evaluated based on their macro F1 score - i.e. F1 will be calculated for each class of animal (including "empty" if no animal is present), and the submission's final score will be the unweighted mean of all class F1 scores.
+
+### Submission File
+
+The submission format for the competition is a csv file with the following format:
+
+```
+Id,Category
+58857ccf-23d2-11e8-a6a3-ec086b02610b,1
+591e4006-23d2-11e8-a6a3-ec086b02610b,5
+```
+
+The Id column corresponds to the test image id. The Category is an integer value that indicates the class of the animal, or 0 to represent the absence of an animal.
+
+### Dataset Description
+
+The training set contains 196,157 images from 138 locations in Southern California, with optional supplemental data from iNaturalist 2017, 2018, and 2019, as well as simulated images from Microsoft AirSim. The curated "iNat Idaho" dataset includes relevant classes mapped to iWildCam categories. The test set consists of 153,730 images from 100 locations in Idaho. Participants must label each image with one of the following IDs:
+
+- empty: 0
+- deer: 1
+- moose: 2
+- squirrel: 3
+- rodent: 4
+- small_mammal: 5
+- elk: 6
+- pronghorn_antelope: 7
+- rabbit: 8
+- bighorn_sheep: 9
+- fox: 10
+- coyote: 11
+- black_bear: 12
+- raccoon: 13
+- skunk: 14
+- wolf: 15
+- bobcat: 16
+- cat: 17
+- dog: 18
+- opossum: 19
+- bison: 20
+- mountain_goat: 21
+- mountain_lion: 22
+
+Some classes may not appear in the training or test sets.
+
+### Files
+
+We are also providing a general animal detection model, using Faster-RCNN with Inception-Resnet-v2 backbone and atrous convolution, which competitors are free to use as they see fit. Sample code for running the detector over a folder of images can be found here. We have run the detector over the three datasets and provide the top 100 detected boxes for each image with their associated confidence here.
+
+### Other Important Information
+
+Data is primarily provided by Erin Boydston (USGS), Justin Brown (NPS), iNaturalist, and the Idaho Department of Fish and Game (IDFG).

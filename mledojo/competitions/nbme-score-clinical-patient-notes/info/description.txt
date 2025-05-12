@@ -1,0 +1,110 @@
+### Description
+
+In this competition, participants will tackle the challenge of accurately identifying clinical concepts within patient notes, a crucial skill for medical practitioners. The task involves developing an automated method to map clinical concepts from an exam rubric (e.g., “diminished appetite”) to various expressions found in clinical notes written by medical students (e.g., “eating less,” “clothes fit looser”). This initiative aims to enhance the scoring of patient notes, traditionally assessed by physicians, by leveraging machine learning techniques to improve efficiency and accuracy.
+
+The competition addresses the practical barriers in patient note scoring, aiming to make the process more transparent and interpretable. Successful solutions will not only streamline assessments but also unlock the potential of patient notes in evaluating clinical skills, ultimately benefiting medical education and practice.
+
+### Evaluation
+
+This competition is evaluated by a micro-averaged F1 score.
+
+For each instance, we predict a set of character spans. A character span is a pair of indexes representing a range of characters within a text. A span i j represents the characters with indices i through j, inclusive of i and exclusive of j. In Python notation, a span i j is equivalent to a slice i:j.
+
+For each instance there is a collection of ground-truth spans and a collection of predicted spans. The spans we delimit with a semicolon, like: 0 3; 5 9.
+
+We score each character index as:
+
+- TP if it is within both a ground-truth and a prediction,
+- FN if it is within a ground-truth but not a prediction, and,
+- FP if it is within a prediction but not a ground truth.
+
+Finally, we compute an overall F1 score from the TPs, FNs, and FPs aggregated across all instances.
+
+## Example
+
+Suppose we have an instance:
+
+```
+| ground-truth | prediction    |
+|--------------|---------------|
+| 0 3; 3 5     | 2 5; 7 9; 2 3 |
+```
+
+These spans give the sets of indices:
+
+```
+| ground-truth | prediction |
+|--------------|------------|
+| 0 1 2 3 4    | 2 3 4 7 8  |
+```
+
+We therefore compute:
+
+- TP = size of {2, 3, 4} = 3
+- FN = size of {0, 1} = 2
+- FP = size of {7, 8} = 2
+
+Repeat for all instances, collect the TPs, FNs, and FPs, and compute the final F1 score.
+
+## Sample Submission
+
+For each id in the test set, you must predict zero or more spans delimited by a semicolon. The file should contain a header and have the following format:
+
+```
+id,location
+00016_000,0 100
+00016_001,
+00016_002,200 250;300 500
+...
+```
+
+For 00016_000 you should give predictions for feature 000 in patient note 00016.
+
+### Dataset Description
+
+The text data presented here is from the USMLE® Step 2 Clinical Skills examination, a medical licensure exam. This exam measures a trainee's ability to recognize pertinent clinical facts during encounters with standardized patients.
+
+During this exam, each test taker sees a Standardized Patient, a person trained to portray a clinical case. After interacting with the patient, the test taker documents the relevant facts of the encounter in a patient note. Each patient note is scored by a trained physician who looks for the presence of certain key concepts or features relevant to the case as described in a rubric. The goal of this competition is to develop an automated way of identifying the relevant features within each patient note, with a special focus on the patient history portions of the notes where the information from the interview with the standardized patient is documented.
+
+## Important Terms
+
+- Clinical Case: The scenario (e.g., symptoms, complaints, concerns) the Standardized Patient presents to the test taker (medical student, resident or physician). Ten clinical cases are represented in this dataset.
+- Patient Note: Text detailing important information related by the patient during the encounter (physical exam and interview).
+- Feature: A clinically relevant concept. A rubric describes the key concepts relevant to each case.
+
+## Training Data
+
+- patient_notes.csv - A collection of about 40,000 Patient Note history portions. Only a subset of these have features annotated. You may wish to apply unsupervised learning techniques on the notes without annotations. The patient notes in the test set are not included in the public version of this file.
+pn_num - A unique identifier for each patient note.
+case_num - A unique identifier for the clinical case a patient note represents.
+pn_history - The text of the encounter as recorded by the test taker.
+- features.csv - The rubric of features (or key concepts) for each clinical case.
+feature_num - A unique identifier for each feature.
+case_num - A unique identifier for each case.
+feature_text - A description of the feature.
+- train.csv - Feature annotations for 1000 of the patient notes, 100 for each of ten cases.
+id - Unique identifier for each patient note / feature pair.
+pn_num - The patient note annotated in this row.
+feature_num - The feature annotated in this row.
+case_num - The case to which this patient note belongs.
+annotation - The text(s) within a patient note indicating a feature. A feature may be indicated multiple times within a single note.
+location - Character spans indicating the location of each annotation within the note. Multiple spans may be needed to represent an annotation, in which case the spans are delimited by a semicolon ;.
+
+## Example Test Data
+
+To help you author submission code, we include a few example instances selected from the training set. When your submitted notebook is scored, this example data will be replaced by the actual test data. The patient notes in the test set will be added to the patient_notes.csv file. These patient notes are from the same clinical cases as the patient notes in the training set. There are approximately 2000 patient notes in the test set.
+
+- test.csv - Example instances selected from the training set.
+- sample_submission.csv - A sample submission file in the correct format.
+
+### Files
+
+- patient_notes.csv
+- features.csv
+- train.csv
+- test.csv
+- sample_submission.csv
+
+### Other Important Information
+
+This is a Code Competition. Refer to Code Requirements for details.

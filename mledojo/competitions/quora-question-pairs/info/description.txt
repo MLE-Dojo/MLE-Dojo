@@ -1,0 +1,40 @@
+### Description
+
+Quora is a unique platform where knowledge is shared across diverse fields, allowing users to ask questions and receive insightful answers from various contributors. With over 100 million monthly visitors, many users often pose similar questions, leading to inefficiencies in finding the best answers. To enhance user experience, Quora seeks to identify canonical questions that streamline this process.
+
+In this competition, participants are invited to apply advanced natural language processing techniques to classify pairs of questions as duplicates or not. By improving the identification of duplicate questions, the competition aims to facilitate access to high-quality answers, benefiting Quora's writers, seekers, and readers alike.
+
+### Evaluation
+
+Submissions are evaluated on the log loss between the predicted values and the ground truth.
+
+## Submission File
+
+For each ID in the test set, you must predict the probability that the questions are duplicates (a number between 0 and 1). The file should contain a header and have the following format:
+
+```
+test_id,is_duplicate
+0,0.5
+1,0.4
+2,0.9
+etc.
+```
+
+### Dataset Description
+
+The goal of this competition is to predict which pairs of questions have the same meaning. Ground truth labels, provided by human experts, are subjective and may not always be accurate due to the inherent ambiguity in language. While these labels represent a reasonable consensus, they can include errors on a case-by-case basis.
+
+To prevent cheating, the test set includes computer-generated question pairs that are not from Quora and will not be scored. All training set questions are authentic examples from Quora.
+
+## Data fields
+
+- id - the id of a training set question pair
+- qid1, qid2 - unique ids of each question (only available in train.csv)
+- question1, question2 - the full text of each question
+- is_duplicate - the target variable, set to 1 if question1 and question2 have essentially the same meaning, and 0 otherwise.
+
+### Files
+
+- train.csv - the training set containing question pairs and labels
+- test.csv - the test set containing question pairs for evaluation
+- sample_submission.csv - a sample submission file format

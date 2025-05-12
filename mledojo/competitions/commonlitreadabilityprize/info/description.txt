@@ -1,0 +1,59 @@
+Description  
+Can machine learning identify the appropriate reading level of a passage of text and help inspire learning? Reading is an essential skill for academic success. When students have access to engaging passages offering the right level of challenge, they naturally develop reading skills.
+
+Currently, most educational texts are matched to readers using traditional readability methods or commercially available formulas. However, each has its issues. Tools like Flesch-Kincaid Grade Level are based on weak proxies of text decoding (i.e., characters or syllables per word) and syntactic complexity (i.e., number of words per sentence). As a result, they lack construct and theoretical validity. At the same time, commercially available formulas, such as Lexile, can be cost-prohibitive, lack suitable validation studies, and suffer from transparency issues when the formula's features aren't publicly available.
+
+CommonLit, Inc., is a nonprofit education technology organization serving over 20 million teachers and students with free digital reading and writing lessons for grades 3-12. Together with Georgia State University, an R1 public research university in Atlanta, they are challenging Kagglers to improve readability rating methods.
+
+In this competition, you’ll build algorithms to rate the complexity of reading passages for grade 3-12 classroom use. To accomplish this, you'll pair your machine learning skills with a dataset that includes readers from a wide variety of age groups and a large collection of texts taken from various domains. Winning models will be sure to incorporate text cohesion and semantics.
+
+If successful, you'll aid administrators, teachers, and students. Literacy curriculum developers and teachers who choose passages will be able to quickly and accurately evaluate works for their classrooms. Plus, these formulas will become more accessible for all. Perhaps most importantly, students will benefit from feedback on the complexity and readability of their work, making it far easier to improve essential reading skills.
+
+Acknowledgements  
+CommonLit would like to extend a special thanks to Professor Scott Crossley's research team at the Georgia State University Departments of Applied Linguistics and Learning Sciences for their partnership on this project. The organizers would like to thank Schmidt Futures for their advice and support for making this work possible.
+
+This is a Code Competition. Refer to Code Requirements for details.
+
+Evaluation  
+Submissions are scored on the root mean squared error. RMSE is defined as: 
+\[ \text{RMSE} = \sqrt{\frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2} \]
+where \(\hat{y}\) is the predicted value, \(y\) is the original value, and \(n\) is the number of rows in the test data.
+
+Submission File  
+For each row in the test set, you must predict the value of the target as described on the data tab, each on a separate row in the submission file. The file should contain a header and have the following format: 
+```
+id,target 
+eaf8e7355,0.0 
+60ecc9777,0.5 
+c0f722661,-2.0 
+etc.
+```
+
+Dataset Description  
+In this competition, we're predicting the reading ease of excerpts from literature. We've provided excerpts from several time periods and a wide range of reading ease scores. Note that the test set includes a slightly larger proportion of modern texts (the type of texts we want to generalize to) than the training set.
+
+Also note that while licensing information is provided for the public test set (because the associated excerpts are available for display/use), the hidden private test set includes only blank license/legal information.
+
+Files  
+- train.csv - the training set
+- test.csv - the test set
+- sample_submission.csv - a sample submission file in the correct format
+
+Columns  
+- id - unique ID for excerpt
+- url_legal - URL of source - this is blank in the test set.
+- license - license of source material - this is blank in the test set.
+- excerpt - text to predict reading ease of
+- target - reading ease
+- standard_error - measure of spread of scores among multiple raters for each excerpt. Not included for test data.
+
+Update  
+This dataset, the CLEAR Corpus, has now been released in full. You may obtain it from either of the following locations:
+- commonlit.org
+- github.com
+
+The full corpus contains an expanded set of fields as well as six readability predictions on each excerpt resulting from this competition.
+
+You may read more about the CLEAR Corpus from the following publications:
+- Crossley, S. A., Heintz, A., Choi, J., Batchelor, J., Karimi, M., & Malatinszky, A. (in press). A large-scaled corpus for assessing text readability. Behavior Research Methods. [link]
+- Crossley, S. A., Heintz, A., Choi, J., Batchelor, J., & Karimi, M. (2021). The CommonLit Ease of Readability (CLEAR) Corpus. Proceedings of the 14th International Conference on Educational Data Mining (EDM). Paris, France. [link]

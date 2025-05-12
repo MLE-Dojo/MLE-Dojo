@@ -1,0 +1,37 @@
+### Description
+
+Learning a new language can be challenging, especially when it comes to understanding nuances like slang, dates, and local expressions. This is particularly true for machines, which struggle with text normalization—the process of converting written expressions into their spoken forms. For instance, transforming "12:47" into "twelve forty-seven" or "$3.16" into "three dollars, sixteen cents" is essential for applications like text-to-speech synthesis (TTS) and automatic speech recognition (ASR).
+
+In this competition, participants are tasked with automating the development of text normalization grammars using machine learning, specifically focusing on the Russian language. A separate challenge for English text normalization is also available.
+
+### Evaluation
+
+Submissions are evaluated on prediction accuracy (the total percent of correct tokens). The predicted and actual string must match exactly in order to count as correct. In other words, we are measuring sequence accuracy, in that any error in the output for a given token in the input sequence means that that error is wrong. For example, if the input is "145" and the predicted output is "one forty five" but the correct output is "one hundred forty five", this is counted as a single error.
+
+## Submission File
+
+For each token (id) in the test set, you must predict the normalized text. The file should contain a header and have the following format:
+
+```
+id,after
+0_0,"Производится"
+0_1,"в"
+0_2,"Азии"
+...
+```
+
+### Dataset Description
+
+You are provided with a large corpus of text. Each sentence has a sentence_id, and each token within a sentence has a token_id. The "before" column contains the raw text, while the "after" column contains the normalized text. The goal is to predict the "after" column for the test set. The training set includes an additional "class" column to indicate the token type, which is omitted from the test set. The "id" column in the submission format is created by concatenating the sentence_id and token_id with an underscore (e.g., 123_5).
+
+The Russian dataset features normalized text resulting from transliteration, where names like "Julius" are rendered in a way that a Russian TTS system can pronounce them. These instances are marked with a '_trans' postfix (e.g., "Julius" -> "д_trans ж_trans у_trans л_trans и_trans у_trans с_trans"). Submissions should adhere to this convention. Note that both the train and test sets may contain a small number of duplicate sentences, which will be ignored in scoring.
+
+### Files
+
+- ru_sample_submission.csv - a submission file showing the correct format
+- ru_test.csv - the test set, does not contain the normalized text
+- ru_train.csv - the training set, contains the normalized text
+
+### Other Important Information
+
+No special requirements are noted for this competition.

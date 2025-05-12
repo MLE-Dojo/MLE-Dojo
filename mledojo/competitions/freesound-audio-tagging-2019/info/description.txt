@@ -1,0 +1,42 @@
+### Description
+
+Join the Freesound Audio Tagging 2019 competition, where participants are challenged to develop a multi-label audio tagging system capable of automatically tagging audio data across 80 diverse categories. Building on last year's success, this competition features a noisier training set and a greater variety of audio categories, making it an exciting opportunity for machine learning enthusiasts to enhance their skills.
+
+The competition addresses the challenge of recognizing a wide range of sounds, from distinct noises like a baby’s laugh to more ambiguous sounds such as a chainsaw versus a blender. Currently, no reliable automatic audio tagging systems exist, and significant manual effort is required for sound annotation. By leveraging a dataset created by Freesound and Google Research, participants will work to create algorithms that can automatically label audio data, with potential applications in sound collection labeling and real-time sound event recognition.
+
+### Evaluation
+
+The task consists of predicting the audio labels (tags) for every test clip. Some test clips bear one label while others bear several labels. The predictions are to be done at the clip level, i.e., no start/end timestamps for the sound events are required.
+
+The primary competition metric will be label-weighted label-ranking average precision (lwlrap, pronounced "Lol wrap"). This measures the average precision of retrieving a ranked list of relevant labels for each test clip (i.e., the system ranks all the available labels, then the precisions of the ranked lists down to each true label are averaged). This is a generalization of the mean reciprocal rank measure (used in last year’s edition of the competition) for the case where there can be multiple true labels per test item. The novel "label-weighted" part means that the overall score is the average over all the labels in the test set, where each label receives equal weight (by contrast, plain lrap gives each test item equal weight, thereby discounting the contribution of individual labels when they appear on the same item as multiple other labels).
+
+We use label weighting because it allows per-class values to be calculated, and still have the overall metric be expressed as simple average of the per-class metrics (weighted by each label's prior in the test set). For participant’s convenience, a Python implementation of lwlrap is provided in this public Google Colab.
+
+### Submission File
+
+For each fname in the test set, you must predict the probability of each label. The file should contain a header and have the following format:
+
+```
+fname,Accelerating_and_revving_and_vroom,...Zipper_(clothing)
+000ccb97.wav,0.1,....,0.3
+0012633b.wav,0.0,...,0.8
+```
+
+As we will be switching out test data to re-evaluate kernels on stage 2 data to populate the private leaderboard, submissions must be named submission.csv.
+
+### Dataset Description
+
+The FSDKaggle2019 dataset used in this competition includes audio clips from Freesound and the Yahoo Flickr Creative Commons 100M dataset. It features a vocabulary of 80 labels from Google’s AudioSet Ontology, covering a wide range of sounds such as musical instruments, human voice, and various environmental noises. The dataset consists of a curated subset with 4,970 clips and a noisy subset with 19,815 clips, with ground truth labels provided at the clip level. Audio clips vary in length from 0.3 to 30 seconds, and the dataset is designed to promote approaches that handle label noise effectively.
+
+### Files
+
+- train_curated.csv - ground truth labels for the curated subset of the training audio files (see Data Fields below)
+- train_noisy.csv - ground truth labels for the noisy subset of the training audio files (see Data Fields below)
+- sample_submission.csv - a sample submission file in the correct format, including the correct sorting of the sound categories; it contains the list of audio files found in the test.zip folder (corresponding to the public leaderboard)
+- train_curated.zip - a folder containing the audio (.wav) training files of the curated subset
+- train_noisy.zip - a folder containing the audio (.wav) training files of the noisy subset
+- test.zip - a folder containing the audio (.wav) test files for the public leaderboard
+
+### Other Important Information
+
+This is a Kernels-only competition, meaning all submissions must be made through Kaggle Kernels. Participants can train their models locally or in a Kernel, but the inference Kernel must be submitted. The competition consists of two stages, with the second stage involving a rerun of selected kernels on an unseen test set. Participants are encouraged to explore domain adaptation approaches due to potential mismatches between training and test data.

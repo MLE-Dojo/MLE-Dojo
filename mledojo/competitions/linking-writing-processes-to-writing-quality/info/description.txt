@@ -1,0 +1,58 @@
+### Description
+
+This competition invites participants to explore the intricate behaviors and cognitive processes involved in writing by analyzing keystroke log data. Writers employ various techniques for planning, revising, and managing their time, all of which can significantly impact writing quality. While traditional assessments often focus solely on the final product, this competition aims to leverage data science to uncover the relationships between writing behaviors and performance. Hosted by Vanderbilt University in collaboration with The Learning Agency Lab, the competition seeks to identify key process features from keystroke logs to predict overall writing quality. By shifting the focus from end results to the writing process itself, participants can help enhance learners' metacognitive awareness and self-regulation in writing.
+
+### Evaluation
+
+We use the Root Mean Squared Error to score submissions, defined as:
+
+\textrm{RMSE} = \left(\frac{1}{n} \sum_{i=1}^{n} (y_i - \widehat{y}_i)^2 \right)^{1/2}
+
+where \widehat{y}_i is the predicted value and y_i is the original value for each instance i over n total instances.
+
+## Submission File
+
+For each id in the test set, you must predict the corresponding score (described on the Data page). The file should contain a header and have the following format:
+
+```
+id,score
+0000aaaa,1.0
+2222bbbb,2.0
+4444cccc,3.0
+...
+```
+
+### Dataset Description
+
+The competition dataset consists of approximately 5000 logs capturing user inputs, including keystrokes and mouse clicks, during essay composition. Each essay is scored on a scale from 0 to 6, and the objective is to predict the score based on the corresponding log data. More details about the dataset can be found on the Data Collection Procedure page.
+
+### Files
+
+- train_logs.csv - Input logs for training. Alphanumeric characters are anonymized as "q" to protect essay text, while punctuation remains unchanged.
+  - id - Unique essay ID
+  - event_id - Chronological event index
+  - down_time - Time of the down event (ms)
+  - up_time - Time of the up event (ms)
+  - action_time - Duration of the event (up_time - down_time)
+  - activity - Event category
+  - Nonproduction - No text alteration
+  - Input - Text added to the essay
+  - Remove/Cut - Text removed from the essay
+  - Paste - Text changed via paste
+  - Replace - Text replaced with another string
+  - Move From [x1, y1] To [x2, y2] - Text moved to a new location
+  - down_event - Key/mouse press event name
+  - up_event - Key/mouse release event name
+  - text_change - Text change resulting from the event
+  - cursor_position - Cursor index after the event
+  - word_count - Essay word count after the event
+
+- test_logs.csv - Input logs for testing, with the same fields as train_logs.csv. Public version contains example logs only.
+- train_scores.csv
+  - id - Unique essay ID
+  - score - Essay score out of 6 (prediction target)
+- sample_submission.csv - Submission file in the correct format. Refer to the Evaluation page for details.
+
+### Other Important Information
+
+This is a Code Competition. Example logs in test_logs.csv are provided to assist in developing solutions. When scoring submissions, the example test data will be replaced with the complete test set, which includes logs for approximately 2500 essays.

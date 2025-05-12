@@ -1,0 +1,80 @@
+### Description
+
+Imagine facing the daunting reality of pulmonary fibrosis, a lung disorder characterized by scarring and no known cure. Patients often grapple with uncertainty regarding their prognosis, as outcomes can vary widely from stability to rapid decline. This competition aims to harness data science to predict the severity of lung function decline using CT scans, thereby providing crucial insights for patients and clinicians alike.
+
+The Open Source Imaging Consortium (OSIC) is a collaborative initiative focused on advancing the understanding and treatment of Idiopathic Pulmonary Fibrosis (IPF) and other respiratory diseases. By bringing together experts in radiology, clinical practice, and computational science, OSIC seeks to enhance imaging-based treatment strategies.
+
+Participants in this competition will utilize machine learning techniques to predict lung function decline based on CT images, metadata, and baseline Forced Vital Capacity (FVC) measurements. Success in this endeavor could significantly improve patient understanding of their condition and facilitate better clinical trial designs for new treatments.
+
+### Evaluation
+
+This competition is evaluated on a modified version of the Laplace Log Likelihood. In medical applications, it is useful to evaluate a model's confidence in its decisions. Accordingly, the metric is designed to reflect both the accuracy and certainty of each prediction.
+
+For each true FVC measurement, you will predict both an FVC and a confidence measure (standard deviation \sigma). The metric is computed as:
+
+\sigma_{clipped} = max(\sigma, 70),
+
+\Delta = min ( |FVC_{true} - FVC_{predicted}|, 1000 ),
+
+metric = -   \frac{\sqrt{2} \Delta}{\sigma_{clipped}} - \ln ( \sqrt{2} \sigma_{clipped} ).
+
+The error is thresholded at 1000 ml to avoid large errors adversely penalizing results, while the confidence values are clipped at 70 ml to reflect the approximate measurement uncertainty in FVC. The final score is calculated by averaging the metric across all test set Patient_Weeks (three per patient). Note that metric values will be negative and higher is better.
+
+## Submission File
+
+For each Patient_Week, you must predict the FVC and a confidence. To avoid potential leakage in the timing of follow up visits, you are asked to predict every patient's FVC measurement for every possible week. Those weeks which are not in the final three visits are ignored in scoring.
+
+The file should contain a header and have the following format:
+
+```
+Patient_Week,FVC,Confidence
+ID00002637202176704235138_1,2000,100
+ID00002637202176704235138_2,2000,100
+ID00002637202176704235138_3,2000,100
+etc.
+```
+
+### Dataset Description
+
+The aim of this competition is to predict a patient’s severity of decline in lung function based on a CT scan of their lungs. Lung function is assessed based on output from a spirometer, which measures the forced vital capacity (FVC), i.e. the volume of air exhaled.
+
+In the dataset, you are provided with a baseline chest CT scan and associated clinical information for a set of patients. A patient has an image acquired at time Week = 0 and has numerous follow-up visits over the course of approximately 1-2 years, at which time their FVC is measured.
+
+- In the training set, you are provided with an anonymized, baseline CT scan and the entire history of FVC measurements.
+- In the test set, you are provided with a baseline CT scan and only the initial FVC measurement. You are asked to predict the final three FVC measurements for each patient, as well as a confidence value in your prediction.
+
+There are around 200 cases in the public & private test sets, combined. This is split roughly 15-85 between public-private.
+
+Since this is real medical data, you will notice the relative timing of FVC measurements varies widely. The timing of the initial measurement relative to the CT scan and the duration to the forecasted time points may be different for each patient. This is considered part of the challenge of the competition. To avoid potential leakage in the timing of follow-up visits, you are asked to predict every patient's FVC measurement for every possible week. Those weeks which are not in the final three visits are ignored in scoring.
+
+### Files
+
+This is a synchronous rerun code competition. The provided test set is a small representative set of files (copied from the training set) to demonstrate the format of the private test set. When you submit your notebook, Kaggle will rerun your code on the test set, which contains unseen images.
+
+- train.csv - the training set, contains full history of clinical information
+- test.csv - the test set, contains only the baseline measurement
+- train/ - contains the training patients' baseline CT scan in DICOM format
+- test/ - contains the test patients' baseline CT scan in DICOM format
+- sample_submission.csv - demonstrates the submission format
+
+### Columns
+
+### train.csv and test.csv
+
+- Patient- a unique Id for each patient (also the name of the patient's DICOM folder)
+- Weeks- the relative number of weeks pre/post the baseline CT (may be negative)
+- FVC - the recorded lung capacity in ml
+- Percent- a computed field which approximates the patient's FVC as a percent of the typical FVC for a person of similar characteristics
+- Age
+- Sex
+- SmokingStatus
+
+### sample submission.csv
+
+- Patient_Week - a unique Id formed by concatenating the Patient and Weeks columns (i.e. ABC_22 is a prediction for patient ABC at week 22)
+- FVC - the predicted FVC in ml
+- Confidence - a confidence value of your prediction (also has units of ml)
+
+### Other Important Information
+
+This competition requires submissions to be made through Notebooks, with specific runtime limits for CPU and GPU. External data is allowed, and submissions must be named submission.csv.

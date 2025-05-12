@@ -1,0 +1,48 @@
+### Description
+
+In the ALASKA2 competition, participants are challenged to develop effective methods for detecting hidden messages within seemingly innocuous digital images. Utilizing machine learning, competitors will address the shortcomings of current steganalysis techniques, which often yield unreliable results due to the diverse devices and processing methods used to capture images. The dataset includes images sourced from up to 50 different cameras, ranging from smartphones to high-end models, processed in various ways to simulate real-world conditions. The goal is to create robust detection algorithms that minimize false positives, aiding law enforcement in combating criminal activities that exploit hidden communications.
+
+### Evaluation
+
+In order to focus on reliable detection with an emphasis on low false-alarm rate, submissions are evaluated on the weighted AUC. To calculate the weighted AUC, each region of the ROC curve is weighted according to these chosen parameters:
+
+```
+tpr_thresholds = [0.0, 0.4, 1.0]
+weights = [2, 1]
+```
+
+In other words, the area between the true positive rate of 0 and 0.4 is weighted 2X, the area between 0.4 and 1 is now weighed (1X). The total area is normalized by the sum of weights such that the final weighted AUC is between 0 and 1.
+
+The figure below illustrates the different areas. This example also shows that the submission #2 has the lowest AUC but is ranked first since it outperforms its competitors for low False Positive Rate (FPR). On the opposite, the submission #3 has the highest AUC but would have been ranked third.
+
+## Submission File
+
+For each Id (image) in the test set, you must provide a score that indicates how likely this image contains hidden data: the higher the score, the more it is assumed that image contains secret data. The file should contain a header and have the following format:
+
+```
+Id,Label
+0001.jpg,0.1
+0002.jpg,0.99
+0003.jpg,1.2
+0004.jpg,-2.2
+etc.
+```
+
+### Dataset Description
+
+This dataset contains a large number of unaltered images, called the "Cover" image, as well as corresponding examples in which information has been hidden using one of three steganography algorithms (JMiPOD, JUNIWARD, UERD). The goal of the competition is to determine which of the images in the test set (Test/) have hidden messages embedded.
+
+Note that in order to make the competition more realistic the length of hidden messages (the payload) will not be provided. The only available information on the test set is:
+
+### Files
+
+- Cover/ contains 75k unaltered images meant for use in training.
+- JMiPOD/ contains 75k examples of the JMiPOD algorithm applied to the cover images.
+- JUNIWARD/ contains 75k examples of the JUNIWARD algorithm applied to the cover images.
+- UERD/ contains 75k examples of the UERD algorithm applied to the cover images.
+- Test/ contains 5k test set images. These are the images for which you are predicting.
+- sample_submission.csv contains an example submission in the correct format.
+
+### Other Important Information
+
+Participants are encouraged to focus on creating detection algorithms that are not only accurate but also robust against various processing methods and devices. This competition aims to enhance the capabilities of law enforcement in identifying hidden communications used by criminals.

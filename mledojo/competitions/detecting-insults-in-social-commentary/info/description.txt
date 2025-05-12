@@ -1,0 +1,38 @@
+### Description
+
+Join the challenge to combat online negativity by detecting Insulting comments in conversations across various platforms such as news sites, blogs, and message boards. The goal is to develop a generalizable single-class classifier capable of identifying Insults in near real-time, effectively cleaning up the internet's discourse. Participants will not only compete for a share of the $10,000 prize pool but also have the opportunity to impress Impermium, a startup focused on protecting web platforms from social spam and abuse, with the potential for interviews for the Principal Data Engineer role. Additionally, a Visualization Prospect invites participants to create compelling infographics and visual representations of the data.
+
+### Evaluation
+
+This is a single-class classification problem. Your predictions should be a number in the range [0,1] where 0 indicates 0% probability of comment being an Insult, and 1 represents 100% Insult.
+
+All predictions should be in the first column of your submission file. Please see 'sample_submissions_null.csv" for the correct format.
+
+The evaluation metric for this competition is the Area under the Receiver Operating Curve (AUC). This evaluation metric penalizes wrong predictions made with high probability. For more about this metric, check out the AUC page on the Kaggle Wiki.
+
+Please note, winners for the competition will be determined by their performance on an additional verification set that will be released at the end of the competition. See Timeline tab for details.
+
+### Submission File
+You must submit a csv file with the Insult, Date, and Comment columns, like the following:
+Keep Date and Comment columns exactly the same as the test data and add an Insult column as the first column.
+"Exactly the same" means both the order and the content of the Date and Comment columns must be the same as the test data. 
+You should not change the content of the Date and Comment columns. Just copy the the Date and Comment columns from the test data.
+```
+Insult,Date,Comment
+0,2015-01-01 00:00:00,"This is a neutral comment."
+1,2015-01-01 00:00:00,"This is an Insulting comment."
+```
+
+### Dataset Description
+
+The data consists of a label column followed by two attribute fields. This is a single-class classification problem. The label is either 0 meaning a neutral comment, or 1 meaning an Insulting comment (neutral can be considered as not belonging to the Insult class). Your predictions must be a real number in the range [0,1] where 1 indicates 100% confident prediction that the comment is an Insult.
+
+The first attribute is the time at which the comment was made, formatted as "YYYYMMDDhhmmssZ" on a 24-hour clock, and may sometimes be blank. The second attribute contains the unicode-escaped text of the content, primarily in English, enclosed in double quotes.
+
+### Files
+
+Refer to the data_structure.txt file for more information on the dataset.
+
+### Other Important Information
+
+Participants must compete individually and can only use the provided data for predictions. Impermium will review the top submissions for potential interviews. Note that Impermium cannot sponsor new H1B applicants but supports H1B transfers, permanent residents, and US citizens.

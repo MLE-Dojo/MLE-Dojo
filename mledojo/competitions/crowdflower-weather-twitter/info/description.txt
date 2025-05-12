@@ -1,0 +1,72 @@
+### Description
+
+Join us in this exciting competition where you'll analyze a collection of weather-related tweets to determine their sentiment (positive, negative, or neutral), the timing of the weather (past, present, or future), and the specific weather type referenced. With just a few characters to work with, this challenge will test your analytical skills and creativity. 
+
+We are thrilled to collaborate with CrowdFlower on this project, which aims to leverage their new open data library. This initiative not only provides valuable labeled data for machine learning but also encourages the exploration of crowdsourcing's potential. The CrowdFlower Open Data Library is a treasure trove of datasets that can be used to enhance algorithms and foster innovation in data science.
+
+### Evaluation
+
+The Root Mean Squared Error ("RMSE") is used to measure the accuracy:
+
+\textrm{RMSE} = \sqrt{\frac{\sum_{i=1}^n (p_i - a_i)^2}{n} }
+
+Where:
+
+- \\( n \\) is 24 times the total number of tweets
+- \\( p_i \\) is the predicted confidence rating for a given label
+- \\( a_i \\) is the actual confidence rating for a given label
+
+## Submission format
+
+For each tweet in the test set, predict the confidence score for each of the 24 possible labels. Submission files should be in the following format and must have a header.
+
+```
+id,s1,s2,s3,s4,...,k12,k13,k14,k15
+4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+etc.
+```
+
+### Dataset Description
+
+The training set contains tweets, locations, and a confidence score for each of 24 possible labels. The 24 labels come from three categories: sentiment, when, and kind. Human raters can choose only one label from the "sentiment" and "when" categories, but are allowed multiple choices for the "kind". Your goal is to predict a confidence score of all 24 labels for each tweet in the test set.
+
+```
+s1,"I can't tell"
+s2,"Negative"
+s3,"Neutral / author is just sharing information"
+s4,"Positive"
+s5,"Tweet not related to weather condition"
+
+w1,"current (same day) weather"
+w2,"future (forecast)"
+w3,"I can't tell"
+w4,"past weather"
+
+k1,"clouds"
+k2,"cold"
+k3,"dry"
+k4,"hot"
+k5,"humid"
+k6,"hurricane"
+k7,"I can't tell"
+k8,"ice"
+k9,"other"
+k10,"rain"
+k11,"snow"
+k12,"storms"
+k13,"sun"
+k14,"tornado"
+k15,"wind"
+```
+
+For example, a tweet "The hot and humid weather yesterday was awesome!" could have s4=1, w4=1, k4=1, k5=1, with the rest marked as zero.
+
+### Files
+
+The files for this competition include the training set and the test set containing the tweets. 
+
+### Other Important Information
+
+Participants should note that the confidence score reflects the consensus of multiple raters, accounting for their varying levels of accuracy. While individual ratings are not accessible, understanding the labeling process is crucial for effective predictions.

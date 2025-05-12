@@ -1,0 +1,81 @@
+### Description
+
+India, with its population of nearly 1.4 billion, has a significant number of speakers of languages like Hindi and Tamil, which are often underrepresented online. This competition aims to enhance Natural Language Understanding (NLU) models for these languages, addressing the challenges faced by Indian users in web applications. Participants will predict answers to questions based on Wikipedia articles using the chaii-1 dataset, which contains question-answer pairs in Hindi and Tamil, created by native-speaking annotators without translation. By improving upon the baseline model provided, participants can contribute to better web experiences for millions and advance multilingual NLP.
+
+### Evaluation
+
+The metric in this competition is the word-level Jaccard score. A good description of Jaccard similarity for strings is here.
+
+A Python implementation based on the links above, and matched with the output of the C# implementation on the back end, is provided below.
+
+```
+def jaccard(str1, str2): 
+    a = set(str1.lower().split()) 
+    b = set(str2.lower().split())
+    c = a.intersection(b)
+    return float(len(c)) / (len(a) + len(b) - len(c))
+```
+
+The formula for the overall metric, then, is:
+
+score = \frac{1}{n} \sum_{i=1}^n jaccard( gt_i, dt_i )
+
+where:
+
+n = \textrm{number of documents}
+
+jaccard = \textrm{the function provided above}
+
+gt_i = \textrm{the ith ground truth}
+
+dt_i = \textrm{the ith prediction}
+
+## Submission File
+
+For each ID in the test set, you must predict the string that best answers the provided question based on the context. Note that the selected text needs to be quoted and complete to work correctly. Include punctuation, etc. - the above code splits ONLY on whitespace. The file should contain a header and have the following format:
+
+```
+id,PredictionString
+8c8ee6504,"1"
+3163c22d0,"2 string"
+66aae423b,"4 word 6"
+722085a7b,"1"
+etc.
+```
+
+### Dataset Description
+
+In this competition, you will be predicting the answers to questions in Hindi and Tamil. The answers are drawn directly (see the Evaluation page for details) from a limited context. We have provided a small number of samples to check your code with. There is also a hidden test set.
+
+All files should be encoded as UTF-8.
+
+### Files
+
+- train.csv - the training set, containing context, questions, and answers. Also includes the start character of the answer for disambiguation.
+- test.csv - the test set, containing context and questions.
+- sample_submission.csv - a sample submission file in the correct format
+
+### Columns
+
+- id - a unique identifier
+- context - the text of the Hindi/Tamil sample from which answers should be derived
+- question - the question, in Hindi/Tamil
+- answer_text (train only) - the answer to the question (manual annotation) (note: for test, this is what you are attempting to predict)
+- answer_start (train only) - the starting character in context for the answer (determined using substring match during data preparation)
+- language - whether the text in question is in Tamil or Hindi
+
+### Data Annotation Details
+
+chaii 2021 dataset was prepared following the two step process as in TydiQA.
+
+- In the question elicitation step, the annotators were shown snippets of Wikipedia text and asked to come up with interesting questions that they may be genuinely interested in knowing answers about. They were also asked to make sure the elicited question was not answerable from the snippet of wiki text shown. Annotators were asked to elicit questions which were likely to have precise, unambiguous answers.
+- In the answer labelling step, for each question elicited in the previous step, the first Wikipedia page in the Google search results for that question was selected. For Hindi questions, the selection was restricted to Hindi Wikipedia documents, and similarly for Tamil. Annotators were then asked to select the answer for the question in the document. Annotators were asked to select the first valid answer in the document as the correct answer.
+- Questions which were not answerable from the selected document were marked as non-answerable. These question-document pairs were not included in the chaii 2021 dataset.
+- With (question, wiki_document, answer) now in place, the first substring occurrence of the answer in the wiki_document was automatically calculated and provided as answer_start in the dataset. Since this part was done automatically, some amount of inaccuracy is possible. This was included only for convenience, and participants may consider ignoring this offset during model development (or come up with their own mechanism for offset selection). Please note that during test, the model is only required to predict the answer string, and not its span offset.
+- Answers in the training data were produced by one annotator, while those in the test were produced by three annotators. Majority voting was then used to come up with the final answer. In test data with minor disagreements, a separate annotator pass was done to select the final answer. For both train and test answer labelling, sampling based quality checks were carried out and the answer accuracy were routinely observed to be quite high.
+- In spite of all these multi-step checks, some amount of noise in the training data is likely. This is expected and meant to reflect real-world settings where slight noise in the training data may be unavoidable to achieve larger volumes of it. Moreover, this may also result in development of more robust methods which are more noise tolerant during training.
+- Update: we ran a few random sampling based quality checks on the datasets. Based on these checks, we found the Hindi train and test datasets to be 93.8% and 97.8%, respectively. No issues were identified in the sampled Tamil train and test instances.
+
+### Other Important Information
+
+Participants are encouraged to create and share additional datasets to enhance the competition's dataset, ensuring they are publicly available. Submissions must be made through Notebooks, with specific requirements for runtime and data usage.

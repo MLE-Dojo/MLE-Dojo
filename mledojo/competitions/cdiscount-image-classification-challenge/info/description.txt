@@ -1,0 +1,47 @@
+### Description
+
+Cdiscount.com, France’s largest non-food e-commerce company, generated nearly 3 billion euros last year and is rapidly expanding its product catalog, which is expected to exceed 30 million items by year-end. To manage this vast inventory effectively, Cdiscount.com is leveraging machine learning to classify products based on their text descriptions. However, the company believes that the next significant improvement in classification accuracy will come from applying data science techniques to product images.
+
+In this competition, participants will develop models to automatically classify products using their images. The dataset provided is extensive, featuring nearly 9 million products and over 15 million images, making it a unique challenge in extreme multi-class classification with more than 5000 categories.
+
+### Evaluation
+
+## Goal
+
+## Metric
+
+## Submission File
+
+For each _id in the test set, you must predict a category_id. The file should contain a header and have the following format:
+
+```
+_id,category_id
+2,1000000055
+5,1000016018
+6,1000016055
+etc.
+```
+
+### Dataset Description
+
+## Update:
+
+At the request of the sponsor, the data has been removed post-competition.
+
+## BSON Files
+
+BSON, short for Bin­ary JSON, is a bin­ary-en­coded seri­al­iz­a­tion of JSON-like doc­u­ments, used with MongoDB. This kernel shows how to read and process the BSON files for this competition.
+
+## File Descriptions
+
+Please Note: The train and test files are very large!
+
+- train.bson - (Size: 58.2 GB) Contains a list of 7,069,896 dictionaries, one per product. Each dictionary contains a product id (key: _id), the category id of the product (key: category_id), and between 1-4 images, stored in a list (key: imgs). Each image list contains a single dictionary per image, which uses the format: {'picture': b'…binary string…'}. The binary string corresponds to a binary representation of the image in JPEG format. This kernel provides an example of how to process the data.
+- train_example.bson - Contains the first 100 records of train.bson so you can start exploring the data before downloading the entire set.
+- test.bson - (Size: 14.5 GB) Contains a list of 1,768,182 products in the same format as train.bson, except there is no category_id included. The objective of the competition is to predict the correct category_id from the picture(s) of each product id (_id). The category_ids that are present in Private Test split are also all present in the Public Test split.
+- category_names.csv - Shows the hierarchy of product classification. Each category_id has a corresponding level1, level2, and level3 name, in French. The category_id corresponds to the category tree down to its lowest level. This hierarchical data may be useful, but it is not necessary for building models and making predictions. All the absolutely necessary information is found in train.bson.
+- sample_submission.csv - Shows the correct format for submission. It is highly recommended that you zip your submission file before uploading for scoring.
+
+### Other Important Information
+
+Rules Update: The CDiscount team has updated their rules to allow for use of this dataset for research and academic purposes only. To access the data, go to rules and accept the terms to download the data.

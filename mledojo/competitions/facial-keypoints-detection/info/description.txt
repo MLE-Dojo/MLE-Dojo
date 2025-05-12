@@ -1,0 +1,55 @@
+### Description
+
+The goal of this competition is to accurately predict keypoint positions on face images, which can be utilized in various applications such as face tracking, facial expression analysis, medical diagnosis of dysmorphic signs, and biometric recognition. Detecting facial keypoints presents significant challenges due to the vast variability in facial features across individuals and the influence of factors like 3D pose, size, position, viewing angle, and lighting conditions. This competition offers a benchmark dataset and an R tutorial to help participants get started with analyzing face images.
+
+### Evaluation
+
+## Root Mean Squared Error (RMSE)
+
+Submissions are scored on the root mean squared error. RMSE is very common and is a suitable general-purpose error metric. Compared to the Mean Absolute Error, RMSE punishes large errors:
+
+\textrm{RMSE} = \sqrt{\frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2},
+
+where y hat is the predicted value and y is the original value.
+
+### Submission Instructions
+
+Refer to the sample_submission.csv file for the correct format. For each ImageId, there's a certain number of keypoints to predict, not fixed.
+So you should refer to the sample_submission.csv file to determine the keypoints for each ImageId to predict.
+The Location column should not be missing for any row.
+
+Submission File Columns
+
+- Row Id: integer id for the row
+- Image Id: integer id for the image.
+- Feature Name: string identifying the facial keypoint, e.g., left_eye_center_x, left_eye_center_y, mouth_bottom_center_lip_x, nose_tip_y
+- Location: x- or y-coordinate of the specified feature. This is the value to be predicted.
+
+## Submission file
+
+```
+RowId,ImageId,FeatureName,Location
+1,1,left_eye_center_x,?
+2,1,left_eye_center_y,?
+3,1,right_eye_center_x,?
+4,1,right_eye_center_y,?
+etc...
+```
+
+### Dataset Description
+
+Each predicted keypoint is specified by an (x,y) real-valued pair in the space of pixel indices. There are 15 keypoints, which represent the following elements of the face:
+
+left_eye_center, right_eye_center, left_eye_inner_corner, left_eye_outer_corner, right_eye_inner_corner, right_eye_outer_corner, left_eyebrow_inner_end, left_eyebrow_outer_end, right_eyebrow_inner_end, right_eyebrow_outer_end, nose_tip, mouth_left_corner, mouth_right_corner, mouth_center_top_lip, mouth_center_bottom_lip.
+
+Left and right refer to the point of view of the subject. In some examples, some of the target keypoint positions are missing (encoded as missing entries in the csv, i.e., with nothing between two commas). The input image is given in the last field of the data files and consists of a list of pixels (ordered by row), as integers in (0,255). The images are 96x96 pixels.
+
+### Files
+
+- training.csv: list of training images. Each row contains the (x,y) coordinates for 15 keypoints, and image data as a row-ordered list of pixels.
+- test.csv: list of test images. Each row contains ImageId and image data as a row-ordered list of pixels.
+- sample_submission.csv: list of keypoints to predict. Each row contains a RowId, ImageId, FeatureName, Location. FeatureName are "left_eye_center_x," "right_eyebrow_outer_end_y," etc. Location is what you need to predict.
+
+### Other Important Information
+
+Participants are encouraged to utilize the provided R tutorial and benchmark dataset to develop their algorithms for predicting facial keypoints.

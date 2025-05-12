@@ -1,0 +1,111 @@
+### Description
+
+Join the exciting quest to uncover charged lepton flavour violation in this playground challenge, aimed at discovering phenomena that challenge our understanding of physics. The competition focuses on the decay τ → 3μ, which, if observed, would indicate a violation of lepton flavour conservation and suggest the existence of "new physics." Participants will analyze real data from the LHCb experiment, combined with simulated datasets, to develop classifiers that can identify this elusive decay. The competition is designed with built-in checks to ensure that results are unbiased and useful for future physicist studies.
+
+### Evaluation
+
+The evaluation metric for this competition is Weighted Area Under the ROC Curve. The ROC curve is divided into sections based on the True Positive Rate (TPR). To calculate the total area, multiply the area with TPR in [0., 0.2] by weight 2.0, the area with TPR in [0.2, 0.4] by 1.5, the area with TPR [0.4, 0.6] with weight 1.0, and the area with TPR [0.6, 0.8] with weight 0.5. Anything above a TPR of 0.8 has weight 0.
+
+These weights were chosen to match the evaluation methodology used by CERN scientists. Note that the weighted AUC is calculated only for events (simulated signal events for tau->µµµ and real background events for tau->µµµ) with min_ANNmuon > 0.4 (see details in section 2.2 Physics background).
+
+Before your predictions are scored with weighted AUC, they also must pass two addition checks: first an agreement test and then the correlation test. Please refer to their respective pages to learn about these tests and what is needed to pass them.
+
+## Submission File
+
+For every event in the dataset, submission files should contain two columns: id and prediction. The prediction should be a floating point value between 0 and 1.0, indicating the probability that this event is τ → 3μ decay.
+
+The file should contain a header and have the following format:
+
+```
+id,prediction
+14711831,0.3
+16316387,0.3
+6771382,0.3
+686045,0.3
+8755882,0.3
+10247299,0.3
+etc.
+```
+
+### Dataset Description
+
+In this competition, you are given a list of collision events and their properties. You will then predict whether a τ → 3μ decay happened in this collision. This τ → 3μ is currently assumed by scientists not to happen, and the goal of this competition is to discover τ → 3μ happening more frequently than scientists currently can understand.
+
+It is challenging to design a machine learning problem for something you have never observed before. Scientists at CERN developed the following designs to achieve the goal.
+
+### training.csv
+
+This is a labelled dataset (the label ‘signal’ being ‘1’ for signal events, ‘0’ for background events) to train the classifier. Signal events have been simulated, while background events are real data.
+
+This real data is collected by the LHCb detectors observing collisions of accelerated particles with a specific mass range in which τ → 3μ can’t happen. We call these events “background” and label them 0.
+
+- FlightDistance - Distance between τ and PV (primary vertex, the original protons collision point).
+- FlightDistanceError - Error on FlightDistance.
+- mass - reconstructed τ candidate invariant mass, which is absent in the test samples.
+- LifeTime - Life time of tau candidate.
+- IP - Impact Parameter of tau candidate.
+- IPSig - Significance of Impact Parameter.
+- VertexChi2 - χ2 of τ vertex.
+- dira - Cosine of the angle between the τ momentum and line between PV and tau vertex.
+- pt - transverse momentum of τ.
+- DOCAone - Distance of Closest Approach between p0 and p1.
+- DOCAtwo - Distance of Closest Approach between p1 and p2.
+- DOCAthree - Distance of Closest Approach between p0 and p2.
+- IP_p0p2 - Impact parameter of the p0 and p2 pair.
+- IP_p1p2 - Impact parameter of the p1 and p2 pair.
+- isolationa - Track isolation variable.
+- isolationb - Track isolation variable.
+- isolationc - Track isolation variable.
+- isolationd - Track isolation variable.
+- isolatione - Track isolation variable.
+- isolationf - Track isolation variable.
+- iso - Track isolation variable.
+- CDF1 - Cone isolation variable.
+- CDF2 - Cone isolation variable.
+- CDF3 - Cone isolation variable.
+- production - source of τ. This variable is absent in the test samples.
+- ISO_SumBDT - Track isolation variable.
+- p0_IsoBDT - Track isolation variable.
+- p1_IsoBDT - Track isolation variable.
+- p2_IsoBDT - Track isolation variable.
+- p0_track_Chi2Dof - Quality of p0 muon track.
+- p1_track_Chi2Dof - Quality of p1 muon track.
+- p2_track_Chi2Dof - Quality of p2 muon track.
+- p0_pt - Transverse momentum of p0 muon.
+- p0_p - Momentum of p0 muon.
+- p0_eta - Pseudorapidity of p0 muon.
+- p0_IP - Impact parameter of p0 muon.
+- p0_IPSig - Impact Parameter Significance of p0 muon.
+- p1_pt - Transverse momentum of p1 muon.
+- p1_p - Momentum of p1 muon.
+- p1_eta - Pseudorapidity of p1 muon.
+- p1_IP - Impact parameter of p1 muon.
+- p1_IPSig - Impact Parameter Significance of p1 muon.
+- p2_pt - Transverse momentum of p2 muon.
+- p2_p - Momentum of p2 muon.
+- p2_eta - Pseudorapidity of p2 muon.
+- p2_IP - Impact parameter of p2 muon.
+- p2_IPSig - Impact Parameter Significance of p2 muon.
+- SPDhits - Number of hits in the SPD detector.
+- min_ANNmuon - Muon identification. LHCb collaboration trains Artificial Neural Networks (ANN) from informations from RICH, ECAL, HCAL, Muon system to distinguish muons from other particles. This variables denotes the minimum of the three muons ANN. min ANNmuon should not be used for training. This variable is absent in the test samples.
+- signal - This is the target variable for you to predict in the test samples.
+
+### test.csv
+
+The test dataset has all the columns that training.csv has, except mass, production, min_ANNmuon, and signal.
+
+The test dataset consists of a few parts:
+
+real data for the control channel (ignored for scoring, used by agreement test)
+
+You need to submit predictions for ALL the test entries. You will need to treat them all the same and predict as if they are all the same channel's collision events.
+
+A submission is only scored after passing both the agreement test and the correlation test.
+
+### check_agreement.csv: Ds → φπ data
+
+This dataset contains simulated and real events from the Control channel Ds → φπ to evaluate your simulated-real data of submission agreement locally. It contains the same columns as test.csv and weight column. For more details see agreement test.
+
+### check_correlation.csv
+
+This dataset contains only real background events recorded at LHCb to evaluate your submission correlation with mass locally. It contains the same columns as test.csv and mass column to check correlation with.

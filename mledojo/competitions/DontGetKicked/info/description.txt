@@ -1,0 +1,28 @@
+### Description
+
+The "Don't Get Kicked!" competition addresses a significant challenge faced by auto dealerships when purchasing used cars at auctions: the risk of acquiring vehicles with serious issues, commonly referred to as "kicks." These problematic purchases can arise from tampered odometers, unresolved mechanical issues, title complications, or other unforeseen problems, leading to substantial costs for dealers due to transportation fees, ineffective repairs, and losses during resale. Participants in this competition are tasked with predicting whether a car bought at auction is a kick (bad buy), providing valuable insights to dealerships aiming to optimize their inventory selection.
+
+### Evaluation
+
+Gini score.
+
+### Submission File
+
+Submission File
+
+### Dataset Description
+
+- The challenge of this competition is to predict if the car purchased at the Auction is a good / bad buy.
+- All the variables in the data set are defined in the file Carvana_Data_Dictionary.txt
+- The data contains missing values
+- The dependent variable (IsBadBuy) is binary (C2)
+- There are 32 Independent variables (C3-C34)
+- The data set is split to 60% training and 40% testing.
+
+### Files
+
+Files
+
+### Other Important Information
+
+Participants should be prepared to handle missing values in the dataset and familiarize themselves with the variable definitions provided in the accompanying data dictionary.

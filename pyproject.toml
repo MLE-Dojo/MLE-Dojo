@@ -1,0 +1,62 @@
+# pyproject.toml
+
+[build-system]
+# Specifies the build backend and its requirements (PEP 517/518)
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+# Core project metadata (PEP 621)
+name = "mledojo"
+# version = "0.1.0"
+authors = [
+  { name="Rushi Qiang", email="rqiang6@gatech.edu" }
+]
+description = "A Gym-style framework for systematically training, evaluating, and improving autonomous large language model (LLM) agents in iterative machine learning engineering (MLE) workflows."
+readme = "README.md" # Specifies the file to use as the long description
+requires-python = ">=3.11" # Specify minimum Python version compatibility
+license = { file = "LICENSE" } # Reference your license file
+keywords = ["machine learning", "agent", "kaggle", "llm", "ai", "data science"]
+classifiers = [
+    "Development Status :: 3 - Alpha", # Or Beta, Production/Stable etc.
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License", # Change if you use a different license
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+# Declare which fields will be dynamically determined
+dynamic = ["version", "dependencies"]
+
+[project.urls]
+# Optional: Links for users
+Homepage = "https://github.com/jerrycool2002/MLE-Dojo.git"
+Repository = "https://github.com/jerrycool2002/MLE-Dojo.git"
+
+# Optional dependencies: users can install these via `pip install mledojo[dev]`
+[project.optional-dependencies]
+dev = [
+    "pytest", # Example: for running tests
+    "ruff",   # Example: for linting/formatting
+    # Add other development tools
+]
+
+# --- Setuptools Specific Configuration ---
+[tool.setuptools]
+# MUST HAVE: Tell setuptools to include files specified in MANIFEST.in
+include-package-data = true
+
+[tool.setuptools.packages.find]
+# Automatically find packages (directories with __init__.py) under the root directory
+# This will find: mledojo, mledojo.agent, mledojo.chat, mledojo.competitions, mledojo.gym, mledojo.metrics
+# It will *NOT* find mledojo.competitions.*
+where = ["."]
+
+# --- Dynamic Metadata Configuration ---
+[tool.setuptools.dynamic]
+# Read version from the specified attribute
+version = {attr = "mledojo.__version__"}
+# Read dependencies from the specified file(s)
+dependencies = {file = ["requirements.txt"]}

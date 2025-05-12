@@ -1,0 +1,48 @@
+### Description
+
+Welcome to the Ciphertext Challenge! This competition presents a unique twist on the classic decoder ring puzzle by encrypting parts of the well-known 20 Newsgroups dataset using several simple, classic ciphers. This dataset, popular in multi-class and NLP tasks, features 20 distinct classes and offers a glimpse into the 90s-era internet. With a variety of clues available, participants can explore numerous approaches to crack the code.
+
+The challenge is heightened as competitors vie for fabulous Kaggle swag, awarded to the highest-scoring teams and the most popular kernel. Remember, this is a short competition, so make your submissions count!
+
+### Evaluation
+
+Submissions will be evaluated based on their macro F1 score.
+
+## Submission File
+
+For each ID in the test set, you must predict which newsgroup a particular item came from. The file should contain a header and have the following format:
+
+```
+Id,Predicted
+ID_e93d1d4c6,0
+ID_f5f7560ec,0
+ID_6ebe8f07f,0
+ID_26222d9b7,0
+ID_a0632653b,0
+ID_641f090da,0
+ID_888b6c7a5,0
+ID_7b5b3bb47,0
+ID_70f08430c,0
+etc.
+```
+
+### Dataset Description
+
+The dataset consists of approximately 20,000 newsgroup documents, evenly distributed across 20 different newsgroups. Each document has been encrypted using up to 4 layered ciphers, with a difficulty value indicating which ciphers were applied. Documents are divided into 300-character chunks for encryption, and the exact ciphers used will be revealed at the end of the competition.
+
+### Files
+
+You will need the following files:
+- train.csv: Contains Ids, ciphertext samples, and labels for the training set.
+- test.csv: Contains Ids and ciphertext for the test set.
+- sample_submission.csv: A sample submission file in the correct format.
+
+### Data fields
+
+- Id: A unique ID for each chunk of ciphertext.
+- ciphertext: A segment of encrypted text.
+- difficulty: Indicates the number of ciphers used (1 to 4) and their order of application.
+
+### Other Important Information
+
+Participants should be aware that the competition is designed for fun and practice within the machine learning community.

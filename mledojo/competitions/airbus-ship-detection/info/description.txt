@@ -1,0 +1,53 @@
+### Description
+
+Airbus invites Kagglers to tackle the challenge of detecting ships in satellite images, even amidst clouds and haze. With the rapid growth of shipping traffic, the need for vigilant monitoring has become critical to prevent environmental disasters, piracy, illegal fishing, and other maritime infractions. Airbus aims to enhance maritime safety and efficiency through advanced monitoring solutions, leveraging proprietary data and expert analysis.
+
+Over the past decade, significant progress has been made in automating object detection in satellite imagery, yet operational effectiveness remains a challenge. This competition seeks to improve the accuracy and speed of ship detection algorithms. Additionally, participants can compete for the Algorithm Speed Prize by submitting their models for evaluation based on inference time across a dataset of over 40,000 image chips.
+
+### Evaluation
+
+This competition is evaluated on the F2 Score at different intersection over union (IoU) thresholds. The IoU of a proposed set of object pixels and a set of true object pixels is calculated as:
+
+IoU(A,B) = \frac{A \cap B}{ A \cup B}. The metric sweeps over a range of IoU thresholds, at each point calculating an F2 Score. The threshold values range from 0.5 to 0.95 with a step size of 0.05: (0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95). In other words, at a threshold of 0.5, a predicted object is considered a "hit" if its intersection over union with a ground truth object is greater than 0.5.
+
+At each threshold value t, the F2 Score value is calculated based on the number of true positives (TP), false negatives (FN), and false positives (FP) resulting from comparing the predicted object to all ground truth objects. The following equation is equivalent to F2 Score when \beta is set to 2:
+
+F_\beta(t) = \frac{(1 + \beta^2) \cdot TP(t)}{(1 + \beta^2) \cdot TP(t) + \beta^2 \cdot FN(t) + FP(t)}.
+
+A true positive is counted when a single predicted object matches a ground truth object with an IoU above the threshold. A false positive indicates a predicted object had no associated ground truth object. A false negative indicates a ground truth object had no associated predicted object. The average F2 Score of a single image is then calculated as the mean of the above F2 Score values at each IoU threshold:
+
+\frac{1}{|thresholds|} \sum_t F_2(t).
+
+Lastly, the score returned by the competition metric is the mean taken over the individual average F2 Scores of each image in the test dataset.
+
+
+### Submission File
+
+In order to reduce the submission file size, our metric uses run-length encoding on the pixel values. Instead of submitting an exhaustive list of indices for your segmentation, you will submit pairs of values that contain a start position and a run length. E.g. '1 3' implies starting at pixel 1 and running a total of 3 pixels (1,2,3).
+
+The competition format requires a space delimited list of pairs. For example, '1 3 10 5' implies pixels 1,2,3,10,11,12,13,14 are to be included in the mask. The pixels are one-indexed and numbered from top to bottom, then left to right: 1 is pixel (1,1), 2 is pixel (2,1), etc. A prediction of "no ship in image" should have a blank value in the EncodedPixels column.
+
+The metric checks that the pairs are sorted, positive, and the decoded pixel values are not duplicated. It also checks that no two predicted masks for the same image are overlapping.
+
+The file should contain a header and have the following format. Each row in your submission represents a single predicted ship segmentation for the given image.
+
+```
+ImageId,EncodedPixels
+  00002bd58.jpg,1 3
+  00015efb6.jpg,
+  00023d5fc.jpg,1 3 10 5
+  etc.
+```
+
+### Dataset Description
+
+In this competition, you are required to locate ships in images and create aligned bounding box segments around them. Many images may not contain ships, and those that do can feature multiple vessels of varying sizes, located in diverse settings such as open seas, docks, or marinas.
+
+Object segments must not overlap. Some images in both the Train and Test sets may have slight overlaps when ships are adjacent, which have been adjusted to background encoding. These minor changes will have minimal impact on scoring, as the evaluation considers increasing overlap thresholds.
+
+The `train_ship_segmentations.csv` file provides the ground truth in run-length encoding format for the training images, while the sample submission files contain the test images. Please refer to each file/folder in the Data Sources section for more details.
+
+### Files
+
+- `train_ship_segmentations.csv`: Ground truth for training images in run-length encoding format.
+- `sample_submission.csv`: Contains the test images for submission.

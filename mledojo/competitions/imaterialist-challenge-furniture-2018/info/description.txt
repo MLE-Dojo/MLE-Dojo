@@ -1,0 +1,76 @@
+### Description
+
+The FGVC5 workshop at the Conference on Computer Vision and Pattern Recognition (CVPR) invites data scientists to tackle the challenge of fine-grained visual categorization. In collaboration with Google, Malong Technologies, and Wish, this competition aims to advance automatic product recognition by developing algorithms that accurately assign category labels to images of furniture and home goods. Top submissions will have the opportunity to present their work live at the FGVC5 workshop, fostering innovation in machine learning.
+
+### Evaluation
+
+For this competition each image has one ground truth label. An algorithm to be evaluated will produce 1 label per image. If the predicted label is the same as the groundtruth label, then the error for that image is 0, otherwise it is 1. The final score is the error averaged across all images.
+
+## Submission File
+
+For each image in the test set, you must predict 1 class label. The csv file should contain a header and have the following format:
+
+```
+id,predicted
+12345,0
+67890,83
+etc.
+```
+
+### Dataset Description
+
+All the data described below are txt files in JSON format.
+
+Overview
+
+- train.json: training data with image URLs and labels
+- validation.json: validation data with the same format as train.json
+- test.json: images of which the participants need to generate predictions. Only image URLs are provided.
+- sample_submission_randomlabel.csv: example submission file with random predictions to illustrate the submission file format
+
+Training Data
+
+The training dataset includes images from 128 furniture and home goods classes, with one ground truth label for each image. It consists of 194,828 training images, 6,400 validation images, and 12,800 testing images. The format for train and validation sets is as follows:
+
+{
+"images" : [image],
+"annotations" : [annotation],
+}
+
+image{
+"image_id" : int,
+"url": [string]
+}
+
+annotation{
+"image_id" : int,
+"label_id" : int
+}
+
+Note that for each image, only the URL is provided, and users must download the images themselves. Image URLs may become unavailable over time, so early downloading is recommended. We are considering an image hosting service to address this issue.
+
+Testing data and submissions
+
+The testing data includes only images in the following format:
+
+{
+"images" : [image],
+}
+
+image {
+"image_id" : int,
+"url" : [string],
+}
+
+A sample submission CSV file is provided as an example. The evaluation section contains a detailed description of the submission format.
+
+### Files
+
+- train.json
+- validation.json
+- test.json
+- sample_submission_randomlabel.csv
+
+### Other Important Information
+
+Attending the FGVC5 workshop is not mandatory for competition participation; however, only teams attending will be considered for presenting their work. Participants are responsible for all travel and associated costs to attend CVPR 2018.

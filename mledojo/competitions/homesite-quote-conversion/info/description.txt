@@ -1,0 +1,33 @@
+### Description
+
+In the competitive world of homeowners insurance, understanding the likelihood of a customer converting a quote into a purchase is crucial. Homesite, a prominent provider in this sector, currently lacks a dynamic model to predict conversion rates effectively. They invite you to leverage an anonymized dataset of customer and sales activity to forecast which customers are likely to accept a given quote. By accurately predicting these conversions, Homesite aims to refine their pricing strategies and optimize their customer portfolio.
+
+### Evaluation
+
+Submissions are evaluated on area under the ROC curve between the predicted probability and the observed target.
+
+## Submission File
+
+For each QuoteNumber in the test set, you must predict a probability for QuoteConversion_Flag. The file should contain a header and have the following format:
+
+```
+QuoteNumber,QuoteConversion_Flag
+3,0
+5,0.3
+7,0
+etc.
+```
+
+## Dataset Description
+
+This dataset captures the interactions of numerous customers interested in purchasing policies from Homesite. Each QuoteNumber represents a potential customer, while the QuoteConversion_Flag indicates whether a policy was purchased. The anonymized features encompass detailed coverage, sales, personal, property, and geographic information, providing a comprehensive view of prospective customers. Your objective is to predict the QuoteConversion_Flag for each QuoteNumber in the test set.
+
+## File descriptions
+
+- train.csv - the training set, contains QuoteConversion_Flag
+- test.csv - the test set, does not contain QuoteConversion_Flag
+- sample_submission.csv - a sample submission file in the correct format
+
+### Other Important Information
+
+No special requirements are noted for this competition.

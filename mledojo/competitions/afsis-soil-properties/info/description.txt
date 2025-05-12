@@ -1,0 +1,54 @@
+### Description
+
+The competition focuses on leveraging advancements in infrared spectroscopy and georeferencing to predict soil functional properties at unsampled locations, particularly in data-sparse regions like Africa. Soil functional properties are crucial for supporting ecosystem services such as productivity, nutrient retention, and erosion resistance. By utilizing diffuse reflectance infrared spectroscopy, which allows for rapid and cost-effective measurement of soil properties, participants are tasked with predicting five key soil functional properties from spectral data. This digital mapping is essential for sustainable agricultural planning and natural resource management.
+
+### Evaluation
+
+Submissions are scored on MCRMSE (mean columnwise root mean squared error):
+
+\textrm{MCRMSE} = \frac{1}{5}\sum_{j=1}^{5}\sqrt{\frac{1}{n} \sum_{i=1}^{n} (y_{ij} - \hat{y}_{ij})^2},
+
+where \\(y\\) and \\(\hat{y}\\) are the actual and predicted values, respectively.
+
+## Submission File
+
+For each row in the dataset, the submission file should contain an identifier column (PIDN) and 5 prediction columns: Ca, P, pH, SOC, and Sand. PIDN, the sample identifier, should be copied from the first column of test data file. Ca, P, pH, SOC, and Sand are soil properties whose values you must predict.
+
+The file should contain a header and have the following format:
+
+```
+PIDN,Ca,P,pH,SOC,Sand
+XNhoFZW5,1.3,3.1,2.0,1.5,4.8
+```
+
+### Dataset Description
+
+- **PIDN**: unique soil sample identifier
+- **SOC**: Soil organic carbon
+- **pH**: pH values
+- **Ca**: Mehlich-3 extractable Calcium
+- **P**: Mehlich-3 extractable Phosphorus
+- **Sand**: Sand content
+- **m7497.96 - m599.76**: 3,578 mid-infrared absorbance measurements. For example, the "m7497.96" column is the absorbance at wavenumber 7497.96 cm-1. It is suggested to remove spectra CO2 bands in the region m2379.76 to m2352.76, but this is not mandatory.
+- **Depth**: Depth of the soil sample (2 categories: "Topsoil", "Subsoil")
+
+Potential spatial predictors from remote sensing data sources include:
+
+- **BSA**: average long-term Black Sky Albedo measurements from MODIS satellite images
+- **CTI**: compound topographic index from Shuttle Radar Topography Mission elevation data
+- **ELEV**: Shuttle Radar Topography Mission elevation data
+- **EVI**: average long-term Enhanced Vegetation Index from MODIS satellite images
+- **LST**: average long-term Land Surface Temperatures from MODIS satellite images
+- **Ref**: average long-term Reflectance measurements from MODIS satellite images
+- **Reli**: topographic Relief from Shuttle Radar Topography mission elevation data
+- **TMAP & TMFI**: average long-term Tropical Rainfall Monitoring Mission data
+
+### Files
+
+- **train.csv** - the training set has 1158 rows.
+- **test.csv** - the test set has 728 rows.
+- **sample_submission.csv** - all zeros prediction, serving as a sample submission file in the correct format.
+
+### Other Important Information
+
+Participants should note that no additional data will be introduced during the competition. The dataset is organized based on a spatially stratified sampling design, ensuring a representative sample across various climate zones in Africa.

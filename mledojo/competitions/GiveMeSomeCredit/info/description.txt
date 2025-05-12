@@ -1,0 +1,36 @@
+### Description
+
+In market economies, banks are pivotal in determining access to finance, influencing investment decisions significantly. Credit scoring algorithms assess the likelihood of default, guiding banks in their lending choices. This competition challenges participants to enhance credit scoring methods by predicting the probability of financial distress for individuals over the next two years. The ultimate aim is to develop a model that assists borrowers in making informed financial decisions. Participants will work with historical data from 250,000 borrowers.
+
+### Evaluation
+
+AUC
+
+### Submission File
+
+Training, Test, Sample Entry and Submission Files are provided. Please check the format of the submission file.
+
+Id,Probability
+59771,0.0
+21363,0.0
+127325,0.0
+140510,0.0
+144298,0.0
+96371,0.0
+49743,0.0
+47390,0.0
+
+### Dataset Description
+
+The dataset includes historical data on 250,000 borrowers, which will be used to train and test models for predicting financial distress.
+
+### Files
+
+- train.csv
+- test.csv
+- sample_entry.csv
+- submission.csv
+
+### Other Important Information
+
+The competition emphasizes the importance of improving credit scoring algorithms to better serve borrowers and enhance financial decision-making.

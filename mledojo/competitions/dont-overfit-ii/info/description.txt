@@ -1,0 +1,41 @@
+Description  
+Long ago, in the distant, fragrant mists of time, there was a competition… It was not just any competition. It was a competition that challenged mere mortals to model a 20,000x200 matrix of continuous variables using only 250 training samples… without overfitting. Data scientists ― including Kaggle's very own Will Cukierski ― competed by the hundreds. Legends were made. (Will took 5th place, and eventually ended up working at Kaggle!) People overfit like crazy. It was a Kaggle-y, data science-y madhouse. 
+
+So… we're doing it again.  
+Don't Overfit II: The Overfittening  
+This is the next logical step in the evolution of weird competitions. Once again we have 20,000 rows of continuous variables, and a mere handful of training samples. Once again, we challenge you not to overfit. Do your best, model without overfitting, and add, perhaps, to your own legend. In addition to bragging rights, the winner also gets swag. Enjoy!  
+
+Acknowledgments  
+We hereby salute the hard work that went into the original competition, created by Phil Brierly. Thank you!
+
+Evaluation  
+Submissions are evaluated using AUC ROC between the predicted target and the actual target value.  
+
+Submission File  
+For each id in the test set, you must predict a probability for the target variable. The file should contain a header and have the following format:
+```
+id,target  
+300,0  
+301,0  
+302,0  
+303,0  
+304,0  
+305,0  
+306,0  
+307,0  
+308,0  
+```
+
+Dataset Description  
+What am I predicting?  
+You are predicting the binary target associated with each row, without overfitting to the minimal set of training examples provided.
+
+Files  
+- train.csv - the training set. 250 rows.  
+- test.csv - the test set. 19,750 rows.  
+- sample_submission.csv - a sample submission file in the correct format
+
+Columns  
+- id - sample id  
+- target - a binary target of mysterious origin  
+- 0-299 - continuous variables

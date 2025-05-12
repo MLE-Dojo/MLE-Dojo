@@ -1,0 +1,48 @@
+### Description
+
+From 1934 to 1963, Alcatraz housed some of the world's most notorious criminals, but today, San Francisco is more recognized for its tech scene than its criminal past. However, with rising wealth inequality and housing shortages, crime remains a pressing issue in the city. This competition invites participants to analyze nearly 12 years of crime reports from various neighborhoods in San Francisco. Your challenge is to predict the category of crime based on time and location. We encourage you to visualize the dataset, exploring insights through tools like the Top Crimes Map. The most up-voted scripts will earn official Kaggle swag.
+
+### Evaluation
+
+Submissions are evaluated using the multi-class logarithmic loss. Each incident has been labeled with one true class. For each incident, you must submit a set of predicted probabilities (one for every class). The formula is then,
+
+log loss = -\frac{1}{N}\sum_{i=1}^N\sum_{j=1}^My_{ij}\log(p_{ij}),
+
+where N is the number of cases in the test set, M is the number of class labels, \\(log\\) is the natural logarithm, \\(y_{ij}\\) is 1 if observation \\(i\\) is in class \\(j\\) and 0 otherwise, and \\(p_{ij}\\) is the predicted probability that observation \\(i\\) belongs to class \\(j\\).
+
+The submitted probabilities for a given incident are not required to sum to one because they are rescaled prior to being scored (each row is divided by the row sum). In order to avoid the extremes of the log function, predicted probabilities are replaced with \\(max(min(p,1-10^{-15}),10^{-15})\\).
+
+### Submission File
+
+You must submit a csv file with the incident id, all candidate class names, and a probability for each class. The order of the rows does not matter. The file must have a header and should look like the following:
+
+```
+Id,ARSON,ASSAULT,BAD CHECKS,BRIBERY,BURGLARY,DISORDERLY CONDUCT,DRIVING UNDER THE INFLUENCE,DRUG/NARCOTIC,DRUNKENNESS,EMBEZZLEMENT,EXTORTION,FAMILY OFFENSES,FORGERY/COUNTERFEITING,FRAUD,GAMBLING,KIDNAPPING,LARCENY/THEFT,LIQUOR LAWS,LOITERING,MISSING PERSON,NON-CRIMINAL,OTHER OFFENSES,PORNOGRAPHY/OBSCENE MAT,PROSTITUTION,RECOVERED VEHICLE,ROBBERY,RUNAWAY,SECONDARY CODES,SEX OFFENSES FORCIBLE,SEX OFFENSES NON FORCIBLE,STOLEN PROPERTY,SUICIDE,SUSPICIOUS OCC,TREA,TRESPASS,VANDALISM,VEHICLE THEFT,WARRANTS,WEAPON LAWS
+0,0.9,0.1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+...
+etc.
+```
+
+### Dataset Description
+
+This dataset contains incidents derived from the SFPD Crime Incident Reporting system, covering the period from 1/1/2003 to 5/13/2015. The training and test sets rotate weekly, with odd weeks designated for testing and even weeks for training.
+
+### Data fields
+
+- Dates - timestamp of the crime incident
+- Category - category of the crime incident (only in train.csv). This is the target variable you are going to predict.
+- Descript - detailed description of the crime incident (only in train.csv)
+- DayOfWeek - the day of the week
+- PdDistrict - name of the Police Department District
+- Resolution - how the crime incident was resolved (only in train.csv)
+- Address - the approximate street address of the crime incident
+- X - Longitude
+- Y - Latitude
+
+### Files
+
+The dataset includes the following files:
+- train.csv - the training set containing labeled incidents
+- test.csv - the test set containing unlabeled incidents
+- sample_submission.csv - a sample submission file to guide your submission format.

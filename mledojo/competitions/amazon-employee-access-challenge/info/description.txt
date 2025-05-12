@@ -1,0 +1,69 @@
+### Description
+
+In this competition, participants are tasked with developing a model that predicts employee access needs based on historical data. When employees start their roles, they often face challenges in obtaining the necessary computer access, leading to delays and inefficiencies. By leveraging data on employee roles and their access history, the goal is to create an automated system that minimizes manual interventions for granting or revoking access as employees transition between roles. The model will utilize an employee's role information and a resource code to determine whether access should be granted.
+
+## Evaluation
+
+Submissions are judged on area under the ROC curve.
+
+In Matlab (using the stats toolbox):
+
+```
+[~, ~, ~, auc ] = perfcurve(true_labels, predictions, 1);
+```
+
+In R (using the verification package):
+
+```
+auc = roc.area(true_labels, predictions)
+```
+
+In python (using the metrics module of scikit-learn):
+
+```
+fpr, tpr, thresholds = metrics.roc_curve(true_labels, predictions, pos_label=1)
+auc = metrics.auc(fpr,tpr)
+```
+
+## Submission File
+
+For every line in the test set, submission files should contain two columns: id and ACTION. In the ground truth, ACTION is 1 if the resource should be allowed, 0 if the resource should not. Your predictions do not need to be binary. You may submit probabilities/predictions having any real value. The submission file should have a header.
+
+```
+id,ACTION
+1,1
+2,0.2
+3,1
+4,0
+5,2
+...
+```
+
+## Dataset Description
+
+The dataset comprises real historical data from 2010 and 2011, detailing how employees were manually granted or denied access to resources over time. Participants must develop an algorithm that learns from this data to predict access approvals or denials for a new set of employees.
+
+## File Descriptions
+
+train.csv - The training set. Each row has the ACTION (ground truth), RESOURCE, and information about the employee's role at the time of approval.
+
+test.csv - The test set for which predictions should be made. Each row asks whether an employee having the listed characteristics should have access to the listed resource.
+
+## Column Descriptions
+
+| Column Name | Description |
+| --- | --- |
+| ACTION | ACTION is 1 if the resource was approved, 0 if the resource was not |
+| RESOURCE | An ID for each resource |
+| MGR_ID | The EMPLOYEE ID of the manager of the current EMPLOYEE ID record; an employee may have only one manager at a time |
+| ROLE_ROLLUP_1 | Company role grouping category id 1 (e.g. US Engineering) |
+| ROLE_ROLLUP_2 | Company role grouping category id 2 (e.g. US Retail) |
+| ROLE_DEPTNAME | Company role department description (e.g. Retail) |
+| ROLE_TITLE | Company role business title description (e.g. Senior Engineering Retail Manager) |
+| ROLE_FAMILY_DESC | Company role family extended description (e.g. Retail Manager, Software Engineering) |
+| ROLE_FAMILY | Company role family description (e.g. Retail Manager) |
+| ROLE_CODE | Company role code; this code is unique to each role (e.g. Manager) |
+
+## Other Important Information
+
+Participants should focus on creating a robust model that minimizes manual access transactions as employee attributes change over time.

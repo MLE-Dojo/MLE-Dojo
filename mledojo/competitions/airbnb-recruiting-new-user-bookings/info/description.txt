@@ -1,0 +1,57 @@
+### Description
+
+Airbnb invites you to participate in a recruiting competition aimed at predicting the first booking destination of new users. With over 34,000 cities in 190+ countries available for booking, accurately forecasting where a new user will travel allows Airbnb to enhance personalized content, reduce the time to first booking, and improve demand forecasting. Successful participants will have the opportunity to interview for a position on Airbnb's Data Science and Analytics team. For insights into Airbnb's data science approach and their mission to foster human connection, check out their careers page.
+
+### Evaluation
+
+The evaluation metric for this competition is NDCG (Normalized discounted cumulative gain) @k where k=5. NDCG is calculated as:
+
+DCG_k=\sum_{i=1}^k\frac{2^{rel_i}-1}{\log_2{\left(i+1\right)}},
+
+nDCG_k=\frac{DCG_k}{IDCG_k},
+
+where \\(rel_i\\) is the relevance of the result at position \\(i\\).
+
+\\(IDCG_k\\) is the maximum possible (ideal) \\(DCG\\) for a given set of queries. All NDCG calculations are relative values on the interval 0.0 to 1.0.
+
+For each new user, you are to make a maximum of 5 predictions on the country of the first booking. The ground truth country is marked with relevance = 1, while the rest have relevance = 0.
+
+For example, if for a particular user the destination is FR, then the predictions become:
+
+[ FR ]  gives a \\(NDCG=\frac{2^{1}-1}{log_{2}(1+1)}=1.0\\)
+
+[ US, FR ] gives a \\(DCG=\frac{2^{0}-1}{log_{2}(1+1)}+\frac{2^{1}-1}{log_{2}(2+1)}=\frac{1}{1.58496}=0.6309\\)
+
+## Submission File
+
+For every user in the dataset, submission files should contain two columns: id and country. The destination country predictions must be ordered such that the most probable destination country goes first.
+
+The file should contain a header and have the following format:
+
+```
+id,country
+000am9932b,NDF
+000am9932b,US
+000am9932b,IT
+01wi37r0hw,FR
+etc.
+```
+
+### Dataset Description
+
+In this challenge, you will predict the first booking destination country for new users based on their demographics, web session records, and summary statistics. All users in this dataset are from the USA, with 12 possible destination outcomes: 'US', 'FR', 'CA', 'GB', 'ES', 'IT', 'PT', 'NL', 'DE', 'AU', 'NDF' (no destination found), and 'other'. 'NDF' indicates no booking occurred, while 'other' signifies a booking to a country not listed.
+
+The training and test sets are divided by date, with the test set focusing on new users whose first activities occurred after 7/1/2014. The sessions dataset starts from 1/1/2014, while the users dataset dates back to 2010.
+
+### Files
+
+- train_users.csv - the training set of users
+- test_users.csv - the test set of users
+- sessions.csv - web sessions log for users
+- countries.csv - summary statistics of destination countries in this dataset and their locations
+- age_gender_bkts.csv - summary statistics of users' age group, gender, country of destination
+- sample_submission.csv - correct format for submitting your predictions
+
+### Other Important Information
+
+No special requirements are noted for this competition.

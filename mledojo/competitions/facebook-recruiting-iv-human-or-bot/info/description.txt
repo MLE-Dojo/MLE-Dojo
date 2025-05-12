@@ -1,0 +1,64 @@
+### Description
+
+Join Facebook and Kaggle in an exciting Engineering competition where you can showcase your skills and potentially land an interview for a software engineering role focused on cutting-edge Machine Learning challenges. 
+
+In this competition, participants will tackle the issue of automated bidding on an online auction site, where human bidders are struggling to compete against software-controlled bots. The site owners are eager to restore customer satisfaction by identifying and removing these "robot" bidders, as their presence is causing a decline in user engagement.
+
+Your mission is to develop a model that accurately identifies bids placed by these automated systems using behavioral data, such as bid frequency over short time frames. The data for this competition is sourced from an online platform, not Facebook.
+
+### Evaluation
+
+Submissions are judged on area under the ROC curve.
+
+## Submission File
+
+Each line of your submission should contain an Id and a prediction of the probability that this bidder is a robot. Your submission file must have a header row. The file should have the following format:
+
+```
+bidder_id,prediction
+38d9e2e83f25229bd75bfcdc39d776bajysie,0.3
+9744d8ea513490911a671959c4a530d8mp2qm,0.0
+dda14384d59bf0b3cb883a7065311dac3toxe,0.9
+...
+etc
+```
+
+### Dataset Description
+
+This competition features two datasets: a bidder dataset containing bidder information (id, payment account, and address) and a bid dataset with 7.6 million bids made via mobile devices. The auction platform employs a fixed increment for bids, omitting specific bid amounts. Participants can analyze bidding behavior based on the timing of bids, auction details, or device used.
+
+### Files
+
+- train.csv - the training set from the bidder dataset
+- test.csv - the test set from the bidder dataset
+- sampleSubmission.csv - a sample submission file in the correct format
+- bids.csv - the bid dataset
+
+### Data fields
+
+For the bidder dataset
+
+- bidder_id – Unique identifier of a bidder.
+- payment_account – Payment account associated with a bidder. These are obfuscated to protect privacy.
+- address – Mailing address of a bidder. These are obfuscated to protect privacy.
+- outcome – Label of a bidder indicating whether or not it is a robot. Value 1.0 indicates a robot, where value 0.0 indicates human. 
+The outcome was half hand labeled, half stats-based. There are two types of "bots" with different levels of proof:
+
+1. Bidders identified as bots/fraudulent with clear proof, whose accounts were banned by the auction site.
+2. Bidders who may have just started their business or whose stats exceed the system-wide average, lacking clear proof of being bots.
+
+For the bid dataset
+
+- bid_id - unique id for this bid
+- bidder_id – Unique identifier of a bidder (same as the bidder_id used in train.csv and test.csv)
+- auction – Unique identifier of an auction
+- merchandise – The category of the auction site campaign, indicating the bidder's search term or online advertisement.
+- device – Phone model of a visitor
+- time - Time that the bid is made (transformed to protect privacy).
+- country - The country that the IP belongs to
+- ip – IP address of a bidder (obfuscated to protect privacy).
+- url - URL where the bidder was referred from (obfuscated to protect privacy).
+
+### Other Important Information
+
+Please note: You must compete as an individual in recruiting competitions. You may only use the data provided to make your predictions.

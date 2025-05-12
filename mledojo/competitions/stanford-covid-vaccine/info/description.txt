@@ -1,0 +1,70 @@
+### Description
+
+The fight against the COVID-19 pandemic hinges on the development of an effective vaccine that can be distributed equitably and widely. While mRNA vaccines have emerged as the fastest candidates, they face significant challenges, particularly in designing stable messenger RNA molecules. RNA's tendency to degrade poses a serious limitation, as even minor damage can render a vaccine ineffective. Currently, mRNA vaccines require intense refrigeration, limiting their accessibility.
+
+The Eterna community, led by Professor Rhiju Das from Stanford’s School of Medicine, combines the efforts of scientists and gamers to tackle scientific puzzles, including mRNA design. Through this online platform, players contribute solutions that are synthesized and tested at Stanford, leading to advancements in RNA biotechnology.
+
+This competition invites the Kaggle community to apply their data science skills to predict RNA degradation rates. Participants will develop models based on a dataset of over 3,000 RNA molecules and their degradation rates. The models will be evaluated against new RNA sequences designed by Eterna players specifically for COVID-19 mRNA vaccines, which are being synthesized and tested concurrently at Stanford. The goal is to accelerate research and deliver a refrigerator-stable vaccine against SARS-CoV-2.
+
+### Evaluation
+
+Submissions are scored using MCRMSE, mean columnwise root mean squared error:
+
+\textrm{MCRMSE} = \frac{1}{N_{t}}\sum_{j=1}^{N_{t}}\sqrt{\frac{1}{n} \sum_{i=1}^{n} (y_{ij} - \hat{y}_{ij})^2}
+
+where N_t is the number of scored ground truth target columns, and y and \hat{y} are the actual and predicted values, respectively.
+
+From the Data page: There are multiple ground truth values provided in the training data. While the submission format requires all 5 to be predicted, only the following are scored: reactivity, deg_Mg_pH10, and deg_Mg_50C.
+
+## Submission File
+
+For each sample id in the test set, you must predict targets for each sequence position (seqpos), one per row. If the length of the sequence of an id is, e.g., 107, then you should make 107 predictions. Positions greater than the seq_scored value of a sample are not scored, but still need a value in the solution file.
+
+```
+id_seqpos,reactivity,deg_Mg_pH10,deg_pH10,deg_Mg_50C,deg_50C    
+id_00073f8be_0,0.1,0.3,0.2,0.5,0.4
+id_00073f8be_1,0.3,0.2,0.5,0.4,0.2
+id_00073f8be_2,0.5,0.4,0.2,0.1,0.2
+etc.
+```
+
+### Dataset Description
+
+In this competition, you will be predicting the degradation rates at various locations along RNA sequence.
+
+There are multiple ground truth values provided in the training data. While the submission format requires all 5 to be predicted, only the following are scored: reactivity, deg_Mg_pH10, and deg_Mg_50C.
+
+### Files
+
+- train.json - the training data
+- test.json - the test set, without any columns associated with the ground truth.
+- sample_submission.csv - a sample submission file in the correct format
+
+### Columns
+
+- id - An arbitrary identifier for each sample.
+- seq_scored - (68 in Train and Public Test, 91 in Private Test) Integer value denoting the number of positions used in scoring with predicted values. This should match the length of reactivity, deg_* and *_error_* columns. Note that molecules used for the Private Test will be longer than those in the Train and Public Test data, so the size of this vector will be different.
+- seq_length  - (107 in Train and Public Test, 130 in Private Test) Integer values, denotes the length of sequence. Note that molecules used for the Private Test will be longer than those in the Train and Public Test data, so the size of this vector will be different.
+- sequence  - (1x107 string in Train and Public Test, 130 in Private Test) Describes the RNA sequence, a combination of A, G, U, and C for each sample. Should be 107 characters long, and the first 68 bases should correspond to the 68 positions specified in seq_scored (note: indexed starting at 0).
+- structure -  (1x107 string in Train and Public Test, 130 in Private Test) An array of (, ), and . characters that describe whether a base is estimated to be paired or unpaired. Paired bases are denoted by opening and closing parentheses e.g. (….) means that base 0 is paired to base 5, and bases 1-4 are unpaired.
+- reactivity - (1x68 vector in Train and Public Test, 1x91 in Private Test) An array of floating point numbers, should have the same length as seq_scored. These numbers are reactivity values for the first 68 bases as denoted in sequence, and used to determine the likely secondary structure of the RNA sample.
+- deg_pH10 - (1x68 vector in Train and Public Test, 1x91 in Private Test) An array of floating point numbers, should have the same length as seq_scored. These numbers are reactivity values for the first 68 bases as denoted in sequence, and used to determine the likelihood of degradation at the base/linkage after incubating without magnesium at high pH (pH 10).
+- deg_Mg_pH10 - (1x68 vector in Train and Public Test, 1x91 in Private Test) An array of floating point numbers, should have the same length as seq_scored. These numbers are reactivity values for the first 68 bases as denoted in sequence, and used to determine the likelihood of degradation at the base/linkage after incubating with magnesium in high pH (pH 10).
+- deg_50C - (1x68 vector in Train and Public Test, 1x91 in Private Test) An array of floating point numbers, should have the same length as seq_scored. These numbers are reactivity values for the first 68 bases as denoted in sequence, and used to determine the likelihood of degradation at the base/linkage after incubating without magnesium at high temperature (50 degrees Celsius).
+- deg_Mg_50C - (1x68 vector in Train and Public Test, 1x91 in Private Test) An array of floating point numbers, should have the same length as seq_scored. These numbers are reactivity values for the first 68 bases as denoted in sequence, and used to determine the likelihood of degradation at the base/linkage after incubating with magnesium at high temperature (50 degrees Celsius).
+- *_error_* - An array of floating point numbers, should have the same length as the corresponding reactivity or deg_* columns, calculated errors in experimental values obtained in reactivity and deg_* columns.
+- predicted_loop_type - (1x107 string) Describes the structural context (also referred to as 'loop type') of each character in sequence. Loop types assigned by bpRNA from Vienna RNAfold 2 structure. From the bpRNA_documentation: 
+    S: paired "Stem"
+    M: Multiloop
+    I: Internal loop
+    B: Bulge
+    H: Hairpin loop
+    E: dangling End
+    X: eXternal loop
+S/N filter Indicates if the sample passed filters described below in Additional Notes.
+
+### Other Important Information
+
+At the beginning of the competition, Stanford scientists have data on 3029 RNA sequences of length 107. For technical reasons, measurements cannot be carried out on the final bases of these RNA sequences, so we have experimental data (ground truth) in 5 conditions for the first 68 bases.
+
+A public test set of 629 sequences has been created to allow for continuous evaluation, while the remaining 2400 sequences are in the training data. For the final scoring, measurements will be conducted on 3005 new RNAs, which are longer and will have data for the first 91 bases. Filters have been applied to ensure a diverse and high-quality test set for public leaderboard scoring.

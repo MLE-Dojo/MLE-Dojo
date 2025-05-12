@@ -1,0 +1,65 @@
+Description  
+This week 2 forecasting task is now closed for submissions. Click here to visit the week 3 version, and make a submission there.  
+This is week 2 of Kaggle's COVID-19 forecasting series, following the Week 1 competition. This is the 2nd of at least 4 competitions we plan to launch in this series.
+
+Background  
+The White House Office of Science and Technology Policy (OSTP) pulled together a coalition of research groups and companies (including Kaggle) to prepare the COVID-19 Open Research Dataset (CORD-19) to attempt to address key open scientific questions on COVID-19. Those questions are drawn from the National Academies of Sciences, Engineering, and Medicine (NASEM) and the World Health Organization (WHO).
+
+The Challenge  
+Kaggle is launching a companion COVID-19 forecasting challenge to help answer a subset of the NASEM/WHO questions. While the challenge involves forecasting confirmed cases and fatalities between April 1 and April 30 by region, the primary goal isn't only to produce accurate forecasts. It’s also to identify factors that appear to impact the transmission rate of COVID-19.  
+You are encouraged to pull in, curate, and share data sources that might be helpful. If you find variables that look like they impact the transmission rate, please share your findings in a notebook.  
+As the data becomes available, we will update the leaderboard with live results based on data made available from the Johns Hopkins University Center for Systems Science and Engineering (JHU CSSE).  
+We have received support and guidance from health and policy organizations in launching these challenges. We're hopeful the Kaggle community can make valuable contributions to developing a better understanding of factors that impact the transmission of COVID-19.
+
+Companies and Organizations  
+There is also a call to action for companies and other organizations: If you have datasets that might be useful, please upload them to Kaggle’s dataset platform and reference them in this forum thread. That will make them accessible to those participating in this challenge and a resource to the wider scientific community.
+
+Acknowledgements  
+JHU CSSE for making the data available to the public. The White House OSTP for pulling together the key open questions. The image comes from the Center for Disease Control.  
+This is a Code Competition. Refer to Code Requirements for details.
+
+Evaluation  
+Public and Private Leaderboard  
+To have a public leaderboard for this forecasting task, we will be using data from 7 days before to 7 days after the competition launch. Only use data prior to 2020-03-19 for predictions on the public leaderboard period. Use up to and including the most recent data for predictions on the private leaderboard period.  
+Public Leaderboard Period: 2020-03-19 - 2020-04-01  
+Private Leaderboard Period: 2020-04-02 - 2020-04-30  
+Evaluation  
+Submissions are evaluated using the column-wise root mean squared logarithmic error (RMSLE).  
+The RMSLE for a single column is calculated as:
+
+\[
+\sqrt{\frac{1}{n} \sum_{i=1}^n (\log(p_i + 1) - \log(a_i + 1))^2 }
+\]
+
+where:  
+\(n\) is the total number of observations  
+\(p_i\) is your prediction  
+\(a_i\) is the actual value  
+\(\log(x)\) is the natural logarithm of \(x\)  
+The final score is the mean of the RMSLE over all columns (in this case, 2).
+
+Submission File  
+We understand this is a serious situation, and in no way want to trivialize the human impact this crisis is causing by predicting fatalities. Our goal is to provide better methods for estimates that can assist medical and governmental institutions to prepare and adjust as pandemics unfold.  
+For each ForecastId in the test set, you'll predict the cumulative COVID-19 cases and fatalities to date. The file should contain a header and have the following format:
+
+```
+ForecastId,ConfirmedCases,Fatalities
+1,10,0
+2,10,0
+3,10,0
+```
+etc.  
+You will get the ForecastId for the corresponding date and location from the test.csv file.
+
+Dataset Description  
+In this challenge, you will be predicting the cumulative number of confirmed COVID-19 cases in various locations across the world, as well as the number of resulting fatalities, for future dates.  
+We understand this is a serious situation, and in no way want to trivialize the human impact this crisis is causing by predicting fatalities. Our goal is to provide better methods for estimates that can assist medical and governmental institutions to prepare and adjust as pandemics unfold.  
+
+Files  
+- train.csv - the training data (you are encouraged to join in many more useful external datasets)
+- test.csv - the dates to predict; there is a week of overlap with the training data for the initial Public leaderboard. Once submissions are paused, the Public leaderboard will update based on the last 28 days of predicted data.
+- submission.csv - a sample submission in the correct format; again, predictions should be cumulative.
+
+Data Source  
+This evaluation data for this competition comes from Johns Hopkins CSSE, which is uninvolved in the competition.  
+See their README for a description of how the data was collected. They are currently updating the data daily.

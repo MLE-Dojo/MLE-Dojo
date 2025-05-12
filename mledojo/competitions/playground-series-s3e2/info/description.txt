@@ -1,0 +1,34 @@
+Description  
+Welcome to the 2023 edition of Kaggle's Playground Series! Thank you to everyone who participated in and contributed to last year's Tabular Playground Series. And many thanks to all those who took the time to provide constructive feedback! We're thrilled that there continues to be interest in these types of challenges, and we're continuing the series this year but with a few changes.
+
+First, the series is getting upgraded branding. We've dropped "Tabular" from the name because, while we anticipate this series will still have plenty of tabular competitions, we'll also be having some other formats as well. You'll also notice freshly-upgraded (better looking and more fun!) banner and thumbnail images.
+
+Second, rather than naming the challenges by month and year, we're moving to a Season-Edition format. This year is Season 3, and each challenge will be a new Edition. We're doing this to have more flexibility. Competitions going forward won't necessarily align with each month like they did in previous years (although some might!), we'll have competitions with different time durations, and we may have multiple competitions running at the same time on occasion.
+
+Regardless of these changes, the goals of the Playground Series remain the same—to give the Kaggle community a variety of fairly light-weight challenges that can be used to learn and sharpen skills in different aspects of machine learning and data science. We hope we continue to meet this objective!
+
+To start the year with some fun, January will be the month of Tabular Tuesday. We're launching four week-long tabular competitions, with each starting Tuesday 00:00 UTC. These will be fairly light-weight datasets that are synthetically generated from real-world data and will provide an opportunity to quickly iterate through various model and feature engineering ideas, create visualizations, etc.
+
+Synthetically-Generated Datasets  
+Using synthetic data for Playground competitions allows us to strike a balance between having real-world data (with named features) and ensuring test labels are not publicly available. This allows us to host competitions with more interesting datasets than in the past. While there are still challenges with synthetic data generation, the state-of-the-art is much better now than when we started the Tabular Playground Series two years ago, and that goal is to produce datasets that have far fewer artifacts. Please feel free to give us feedback on the datasets for the different competitions so that we can continue to improve!
+
+Evaluation  
+Submissions are evaluated on the area under the ROC curve between the predicted probability and the observed target.
+
+Submission File  
+For each id in the test set, you must predict the probability for the target variable stroke. The file should contain a header and have the following format:
+```
+id,stroke
+15304,0.23
+15305,0.55
+15306,0.98
+etc.
+```
+
+Dataset Description  
+The dataset for this competition (both train and test) was generated from a deep learning model trained on the Stroke Prediction Dataset. Feature distributions are close to, but not exactly the same, as the original. Feel free to use the original dataset as part of this competition, both to explore differences as well as to see whether incorporating the original in training improves model performance.
+
+Files  
+- train.csv - the training dataset; stroke is the binary target
+- test.csv - the test dataset; your objective is to predict the probability of positive stroke
+- sample_submission.csv - a sample submission file in the correct format

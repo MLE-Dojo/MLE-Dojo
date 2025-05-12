@@ -1,0 +1,14 @@
+agent:
+  type: "mle"
+  model_mode: "gemini"
+  model_name: "gemini-2.0-flash"
+  port: 8314
+  max_completion_tokens: 8192
+  max_prompt_tokens: 50000
+  api_idx: -1
+  api_key: ""
+  history_length: "all"
+  init_method: "cold"
+  history_init: null
+  temperature: 0.0
+  top_p: 1.0

@@ -1,0 +1,58 @@
+### Description
+
+## Hotel Recognition to Combat Human Trafficking
+
+Human trafficking victims are often photographed in hotel rooms, making hotel identification crucial for investigations. However, this task is challenging due to low-quality images and unusual camera angles. Even without victims, identifying hotels is a fine-grained visual recognition challenge with numerous classes and significant intraclass and low interclass variation. To aid research and develop image search tools for investigators, we created the TraffickCam mobile application, enabling travelers to submit photos of their hotel rooms. In this competition, participants will identify hotels from test images in the TraffickCam dataset, which is based on a comprehensive gallery of training images with known hotel IDs. Innovative approaches may enhance the image search system currently utilized by the National Center for Missing and Exploited Children in human trafficking investigations.
+
+### Evaluation
+
+Submissions are evaluated according to the Mean Average Precision @ 5 (MAP@5):
+
+MAP@5 = \frac{1}{U} \sum_{u=1}^{U}  \sum_{k=1}^{min(n,5)} P(k) \times rel(k)
+
+where U  is the number of images, P(k) is the precision at cutoff k, n is the number of predictions per image, and rel(k) is an indicator function equaling 1 if the item at rank k is a relevant correct label, zero otherwise.
+
+Once a correct label has been scored for an observation, that label is no longer considered relevant for that observation, and additional predictions of that label are skipped in the calculation. For example, if the correct label is A for an observation, the following predictions all score an average precision of 1.0.
+
+```
+A B C D E
+A A A A A
+A B A C A
+```
+
+## Submission File
+
+For each image in the test set, you must predict a space-delimited list of hotel IDs that could match that image. The list should be sorted such that the first ID is considered the most relevant one and the last the least relevant one. The file should contain a header and have the following format:
+
+```
+image,hotel_id 
+99e91ad5f2870678.jpg,36363 53586 18807 64314 60181
+b5cc62ab665591a9.jpg,36363 53586 18807 64314 60181
+d5664a972d5a644b.jpg,36363 53586 18807 64314 60181
+```
+
+## Dataset Description
+
+This competition offers a rich dataset of hotel room interior photos, devoid of people, aimed at addressing the challenge of hotel identification to combat human trafficking. Many hotels are independent or part of small chains, where shared decor is less of a concern. However, larger chains often have similar-looking hotels, making identification difficult. Recognizing the chain can help narrow down possibilities, but the real challenge lies in reducing the candidate list to a manageable number for human investigators to follow up on.
+
+## Files
+
+train.csv - The training set metadata.
+
+- image - The image ID.
+- chain - An ID code for the hotel chain. A chain of zero (0) indicates that the hotel is either not part of a chain or the chain is not known. This field is not available for the test set. The number of hotels per chain varies widely.
+- hotel_id - The hotel ID. The target class.
+- timestamp - When the image was taken. Provided for the training set only.
+
+sample_submission.csv - A sample submission file in the correct format.
+
+- image The image ID
+- hotel_id The hotel ID. The target class.
+
+train_images - The training set contains 97000+ images from around 7700 hotels from across the globe. All of the images for each hotel chain are in a dedicated subfolder for that chain.
+
+test_images - The test set images. This competition has a hidden test set: only three images are provided here as samples while the remaining 13,000 images will be available to your notebook once it is submitted.
+
+### Other Important Information
+
+This is a Code Competition. Refer to Code Requirements for details. Submissions must be made through Notebooks, with specific runtime and submission file naming conditions.

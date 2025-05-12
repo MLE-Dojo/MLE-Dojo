@@ -1,0 +1,58 @@
+### Description
+
+Rossmann, a leading drug store chain with over 3,000 locations across 7 European countries, is inviting participants to predict daily sales for 1,115 stores in Germany over a six-week period. Store managers currently face challenges in forecasting sales due to various influencing factors such as promotions, competition, holidays, and seasonality. By developing a reliable sales prediction model, participants will empower store managers to optimize staff scheduling and enhance customer service, allowing them to focus on their core responsibilities.
+
+### Evaluation
+
+Submissions are evaluated on the Root Mean Square Percentage Error (RMSPE). The RMSPE is calculated as
+
+\textrm{RMSPE} = \sqrt{\frac{1}{n} \sum_{i=1}^{n} \left(\frac{y_i - \hat{y}_i}{y_i}\right)^2},
+
+where y_i denotes the sales of a single store on a single day and yhat_i denotes the corresponding prediction. Any day and store with 0 sales is ignored in scoring.
+
+## Submission File
+
+The file should contain a header and have the following format:
+
+```
+Id,Sales
+1,0
+2,0
+3,0
+etc.
+```
+
+### Dataset Description
+
+You are provided with historical sales data for 1,115 Rossmann stores. The task is to forecast the "Sales" column for the test set. Note that some stores in the dataset were temporarily closed for refurbishment.
+
+### Files
+
+- train.csv - historical data including Sales
+- test.csv - historical data excluding Sales
+- sample_submission.csv - a sample submission file in the correct format
+- store.csv - supplemental information about the stores
+
+### Data fields
+
+Most of the fields are self-explanatory. The following are descriptions for those that aren't.
+
+- Id - an Id that represents a (Store, Date) duple within the test set
+- Store - a unique Id for each store
+- Sales - the turnover for any given day (this is what you are predicting)
+- Customers - the number of customers on a given day
+- Open - an indicator for whether the store was open: 0 = closed, 1 = open
+- StateHoliday - indicates a state holiday. Normally all stores, with few exceptions, are closed on state holidays. Note that all schools are closed on public holidays and weekends. a = public holiday, b = Easter holiday, c = Christmas, 0 = None
+- SchoolHoliday - indicates if the (Store, Date) was affected by the closure of public schools
+- StoreType - differentiates between 4 different store models: a, b, c, d
+- Assortment - describes an assortment level: a = basic, b = extra, c = extended
+- CompetitionDistance - distance in meters to the nearest competitor store
+- CompetitionOpenSince[Month/Year] - gives the approximate year and month of the time the nearest competitor was opened
+- Promo - indicates whether a store is running a promo on that day
+- Promo2 - Promo2 is a continuing and consecutive promotion for some stores: 0 = store is not participating, 1 = store is participating
+- Promo2Since[Year/Week] - describes the year and calendar week when the store started participating in Promo2
+- PromoInterval - describes the consecutive intervals Promo2 is started, naming the months the promotion is started anew. E.g. "Feb,May,Aug,Nov" means each round starts in February, May, August, November of any given year for that store
+
+### Other Important Information
+
+Rossmann is interested in hiring top Kagglers from this competition. If you're interested in a position with Rossmann, you may append "JOB" next to your team name for consideration.

@@ -1,0 +1,40 @@
+### Description
+
+BNP Paribas Cardif, a global leader in personal insurance, serves 90 million clients across 36 countries. In an era of rapid change and evolving customer expectations, the company seeks to enhance its claims management process through data science. This competition invites Kagglers to utilize an anonymized dataset containing two categories of claims to predict the category based on early available features. The goal is to streamline the claims process, enabling BNP Paribas Cardif to provide faster and more efficient service to its customers.
+
+### Evaluation
+
+The evaluation metric for this competition is Log Loss
+
+log loss = -\frac{1}{N}\sum_{i=1}^N {(y_i\log(p_i) + (1 - y_i)\log(1 - p_i))}
+
+where N is the number of observations, \\(log\\) is the natural logarithm, \\(y_{i}\\) is the binary target, and \\(p_{i}\\) is the predicted probability that \\(y_i\\) equals 1.
+
+Note: the actual submitted predicted probabilities are replaced with \\(max(min(p,1-10^{-15}),10^{-15})\\).
+
+## Submission File
+
+For every observation in the test dataset, submission files should contain two columns: ID and PredictedProb. The file should contain a header and have the following format:
+
+```
+ID,PredictedProb
+0,0.5
+1,0.5
+2,0.5
+7,0.5
+etc.
+```
+
+### Dataset Description
+
+You are provided with an anonymized dataset containing both categorical and numeric variables available when the claims were received by BNP Paribas Cardif. All string type variables are categorical. There are no ordinal variables. The "target" column in the train set is the variable to predict. It is equal to 1 for claims suitable for an accelerated approval. The task is to predict a probability ("PredictedProb") for each claim in the test set.
+
+### Files
+
+- train.csv - the training set including the target
+- test.csv - the test set without the target
+- sample_submission.csv - a sample submission file in the correct format
+
+### Other Important Information
+
+Participants are encouraged to leverage data science techniques to adapt to the evolving needs of customers in the digital economy, ultimately enhancing the claims management process for BNP Paribas Cardif.

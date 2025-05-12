@@ -1,0 +1,33 @@
+### Description
+
+After a serious car accident, the last thing you want to deal with is the complexities of insurance claims. Allstate, a leading personal insurer in the U.S., is on a mission to enhance their claims service for over 16 million households. They are seeking innovative solutions to automate the prediction of claims severity and costs. In this recruitment challenge, Kagglers are invited to develop algorithms that accurately predict claims severity, showcasing their creativity and technical skills. This is not just a competition; it's an opportunity to connect with Allstate's hiring team and contribute to a worry-free customer experience.
+
+### Evaluation
+
+Submissions are evaluated on the mean absolute error (MAE) between the predicted loss and the actual loss.
+
+## Submission File
+
+For every id in the test set, you should predict the loss value. The file should contain a header and have the following format:
+
+```
+id,loss
+4,0
+6,1
+9,99.3
+etc.
+```
+
+### Dataset Description
+
+Each row in this dataset represents an insurance claim. You must predict the value for the 'loss' column. Variables prefaced with 'cat' are categorical, while those prefaced with 'cont' are continuous.
+
+### Files
+
+- train.csv - the training set
+- test.csv - the test set. You must predict the loss value for the ids in this file.
+- sample_submission.csv - a sample submission file in the correct format
+
+### Other Important Information
+
+This competition serves as a recruitment opportunity, allowing participants to potentially join Allstate's team.

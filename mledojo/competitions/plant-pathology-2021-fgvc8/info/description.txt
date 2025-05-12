@@ -1,0 +1,46 @@
+### Description
+
+The Plant Pathology 2021-FGVC8 competition focuses on the critical challenge of diagnosing foliar diseases in apple orchards, which significantly impact productivity and quality. Traditional manual scouting methods are time-consuming and costly, highlighting the need for efficient solutions. This competition aims to leverage machine learning to classify leaf images accurately into specific disease categories, even when multiple symptoms are present on a single leaf.
+
+This year’s dataset features approximately 23,000 high-quality RGB images of apple foliar diseases, significantly expanding on the previous year's dataset. The images reflect real-world conditions, showcasing non-homogeneous backgrounds and varying leaf maturity stages, which present unique challenges for computer vision models.
+
+### Evaluation
+
+The evaluation metric for this competition is Mean F1-Score.
+
+## Submission File
+
+For every author in the dataset, submission files should contain two columns: image and labels. labels should be a space-delimited list.
+
+The file should contain a header and have the following format:
+
+```
+image, labels
+85f8cb619c66b863.jpg,healthy
+ad8770db05586b59.jpg,healthy
+c7b03e718489f3ca.jpg,healthy
+```
+
+### Dataset Description
+
+Can you help detect farmers detect apple diseases? This competition builds on last year's by challenging you to handle additional diseases and to provide more detailed information about leaves that have multiple infections.
+
+### Files
+
+train.csv - the training set metadata.
+
+- image - the image ID.
+- labels - the target classes, a space delimited list of all diseases found in the image. Unhealthy leaves with too many diseases to classify visually will have the complex class, and may also have a subset of the diseases identified.
+
+sample_submission.csv - A sample submission file in the correct format.
+
+- image
+- labels
+
+train_images - The training set images.
+
+test_images - The test set images. This competition has a hidden test set: only three images are provided here as samples while the remaining 5,000 images will be available to your notebook once it is submitted.
+
+### Other Important Information
+
+This is a Code Competition. Refer to Code Requirements for details. Submissions must be made through Notebooks, and pre-trained models are allowed.

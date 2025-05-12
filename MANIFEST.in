@@ -1,0 +1,40 @@
+# MANIFEST.in
+
+# Include top-level metadata files
+include README.md
+include LICENSE
+
+# Include the __init__.py files for the parts that ARE packages
+# (Setuptools often finds these automatically, but explicit is safer)
+include mledojo/__init__.py
+include mledojo/agent/__init__.py
+include mledojo/agent/aide/__init__.py
+include mledojo/agent/aide/utils/__init__.py
+include mledojo/agent/dummy/__init__.py
+include mledojo/agent/mleagent/__init__.py
+include mledojo/agent/openaiagent/__init__.py
+include mledojo/chat/__init__.py
+include mledojo/competitions/__init__.py
+include mledojo/gym/__init__.py
+include mledojo/metrics/__init__.py
+
+# Include all Python files within the standard package directories
+recursive-include mledojo/agent *.py *.yaml
+recursive-include mledojo/agent/aide/utils/viz_templates *.html *.js
+recursive-include mledojo/chat *.py
+include mledojo/competitions/utils.py # The utils.py directly under competitions
+include mledojo/competitions/competition.json # The main competition list
+recursive-include mledojo/gym *.py
+recursive-include mledojo/metrics *.py
+include mledojo/utils.py
+
+# --- CRITICAL SECTION for non-package competitions data ---
+# Recursively include EVERYTHING under each competition directory.
+# This ensures metric.py, prepare.py, and all info/* files are included.
+recursive-include mledojo/competitions */utils/*.py
+recursive-include mledojo/competitions */info/*
+
+
+# Exclude common unwanted files and directories globally
+global-exclude *.py[cod] __pycache__ *.so *.dylib *.egg-info*
+global-exclude .git .gitignore .gitattributes build dist

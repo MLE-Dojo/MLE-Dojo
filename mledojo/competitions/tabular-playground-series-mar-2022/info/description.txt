@@ -1,0 +1,47 @@
+Description  
+For the March edition of the 2022 Tabular Playground Series, you're challenged to forecast twelve hours of traffic flow in a U.S. metropolis. The time series in this dataset are labeled with both location coordinates and a direction of travel—a combination of features that will test your skill at spatio-temporal forecasting within a highly dynamic traffic network. Which model will prevail? The venerable linear regression? The deservedly-popular ensemble of decision trees? Or maybe a cutting-edge graph neural network? We can't wait to see!
+
+About the Tabular Playground Series  
+Kaggle competitions are incredibly fun and rewarding, but they can also be intimidating for people who are relatively new in their data science journey. In the past, we've launched many Playground competitions that are more approachable than our Featured competitions and thus, more beginner-friendly. The goal of these competitions is to provide a fun and approachable-for-anyone tabular dataset to model. These competitions are a great choice for people looking for something in between the Titanic Getting Started competition and the Featured competitions. If you're an established competitions master or grandmaster, these probably won't be much of a challenge for you; thus, we encourage you to avoid saturating the leaderboard.
+
+For each monthly competition, we'll be offering Kaggle Merchandise for the top three teams. And finally, because we want these competitions to be more about learning, we're limiting team sizes to 3 individuals.
+
+Evaluation  
+Submissions are evaluated on the mean absolute error between predicted and actual congestion values for each time period in the test set.
+
+Submission File  
+For each row_id in the test set, you should predict a congestion measurement. The file should contain a header and have the following format:  
+row_id,congestion  
+140140,0.0  
+140141,0.0  
+140142,0.0  
+...  
+The congestion target has integer values from 0 to 100, but your predictions may be any floating-point number.
+
+Dataset Description  
+In this competition, you'll forecast twelve hours of traffic flow in a major U.S. metropolitan area. Time, space, and directional features give you the chance to model interactions across a network of roadways.
+
+Files and Field Descriptions  
+**train.csv**  
+- the training set, comprising measurements of traffic congestion across 65 roadways from April through September of 1991.  
+**row_id**  
+- a unique identifier for this instance  
+**time**  
+- the 20-minute period in which each measurement was taken  
+**x**  
+- the east-west midpoint coordinate of the roadway  
+**y**  
+- the north-south midpoint coordinate of the roadway  
+**direction**  
+- the direction of travel of the roadway. EB indicates "eastbound" travel, for example, while SW indicates a "southwest" direction of travel.  
+**congestion**  
+- congestion levels for the roadway during each hour; the target. The congestion measurements have been normalized to the range 0 to 100.  
+
+**test.csv**  
+- the test set; you will make hourly predictions for roadways identified by a coordinate location and a direction of travel on the day of 1991-09-30.  
+
+**sample_submission.csv**  
+- a sample submission file in the correct format  
+
+Source  
+This dataset was derived from the Chicago Traffic Tracker - Historical Congestion Estimates dataset.

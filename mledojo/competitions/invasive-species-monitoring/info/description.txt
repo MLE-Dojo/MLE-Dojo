@@ -1,0 +1,41 @@
+### Description
+
+Invasive species like kudzu in Georgia and cane toads across multiple countries pose significant threats to ecosystems, economies, and human health. Tracking their spread is often prohibitively expensive and relies heavily on expert knowledge, which limits the scale of monitoring efforts. Traditional methods involve trained scientists visiting specific areas, but this approach is time-consuming and cannot cover large regions effectively.
+
+To address this challenge, machine learning algorithms are being employed to predict the presence of invasive species in unsampled areas, although their accuracy needs improvement. In this playground competition, participants are invited to create algorithms that can more accurately determine whether images of forests and foliage contain invasive hydrangea. By leveraging computer vision and technologies like aerial imaging, the goal is to enhance the efficiency and reliability of invasive species monitoring.
+
+### Evaluation
+
+Submissions are evaluated on area under the ROC curve between the predicted probability and the observed target.
+
+## Submission File
+
+For each image in the test set, you must predict a probability for the target variable on whether the image contains invasive species or not. The file should contain a header and have the following format:
+
+```
+name,invasive
+2,0.5
+5,0
+6,0.2
+etc.
+```
+
+### Dataset Description
+
+The dataset consists of images captured in a Brazilian national forest, some of which feature Hydrangea, an invasive species native to Asia. Participants are tasked with predicting the presence of this invasive species in the test set based on the training images and their corresponding labels.
+
+## File descriptions
+
+- train.7z - the training set (contains 2295 images).
+- train_labels.csv - the correct labels for the training set.
+- test.7z - the testing set (contains 1531 images), ready to be labeled by your algorithm.
+- sample_submission.csv - a sample submission file in the correct format.
+
+## Data fields
+
+- name - name of the sample picture file (numbers)
+- invasive - probability of the picture containing an invasive species. A probability of 1 means the species is present.
+
+### Other Important Information
+
+Participants should focus on improving the accuracy of their algorithms to enhance the monitoring of invasive species effectively.

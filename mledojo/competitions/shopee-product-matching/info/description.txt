@@ -1,0 +1,58 @@
+### Description
+
+Are you a savvy shopper who seeks the best deals online? Join the challenge of product matching in this competition, where your machine learning expertise can help retailers ensure competitive pricing. Retailers face the challenge of accurately identifying whether two images represent the same product or different items, as discrepancies in images, titles, and descriptions can lead to misrepresentation. 
+
+Shopee, a leading e-commerce platform in Southeast Asia and Taiwan, offers a seamless online shopping experience with a 'Lowest Price Guaranteed' feature. In this competition, you will develop a model to predict which items are identical products. Your work will not only enhance product categorization but also improve customer experiences by providing accurate listings, ultimately aiding shoppers in finding the best deals.
+
+### Evaluation
+
+Submissions will be evaluated based on their mean F1 score. The mean is calculated in a sample-wise fashion, meaning that an F1 score is calculated for every predicted row, then averaged.
+
+## Submission File
+
+You must create a space-delimited list of all posting_ids that match the posting in the posting_id column. Posts always self-match. Group sizes were capped at 50, so there is no benefit to predict more than 50 matches.
+
+The file should have a header, be named submission.csv, and look like the following:
+
+```
+posting_id,matches
+test_123,test_123
+test_456,test_456 test_789
+```
+
+You should predict matches for every posting_id. For example, if you believe A matches B and C, A,A B C, you would also include B,B A C and C,C A B.
+
+## Dataset Description
+
+Finding near-duplicates in large datasets is an important problem for many online businesses. In Shopee's case, everyday users can upload their own images and write their own product descriptions, adding an extra layer of challenge. Your task is to identify which products have been posted repeatedly. The differences between related products may be subtle while photos of identical products may be wildly different!
+
+As this is a code competition, only the first few rows/images of the test set are published; the remainder are only available to your notebook when it is submitted. Expect to find roughly 70,000 images in the hidden test set. The few test rows and images that are provided are intended to illustrate the hidden test set format and folder structure.
+
+## Files
+
+[train/test].csv - the training set metadata. Each row contains the data for a single posting. Multiple postings might have the exact same image ID, but with different titles or vice versa.
+
+- posting_id - the ID code for the posting.
+- image - the image id/md5sum.
+- image_phash - a perceptual hash of the image.
+- title - the product description for the posting.
+- label_group - ID code for all postings that map to the same product. Not provided for the test set.
+
+[train/test]images - the images associated with the postings.
+
+sample_submission.csv - a sample submission file in the correct format.
+
+- posting_id - the ID code for the posting.
+- matches - Space delimited list of all posting IDs that match this posting. Posts always self-match. Group sizes were capped at 50, so there's no need to predict more than 50 matches.
+
+### Other Important Information
+
+This is a code competition, and submissions must be made through Notebooks. Ensure your notebook meets the following conditions for submission:
+
+- CPU Notebook <= 9 hours
+- GPU Notebook <= 2 hours
+- Internet access disabled
+- Freely & publicly available external data is allowed, including pre-trained models
+- Submission file must be named "submission.csv"
+
+Please refer to the Code Competition FAQ for more details on submission and review the code debugging document if you encounter any errors.

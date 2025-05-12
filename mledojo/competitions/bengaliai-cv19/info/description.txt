@@ -1,0 +1,87 @@
+### Description
+
+The Bengali Handwritten Grapheme Classification competition aims to advance optical character recognition (OCR) for Bengali, the fifth most spoken language globally, with a complex script comprising 49 letters and 18 diacritics, resulting in approximately 13,000 grapheme variations. Participants are tasked with classifying three components of handwritten Bengali graphemes: the grapheme root, vowel diacritics, and consonant diacritics. This initiative, led by the Bangladesh-based non-profit Bengali.AI, seeks to enhance research in Bengali language technologies and promote machine learning education, ultimately facilitating the digitalization of educational resources and benefiting related languages in the Indian subcontinent.
+
+### Evaluation
+
+Submissions are evaluated using a hierarchical macro-averaged recall. First, a standard macro-averaged recall is calculated for each component (grapheme root, vowel diacritic, or consonant diacritic). The final score is the weighted average of those three scores, with the grapheme root given double weight. You can replicate the metric with the following python snippet:
+
+```
+import numpy as np
+import sklearn.metrics
+
+scores = []
+for component in ['grapheme_root', 'consonant_diacritic', 'vowel_diacritic']:
+    y_true_subset = solution[solution[component] == component]['target'].values
+    y_pred_subset = submission[submission[component] == component]['target'].values
+    scores.append(sklearn.metrics.recall_score(
+        y_true_subset, y_pred_subset, average='macro'))
+final_score = np.average(scores, weights=[2,1,1])
+```
+
+## Submission File
+
+For each image ID in the test set, you must classify the grapheme root, vowel diacritic, and consonant diacritic for all images. The prediction for each component goes on a separate row. The submission file should contain a header and have the following format:
+
+```
+row_id,target
+Test_0_grapheme_root,3
+Test_1_grapheme_root,2
+Test_2_grapheme_root,1
+...
+```
+
+### Dataset Description
+
+This dataset contains images of individual hand-written Bengali characters. Bengali characters (graphemes) are written by combining three components: a grapheme_root, vowel_diacritic, and consonant_diacritic. Your challenge is to classify the components of the grapheme in each image. There are roughly 10,000 possible graphemes, of which roughly 1,000 are represented in the training set. The test set includes some graphemes that do not exist in train but has no new grapheme components. It takes a lot of volunteers filling out sheets like this to generate a useful amount of real data; focusing the problem on the grapheme components rather than on recognizing whole graphemes should make it possible to assemble a Bengali OCR system without handwriting samples for all 10,000 graphemes.
+
+### Files
+
+#### train.csv
+
+- image_id: the foreign key for the parquet files
+- grapheme_root: the first of the three target classes
+- vowel_diacritic: the second target class
+- consonant_diacritic: the third target class
+- grapheme: the complete character. Provided for informational purposes only, you should not need to use this.
+
+#### test.csv
+
+Every image in the test set will require three rows of predictions, one for each component. This csv specifies the exact order for you to provide your labels.
+
+- image_id: foreign key to the parquet file, the ids of the images to predict
+
+#### sample_submission.csv
+
+- row_id: foreign key to test.csv
+- target: the target column
+
+#### (train/test).parquet
+
+Each parquet file contains tens of thousands of 137x236 grayscale images. The images have been provided in the parquet format for I/O and space efficiency. Each row in the parquet files contains an image_id column, and the flattened image.
+
+#### class_map.csv
+
+Maps the class labels to the actual Bengali grapheme components.
+
+This is a synchronous rerun code competition, you can assume that the complete test set will contain essentially the same size and number of images as the training set. Consider performing inference on just one batch at a time to avoid memory errors. Only the first few rows/images in the test set and sample submission files can be downloaded. These samples provided so you can review the basic structure of the files and to ensure consistency between the publicly available set of file names and those your code will have access to while it is being rerun for scoring.
+
+The parquet files were written with pyarrow v 0.10.0 for compatibility with notebooks; you might not be able to read them with other versions of arrow/parquet.
+
+Update: March 2020
+
+Two of the consonant diacritics র্ (class 2) and ্র ( class 5) can coexist in the same grapheme. The original labeling scheme did not account for this possibility so these cases are labeled as class (2) for the purpose of this competition.
+
+class_map_corrected.csv  is an updated class map that adds this special case as class 7,
+
+train_multi_diacritics.csv is a list of the affected rows in the training set. Approximately 450 rows were affected in each of the train and test sets.
+
+### Other Important Information
+
+This is a code competition, and submissions must be made through Notebooks. Ensure your notebook meets the following conditions for the "Submit to Competition" button to be active after a commit:
+
+- CPU Notebook <= 9 hours run-time
+- GPU Notebook <= 2 hours run-time
+- No internet access enabled
+- External data is allowed, and you are encouraged to train your model offline and use your Notebook for inference.
+- Submission file must be named "submission.csv".

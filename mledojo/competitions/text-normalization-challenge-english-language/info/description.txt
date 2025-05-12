@@ -1,0 +1,35 @@
+### Description
+
+Learning a new language can be challenging, especially when it comes to understanding nuances like slang, dates, and local expressions. This complexity extends to machines, particularly in speech and language applications such as text-to-speech synthesis (TTS) and automatic speech recognition (ASR). These systems rely on text normalization to convert written expressions into their spoken forms, transforming "12:47" into "twelve forty-seven" and "$3.16" into "three dollars, sixteen cents."
+
+The primary challenge in developing TTS or ASR systems for new languages lies in creating and testing the grammar for these normalization rules, which requires linguistic expertise and native speaker intuition. In this competition, participants are tasked with automating the development of text normalization grammars using machine learning, focusing on the English language.
+
+### Evaluation
+
+Submissions are evaluated on prediction accuracy (the total percent of correct tokens). The predicted and actual string must match exactly in order to count as correct. In other words, we are measuring sequence accuracy, in that any error in the output for a given token in the input sequence means that that error is wrong. For example, if the input is "145" and the predicted output is "one forty five" but the correct output is "one hundred forty five", this is counted as a single error.
+
+## Submission File
+
+For each token (id) in the test set, you must predict the normalized text. The file should contain a header and have the following format:
+
+```
+id,after
+0_0,"the"
+0_1,"quick"
+0_2,"fox"
+...
+```
+
+### Dataset Description
+
+You are provided with a large corpus of text. Each sentence has a sentence_id, and each token within a sentence has a token_id. The "before" column contains the raw text, while the "after" column contains the normalized text. The goal of the competition is to predict the "after" column for the test set. The training set includes an additional "class" column to indicate the token type, which is omitted from the test set. An "id" column is also included for submission, formed by concatenating the sentence_id and token_id with an underscore (e.g., 123_5).
+
+### Files
+
+- en_sample_submission.csv - a submission file showing the correct format
+- en_test.csv - the test set, does not contain the normalized text
+- en_train.csv - the training set, contains the normalized text
+
+### Other Important Information
+
+No special requirements are noted for this competition.

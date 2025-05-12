@@ -1,0 +1,136 @@
+### Description
+
+Join the 2013 Recommender Systems Challenge, part of ACM RecSys 2013, organized by Yelp. This year's competition focuses on creating personalized business recommendations for Yelp users, utilizing a rich dataset from the Phoenix, AZ area, which includes over 10,000 businesses, 8,000 check-in sites, 40,000 users, and 200,000 reviews. Participants will develop algorithms to predict user ratings for businesses, with models evaluated based on accuracy using the root mean squared error (RMSE) metric.
+
+### Evaluation
+
+The Root Mean Squared Error ("RMSE") is used to measure the accuracy:
+
+\textrm{RMSE} = \sqrt{\frac{\sum_{i=1}^n (p_i - a_i)^2}{n} }
+
+Where:
+
+- \\( n \\) is the total number of review ratings to predict
+- \\( p_i \\) is the predicted rating for review \\( i \\)
+- \\( a_i \\) is the actual rating for review \\( i \\)
+
+## Submission format
+
+For each (user_id, business_id) pair in the testing dataset, predict the rating that user will give to that business. Submission files should be in the following format and must have a header.
+
+```
+RecommendationId,Stars
+1,3.67452543988905
+2,3.67452543988905
+3,3.67452543988905
+4,3.67452543988905
+etc.
+```
+
+### Submission File
+
+### Dataset Description
+
+The dataset provides a comprehensive overview of Yelp reviews, businesses, users, and check-ins specifically for the Phoenix, AZ metropolitan area. Participants can download either yelp_training_set.zip or yelp_training_set_mac.zip, as both contain the same files for compatibility.
+
+### Files
+
+- Training set: yelp_training_set.zip
+- Testing set: yelp_test_set.zip
+- Sample submission format: sample_submission.csv
+
+## Training Data Format
+
+Each object type is in a separate file, one JSON object per line.
+
+### Business
+
+```
+{
+  'type': 'business',
+  'business_id': (encrypted business id),
+  'name': (business name),
+  'neighborhoods': [(hood names)],
+  'full_address': (localized address),
+  'city': (city),
+  'state': (state),
+  'latitude': latitude,
+  'longitude': longitude,
+  'stars': (star rating, rounded to half-stars),
+  'review_count': review count,
+  'categories': [(localized category names)]
+  'open': True / False (corresponds to permanently closed, not business hours),
+}
+```
+
+### Review
+
+```
+{
+  'type': 'review',
+  'business_id': (encrypted business id),
+  'user_id': (encrypted user id),
+  'stars': (star rating),
+  'text': (review text),
+  'date': (date, formatted like '2012-03-14', %Y-%m-%d in strptime notation),
+  'votes': {'useful': (count), 'funny': (count), 'cool': (count)}
+}
+```
+
+### User
+
+Some user profiles are omitted from the data because they have elected not to have public profiles. Their reviews may still be in the data set if they are still visible on Yelp.
+
+```
+{
+  'type': 'user',
+  'user_id': (encrypted user id),
+  'name': (first name),
+  'review_count': (review count),
+  'average_stars': (floating point average, like 4.31),
+  'votes': {'useful': (count), 'funny': (count), 'cool': (count)}
+}
+```
+
+### Checkin
+
+If there are no checkins for a business, the entire record will be omitted.
+
+```
+{
+  'type': 'checkin',
+  'business_id': (encrypted business id),
+  'checkin_info': {
+        '0-0': (number of checkins from 00:00 to 01:00 on all Sundays),
+        '1-0': (number of checkins from 01:00 to 02:00 on all Sundays), 
+        ... 
+        '14-4': (number of checkins from 14:00 to 15:00 on all Thursdays),
+        ...
+        '23-6': (number of checkins from 23:00 to 00:00 on all Saturdays)
+  } # if there was no checkin for an hour-day block it will not be in the dict
+}
+```
+
+## Testing Data
+
+The testing data format is the same as the training data, except that several fields have been removed. Identifiers are consistent between the test set and the training set. The test set's user and business files only contain the records that cannot already be found in the training set. Information from the training set was not duplicated into the testing set; please cross reference both data sets to make your predictions. Although these users and businesses may not be new to Yelp, they are new to this data set, and don't have as much information attached to them.
+
+### Review
+
+Since you are trying to predict how a user will rate a business, the only information in a Review object is the user_id and business_id. The CSV file you submit should contain a predicted rating for every (user_id, business_id) pair in this file.
+
+### Business
+
+The stars field has been removed from the Business object. If a business object is included in the testing set, that means there were no reviews of this business included in the training set. The test set may not ask you to predict a rating for as many reviews as review_count.
+
+### User
+
+The average_stars and votes fields have been removed from the User object. If a user object is included in the testing set, that means there were no reviews by this user included in the training set. The test set may not ask you to predict a rating for as many reviews as review_count.
+
+### Checkin
+
+The checkin format is the same as in the training set.
+
+### Other Important Information
+
+Participants are encouraged to attend the ACM RecSys 2013 conference, and workshop participation is open to all, regardless of contest involvement.

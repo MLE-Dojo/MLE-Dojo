@@ -1,0 +1,56 @@
+### Description
+
+Large language models (LLMs) are becoming integral to our daily interactions, but ensuring their responses align with user preferences is essential for effective communication. This competition invites participants to address this challenge using real-world data from Chatbot Arena, where users engage with two anonymous LLMs and select their preferred responses. 
+
+Your objective is to predict which response a user will favor in these comparisons. This task is rooted in the concept of "reward models" or "preference models" in reinforcement learning from human feedback (RLHF). Previous studies have highlighted challenges in using existing LLMs for preference predictions, often due to biases like position bias, verbosity bias, and self-enhancement bias.
+
+We encourage you to apply diverse machine-learning techniques to develop a model that accurately predicts user preferences, contributing to the creation of LLMs that can customize responses to individual users, ultimately enhancing the user experience in AI-driven conversations.
+
+### Evaluation
+
+Submissions will be evaluated based on their categorization accuracy.
+
+## Submission File
+
+For each id in the test set, you must predict the target class. The file should contain a header and have the following format:
+
+```
+id,winner
+ 123,model_a
+ 456,model_b
+ 789,model_a
+ etc
+```
+
+## Dataset Description
+
+The competition dataset comprises user interactions from the ChatBot Arena (formerly LMSYS). Each interaction features a judge providing a prompt to two different LLMs and indicating which model delivered the more satisfactory response. This is a Code Competition, and when your submission is scored, the example test data will be replaced with the full test set.
+
+## Files
+
+train.parquet
+
+- id - A unique string identifier for the row.
+- prompt - The prompt that was given as an input to both models.
+- response_[a/b] - The response from model_[a/b] to the given prompt.
+- winner - The judge's selection. The ground truth target column.
+- model_[a/b] - The identity of model_[a/b]. Only included in train.parquet.
+- language - The language used in the prompt. Only included in train.parquet.
+
+test.parquet
+
+- id - A unique integer identifier for the row.
+- prompt
+- response_[a/b]
+- scored - Whether or not the row is currently scored. During the model training phase this will be true for rows used for the public leaderboard; during the forecasting phase this will be true for rows used for the private leaderboard.
+
+sample_submission.csv A submission file in the correct format.
+
+- id
+- winner
+
+Note that the dataset for this competition contains text that may be considered profane, vulgar, or offensive.
+
+### Other Important Information
+
+This competition is part of the WSDM Cup 2025. Top submissions will be invited to present at the conference, although attendance is not mandatory for participation. Teams attending the conference will be considered for presentations, and participants are responsible for their own travel and associated costs.

@@ -1,0 +1,54 @@
+### Description
+
+The Big Data Combine, engineered by BattleFin, is an exciting competition aimed at computer scientists with exceptional predictive analytic skills who are eager to monetize their models. Participants will engage in a predictive modeling challenge, utilizing sentiment data from RavenPack to forecast stock price movements. This competition seeks to uncover talent capable of developing predictive models that can assist traders, analysts, and investors in making informed decisions and managing risks effectively.
+
+Competitors will analyze intraday trading data, which details stock price movements at 5-minute intervals, to predict changes two hours ahead. The top performers will earn a spot in the "live" Big Data Combine tryouts in Miami, FL, where up to 12 finalists will present their models to expert judges and an audience. Each finalist has just three minutes to share their personal background, describe their predictive model, and explain how they would leverage it for financial gain. Successful presentations may lead to opportunities to collaborate with BattleFin and Deltix to transform their models into actionable trading strategies.
+
+### Evaluation
+
+Submissions are evaluated by the mean absolute error between the predicted percentage change and the actual percentage change.
+
+\textrm{MAE} = \frac{1}{n} \sum_{i=1}^n | y_i - \hat{y}_i |
+
+## Submission File
+
+Each line should have the predicted percentage change for the given FileId. A header is required. Refer to the sample submission to see the exact format. The format looks like this:
+
+```
+FileId,O1,O2,O3,...,O198
+201,0,0,0,...
+202,0,0,0,...
+...
+510,0,0,0...
+```
+
+### Dataset Description
+
+For this competition, you are asked to predict the percentage change in a financial instrument at a time 2 hours in the future. The data represents features of various financial securities (198 in total) recorded at 5-minute intervals throughout a trading day. To discourage cheating, you are not provided with the features' names or the specific dates.
+
+data.zip - contains features for 510 days worth of trading, including 200 training days and 310 testing days  
+trainLabels.csv - contains the targets for the 200 training days  
+sampleSubmission.csv - shows the submission format  
+
+Each variable named O1, O2, O3, etc. (the outputs) represents a percent change in the value of a security. Each variable named I1, I2, I3, etc. (the inputs) represents a feature. The underlying securities and features represented by these anonymized names are the same across all files (e.g. O1 will always be the same stock).
+
+Within each trading day, you are provided the outputs as a relative percentage compared to the previous day's closing price. The first line of each data file represents the previous close. For example, if a security closed at $1 the previous day and opened at $2 the next day, the first output would be 0, then 100. All output values are computed relative to the previous day's close. The timestamps within each file are as follows (ignoring the header row):
+
+Line 1 = Outputs and inputs at previous day's close (4PM ET)  
+Line 2 = Outputs and inputs at current day's open (9:30AM ET)  
+Line 3 = Outputs and inputs at 9:35AM ET...  
+Line 55 = Outputs and inputs at 1:55PM ET  
+
+You are asked to predict the outputs 2 hours later, at 4PM ET.
+
+### Files
+
+data.zip - contains features for 510 days worth of trading, including 200 training days and 310 testing days  
+trainLabels.csv - contains the targets for the 200 training days  
+sampleSubmission.csv - shows the submission format  
+
+
+
+### Other Important Information
+
+Competitors should be prepared to present their models in a clear and engaging manner, focusing on non-technical explanations to appeal to a diverse audience.

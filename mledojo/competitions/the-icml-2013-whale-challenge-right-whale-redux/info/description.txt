@@ -1,0 +1,56 @@
+### Description
+
+This competition builds on the success of the Marinexplore Whale Detection Challenge, where participants achieved over 98% accuracy in classifying North Atlantic Right Whales using the Auto Buoy Monitoring System. The current challenge expands the scope to include algorithms applied to archival data collected via Marine Autonomous Recording Units (MARUs), which have been in use for over a decade, resulting in a rich dataset covering various marine mammal species across multiple ocean basins.
+
+Participants are encouraged to leverage their previous solutions from the Marinexplore challenge and apply them to this extensive dataset. The resulting solutions will be integrated into a High Performance Computing (HPC) platform, supported by the Office of Naval Research, to enhance the analysis of this data using advanced measurement tools. The findings will be showcased at the Workshop on Machine Learning for Bioacoustics at ICML 2013.
+
+### Evaluation
+
+Submissions are judged on area under the ROC curve.
+
+In Matlab (using the stats toolbox):
+
+```
+[~, ~, ~, auc ] = perfcurve(true_labels, predictions, 1);
+```
+
+In R (using the verification package):
+
+```
+auc = roc.area(true_labels, predictions)
+```
+
+In python (using the metrics module of scikit-learn):
+
+```
+fpr, tpr, thresholds = metrics.roc_curve(true_labels, predictions, pos_label=1)
+auc = metrics.auc(fpr,tpr)
+```
+
+## Submission File
+
+For every recording in the test set, submission files should contain two columns: clip and probability. The submission file should have a header.
+
+```
+clip,probability
+20090404_000000_012s0ms_Test0.aif,0
+20090404_000000_042s6ms_Test1.aif,0
+20090404_000000_064s8ms_Test2.aif,0
+20090404_000000_082s3ms_Test3.aif,0
+20090404_000000_095s0ms_Test4.aif,0
+```
+
+### Dataset Description
+
+You are given four days of training data and three days of testing data. The task is to assign a probability that each recording in the test set contains a right whale call (1) or noise (0).
+
+### Files
+
+- train2.zip - all of the training data as .aif clips. If the file ends in "_1.aif" it was labeled a whale call, if it ends in "_0.aif", it was labeled noise.
+- test2.zip - all of the testing data as .aif clips. You should predict a probability for each of these files.
+
+To run within hardware constraints, solutions would ideally function with limited training history, meaning the algorithm would page in no more than five previous minutes of data at a time. Since we cannot enforce this requirement in this particular competition, we provide this info for those who want to optimize on "real world utility," as opposed to AUC.
+
+### Other Important Information
+
+Participants should consider optimizing their algorithms for real-world utility, as the competition does not enforce hardware constraints.

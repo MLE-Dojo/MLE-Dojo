@@ -1,0 +1,40 @@
+Description  
+Can you find more cat in your dat?  
+We loved the participation and engagement with the first Cat in the Dat competition.  
+Because this is such a common task and important skill to master, we've put together a dataset that contains only categorical features, and includes:  
+- binary features  
+- low- and high-cardinality nominal features  
+- low- and high-cardinality ordinal features  
+- (potentially) cyclical features  
+
+This follow-up competition offers an even more challenging dataset so that you can continue to build your skills with the common machine learning task of encoding categorical variables.  
+This challenge adds the additional complexity of feature interactions, as well as missing data.  
+
+This Playground competition will give you the opportunity to try different encoding schemes for different algorithms to compare how they perform. We encourage you to share what you find with the community.  
+If you're not sure how to get started, you can check out the Categorical Variables section of Kaggle's Intermediate Machine Learning course.  
+
+Have Fun!
+
+Evaluation  
+Submissions are evaluated on area under the ROC curve between the predicted probability and the observed target.  
+
+Submission File  
+For each id in the test set, you must predict a probability for the target variable. The file should contain a header and have the following format:  
+```
+id,target  
+600000,0.5  
+600001,0.5  
+600002,0.5  
+...  
+```
+
+Dataset Description  
+In this competition, you will be predicting the probability [0, 1] of a binary target column.  
+The data contains binary features (`bin_*`), nominal features (`nom_*`), ordinal features (`ord_*`) as well as (potentially cyclical) `day` (of the week) and `month` features. The string ordinal features `ord_{3-5}` are lexically ordered according to `string.ascii_letters`.  
+
+Since the purpose of this competition is to explore various encoding strategies, unlike the first Categorical Feature Encoding Challenge, the data for this challenge has missing values and feature interactions.  
+
+Files  
+- `train.csv` - the training set  
+- `test.csv` - the test set; you must make predictions against this data  
+- `sample_submission.csv` - a sample submission file in the correct format

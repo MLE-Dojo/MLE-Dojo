@@ -1,0 +1,20 @@
+Evaluation  
+Submissions will be evaluated using Mean Absolute Error (MAE), where each x_i represents the predicted target, y_i represents the ground truth, and n is the number of rows in the test set.
+
+Submission File  
+For each id in the test set, you must predict the target yield. The file should contain a header and have the following format:  
+```
+id,yield  
+15289,6025.194  
+15290,1256.223  
+15291,357.44  
+etc.
+```
+
+Dataset Description  
+**NOTE:** You can now create your own synthetic versions of this dataset by forking and running this notebook. The dataset for this competition (both train and test) was generated from a deep learning model trained on the Wild Blueberry Yield Prediction Dataset. (Since this is Playground 3.14, it seems like we need a Blueberry Pie joke here?) Feature distributions are close to, but not exactly the same as the original. Feel free to use the original dataset as part of this competition, both to explore differences as well as to see whether incorporating the original in training improves model performance.
+
+Files  
+- `train.csv` - the training dataset; yield is the target  
+- `test.csv` - the test dataset; your objective is to predict the yield given the other features  
+- `sample_submission.csv` - a sample submission file in the correct format

@@ -1,0 +1,44 @@
+### Description
+
+Get ready for a fun and festive competition this Thanksgiving! Instead of enduring family debates and holiday movie marathons, join your Kaggle family to uncover the elusive turkey sound signature from pre-extracted audio features. This engaging binary challenge will have you questioning: What does a turkey really sound like? How many similar sounds exist? Will you successfully identify the turkey, or will you go a-fowl?
+
+This short, playful competition encourages creativity and enjoyment. Remember, to keep the spirit alive, avoid using models trained on the answers. Don't be a turkey!
+
+### Evaluation
+
+Submissions are evaluated on area under the ROC curve between the predicted probability and the observed target.
+
+## Submission File
+
+For each ID in the test set, you must predict a probability for the TARGET variable. The file should contain a header and have the following format:
+
+```
+vid_id,is_turkey
+  pyKh38FXD3E,0
+  THhP1idrWXA,0.3
+  etc.
+```
+
+### Dataset Description
+
+This dataset is derived from AudioSet’s data, which can be found at https://research.google.com/audioset/. It includes video IDs and time bounds for YouTube clips, along with 128-dimensional audio-based features generated using VGGish. Your task is to predict whether the audio clip from which the audio embedding originates contains a turkey sound.
+
+AudioSet's dataset is licensed under Creative Commons Attribution 4.0 International (CC BY 4.0), and its ontology is under Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0). Our data has been modified to fit a competition format.
+
+## Files
+
+- train.json - the training set
+- test.json - the test set
+- sample_submission.csv - a sample submission file in the correct format
+
+## Data fields
+
+- vid_id - YouTube video ID associated with this sample.
+- start_time_seconds_youtube_clip - Where in the YouTube video this audio feature starts.
+- end_time_seconds_youtube_clip - Where in the YouTube video this audio feature ends.
+- audio_embedding - Extracted frame-level audio feature, embedded down to 128 dimensions per frame using AudioSet’s VGGish tools available here: https://github.com/tensorflow/models/tree/master/research/audioset
+- is_turkey - The target: whether or not the original audio clip contained a turkey. Label is a soft label, based on whether or not AudioSet’s ontology labeled this clip with “Turkey”, and may count turkey calls and other related content as being “turkey”. is_turkey is 1 if the clip contains a turkey sound, and 0 if it does not.
+
+### Other Important Information
+
+This competition is designed to be light-hearted and enjoyable. Please refrain from using pre-trained models that may inadvertently provide answers. Happy modeling, and thank you for spending your Thanksgiving holiday with us!

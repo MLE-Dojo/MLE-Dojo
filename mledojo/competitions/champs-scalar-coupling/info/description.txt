@@ -1,0 +1,62 @@
+### Description
+
+Are you ready to leverage your data science skills to make groundbreaking predictions at the molecular level? This competition challenges participants to predict interactions between atoms, specifically the scalar coupling constant, using advanced imaging technologies like Nuclear Magnetic Resonance (NMR). NMR helps researchers understand the structure and dynamics of molecules, which is crucial in fields such as environmental science, pharmaceuticals, and materials science.
+
+Hosted by the CHemistry and Mathematics in Phase Space (CHAMPS) consortium from several prestigious universities, this competition invites you to develop an algorithm that accurately predicts the magnetic interactions between atom pairs in a molecule. The top teams will have the unique opportunity to collaborate with CHAMPS on an academic publication, discussing their models and solutions.
+
+Understanding scalar coupling is vital for gaining insights into molecular structures and dynamics. While quantum mechanics can calculate these constants accurately, the process is time-consuming and impractical for everyday use. A fast and reliable predictive method will empower medicinal chemists to derive structural insights more efficiently, ultimately aiding in the design of molecules for specific tasks and improving drug development.
+
+Join the CHAMPS Scalar Coupling challenge and apply your predictive analytics expertise to the fields of chemistry and chemical biology.
+
+### Evaluation
+
+Submissions are evaluated on the Log of the Mean Absolute Error, calculated for each scalar coupling type, and then averaged across types, so that a 1% decrease in MAE for one type provides the same improvement in score as a 1% decrease for another type.
+
+score = \frac{1}{T} \sum_{t=1}^{T} \log \left( \frac{1}{n_{t}} \sum_{i=1}^{n_t} \lvert y_i - \hat{y_i} \rvert \right)
+
+Where:
+
+- T is the number of scalar coupling types
+- n_{t} is the number of observations of type t
+- y_{i} is the actual scalar coupling constant for the observation
+- \hat{y_i} is the predicted scalar coupling constant for the observation
+
+For this metric, the MAE for any group has a floor of 1e-9, so that the minimum (best) possible score for perfect predictions is approximately -20.7232.
+
+## Submission File
+
+For each id in the test set, you must predict the scalar_coupling_constant variable. The file should contain a header and have the following format:
+
+```
+id,scalar_coupling_constant
+4659076,0.0
+4659077,0.0
+4659078,0.0
+etc.
+```
+
+### Dataset Description
+
+In this competition, you will be predicting the scalar_coupling_constant between atom pairs in molecules, given the two atom types (e.g., C and H), the coupling type (e.g., 2JHC), and any features you are able to create from the molecule structure (xyz) files.
+
+For this competition, you will not be predicting all the atom pairs in each molecule rather, you will only need to predict the pairs that are explicitly listed in the train and test files. For example, some molecules contain Fluorine (F), but you will not be predicting the scalar coupling constant for any pair that includes F.
+
+The training and test splits are by molecule, so that no molecule in the training data is found in the test data.
+
+## Files
+
+- train.csv - the training set, where the first column (molecule_name) is the name of the molecule where the coupling constant originates (the corresponding XYZ file is located at ./structures/.xyz), the second (atom_index_0) and third column (atom_index_1) is the atom indices of the atom-pair creating the coupling and the fourth column (scalar_coupling_constant) is the scalar coupling constant that we want to be able to predict
+- test.csv - the test set; same info as train, without the target variable
+- sample_submission.csv - a sample submission file in the correct format
+- structures.zip - folder containing molecular structure (xyz) files, where the first line is the number of atoms in the molecule, followed by a blank line, and then a line for every atom, where the first column contains the atomic element (H for hydrogen, C for carbon etc.) and the remaining columns contain the X, Y and Z cartesian coordinates (a standard format for chemists and molecular visualization programs)
+- structures.csv - this file contains the same information as the individual xyz structure files, but in a single file
+
+### Additional Data
+
+NOTE: additional data is provided for the molecules in Train only!
+
+- dipole_moments.csv - contains the molecular electric dipole moments. These are three dimensional vectors that indicate the charge distribution in the molecule. The first column (molecule_name) are the names of the molecule, the second to fourth column are the X, Y and Z components respectively of the dipole moment.
+- magnetic_shielding_tensors.csv - contains the magnetic shielding tensors for all atoms in the molecules. The first column (molecule_name) contains the molecule name, the second column (atom_index) contains the index of the atom in the molecule, the third to eleventh columns contain the XX, YX, ZX, XY, YY, ZY, XZ, YZ and ZZ elements of the tensor/matrix respectively.
+- mulliken_charges.csv - contains the mulliken charges for all atoms in the molecules. The first column (molecule_name) contains the name of the molecule, the second column (atom_index) contains the index of the atom in the molecule, the third column (mulliken_charge) contains the mulliken charge of the atom.
+- potential_energy.csv - contains the potential energy of the molecules. The first column (molecule_name) contains the name of the molecule, the second column (potential_energy) contains the potential energy of the molecule.
+- scalar_coupling_contributions.csv - The scalar coupling constants in train.csv (or corresponding files) are a sum of four terms. scalar_coupling_contributions.csv contain all these terms. The first column (molecule_name) are the name of the molecule, the second (atom_index_0) and third column (atom_index_1) are the atom indices of the atom-pair, the fourth column indicates the type of coupling, the fifth column (fc) is the Fermi Contact contribution, the sixth column (sd) is the Spin-dipolar contribution, the seventh column (pso) is the Paramagnetic spin-orbit contribution and the eighth column (dso) is the Diamagnetic spin-orbit contribution.

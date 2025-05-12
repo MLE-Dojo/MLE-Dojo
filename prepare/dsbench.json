@@ -1,0 +1,1650 @@
+{
+    "playground-series-s3e12": {
+        "host": "Kaggle",
+        "participation": [
+            "2,507 Entrants",
+            "1,108 Participants",
+            "1,088 Teams",
+            "8,778 Submissions"
+        ],
+        "tags": [
+            "Beginner",
+            "Tabular",
+            "Binary Classification",
+            "Custom Metric"
+        ],
+        "title": "Binary Classification with a Tabular Kidney Stone Prediction Dataset",
+        "href": "https://www.kaggle.com/competitions/playground-series-s3e12",
+        "data_info": {
+            "files": "3 files",
+            "size": "25.56 kB",
+            "type": "csv"
+        }
+    },
+    "titanic": {
+        "host": "Kaggle",
+        "participation": [
+            "1,345,526 Entrants",
+            "13,865 Participants",
+            "13,610 Teams",
+            "56,719 Submissions"
+        ],
+        "tags": [
+            "Binary Classification",
+            "Tabular",
+            "Beginner",
+            "Categorization Accuracy"
+        ],
+        "title": "Titanic - Machine Learning from Disaster",
+        "href": "https://www.kaggle.com/competitions/titanic",
+        "data_info": {
+            "files": "3 files",
+            "size": "93.08 kB",
+            "type": "csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "playground-series-s3e5": {
+        "host": "Kaggle",
+        "participation": [
+            "2,131 Entrants",
+            "933 Participants",
+            "901 Teams",
+            "8,644 Submissions"
+        ],
+        "tags": [
+            "Beginner",
+            "Tabular",
+            "Cohen Kappa Score"
+        ],
+        "title": "Ordinal Regression with a Tabular Wine Quality Dataset",
+        "href": "https://www.kaggle.com/competitions/playground-series-s3e5",
+        "data_info": {
+            "files": "3 files",
+            "size": "225.6 kB",
+            "type": "csv"
+        }
+    },
+    "playground-series-s3e13": {
+        "host": "Kaggle",
+        "participation": [
+            "2,553 Entrants",
+            "963 Participants",
+            "934 Teams",
+            "7,765 Submissions"
+        ],
+        "tags": [
+            "Beginner",
+            "Tabular",
+            "Multiclass Classification",
+            "Health Conditions",
+            "MAP@{K}"
+        ],
+        "title": "Classification with a Tabular Vector Borne Disease Dataset",
+        "href": "https://www.kaggle.com/competitions/playground-series-s3e13",
+        "data_info": {
+            "files": "3 files",
+            "size": "284.43 kB",
+            "type": "csv"
+        }
+    },
+    "playground-series-s3e22": {
+        "host": "Kaggle",
+        "participation": [
+            "4,907 Entrants",
+            "1,628 Participants",
+            "1,541 Teams",
+            "12,287 Submissions"
+        ],
+        "tags": [
+            "Beginner",
+            "Tabular",
+            "Multiclass Classification",
+            "Animals",
+            "Health",
+            "F1 Score"
+        ],
+        "title": "Predict Health Outcomes of Horses",
+        "href": "https://www.kaggle.com/competitions/playground-series-s3e22",
+        "data_info": {
+            "files": "3 files",
+            "size": "386.6 kB",
+            "type": "csv"
+        }
+    },
+    "playground-series-s3e3": {
+        "host": "Kaggle",
+        "participation": [
+            "1,577 Entrants",
+            "676 Participants",
+            "665 Teams",
+            "5,397 Submissions"
+        ],
+        "tags": [
+            "Tabular",
+            "Beginner",
+            "Binary Classification",
+            "Business",
+            "Area Under Receiver Operating Characteristic Curve"
+        ],
+        "title": "Binary Classification with a Tabular Employee Attrition Dataset",
+        "href": "https://www.kaggle.com/competitions/playground-series-s3e3",
+        "data_info": {
+            "files": "3 files",
+            "size": "455.63 kB",
+            "type": "csv"
+        }
+    },
+    "playground-series-s3e9": {
+        "host": "Kaggle",
+        "participation": [
+            "1,669 Entrants",
+            "782 Participants",
+            "765 Teams",
+            "6,998 Submissions"
+        ],
+        "tags": [
+            "Beginner",
+            "Tabular",
+            "Regression",
+            "Root Mean Squared Error"
+        ],
+        "title": "Regression with a Tabular Concrete Strength Dataset",
+        "href": "https://www.kaggle.com/competitions/playground-series-s3e9",
+        "data_info": {
+            "files": "3 files",
+            "size": "485.23 kB",
+            "type": "csv"
+        }
+    },
+    "tabular-playground-series-jul-2021": {
+        "host": "Kaggle",
+        "participation": [
+            "4,054 Entrants",
+            "1,346 Participants",
+            "1,293 Teams",
+            "13,534 Submissions"
+        ],
+        "tags": [
+            "Tabular",
+            "Pollution",
+            "Time Series Analysis",
+            "Mean Columnwise Root Mean Squared Logarithmic Error"
+        ],
+        "title": "Tabular Playground Series - Jul 2021",
+        "href": "https://www.kaggle.com/competitions/tabular-playground-series-jul-2021",
+        "data_info": {
+            "files": "3 files",
+            "size": "826.96 kB",
+            "type": "csv"
+        }
+    },
+    "bike-sharing-demand": {
+        "host": "Kaggle",
+        "participation": [
+            "4,169 Entrants",
+            "3,559 Participants",
+            "3,242 Teams",
+            "32,809 Submissions"
+        ],
+        "tags": [
+            "Cycling",
+            "Tabular",
+            "Time Series Analysis",
+            "Root Mean Squared Logarithmic Error"
+        ],
+        "title": "Bike Sharing Demand",
+        "href": "https://www.kaggle.com/competitions/bike-sharing-demand",
+        "data_info": {
+            "files": "3 files",
+            "size": "1.12 MB",
+            "type": "csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "spaceship-titanic": {
+        "host": "Kaggle",
+        "participation": [
+            "107,842 Entrants",
+            "2,434 Participants",
+            "2,315 Teams",
+            "17,174 Submissions"
+        ],
+        "tags": [
+            "Beginner",
+            "Tabular",
+            "Binary Classification",
+            "Categorization Accuracy"
+        ],
+        "title": "Spaceship Titanic",
+        "href": "https://www.kaggle.com/competitions/spaceship-titanic",
+        "data_info": {
+            "files": "3 files",
+            "size": "1.24 MB",
+            "type": "csv"
+        }
+    },
+    "covid19-global-forecasting-week-2": {
+        "host": "Kaggle",
+        "participation": [
+            "7,937 Entrants",
+            "263 Participants",
+            "215 Teams",
+            "1,368 Submissions"
+        ],
+        "tags": [
+            "Coronavirus",
+            "Tabular",
+            "Mean Columnwise Root Mean Squared Logarithmic Error"
+        ],
+        "title": "COVID19 Global Forecasting (Week 2)",
+        "href": "https://www.kaggle.com/competitions/covid19-global-forecasting-week-2",
+        "data_info": {
+            "files": "3 files",
+            "size": "1.26 MB",
+            "type": "csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "covid19-global-forecasting-week-3": {
+        "host": "Kaggle",
+        "participation": [
+            "4,708 Entrants",
+            "290 Participants",
+            "452 Teams",
+            "1,408 Submissions"
+        ],
+        "tags": [
+            "Tabular",
+            "Coronavirus",
+            "Mean Columnwise Root Mean Squared Logarithmic Error"
+        ],
+        "title": "COVID19 Global Forecasting (Week 3)",
+        "href": "https://www.kaggle.com/competitions/covid19-global-forecasting-week-3",
+        "data_info": {
+            "files": "3 files",
+            "size": "1.41 MB",
+            "type": "csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "nlp-getting-started": {
+        "host": "Kaggle",
+        "participation": [
+            "142,926 Entrants",
+            "813 Participants",
+            "729 Teams",
+            "3,025 Submissions"
+        ],
+        "tags": [
+            "Text",
+            "Binary Classification",
+            "NLP",
+            "Custom Metric"
+        ],
+        "title": "Natural Language Processing with Disaster Tweets",
+        "href": "https://www.kaggle.com/competitions/nlp-getting-started",
+        "data_info": {
+            "files": "3 files",
+            "size": "1.43 MB",
+            "type": "csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "covid19-global-forecasting-week-1": {
+        "host": "Kaggle",
+        "participation": [
+            "14,212 Entrants",
+            "640 Participants",
+            "545 Teams",
+            "2,913 Submissions"
+        ],
+        "tags": [
+            "Coronavirus",
+            "Tabular",
+            "Mean Columnwise Root Mean Squared Logarithmic Error"
+        ],
+        "title": "COVID19 Global Forecasting (Week 1)",
+        "href": "https://www.kaggle.com/competitions/covid19-global-forecasting-week-1",
+        "data_info": {
+            "files": "3 files",
+            "size": "1.63 MB",
+            "type": "csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "tabular-playground-series-jan-2022": {
+        "host": "Kaggle",
+        "participation": [
+            "4,930 Entrants",
+            "1,646 Participants",
+            "1,591 Teams",
+            "16,151 Submissions"
+        ],
+        "tags": [
+            "Tabular",
+            "Time Series Analysis",
+            "SMAPE"
+        ],
+        "title": "Tabular Playground Series - Jan 2022",
+        "href": "https://www.kaggle.com/competitions/tabular-playground-series-jan-2022",
+        "data_info": {
+            "files": "3 files",
+            "size": "1.73 MB",
+            "type": "csv"
+        }
+    },
+    "playground-series-s3e2": {
+        "host": "Kaggle",
+        "participation": [
+            "1,689 Entrants",
+            "785 Participants",
+            "770 Teams",
+            "6,254 Submissions"
+        ],
+        "tags": [
+            "Binary Classification",
+            "Tabular",
+            "Health Conditions",
+            "Beginner",
+            "Area Under Receiver Operating Characteristic Curve"
+        ],
+        "title": "Binary Classification with a Tabular Stroke Prediction Dataset",
+        "href": "https://www.kaggle.com/competitions/playground-series-s3e2",
+        "data_info": {
+            "files": "3 files",
+            "size": "1.88 MB",
+            "type": "csv"
+        }
+    },
+    "covid19-global-forecasting-week-4": {
+        "host": "Kaggle",
+        "participation": [
+            "3,796 Entrants",
+            "388 Participants",
+            "472 Teams",
+            "1,925 Submissions"
+        ],
+        "tags": [
+            "Tabular",
+            "Coronavirus",
+            "Mean Columnwise Root Mean Squared Logarithmic Error"
+        ],
+        "title": "COVID19 Global Forecasting (Week 4)",
+        "href": "https://www.kaggle.com/competitions/covid19-global-forecasting-week-4",
+        "data_info": {
+            "files": "3 files",
+            "size": "1.95 MB",
+            "type": "csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "playground-series-s3e25": {
+        "host": "Kaggle",
+        "participation": [
+            "4,133 Entrants",
+            "1,705 Participants",
+            "1,632 Teams",
+            "12,610 Submissions"
+        ],
+        "tags": [
+            "Beginner",
+            "Tabular",
+            "Regression",
+            "Earth Science",
+            "Median Absolute Error"
+        ],
+        "title": "Regression with a Mohs Hardness Dataset",
+        "href": "https://www.kaggle.com/competitions/playground-series-s3e25",
+        "data_info": {
+            "files": "3 files",
+            "size": "2.11 MB",
+            "type": "csv"
+        }
+    },
+    "us-patent-phrase-to-phrase-matching": {
+        "host": "Satsyil Corp",
+        "participation": [
+            "9,983 Entrants",
+            "2,325 Participants",
+            "1,889 Teams",
+            "42,902 Submissions"
+        ],
+        "tags": [
+            "NLP",
+            "Text",
+            "PearsonCorrelationCoefficient"
+        ],
+        "title": "U.S. Patent Phrase to Phrase Matching ",
+        "href": "https://www.kaggle.com/competitions/us-patent-phrase-to-phrase-matching",
+        "data_info": {
+            "files": "3 files",
+            "size": "2.14 MB",
+            "type": "csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "playground-series-s3e6": {
+        "host": "Kaggle",
+        "participation": [
+            "1,587 Entrants",
+            "715 Participants",
+            "703 Teams",
+            "5,797 Submissions"
+        ],
+        "tags": [
+            "Beginner",
+            "Tabular",
+            "Housing",
+            "Root Mean Squared Error"
+        ],
+        "title": "Regression with a Tabular Paris Housing Price Dataset",
+        "href": "https://www.kaggle.com/competitions/playground-series-s3e6",
+        "data_info": {
+            "files": "3 files",
+            "size": "2.7 MB",
+            "type": "csv"
+        }
+    },
+    "commonlitreadabilityprize": {
+        "host": "CommonLit",
+        "participation": [
+            "16,228 Entrants",
+            "4,393 Participants",
+            "3,633 Teams",
+            "72,150 Submissions"
+        ],
+        "tags": [
+            "Text",
+            "Regression",
+            "Root Mean Squared Error"
+        ],
+        "title": "CommonLit Readability Prize",
+        "href": "https://www.kaggle.com/competitions/commonlitreadabilityprize",
+        "data_info": {
+            "files": "3 files",
+            "size": "2.93 MB",
+            "type": "csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "playground-series-s3e14": {
+        "host": "Kaggle",
+        "participation": [
+            "4,197 Entrants",
+            "1,904 Participants",
+            "1,875 Teams",
+            "12,227 Submissions"
+        ],
+        "tags": [
+            "Beginner",
+            "Tabular",
+            "Regression",
+            "Mean Absolute Error"
+        ],
+        "title": "Regression with a Wild Blueberry Yield Dataset",
+        "href": "https://www.kaggle.com/competitions/playground-series-s3e14",
+        "data_info": {
+            "files": "3 files",
+            "size": "2.99 MB",
+            "type": "csv"
+        }
+    },
+    "playground-series-s3e7": {
+        "host": "Kaggle",
+        "participation": [
+            "1,600 Entrants",
+            "703 Participants",
+            "678 Teams",
+            "5,288 Submissions"
+        ],
+        "tags": [
+            "Beginner",
+            "Tabular",
+            "Binary Classification",
+            "Area Under Receiver Operating Characteristic Curve"
+        ],
+        "title": "Binary Classification with a Tabular Reservation Cancellation Dataset",
+        "href": "https://www.kaggle.com/competitions/playground-series-s3e7",
+        "data_info": {
+            "files": "3 files",
+            "size": "3.86 MB",
+            "type": "csv"
+        }
+    },
+    "tweet-sentiment-extraction": {
+        "host": "Kaggle",
+        "participation": [
+            "14,306 Entrants",
+            "2,817 Participants",
+            "2,225 Teams",
+            "37,917 Submissions"
+        ],
+        "tags": [
+            "Text",
+            "Internet",
+            "Custom Metric"
+        ],
+        "title": "Tweet Sentiment Extraction",
+        "href": "https://www.kaggle.com/competitions/tweet-sentiment-extraction",
+        "data_info": {
+            "files": "3 files",
+            "size": "3.86 MB",
+            "type": "csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "playground-series-s4e2": {
+        "host": "Kaggle",
+        "participation": [
+            "8,346 Entrants",
+            "3,746 Participants",
+            "3,587 Teams",
+            "29,669 Submissions"
+        ],
+        "tags": [
+            "Beginner",
+            "Time Series Analysis",
+            "Tabular",
+            "Multiclass Classification",
+            "Accuracy Score"
+        ],
+        "title": "Multi-Class Prediction of Obesity Risk",
+        "href": "https://www.kaggle.com/competitions/playground-series-s4e2",
+        "data_info": {
+            "files": "3 files",
+            "size": "4.59 MB",
+            "type": "csv"
+        }
+    },
+    "playground-series-s4e3": {
+        "host": "Kaggle",
+        "participation": [
+            "6,473 Entrants",
+            "2,303 Participants",
+            "2,199 Teams",
+            "17,300 Submissions"
+        ],
+        "tags": [
+            "Beginner",
+            "Tabular",
+            "Multiclass Classification",
+            "Binary Classification",
+            "Manufacturing",
+            "Mean Columnwise Area Under Receiver Operating Characteristic Curve"
+        ],
+        "title": "Steel Plate Defect Prediction",
+        "href": "https://www.kaggle.com/competitions/playground-series-s4e3",
+        "data_info": {
+            "files": "3 files",
+            "size": "5.49 MB",
+            "type": "csv"
+        }
+    },
+    "tabular-playground-series-sep-2022": {
+        "host": "Kaggle",
+        "participation": [
+            "4,772 Entrants",
+            "1,447 Participants",
+            "1,381 Teams",
+            "13,085 Submissions"
+        ],
+        "tags": [
+            "Tabular",
+            "SMAPE"
+        ],
+        "title": "Tabular Playground Series - Sep 2022",
+        "href": "https://www.kaggle.com/competitions/tabular-playground-series-sep-2022",
+        "data_info": {
+            "files": "3 files",
+            "size": "5.73 MB",
+            "type": "csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "playground-series-s3e1": {
+        "host": "Kaggle",
+        "participation": [
+            "1,618 Entrants",
+            "702 Participants",
+            "689 Teams",
+            "5,163 Submissions"
+        ],
+        "tags": [
+            "Regression",
+            "Tabular",
+            "Housing",
+            "Beginner",
+            "Root Mean Squared Error"
+        ],
+        "title": "Regression with a Tabular California Housing Dataset",
+        "href": "https://www.kaggle.com/competitions/playground-series-s3e1",
+        "data_info": {
+            "files": "3 files",
+            "size": "6.48 MB",
+            "type": "csv"
+        }
+    },
+    "tabular-playground-series-aug-2022": {
+        "host": "Kaggle",
+        "participation": [
+            "5,161 Entrants",
+            "1,972 Participants",
+            "1,888 Teams",
+            "21,790 Submissions"
+        ],
+        "tags": [
+            "Tabular",
+            "Binary Classification",
+            "Area Under Receiver Operating Characteristic Curve"
+        ],
+        "title": "Tabular Playground Series - Aug 2022",
+        "href": "https://www.kaggle.com/competitions/tabular-playground-series-aug-2022",
+        "data_info": {
+            "files": "3 files",
+            "size": "7.21 MB",
+            "type": "csv"
+        }
+    },
+    "playground-series-s3e18": {
+        "host": "Kaggle",
+        "participation": [
+            "3,190 Entrants",
+            "1,065 Participants",
+            "1,047 Teams",
+            "8,801 Submissions"
+        ],
+        "tags": [
+            "Beginner",
+            "Tabular",
+            "Binary Classification",
+            "Multilabel Classification",
+            "Roc Auc Score"
+        ],
+        "title": "Explore Multi-Label Classification with an Enzyme Substrate Dataset",
+        "href": "https://www.kaggle.com/competitions/playground-series-s3e18",
+        "data_info": {
+            "files": "3 files",
+            "size": "7.63 MB",
+            "type": "csv"
+        }
+    },
+    "playground-series-s4e4": {
+        "host": "Kaggle",
+        "participation": [
+            "5,859 Entrants",
+            "2,719 Participants",
+            "2,606 Teams",
+            "21,531 Submissions"
+        ],
+        "tags": [
+            "Beginner",
+            "Tabular",
+            "Regression",
+            "Mean Squared Log Error"
+        ],
+        "title": "Regression with an Abalone Dataset",
+        "href": "https://www.kaggle.com/competitions/playground-series-s4e4",
+        "data_info": {
+            "files": "3 files",
+            "size": "8.4 MB",
+            "type": "csv"
+        }
+    },
+    "playground-series-s3e16": {
+        "host": "Kaggle",
+        "participation": [
+            "3,807 Entrants",
+            "1,467 Participants",
+            "1,429 Teams",
+            "10,531 Submissions"
+        ],
+        "tags": [
+            "Beginner",
+            "Tabular",
+            "Regression",
+            "Animals",
+            "Mean Absolute Error"
+        ],
+        "title": "Regression with a Crab Age Dataset",
+        "href": "https://www.kaggle.com/competitions/playground-series-s3e16",
+        "data_info": {
+            "files": "3 files",
+            "size": "9.05 MB",
+            "type": "csv"
+        }
+    },
+    "feedback-prize-english-language-learning": {
+        "host": "The Learning Agency Lab",
+        "participation": [
+            "13,724 Entrants",
+            "3,273 Participants",
+            "2,654 Teams",
+            "49,503 Submissions"
+        ],
+        "tags": [
+            "NLP",
+            "Education",
+            "Primary and Secondary Schools",
+            "Custom Metric"
+        ],
+        "title": "Feedback Prize - English Language Learning",
+        "href": "https://www.kaggle.com/competitions/feedback-prize-english-language-learning",
+        "data_info": {
+            "files": "3 files",
+            "size": "9.3 MB",
+            "type": "csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "tabular-playground-series-apr-2021": {
+        "host": "Kaggle",
+        "participation": [
+            "3,057 Entrants",
+            "1,306 Participants",
+            "1,244 Teams",
+            "15,345 Submissions"
+        ],
+        "tags": [
+            "Beginner",
+            "Tabular",
+            "Binary Classification",
+            "Categorization Accuracy"
+        ],
+        "title": "Tabular Playground Series - Apr 2021",
+        "href": "https://www.kaggle.com/competitions/tabular-playground-series-apr-2021",
+        "data_info": {
+            "files": "3 files",
+            "size": "12.66 MB",
+            "type": "csv"
+        }
+    },
+    "playground-series-s3e19": {
+        "host": "Kaggle",
+        "participation": [
+            "3,599 Entrants",
+            "1,212 Participants",
+            "1,172 Teams",
+            "10,058 Submissions"
+        ],
+        "tags": [
+            "Beginner",
+            "Tabular",
+            "Time Series Analysis",
+            "SMAPE"
+        ],
+        "title": "Forecasting Mini-Course Sales",
+        "href": "https://www.kaggle.com/competitions/playground-series-s3e19",
+        "data_info": {
+            "files": "3 files",
+            "size": "12.79 MB",
+            "type": "csv"
+        }
+    },
+    "playground-series-s3e17": {
+        "host": "Kaggle",
+        "participation": [
+            "4,165 Entrants",
+            "1,544 Participants",
+            "1,502 Teams",
+            "11,708 Submissions"
+        ],
+        "tags": [
+            "Beginner",
+            "Tabular",
+            "Roc Auc Score"
+        ],
+        "title": "Binary Classification of Machine Failures",
+        "href": "https://www.kaggle.com/competitions/playground-series-s3e17",
+        "data_info": {
+            "files": "3 files",
+            "size": "12.86 MB",
+            "type": "csv"
+        }
+    },
+    "google-quest-challenge": {
+        "host": "Google",
+        "participation": [
+            "10,582 Entrants",
+            "1,904 Participants",
+            "1,571 Teams",
+            "27,817 Submissions"
+        ],
+        "tags": [
+            "Text",
+            "NLP",
+            "Mean Columnwise Spearman's r (rank correlation  coefficient)"
+        ],
+        "title": "Google QUEST Q&A Labeling",
+        "href": "https://www.kaggle.com/competitions/google-quest-challenge",
+        "data_info": {
+            "files": "3 files",
+            "size": "14.85 MB",
+            "type": "csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "playground-series-s4e6": {
+        "host": "Kaggle",
+        "participation": [
+            "7,152 Entrants",
+            "2,858 Participants",
+            "2,684 Teams",
+            "20,893 Submissions"
+        ],
+        "tags": [
+            "Beginner",
+            "Tabular",
+            "Education",
+            "Accuracy Score"
+        ],
+        "title": "Classification with an Academic Success Dataset",
+        "href": "https://www.kaggle.com/competitions/playground-series-s4e6",
+        "data_info": {
+            "files": "3 files",
+            "size": "16.2 MB",
+            "type": "csv"
+        }
+    },
+    "playground-series-s3e23": {
+        "host": "Kaggle",
+        "participation": [
+            "4,140 Entrants",
+            "1,798 Participants",
+            "1,702 Teams",
+            "14,011 Submissions"
+        ],
+        "tags": [
+            "Beginner",
+            "Tabular",
+            "Binary Classification",
+            "Roc Auc Score"
+        ],
+        "title": "Binary Classification with a Software Defects Dataset",
+        "href": "https://www.kaggle.com/competitions/playground-series-s3e23",
+        "data_info": {
+            "files": "3 files",
+            "size": "18.63 MB",
+            "type": "csv"
+        }
+    },
+    "demand-forecasting-kernels-only": {
+        "host": "Kaggle",
+        "participation": [
+            "3,804 Entrants",
+            "484 Participants",
+            "459 Teams",
+            "6,135 Submissions"
+        ],
+        "tags": [
+            "Tabular",
+            "SMAPE"
+        ],
+        "title": "Store Item Demand Forecasting Challenge",
+        "href": "https://www.kaggle.com/competitions/demand-forecasting-kernels-only",
+        "data_info": {
+            "files": "3 files",
+            "size": "18.7 MB",
+            "type": "csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "playground-series-s3e8": {
+        "host": "Kaggle",
+        "participation": [
+            "1,678 Entrants",
+            "757 Participants",
+            "734 Teams",
+            "5,789 Submissions"
+        ],
+        "tags": [
+            "Beginner",
+            "Tabular",
+            "Regression",
+            "Root Mean Squared Error"
+        ],
+        "title": "Regression with a Tabular Gemstone Price Dataset",
+        "href": "https://www.kaggle.com/competitions/playground-series-s3e8",
+        "data_info": {
+            "files": "3 files",
+            "size": "18.96 MB",
+            "type": "csv"
+        }
+    },
+    "playground-series-s3e10": {
+        "host": "Kaggle",
+        "participation": [
+            "1,869 Entrants",
+            "820 Participants",
+            "807 Teams",
+            "6,319 Submissions"
+        ],
+        "tags": [
+            "Beginner",
+            "Tabular",
+            "Log Loss"
+        ],
+        "title": "Binary Classification with a Tabular Pulsar Dataset",
+        "href": "https://www.kaggle.com/competitions/playground-series-s3e10",
+        "data_info": {
+            "files": "3 files",
+            "size": "20.94 MB",
+            "type": "csv"
+        }
+    },
+    "playground-series-s4e1": {
+        "host": "Kaggle",
+        "participation": [
+            "8,898 Entrants",
+            "3,777 Participants",
+            "3,632 Teams",
+            "28,457 Submissions"
+        ],
+        "tags": [
+            "Beginner",
+            "Tabular",
+            "Binary Classification",
+            "Banking",
+            "Roc Auc Score"
+        ],
+        "title": "Binary Classification with a Bank Churn Dataset ",
+        "href": "https://www.kaggle.com/competitions/playground-series-s4e1",
+        "data_info": {
+            "files": "3 files",
+            "size": "21.65 MB",
+            "type": "csv"
+        }
+    },
+    "playground-series-s3e24": {
+        "host": "Kaggle",
+        "participation": [
+            "4,958 Entrants",
+            "2,023 Participants",
+            "1,908 Teams",
+            "14,237 Submissions"
+        ],
+        "tags": [
+            "Beginner",
+            "Tabular",
+            "Binary Classification",
+            "Health",
+            "Roc Auc Score"
+        ],
+        "title": "Binary Prediction of Smoker Status using Bio-Signals",
+        "href": "https://www.kaggle.com/competitions/playground-series-s3e24",
+        "data_info": {
+            "files": "3 files",
+            "size": "22.79 MB",
+            "type": "csv"
+        }
+    },
+    "tabular-playground-series-mar-2022": {
+        "host": "Kaggle",
+        "participation": [
+            "3,383 Entrants",
+            "1,003 Participants",
+            "956 Teams",
+            "9,971 Submissions"
+        ],
+        "tags": [
+            "Tabular",
+            "Time Series Analysis",
+            "Cities and Urban Areas",
+            "Regression",
+            "Mean Absolute Error"
+        ],
+        "title": "Tabular Playground Series - Mar 2022",
+        "href": "https://www.kaggle.com/competitions/tabular-playground-series-mar-2022",
+        "data_info": {
+            "files": "3 files",
+            "size": "31.4 MB",
+            "type": "csv"
+        }
+    },
+    "learning-agency-lab-automated-essay-scoring-2": {
+        "host": "The Learning Agency Lab",
+        "participation": [
+            "8,981 Entrants",
+            "3,341 Participants",
+            "2,706 Teams",
+            "60,730 Submissions"
+        ],
+        "tags": [
+            "Education",
+            "NLP",
+            "Primary and Secondary Schools",
+            "Cohen Kappa Score"
+        ],
+        "title": "Learning Agency Lab - Automated Essay Scoring 2.0",
+        "href": "https://www.kaggle.com/competitions/learning-agency-lab-automated-essay-scoring-2",
+        "data_info": {
+            "files": "3 files",
+            "size": "36.2 MB",
+            "type": "csv"
+        }
+    },
+    "dont-overfit-ii": {
+        "host": "Kaggle",
+        "participation": [
+            "6,030 Entrants",
+            "2,441 Participants",
+            "2,315 Teams",
+            "35,262 Submissions"
+        ],
+        "tags": [
+            "Tabular",
+            "Binary Classification",
+            "Area Under Receiver Operating Characteristic Curve"
+        ],
+        "title": "Don't Overfit! II",
+        "href": "https://www.kaggle.com/competitions/dont-overfit-ii",
+        "data_info": {
+            "files": "3 files",
+            "size": "38.6 MB",
+            "type": "csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "playground-series-s3e11": {
+        "host": "Kaggle",
+        "participation": [
+            "2,387 Entrants",
+            "1,007 Participants",
+            "952 Teams",
+            "7,443 Submissions"
+        ],
+        "tags": [
+            "Beginner",
+            "Tabular",
+            "Regression",
+            "Mean Squared Log Error"
+        ],
+        "title": "Regression with a Tabular Media Campaign Cost Dataset",
+        "href": "https://www.kaggle.com/competitions/playground-series-s3e11",
+        "data_info": {
+            "files": "3 files",
+            "size": "49.83 MB",
+            "type": "csv"
+        }
+    },
+    "see-click-predict-fix": {
+        "participation": [
+            "727 Entrants",
+            "607 Participants",
+            "530 Teams",
+            "5,543 Submissions"
+        ],
+        "tags": [
+            "Root Mean Squared Logarithmic Error"
+        ],
+        "title": "See Click Predict Fix",
+        "href": "https://www.kaggle.com/competitions/see-click-predict-fix",
+        "data_info": {
+            "files": "3 files",
+            "size": "55.75 MB",
+            "type": "csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "cat-in-the-dat": {
+        "host": "Kaggle",
+        "participation": [
+            "5,771 Entrants",
+            "1,387 Participants",
+            "1,338 Teams",
+            "13,527 Submissions"
+        ],
+        "tags": [
+            "Tabular",
+            "Binary Classification",
+            "Area Under Receiver Operating Characteristic Curve"
+        ],
+        "title": "Categorical Feature Encoding Challenge",
+        "href": "https://www.kaggle.com/competitions/cat-in-the-dat",
+        "data_info": {
+            "files": "3 files",
+            "size": "67.96 MB",
+            "type": "csv"
+        }
+    },
+    "tmdb-box-office-prediction": {
+        "host": "Kaggle",
+        "participation": [
+            "9,154 Entrants",
+            "1,615 Participants",
+            "1,395 Teams",
+            "18,974 Submissions"
+        ],
+        "tags": [
+            "Tabular",
+            "Movies and TV Shows",
+            "Root Mean Squared Logarithmic Error"
+        ],
+        "title": "TMDB Box Office Prediction",
+        "href": "https://www.kaggle.com/competitions/tmdb-box-office-prediction",
+        "data_info": {
+            "files": "3 files",
+            "size": "70.24 MB",
+            "type": "csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "playground-series-s4e5": {
+        "host": "Kaggle",
+        "participation": [
+            "7,193 Entrants",
+            "2,932 Participants",
+            "2,788 Teams",
+            "21,519 Submissions"
+        ],
+        "tags": [
+            "Beginner",
+            "Tabular",
+            "Logistic Regression",
+            "R2 Score"
+        ],
+        "title": "Regression with a Flood Prediction Dataset",
+        "href": "https://www.kaggle.com/competitions/playground-series-s4e5",
+        "data_info": {
+            "files": "3 files",
+            "size": "104.17 MB",
+            "type": "csv"
+        }
+    },
+    "santander-customer-satisfaction": {
+        "host": "Banco Santander",
+        "participation": [
+            "6,584 Entrants",
+            "5,688 Participants",
+            "5,115 Teams",
+            "93,333 Submissions"
+        ],
+        "tags": [
+            "Tabular",
+            "Binary Classification",
+            "Banking",
+            "Area Under Receiver Operating Characteristic Curve"
+        ],
+        "title": "Santander Customer Satisfaction",
+        "href": "https://www.kaggle.com/competitions/santander-customer-satisfaction",
+        "data_info": {
+            "files": "3 files",
+            "size": "119.04 MB",
+            "type": "csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "playground-series-s3e20": {
+        "host": "Kaggle",
+        "participation": [
+            "5,072 Entrants",
+            "1,496 Participants",
+            "1,440 Teams",
+            "11,417 Submissions"
+        ],
+        "tags": [
+            "Beginner",
+            "Tabular",
+            "Time Series Analysis",
+            "Root Mean Squared Error"
+        ],
+        "title": "Predict CO2 Emissions in Rwanda",
+        "href": "https://www.kaggle.com/competitions/playground-series-s3e20",
+        "data_info": {
+            "files": "3 files",
+            "size": "119.66 MB",
+            "type": "csv"
+        }
+    },
+    "tabular-playground-series-mar-2021": {
+        "host": "Kaggle",
+        "participation": [
+            "3,835 Entrants",
+            "1,568 Participants",
+            "1,495 Teams",
+            "12,945 Submissions"
+        ],
+        "tags": [
+            "Tabular",
+            "Logistic Regression",
+            "Binary Classification",
+            "Area Under Receiver Operating Characteristic Curve"
+        ],
+        "title": "Tabular Playground Series - Mar 2021",
+        "href": "https://www.kaggle.com/competitions/tabular-playground-series-mar-2021",
+        "data_info": {
+            "files": "3 files",
+            "size": "131.65 MB",
+            "type": "csv"
+        }
+    },
+    "tabular-playground-series-jan-2021": {
+        "host": "Kaggle",
+        "participation": [
+            "4,185 Entrants",
+            "1,728 Participants",
+            "1,728 Teams",
+            "16,138 Submissions"
+        ],
+        "tags": [
+            "Tabular",
+            "Regression",
+            "Root Mean Squared Error"
+        ],
+        "title": "Tabular Playground Series - Jan 2021",
+        "href": "https://www.kaggle.com/competitions/tabular-playground-series-jan-2021",
+        "data_info": {
+            "files": "3 files",
+            "size": "144.43 MB",
+            "type": "csv"
+        }
+    },
+    "cat-in-the-dat-ii": {
+        "host": "Kaggle",
+        "participation": [
+            "5,199 Entrants",
+            "1,293 Participants",
+            "1,161 Teams",
+            "13,837 Submissions"
+        ],
+        "tags": [
+            "Binary Classification",
+            "Area Under Receiver Operating Characteristic Curve"
+        ],
+        "title": "Categorical Feature Encoding Challenge II",
+        "href": "https://www.kaggle.com/competitions/cat-in-the-dat-ii",
+        "data_info": {
+            "files": "3 files",
+            "size": "145.84 MB",
+            "type": "csv"
+        }
+    },
+    "liverpool-ion-switching": {
+        "host": "University of Liverpool",
+        "participation": [
+            "10,041 Entrants",
+            "3,004 Participants",
+            "2,618 Teams",
+            "53,547 Submissions"
+        ],
+        "tags": [
+            "Biology",
+            "F-Score (Macro)"
+        ],
+        "title": "University of Liverpool - Ion Switching",
+        "href": "https://www.kaggle.com/competitions/liverpool-ion-switching",
+        "data_info": {
+            "files": "3 files",
+            "size": "146.08 MB",
+            "type": "csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "tabular-playground-series-feb-2021": {
+        "host": "Kaggle",
+        "participation": [
+            "3,489 Entrants",
+            "1,474 Participants",
+            "1,433 Teams",
+            "12,553 Submissions"
+        ],
+        "tags": [
+            "Regression",
+            "Tabular",
+            "Root Mean Squared Error"
+        ],
+        "title": "Tabular Playground Series - Feb 2021",
+        "href": "https://www.kaggle.com/competitions/tabular-playground-series-feb-2021",
+        "data_info": {
+            "files": "3 files",
+            "size": "154.66 MB",
+            "type": "csv"
+        }
+    },
+    "lmsys-chatbot-arena": {
+        "host": "LMSYS Org",
+        "participation": [
+            "8,907 Entrants",
+            "2,210 Participants",
+            "1,849 Teams",
+            "2,927 Submissions"
+        ],
+        "tags": [
+            "Languages",
+            "Text Conversation",
+            "Log Loss"
+        ],
+        "title": "LMSYS - Chatbot Arena Human Preference Predictions",
+        "href": "https://www.kaggle.com/competitions/lmsys-chatbot-arena",
+        "data_info": {
+            "files": "3 files",
+            "size": "184.19 MB",
+            "type": "csv"
+        }
+    },
+    "playground-series-s3e4": {
+        "host": "Kaggle",
+        "participation": [
+            "1,621 Entrants",
+            "667 Participants",
+            "641 Teams",
+            "4,919 Submissions"
+        ],
+        "tags": [
+            "Tabular",
+            "Binary Classification",
+            "Beginner",
+            "Area Under Receiver Operating Characteristic Curve"
+        ],
+        "title": "Binary Classification with a Tabular Credit Card Fraud Dataset",
+        "href": "https://www.kaggle.com/competitions/playground-series-s3e4",
+        "data_info": {
+            "files": "3 files",
+            "size": "198.09 MB",
+            "type": "csv"
+        }
+    },
+    "conways-reverse-game-of-life-2020": {
+        "host": "Kaggle",
+        "participation": [
+            "2,234 Entrants",
+            "259 Participants",
+            "188 Teams",
+            "1,377 Submissions"
+        ],
+        "tags": [
+            "Simulations",
+            "Board Games",
+            "Custom Metric"
+        ],
+        "title": "Conway's Reverse Game of Life 2020",
+        "href": "https://www.kaggle.com/competitions/conways-reverse-game-of-life-2020",
+        "data_info": {
+            "files": "3 files",
+            "size": "251.11 MB",
+            "type": "csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "porto-seguro-safe-driver-prediction": {
+        "host": "Porto Seguro",
+        "participation": [
+            "16,556 Entrants",
+            "5,784 Participants",
+            "5,156 Teams",
+            "93,568 Submissions"
+        ],
+        "tags": [
+            "Tabular",
+            "Binary Classification",
+            "Normalized Gini Index"
+        ],
+        "title": "Porto Seguro\u2019s Safe Driver Prediction",
+        "href": "https://www.kaggle.com/competitions/porto-seguro-safe-driver-prediction",
+        "data_info": {
+            "files": "3 files",
+            "size": "300.58 MB",
+            "type": "csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "tabular-playground-series-aug-2021": {
+        "host": "Kaggle",
+        "participation": [
+            "5,901 Entrants",
+            "1,841 Participants",
+            "1,753 Teams",
+            "16,696 Submissions"
+        ],
+        "tags": [
+            "Tabular",
+            "Regression",
+            "Banking",
+            "Root Mean Squared Error"
+        ],
+        "title": "Tabular Playground Series - Aug 2021",
+        "href": "https://www.kaggle.com/competitions/tabular-playground-series-aug-2021",
+        "data_info": {
+            "files": "3 files",
+            "size": "337.38 MB",
+            "type": "csv"
+        }
+    },
+    "tabular-playground-series-may-2022": {
+        "host": "Kaggle",
+        "participation": [
+            "3,569 Entrants",
+            "1,176 Participants",
+            "1,151 Teams",
+            "8,902 Submissions"
+        ],
+        "tags": [
+            "Tabular",
+            "Binary Classification",
+            "Area Under Receiver Operating Characteristic Curve"
+        ],
+        "title": "Tabular Playground Series - May 2022",
+        "href": "https://www.kaggle.com/competitions/tabular-playground-series-may-2022",
+        "data_info": {
+            "files": "3 files",
+            "size": "574.22 MB",
+            "type": "csv"
+        }
+    },
+    "santander-customer-transaction-prediction": {
+        "host": "Banco Santander",
+        "participation": [
+            "25,493 Entrants",
+            "9,787 Participants",
+            "8,751 Teams",
+            "104,129 Submissions"
+        ],
+        "tags": [
+            "Banking",
+            "Tabular",
+            "Binary Classification",
+            "Area Under Receiver Operating Characteristic Curve"
+        ],
+        "title": "Santander Customer Transaction Prediction",
+        "href": "https://www.kaggle.com/competitions/santander-customer-transaction-prediction",
+        "data_info": {
+            "files": "3 files",
+            "size": "606.35 MB",
+            "type": "csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "tabular-playground-series-dec-2021": {
+        "host": "Kaggle",
+        "participation": [
+            "3,648 Entrants",
+            "1,234 Participants",
+            "1,188 Teams",
+            "12,524 Submissions"
+        ],
+        "tags": [
+            "Tabular",
+            "Multiclass Classification",
+            "Categorization Accuracy"
+        ],
+        "title": "Tabular Playground Series - Dec 2021",
+        "href": "https://www.kaggle.com/competitions/tabular-playground-series-dec-2021",
+        "data_info": {
+            "files": "3 files",
+            "size": "693.17 MB",
+            "type": "csv"
+        }
+    },
+    "ventilator-pressure-prediction": {
+        "host": "Google Brain",
+        "participation": [
+            "8,511 Entrants",
+            "3,118 Participants",
+            "2,605 Teams",
+            "46,281 Submissions"
+        ],
+        "tags": [
+            "Tabular",
+            "Medicine",
+            "Biology",
+            "Mean Absolute Error"
+        ],
+        "title": "Google Brain - Ventilator Pressure Prediction",
+        "href": "https://www.kaggle.com/competitions/ventilator-pressure-prediction",
+        "data_info": {
+            "files": "3 files",
+            "size": "698.79 MB",
+            "type": "csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "instant-gratification": {
+        "host": "Kaggle",
+        "participation": [
+            "5,368 Entrants",
+            "2,021 Participants",
+            "1,818 Teams",
+            "35,776 Submissions"
+        ],
+        "tags": [
+            "Tabular",
+            "Binary Classification",
+            "Area Under Receiver Operating Characteristic Curve"
+        ],
+        "title": "Instant Gratification",
+        "href": "https://www.kaggle.com/competitions/instant-gratification",
+        "data_info": {
+            "files": "3 files",
+            "size": "972.6 MB",
+            "type": "csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "tabular-playground-series-nov-2021": {
+        "host": "Kaggle",
+        "participation": [
+            "3,596 Entrants",
+            "1,422 Participants",
+            "1,362 Teams",
+            "14,710 Submissions"
+        ],
+        "tags": [
+            "Tabular",
+            "Binary Classification",
+            "Area Under Receiver Operating Characteristic Curve"
+        ],
+        "title": "Tabular Playground Series - Nov 2021",
+        "href": "https://www.kaggle.com/competitions/tabular-playground-series-nov-2021",
+        "data_info": {
+            "files": "3 files",
+            "size": "1.04 GB",
+            "type": "csv"
+        }
+    },
+    "santander-value-prediction-challenge": {
+        "host": "Banco Santander",
+        "participation": [
+            "19,032 Entrants",
+            "4,865 Participants",
+            "4,463 Teams",
+            "54,750 Submissions"
+        ],
+        "tags": [
+            "Banking",
+            "Finance",
+            "Root Mean Squared Logarithmic Error"
+        ],
+        "title": "Santander Value Prediction Challenge",
+        "href": "https://www.kaggle.com/competitions/santander-value-prediction-challenge",
+        "data_info": {
+            "files": "3 files",
+            "size": "1.08 GB",
+            "type": "csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "tabular-playground-series-sep-2021": {
+        "host": "Kaggle",
+        "participation": [
+            "6,603 Entrants",
+            "2,060 Participants",
+            "1,942 Teams",
+            "18,394 Submissions"
+        ],
+        "tags": [
+            "Tabular",
+            "Binary Classification",
+            "Area Under Receiver Operating Characteristic Curve"
+        ],
+        "title": "Tabular Playground Series - Sep 2021",
+        "href": "https://www.kaggle.com/competitions/tabular-playground-series-sep-2021",
+        "data_info": {
+            "files": "3 files",
+            "size": "1.37 GB",
+            "type": "csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "tabular-playground-series-feb-2022": {
+        "host": "Kaggle",
+        "participation": [
+            "3,617 Entrants",
+            "1,312 Participants",
+            "1,255 Teams",
+            "11,766 Submissions"
+        ],
+        "tags": [
+            "Tabular",
+            "Multiclass Classification",
+            "Categorization Accuracy"
+        ],
+        "title": "Tabular Playground Series - Feb 2022",
+        "href": "https://www.kaggle.com/competitions/tabular-playground-series-feb-2022",
+        "data_info": {
+            "files": "3 files",
+            "size": "1.87 GB",
+            "type": "csv"
+        }
+    },
+    "tabular-playground-series-oct-2021": {
+        "host": "Kaggle",
+        "participation": [
+            "3,925 Entrants",
+            "1,124 Participants",
+            "1,089 Teams",
+            "10,119 Submissions"
+        ],
+        "tags": [
+            "Tabular",
+            "Binary Classification",
+            "Area Under Receiver Operating Characteristic Curve"
+        ],
+        "title": "Tabular Playground Series - Oct 2021",
+        "href": "https://www.kaggle.com/competitions/tabular-playground-series-oct-2021",
+        "data_info": {
+            "files": "3 files",
+            "size": "3.49 GB",
+            "type": "csv"
+        }
+    },
+    "microsoft-malware-prediction": {
+        "host": "Microsoft",
+        "participation": [
+            "15,283 Entrants",
+            "2,859 Participants",
+            "2,410 Teams",
+            "43,406 Submissions"
+        ],
+        "tags": [
+            "Area Under Receiver Operating Characteristic Curve"
+        ],
+        "title": "Microsoft Malware Prediction",
+        "href": "https://www.kaggle.com/competitions/microsoft-malware-prediction",
+        "data_info": {
+            "files": "3 files",
+            "size": "8.47 GB",
+            "type": "csv",
+            "license": "Subject to Competition Rules"
+        }
+    }
+}

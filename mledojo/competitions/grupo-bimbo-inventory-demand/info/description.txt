@@ -1,0 +1,71 @@
+### Description
+
+Planning a celebration requires careful preparation to ensure there’s enough food without excessive leftovers. Similarly, Grupo Bimbo faces the challenge of accurately forecasting daily consumer demand for fresh bakery products across over 1 million stores on its 45,000 routes in Mexico. Currently, inventory calculations rely on direct delivery sales employees who must predict supply and demand based on personal experience, which is particularly challenging given the short shelf life of some products.
+
+In this competition, Kagglers are invited to create a model that accurately forecasts inventory demand using historical sales data. This will help ensure that consumers have access to over 100 bakery products while minimizing refunds to store owners for unsold items.
+
+### Evaluation
+
+The evaluation metric for this competition is Root Mean Squared Logarithmic Error.
+
+The RMSLE is calculated as
+
+\epsilon = \sqrt{\frac{1}{n} \sum_{i=1}^n (\log(p_i + 1) - \log(a_i+1))^2 }
+
+Where:
+
+\\(\epsilon\\) is the RMSLE value (score)\\(n\\) is the total number of observations in the (public/private) data set,\\(p_i\\) is your prediction of demand, and\\(a_i\\) is the actual demand for \\(i\\). \\(\log(x)\\) is the natural logarithm of \\(x\\)
+
+## Submission File
+
+For every row in the dataset, submission files should contain two columns: id and Demanda_uni_equi. The id corresponds to the column of that id in the test.csv. The file should contain a header and have the following format:
+
+```
+id,Demanda_uni_equil
+0,1
+1,0
+2,500
+3,100
+etc.
+```
+
+### Dataset Description
+
+In this competition, you will forecast the demand for a product at a specific store for a given week. The dataset includes 9 weeks of sales transactions in Mexico, with each transaction representing sales and returns. Demand for a product in a week is calculated as the sales for that week minus the returns for the following week.
+
+The train and test datasets are time-split, along with public and private leaderboard datasets.
+
+Key points to note:
+
+- Some products in the test set may not appear in the train set, reflecting the dynamic nature of inventory data. Your model should adapt to this.
+- Duplicate Cliente_IDs in cliente_tabla indicate that one Cliente_ID may correspond to multiple similar NombreCliente entries, necessitating data cleaning.
+- Adjusted demand (Demanda_uni_equil) is always >= 0, as demand cannot be negative. Negative values for Venta_uni_hoy - Dev_uni_proxima may occur due to returns spanning multiple weeks.
+
+## File descriptions
+
+- train.csv — the training set
+- test.csv — the test set
+- sample_submission.csv — a sample submission file in the correct format
+- cliente_tabla.csv — client names (can be joined with train/test on Cliente_ID)
+- producto_tabla.csv — product names (can be joined with train/test on Producto_ID)
+- town_state.csv — town and state (can be joined with train/test on Agencia_ID)
+
+## Data fields
+
+- Semana — Week number (From Thursday to Wednesday)
+- Agencia_ID — Sales Depot ID
+- Canal_ID — Sales Channel ID
+- Ruta_SAK — Route ID (Several routes = Sales Depot)
+- Cliente_ID — Client ID
+- NombreCliente — Client name
+- Producto_ID — Product ID
+- NombreProducto — Product Name
+- Venta_uni_hoy — Sales unit this week (integer)
+- Venta_hoy — Sales this week (unit: pesos)
+- Dev_uni_proxima — Returns unit next week (integer)
+- Dev_proxima — Returns next week (unit: pesos)
+- Demanda_uni_equil — Adjusted Demand (integer) (This is the target you will predict)
+
+### Other Important Information
+
+No special requirements are noted for this competition.

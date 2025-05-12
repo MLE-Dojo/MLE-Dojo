@@ -1,0 +1,29 @@
+Evaluation  
+The evaluation metric for this competition is Root Mean Squared Logarithmic Error. The RMSLE is calculated as:
+
+\[ \sqrt{ \frac{1}{n} \sum_{i=1}^n \left(\log (1 + \hat{y}_i) - \log (1 + y_i)\right)^2 } \]
+
+where:
+- \( n \) is the total number of observations in the test set,
+- \( \hat{y}_i \) is the predicted value of the target for instance \( i \),
+- \( y_i \) is the actual value of the target for instance \( i \), and
+- \( \log \) is the natural logarithm.
+
+Submission File  
+For each id row in the test set, you must predict the target, Rings. The file should contain a header and have the following format:
+
+```
+id,Rings
+90615,10
+90616,10
+90617,10
+etc.
+```
+
+Dataset Description  
+The dataset for this competition (both train and test) was generated from a deep learning model trained on the Abalone dataset. Feature distributions are close to, but not exactly the same, as the original. Feel free to use the original dataset as part of this competition, both to explore differences as well as to see whether incorporating the original in training improves model performance.
+
+Files:
+- `train.csv` - the training dataset; Rings is the integer target.
+- `test.csv` - the test dataset; your objective is to predict the value of Rings for each row.
+- `sample_submission.csv` - a sample submission file in the correct format.

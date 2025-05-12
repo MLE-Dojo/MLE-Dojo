@@ -1,0 +1,56 @@
+### Description
+
+In the realm of online advertising, click-through rate (CTR) serves as a crucial metric for assessing ad performance, making click prediction systems vital for sponsored search and real-time bidding. This competition invites participants to utilize 11 days of Avazu data to develop and evaluate prediction models. The challenge lies in devising a strategy that surpasses standard classification algorithms. Winning models will be released under an open-source license.
+
+### Evaluation
+
+Submissions are evaluated using the Logarithmic Loss (smaller is better).
+
+## Submission File
+
+The submissions should contain the predicted probability of click for each ad impression in the test set using the following format:
+
+```
+id,click
+60000000,0.384
+63895816,0.5919
+759281658,0.1934
+895936184,0.9572
+...
+```
+
+### Dataset Description
+
+- **train** - Training set. 10 days of click-through data, ordered chronologically. Non-clicks and clicks are subsampled according to different strategies.
+- **test** - Test set. 1 day of ads to for testing your model predictions.
+- **sampleSubmission.csv** - Sample submission file in the correct format, corresponds to the All-0.5 Benchmark.
+
+### Data fields
+
+- id: ad identifier
+- click: 0/1 for non-click/click
+- hour: format is YYMMDDHH, so 14091123 means 23:00 on Sept. 11, 2014 UTC.
+- C1 -- anonymized categorical variable
+- banner_pos
+- site_id
+- site_domain
+- site_category
+- app_id
+- app_domain
+- app_category
+- device_id
+- device_ip
+- device_model
+- device_type
+- device_conn_type
+- C14-C21 -- anonymized categorical variables
+
+### Files
+
+- **train** - Training set. 10 days of click-through data, ordered chronologically. Non-clicks and clicks are subsampled according to different strategies.
+- **test** - Test set. 1 day of ads to for testing your model predictions.
+- **sampleSubmission.csv** - Sample submission file in the correct format, corresponds to the All-0.5 Benchmark.
+
+### Other Important Information
+
+No special requirements are noted for this competition.

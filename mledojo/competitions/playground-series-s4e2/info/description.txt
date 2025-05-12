@@ -1,0 +1,24 @@
+Evaluation:
+Submissions are evaluated using the accuracy score.
+
+Submission File:
+For each id row in the test set, you must predict the class value of the target, NObeyesdad. The file should contain a header and have the following format:
+
+```
+id,NObeyesdad
+20758,Normal_Weight
+20759,Normal_Weight
+20760,Normal_Weight
+etc.
+```
+
+Dataset Description:
+The dataset for this competition (both train and test) was generated from a deep learning model trained on the Obesity or CVD risk dataset. Feature distributions are close to, but not exactly the same, as the original. Feel free to use the original dataset as part of this competition, both to explore differences as well as to see whether incorporating the original in training improves model performance.
+
+Note:
+This dataset is particularly well suited for visualizations, clustering, and general EDA. Show off your skills!
+
+Files:
+- train.csv - the training dataset; NObeyesdad is the categorical target.
+- test.csv - the test dataset; your objective is to predict the class of NObeyesdad for each row.
+- sample_submission.csv - a sample submission file in the correct format.

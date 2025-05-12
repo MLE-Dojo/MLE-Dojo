@@ -1,0 +1,59 @@
+### Description
+
+Join the challenge of predicting Kobe Bryant's shot success using 20 years of data from his illustrious NBA career. After scoring an impressive 60 points in his final game, this competition invites you to analyze his shooting patterns and determine which shots will find the net. It's an excellent opportunity to hone your skills in classification, feature engineering, and time series analysis. Just as Kobe's practice led to an eight-figure contract and five championship rings, your efforts could lead to exciting insights and achievements!
+
+### Evaluation
+
+Submissions are evaluated on the log loss.
+
+## Submission File
+
+For each missing shot_made_flag in the data set, you should predict a probability that Kobe made the field goal. The file should have a header and the following format:
+
+```
+shot_id,shot_made_flag
+1,0.5
+8,0.5
+17,0.5
+etc.
+```
+
+## Dataset Description
+
+This dataset includes the details of every field goal attempted by Kobe Bryant throughout his 20-year career, with the goal of predicting whether each shot was successful (shot_made_flag). 
+
+The dataset contains 5000 missing shot_made_flags, representing the test set for which you need to provide predictions. A sample submission file is available with the necessary shot_ids for valid predictions.
+
+To prevent data leakage, ensure your model only trains on events that occurred before the shot you are predicting. As this is a playground competition with public answers, adherence to this rule is essential.
+
+The dataset features the following attributes:
+
+- action_type
+- combined_shot_type
+- game_event_id
+- game_id
+- lat
+- loc_x
+- loc_y
+- lon
+- minutes_remaining
+- period
+- playoffs
+- season
+- seconds_remaining
+- shot_distance
+- shot_made_flag (this is what you are predicting)
+- shot_type
+- shot_zone_area
+- shot_zone_basic
+- shot_zone_range
+- team_id
+- team_name
+- game_date
+- matchup
+- opponent
+- shot_id
+
+### Files
+
+The dataset is provided in a CSV format containing the necessary information for your analysis.

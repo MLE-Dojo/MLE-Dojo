@@ -1,0 +1,72 @@
+### Description
+
+Winton Capital invites data scientists to tackle the challenge of predicting stock returns amidst terabytes of noisy, non-stationary data. This recruiting competition aims to identify hidden signals in historical stock performance and masked features, focusing on predicting intra-day and end-of-day returns. Participants will engage with complex problems similar to those faced by Winton's research scientists, fostering a creative and collaborative environment. While cash prizes are available for top teams, the primary goal is to evaluate the intellectual property created in the context of potential employment opportunities.
+
+### Evaluation
+
+Submissions are evaluated using the Weighted Mean Absolute Error. Each return you predicted is compared with the actual return. The formula is then
+
+WMAE = \frac{1}{n}\sum\limits_{i=1}^{n} w_i \cdot \left|y_i - \hat{y_i}\right| ,
+
+where \\(w_i\\) is the weight associated with the return, Weight_Intraday, Weight_Daily for intraday and daily returns, \\(i\\), \\(y_i\\) is the predicted return, \\(\hat{y_i}\\) is the actual return, \\(n\\) is the number of predictions.
+
+The weights for the training set are given in the training data. The weights for the test set are unknown.
+
+## Submission File
+
+The submission file should contain two columns: Id and Predicted. For each 5-day window, you need to predict 62 returns. For example, for the first time window, you will predict 1_1, 1_2, to 1_62. 1_1 to 1_60 are predicting Ret_121 through Ret_180, 1_61 the prediction for Ret_PlusOne, and 1_62 the prediction for Ret_PlusTwo.
+
+The file should contain a header and have the following format:
+
+```
+Id,Predicted
+1_1,0
+1_2,0
+1_3,0
+1_4,0
+...
+1_60,0
+1_61,0
+1_62,0
+2_1,0
+2_2,0
+etc.
+```
+
+### Dataset Description
+
+Updated 2015-12-21: Winton have added new data into the test set. If you downloaded the test set before 2015-12-21 please re-download the data set and submit predictions on this instead.
+
+In this competition the challenge is to predict the return of a stock, given the history of the past few days.
+
+We provide 5-day windows of time, days D-2, D-1, D, D+1, and D+2. You are given returns in days D-2, D-1, and part of day D, and you are asked to predict the returns in the rest of day D, and in days D+1 and D+2.
+
+During day D, there is intraday return data, which are the returns at different points in the day. We provide 180 minutes of data, from t=1 to t=180. In the training set you are given the full 180 minutes, in the test set just the first 120 minutes are provided.
+
+For each 5-day window, we also provide 25 features, Feature_1 to Feature_25. These may or may not be useful in your prediction.
+
+Each row in the dataset is an arbitrary stock at an arbitrary 5 day time window.
+
+How these returns are calculated is defined by Winton, and will not to be revealed to you in this competition. The data set is designed to be representative of real data and so should bring about a number of challenges.
+
+## File descriptions
+
+- train.csv - the training set, including the columns of:
+- test.csv - the test set, including the columns of:
+- sample_submission.csv - a sample submission file in the correct format
+
+## Data fields
+
+- Feature_1 to Feature_25: different features relevant to prediction
+- Ret_MinusTwo:  this is the return from the close of trading on day D-2 to the close of trading on day D-1 (i.e. 1 day)
+- Ret_MinusOne: this is the return from the close of trading on day D-1 to the point at which the intraday returns start on day D (approximately 1/2 day)
+- Ret_2 to Ret_120: these are returns over approximately one minute on day D. Ret_2 is the return between t=1 and t=2.
+- Ret_121 to Ret_180: intraday returns over approximately one minute on day D. These are the target variables you need to predict as {id}_{1-60}.
+- Ret_PlusOne: this is the return from the time Ret_180 is measured on day D to the close of trading on day D+1. (approximately 1day). This is a target variable you need to predict as {id}_61.
+- Ret_PlusTwo: this is the return from the close of trading on day D+1 to the close of trading on day D+2 (i.e. 1 day) This is a target variable you need to predict as {id}_62.
+- Weight_Intraday: weight used to evaluate intraday return predictions Ret 121 to 180
+- Weight_Daily: weight used to evaluate daily return predictions (Ret_PlusOne and Ret_PlusTwo).
+
+### Other Important Information
+
+Winton is looking for talented scientists and engineers to join their team, emphasizing a collaborative and innovative work environment. Participants are encouraged to explore potential career opportunities within the company.

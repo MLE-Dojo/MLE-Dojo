@@ -1,0 +1,67 @@
+### Description
+
+The goal of this competition is to predict whether an individual has one or more of three specific medical conditions (Class 1) or none of them (Class 0). Participants will develop a model using health characteristic measurements to streamline the traditionally lengthy and invasive process of diagnosing these conditions, while maintaining patient privacy through the encoding of key characteristics.
+
+As aging is associated with various health issues, including heart disease and dementia, the field of bioinformatics is increasingly focused on interventions to mitigate age-related ailments. Current predictive models, such as XGBoost and random forest, have not achieved satisfactory performance, highlighting the need for more reliable and consistent predictions in critical health scenarios.
+
+Hosted by InVitro Cell Research, LLC (ICR), a company dedicated to regenerative and preventive personalized medicine, this competition invites participants to leverage health data to enhance existing predictive methods. By engaging in this Code Competition, you will contribute to advancing bioinformatics and exploring innovative solutions to complex health-related challenges.
+
+### Evaluation
+
+Submissions are evaluated using a balanced logarithmic loss. The overall effect is such that each class is roughly equally important for the final score.
+
+Each observation is either of class 0 or of class 1. For each observation, you must submit a probability for each class. The formula is then:
+
+\text{Log Loss} = \frac{-\frac{1}{N_{0}} \sum_{i=1}^{N_{0}} y_{0 i} \log  p_{0 i} - \frac {1}{N_{1}} \sum_{i=1}^{N_{1}} y_{1 i} \log  p_{1 i} } { 2 }
+
+where (N_{c}) is the number of observations of class (c), (\log) is the natural logarithm, (y_{c i}) is 1 if observation (i) belongs to class (c) and 0 otherwise, (p_{c i}) is the predicted probability that observation (i) belongs to class (c).
+
+The submitted probabilities for a given row are not required to sum to one because they are rescaled prior to being scored (each row is divided by the row sum). In order to avoid the extremes of the log function, each predicted probability p is replaced with \max(\min(p,1-10^{-15}),10^{-15}).
+
+### Submission File
+
+For each id in the test set, you must predict a probability for each of the two classes. The file should contain a header and have the following format:
+
+```
+Id,class_0,class_1
+00eed32682bb,0.5,0.5
+010ebe33f668,0.5,0.5
+02fa521e1838,0.5,0.5
+040e15f562a2,0.5,0.5
+046e85c7cc7f,0.5,0.5
+...
+```
+
+### Dataset Description
+
+The competition data comprises over fifty anonymized health characteristics linked to three age-related conditions. Your goal is to predict whether a subject has or has not been diagnosed with one of these conditions -- a binary classification problem.
+
+Note that this is a Code Competition, in which the actual test set is hidden. In this version, we give some sample data in the correct format to help you author your solutions. When your submission is scored, this example test data will be replaced with the full test set. There are about 400 rows in the full test set.
+
+### Files and Field Descriptions
+
+- train.csv - The training set.
+  - Id: Unique identifier for each observation.
+  - AB-GL: Fifty-six anonymized health characteristics. All are numeric except for EJ, which is categorical.
+  - Class: A binary target: 1 indicates the subject has been diagnosed with one of the three conditions, 0 indicates they have not.
+  
+- test.csv - The test set. Your goal is to predict the probability that a subject in this set belongs to each of the two classes.
+
+- greeks.csv - Supplemental metadata, only available for the training set.
+  - Alpha: Identifies the type of age-related condition, if present.
+  - A: No age-related condition. Corresponds to class 0.
+  - B, D, G: The three age-related conditions. Correspond to class 1.
+  - Beta, Gamma, Delta: Three experimental characteristics.
+  - Epsilon: The date the data for this subject was collected. Note that all of the data in the test set was collected after the training set was collected.
+
+- sample_submission.csv - A sample submission file in the correct format. See the Evaluation page for more details.
+
+### Other Important Information
+
+This is a Code Competition, and submissions must be made through Notebooks. Ensure that your notebook adheres to the following conditions for successful submission:
+- CPU Notebook <= 9 hours run-time
+- GPU Notebook <= 9 hours run-time
+- Internet access disabled
+- Submission file must be named submission.csv
+
+Refer to the Code Competition FAQ for more information on submission procedures and troubleshooting.

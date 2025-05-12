@@ -1,0 +1,94 @@
+### Description
+
+Join the iNat Challenge 2019, part of the FGVC6 workshop at CVPR 2019, aimed at advancing automatic image classification for a vast array of species. With millions of plant and animal species in the natural world, accurately classifying them can be challenging due to their visual similarities. This competition focuses on a refined set of 1,010 species, featuring 268,243 images collected and verified by users from iNaturalist. Participants are encouraged to push the boundaries of machine learning in this large-scale species classification task. Top teams may be invited to present their findings at the FGVC6 workshop, and submissions that surpass the sample can earn $150 in Google Cloud credits.
+
+### Evaluation
+
+We use top-1 classification error as the metric for this competition. For each image, an algorithm will produce 1 label. If the predicted label matches the ground truth label then the error for that image is 0, otherwise it is 1. The final score is the error averaged across all images.
+
+## Submission File
+
+For each image in the test set, you must predict 1 category label. However, we encourage you to predict more categories labels (sorted by confidence) so that we can analyze top-3 and top-5 performances. The csv file should contain a header and have the following format:
+
+```
+id,predicted  
+268243,71 108 339 341 560  
+268244,333 729 838 418 785  
+268245,690 347 891 655 755
+```
+
+The id column corresponds to the test image id. The predicted column corresponds to 1 category id. The first category id will be used to compute the metric. You should have one row for each test image.
+
+### Dataset Description
+
+## File descriptions
+
+- train_val2019.tar.gz - Contains the training and validation images in a directory structure following {iconic category name}/{category name}/{image id}.jpg.
+- train2019.json - Contains the training annotations.
+- val2019.json - Contains the validation annotations.
+- test2019.tar.gz - Contains a single directory of test images.
+- test2019.json - Contains test image information.
+- kaggle_sample_submission.csv - A sample submission file in the correct format.
+
+## Image Format
+
+All images have been saved in the JPEG format and have been resized to have a maximum dimension of 800 pixels.
+
+## Annotation Format
+
+We follow the annotation format of the [COCO dataset][2] and add additional fields. The annotations are stored in the [JSON format][3] and are organized as follows:
+
+```
+{
+  "info" : info,
+  "images" : [image],
+  "categories" : [category],
+  "annotations" : [annotation],
+  "licenses" : [license]
+}
+
+info{
+  "year" : int,
+  "version" : str,
+  "description" : str,
+  "contributor" : str,
+  "url" : str,
+  "date_created" : datetime,
+}
+
+image{
+  "id" : int,
+  "width" : int,
+  "height" : int,
+  "file_name" : str,
+  "license" : int,
+  "rights_holder" : str
+}
+
+category{
+  "id" : int,
+  "name" : str,
+  "kingdom" : str,
+  "phylum" : str,
+  "class" : str,
+  "order" : str,
+  "family" : str,
+  "genus" : str
+}
+
+annotation{
+  "id" : int,
+  "image_id" : int,
+  "category_id" : int
+}
+
+license{
+  "id" : int,
+  "name" : str,
+  "url" : str
+}
+```
+
+### Other Important Information
+
+This competition is part of the Fine-Grained Visual Categorization FGVC6 workshop at the Computer Vision and Pattern Recognition Conference CVPR 2019. A panel will review the top submissions based on the methods described. Only teams attending the workshop will be considered for presentation. Participants are responsible for their own travel and expenses, as there is no cash prize for this competition.

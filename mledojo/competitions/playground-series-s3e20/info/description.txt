@@ -1,0 +1,52 @@
+Welcome to the 2023 edition of Kaggle's Playground Series! Thank you to everyone who participated in and contributed to Season 3 Playground Series so far!
+
+With the same goal to give the Kaggle community a variety of fairly lightweight challenges that can be used to learn and sharpen skills in different aspects of machine learning and data science, we will continue launching the Tabular Tuesday in July every Tuesday at 00:00 UTC, with each competition running for 3 weeks. Again, these will be fairly lightweight datasets that are synthetically generated from real-world data and will provide an opportunity to quickly iterate through various model and feature engineering ideas, create visualizations, etc.
+
+This episode is similar to the Kaggle/Zindi Hackathon that was held at the Kaggle@ICLR 2023: ML Solutions in Africa workshop in Rwanda, and builds on an ongoing partnership between Kaggle and Zindi to build community-driven impact across Africa. Zindi is a professional network for data scientists to learn, grow their careers, and get jobs. If you haven't done so recently, stop by Zindi and see what they're up to!
+
+Predicting CO2 Emissions
+The ability to accurately monitor carbon emissions is a critical step in the fight against climate change. Precise carbon readings allow researchers and governments to understand the sources and patterns of carbon mass output. While Europe and North America have extensive systems in place to monitor carbon emissions on the ground, there are few available in Africa.
+
+The objective of this challenge is to create machine learning models using open-source CO2 emissions data from Sentinel-5P satellite observations to predict future carbon emissions. These solutions may help enable governments and other actors to estimate carbon emission levels across Africa, even in places where on-the-ground monitoring is not possible.
+
+Acknowledgements
+We acknowledge Carbon Monitor for the use of the GRACED dataset, and special thanks to Darius Moruri from Zindi for his work in preparing the dataset and starter notebooks.
+
+Evaluation
+Root Mean Squared Error (RMSE)
+Submissions are scored on the root mean squared error. RMSE is defined as:
+
+\[ \textrm{RMSE} = \sqrt{ \frac{1}{N} \sum_{i=1}^{N} (y_i - \hat{y}_i)^2 } \]
+
+where \( \hat{y}_i \) is the predicted value and \( y_i \) is the original value for each instance \( i \).
+
+Submission File
+For each ID_LAT_LON_YEAR_WEEK row in the test set, you must predict the value for the target emission. The file should contain a header and have the following format:
+
+```plaintext
+ID_LAT_LON_YEAR_WEEK,emission
+ID_-0.510_29.290_2022_00,81.94
+ID_-0.510_29.290_2022_01,81.94
+ID_-0.510_29.290_2022_02,81.94
+etc.
+```
+
+Dataset Description
+The objective of this challenge is to create machine learning models that use open-source emissions data (from Sentinel-5P satellite observations) to predict carbon emissions. Approximately 497 unique locations were selected from multiple areas in Rwanda, with a distribution around farmlands, cities, and power plants. The data for this competition is split by time; the years 2019-2021 are included in the training data, and your task is to predict the CO2 emissions data for 2022 through November.
+
+Seven main features were extracted weekly from Sentinel-5P from January 2019 to November 2022. Each feature (Sulphur Dioxide, Carbon Monoxide, etc.) contains sub-features such as column_number_density, which is the vertical column density at ground level, calculated using the DOAS technique. You can read more about each feature in the links below, including how they are measured and variable definitions. You are given the values of these features in the test set and your goal is to predict CO2 emissions using time information as well as these features.
+
+- Sulphur Dioxide - COPERNICUS/S5P/NRTI/L3_SO2
+- Carbon Monoxide - COPERNICUS/S5P/NRTI/L3_CO
+- Nitrogen Dioxide - COPERNICUS/S5P/NRTI/L3_NO2
+- Formaldehyde - COPERNICUS/S5P/NRTI/L3_HCHO
+- UV Aerosol Index - COPERNICUS/S5P/NRTI/L3_AER_AI
+- Ozone - COPERNICUS/S5P/NRTI/L3_O3
+- Cloud - COPERNICUS/S5P/OFFL/L3_CLOUD
+
+Important: Please only use the data provided for this challenge as part of your modeling effort. Do not use any external data, including any data from Sentinel-5P not provided on this page.
+
+Files
+- train.csv - the training set
+- test.csv - the test set; your task is to predict the emission target for each week at each location
+- sample_submission.csv - a sample submission file in the correct format

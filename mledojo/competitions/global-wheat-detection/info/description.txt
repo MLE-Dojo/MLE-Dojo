@@ -1,0 +1,75 @@
+### Description
+
+Wheat is a staple food worldwide, and its cultivation is crucial for food security. This competition focuses on detecting wheat heads—spikes containing grain—using outdoor images from diverse global wheat fields. Accurate detection is essential for farmers to assess crop health and maturity, but it poses challenges due to overlapping plants, varying appearances, and different growing conditions. Participants will utilize the Global Wheat Head Dataset, which includes over 3,000 training images from Europe and North America, and about 1,000 test images from Australia, Japan, and China. The goal is to develop a generalized model that can estimate the number and size of wheat heads across various environments, ultimately aiding in better crop management and food production.
+
+This is a Code Competition. Refer to Code Requirements for details.
+
+### Evaluation
+
+This competition is evaluated on the mean average precision at different intersection over union (IoU) thresholds. The IoU of a set of predicted bounding boxes and ground truth bounding boxes is calculated as:
+
+IoU(A,B) = \frac{A \cap B}{ A \cup B}. The metric sweeps over a range of IoU thresholds, at each point calculating an average precision value. The threshold values range from 0.5 to 0.75 with a step size of 0.05. In other words, at a threshold of 0.5, a predicted object is considered a "hit" if its intersection over union with a ground truth object is greater than 0.5.
+
+At each threshold value t, a precision value is calculated based on the number of true positives (TP), false negatives (FN), and false positives (FP) resulting from comparing the predicted object to all ground truth objects:
+
+\frac{TP(t)}{TP(t) + FP(t) + FN(t)}. A true positive is counted when a single predicted object matches a ground truth object with an IoU above the threshold. A false positive indicates a predicted object had no associated ground truth object. A false negative indicates a ground truth object had no associated predicted object.
+
+Important note: if there are no ground truth objects at all for a given image, ANY number of predictions (false positives) will result in the image receiving a score of zero, and being included in the mean average precision.
+
+The average precision of a single image is calculated as the mean of the above precision values at each IoU threshold:
+
+\frac{1}{|thresholds|} \sum_t \frac{TP(t)}{TP(t) + FP(t) + FN(t)}.
+
+In your submission, you are also asked to provide a confidence level for each bounding box. Bounding boxes will be evaluated in order of their confidence levels in the above process. This means that bounding boxes with higher confidence will be checked first for matches against solutions, which determines what boxes are considered true and false positives.
+
+Lastly, the score returned by the competition metric is the mean taken over the individual average precisions of each image in the test dataset.
+
+## Intersection over Union (IoU)
+
+Intersection over Union is a measure of the magnitude of overlap between two bounding boxes (or, in the more general case, two objects). It calculates the size of the overlap between two objects, divided by the total area of the two objects combined.
+
+It can be visualized as the following:
+
+The two boxes in the visualization overlap, but the area of the overlap is insubstantial compared with the area taken up by both objects together. IoU would be low - and would likely not count as a "hit" at higher IoU thresholds.
+
+### Submission File
+
+The submission format requires a space delimited set of bounding boxes. For example:
+
+ce4833752,0.5 0 0 100 100
+
+indicates that image ce4833752 has a bounding box with a confidence of 0.5, at x == 0 and y == 0, with a width and height of 100.
+
+The file should contain a header and have the following format. Each row in your submission should contain ALL bounding boxes for a given image.
+
+```
+image_id,PredictionString
+ce4833752,1.0 0 0 50 50
+adcfa13da,1.0 0 0 50 50
+6ca7b2650,
+1da9078c1,0.3 0 0 50 50 0.5 10 10 30 30
+7640b4963,0.5 0 0 50 50
+etc...
+```
+
+### Dataset Description
+
+The dataset consists of images of wheat fields with bounding boxes for each identified wheat head. Not all images contain wheat heads or bounding boxes. The images were captured from various locations worldwide. The CSV data includes the image ID, width, height, and bounding box information. Each row in train.csv corresponds to a bounding box, and not all images have bounding boxes. Most test set images are hidden, but a small subset is available for coding purposes.
+
+### Files
+
+- train.csv - the training data
+- sample_submission.csv - a sample submission file in the correct format
+- train.zip - training images
+- test.zip - test images
+
+### Columns
+
+- image_id - the unique image ID
+- width, height - the width and height of the images
+- bbox - a bounding box, formatted as a Python-style list of [xmin, ymin, width, height]
+- etc.
+
+### Other Important Information
+
+This competition requires participants to submit their solutions through Notebooks. Specific code requirements include limitations on runtime for CPU and GPU notebooks, no internet access during submissions, and the use of external publicly available data. The submission file must be named "submission.csv".

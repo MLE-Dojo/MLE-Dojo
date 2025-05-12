@@ -1,0 +1,39 @@
+### Description
+
+Join Liberty Mutual Insurance, a Fortune 100 company with over a century of experience in providing diverse insurance products, in a challenge to enhance their home insurance portfolio. Your mission is to predict a transformed count of hazards or pre-existing damages using a dataset of property information. This prediction will help Liberty Mutual identify high-risk homes that may require further examination for insurability. 
+
+Liberty Mutual is actively seeking predictive modelers to join their growing analytics teams, where you can apply advanced techniques to large datasets across various departments, including Actuarial, Product, Claims, Marketing, Distribution, Human Resources, and Finance. Eligible Liberty Mutual employees are also encouraged to participate for development purposes. 
+
+### Evaluation
+
+Submissions are evaluated on the normalized Gini coefficient.
+
+To calculate the normalized Gini, your predictions are sorted from largest to smallest. This is the only step where the explicit prediction values are used (i.e. only the order of your predictions matters). We then move from largest to smallest, asking "In the leftmost x% of the data, how much of the observed loss have you accumulated?" With no model, you expect to accumulate 10% of the loss in 10% of the predictions, so no model (or a "null" model) achieves a straight line. The area between your curve and this straight line is the Gini coefficient.
+
+There is a maximum achievable area for a perfect model. The normalized Gini is obtained by dividing the Gini coefficient of your model by the Gini coefficient of a perfect model.
+
+## Submission File
+
+The file should contain a header and have the following format:
+
+```
+Id,Hazard
+6,0
+7,0
+8,0
+etc.
+```
+
+### Dataset Description
+
+Each row in the dataset corresponds to a property that was inspected and assigned a hazard score ("Hazard"). This score reflects the property's condition as determined by the inspection, with some hazards contributing more significantly to the total score than others. The goal of the competition is to forecast the hazard score based on anonymized variables available prior to ordering an inspection.
+
+## File descriptions
+
+- train.csv - the training set, contains the Hazard and anonymized predictor variables
+- test.csv - the test set, contains only the anonymized predictor variables
+- sample_submission.csv - a sample submission file in the correct format
+
+### Other Important Information
+
+Certain eligible Liberty Mutual employees are encouraged to participate in this challenge for development purposes. Refer to the competition rules for full details.

@@ -1,0 +1,33 @@
+### Description
+
+Dive into the fascinating world of integer sequences with this competition! Inspired by the On-Line Encyclopedia of Integer Sequences (OEIS), which has cataloged patterns in integers for over 50 years, your challenge is to develop a machine learning algorithm that predicts the next number in a given integer sequence. While it may seem straightforward, the complexity of the data will test your skills in pattern recognition and algorithm development.
+
+### Evaluation
+
+This competition is evaluated on accuracy of your predictions (the percentage of sequences where you predict the next number correctly).
+
+## Submission File
+
+For every sequence Id in the test set, you should predict the next integer. The file should contain a header and have the following format:
+
+```
+Id,Last
+1,0
+2,22
+4,9378
+etc.
+```
+
+### Dataset Description
+
+This dataset comprises a vast collection of integer sequences from the OEIS, divided into a training set with complete sequences and a test set where the last number has been omitted. Your objective is to accurately predict this missing integer. Be aware that some sequences may share identical beginnings or be completely identical.
+
+## File descriptions
+
+- train.csv - the training set, contains full sequences
+- test.csv - the test set, missing the last number in each sequence
+- sample_submission.csv - a sample submission file in the correct format
+
+### Other Important Information
+
+No special requirements are noted for this competition, making it accessible for all participants interested in exploring integer sequences through machine learning.

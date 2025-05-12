@@ -1,0 +1,47 @@
+### Description
+
+Imagine transforming the daily commute for millions by predicting traffic congestion at intersections. In this competition, hosted by Geotab in partnership with BigQuery, participants will utilize aggregate datasets from commercial vehicle telematics to forecast congestion in four major US cities: Atlanta, Boston, Chicago, and Philadelphia. The dataset includes information on stopped vehicles and intersection wait times, allowing you to analyze stopping distances and waiting times. Your insights could help city planners alleviate traffic stress and enhance commuter experiences.
+
+With the integration of BigQuery in Kaggle's kernels, you have the opportunity to leverage BigQuery ML for creating and running machine learning models through a SQL query interface. You're encouraged to enhance your models by incorporating additional external datasets to boost predictive accuracy. 
+
+### Evaluation
+
+Submissions are scored on the root mean squared error. RMSE is defined as:
+
+\textrm{RMSE} = \sqrt{\frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2},
+
+where \hat{y} is the predicted value, and y is the original value.
+
+## Submission File
+
+For each row in the test set, you must predict the value of six target outcomes as described on the data tab, each on a separate row in the submission file. The file should contain a header and have the following format:
+
+```
+TargetId,Target
+0_1,0
+0_2,0
+0_3,0
+etc.
+```
+
+## Dataset Description
+
+UPDATE: This dataset is no longer available via BigQuery. However, you can source it directly from the Kaggle dataset on this competition.
+
+The data consists of aggregated trip logging metrics from commercial vehicles, such as semi-trucks. The data have been grouped by intersection, month, hour of day, direction driven through the intersection, and whether the day was on a weekend or not.
+
+For each grouping in the test set, you need to make predictions for three different quantiles of two different metrics covering how long it took the group of vehicles to drive through the intersection. Specifically, the 20th, 50th, and 80th percentiles for the total time stopped at an intersection and the distance between the intersection and the first place a vehicle stopped while waiting. You can think of your goal as summarizing the distribution of wait times and stop distances at each intersection.
+
+Each of those six predictions goes on a new row in the submission file. Read the submission TargetId fields, such as 1_1, as the first number being the RowId and the second being the metric id. You can unpack the submission metric id codes with submission_metric_map.json.
+
+The training set includes an optional additional output metric (TimeFromFirstStop) in case you find that useful for building your models. It was only excluded from the test set to limit the number of predictions that must be made.
+
+The instructions in BigQuery-Dataset-Access.md are now deprecated. The dataset is only available through Kaggle, via download below or API.
+
+### Files
+
+The dataset is available for download on Kaggle. Please refer to the competition page for the specific files included.
+
+### Other Important Information
+
+Participants are encouraged to utilize BigQuery ML for model creation and predictions. Ensure you have a GCP account to authenticate and access the necessary resources.

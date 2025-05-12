@@ -1,0 +1,12 @@
+agent:
+  type: "openai"
+  model_name: "gpt-4o-mini"
+  api_key: ""
+  base_url: "https://api.openai.com/v1"
+  temperature: 0.0
+  top_p: 1.0
+  name: "Kaggle Agent"
+  instructions: "You are an excellent Kaggle grandmaster and are trying your best to solve a Kaggle competiton."
+  history_length: "all"
+  init_method: "cold"
+  history_init: null

@@ -1,0 +1,33 @@
+### Description
+
+In this competition, participants are tasked with predicting the insurance coverage options a customer will ultimately purchase based on their shopping history. Each customer receives multiple quotes with varying coverage options, and the goal is to accurately forecast the selected policy using a limited subset of their interaction history. Successfully predicting the purchase earlier in the shopping process can streamline the quoting experience and enhance customer retention.
+
+### Evaluation
+
+Submissions are evaluated on an all-or-none accuracy basis. You must predict every coverage option correctly to receive credit for a given customer. Your score is the percent of customers for whom you predict the exact purchased policy.
+
+## Submission File
+
+The submission format is created by concatenating each plan option (A,B,C,D,E,F,G) as a single string, in order. The file should contain a header and have the following format:
+
+```
+customer_ID,plan
+10000001,1111111
+10000002,1111111
+10000003,1111111
+...
+```
+
+### Dataset Description
+
+The training and test sets include transaction histories for customers who purchased policies. Each customer_ID has a complete quote history in the training set, with the last entry indicating the purchased coverage options. The test set contains only partial quote histories, simulating varying levels of uncertainty in predictions.
+
+### Files
+
+- **train.csv**: Contains the complete transaction history for customers who made purchases.
+- **test.csv**: Contains partial transaction histories for customers, without the purchased coverage options.
+- **sample_submission.csv**: A sample submission file format.
+
+### Other Important Information
+
+Participants should be aware that customer characteristics may evolve over time, and the cost of products is influenced by both the options selected and the customer's profile. Each product consists of seven customizable options, and the challenge involves predicting these options accurately for each customer based on their unique shopping points.

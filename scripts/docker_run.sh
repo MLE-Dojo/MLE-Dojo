@@ -1,0 +1,11 @@
+docker run \
+    --gpus '"device=0"' \
+    -v $(pwd)/main.py:/home/main.py \
+    -v $(pwd)/results:/home/output \
+    -v $(pwd)/config.yaml:/home/config.yaml \
+    -v $(pwd)/mledojo/agent/:/home/mledojo/agent/ \
+    -v $(pwd)/data/prepared:/home/data:ro \
+    -v $(pwd)/.env:/home/.env \
+    -e COMPETITION_NAME="random-acts-of-pizza" \
+    --entrypoint /bin/bash \
+    -it mle-dojo

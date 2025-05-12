@@ -1,0 +1,42 @@
+### Description
+
+In a technology-driven world, the simplicity of pen and paper remains invaluable, especially for organic chemists who utilize the Skeletal formula for molecular representation. Despite advancements like machine-readable chemical descriptions (InChI), a wealth of scanned documents lacks searchable formats. This competition aims to harness machine learning for the automated recognition of optical chemical structures, expediting research and development.
+
+Current public datasets are often too limited for effective machine learning applications, and existing tools achieve only 90% accuracy under ideal conditions. Historical documents frequently suffer from image corruption, necessitating labor-intensive manual conversion of chemical structure images into machine-readable formats.
+
+Bristol-Myers Squibb, a leading biopharmaceutical company, seeks to transform patient care through innovative medicines. In this competition, participants will interpret historical chemical images using a substantial synthetic image dataset provided by Bristol-Myers Squibb, converting these images back into their corresponding InChI text representations.
+
+Successful outcomes will significantly enhance access to chemical research, facilitating faster advancements in various fields by minimizing redundant efforts and uncovering new trends through extensive data mining.
+
+### Evaluation
+
+Submissions are evaluated on the mean Levenshtein distance between the InChI strings you submit and the ground truth InChI values.
+
+## Submission File
+
+For each image_id in the test set, you must predict the InChI string of the molecule in the corresponding image. The file should contain a header and have the following format:
+
+```
+image_id,InChI
+00000d2a601c,InChI=1S/H2O/h1H2
+00001f7fc849,InChI=1S/H2O/h1H2
+000037687605,InChI=1S/H2O/h1H2
+etc.
+```
+
+### Dataset Description
+
+In this competition, you are provided with images of chemicals, with the objective of predicting the corresponding International Chemical Identifier (InChI) text string of the image. The images provided (both in the training data as well as the test data) may be rotated to different angles, be at various resolutions, and have different noise levels.
+
+Note: There are about 4m total images in this dataset. Unzipping the downloaded data will take a non-trivial amount of time.
+
+### Files
+
+- train/ - the training images, arranged in a 3-level folder structure by image_id
+- test/ - the test images, arranged in the same folder structure as train/
+- train_labels.csv - ground truth InChI labels for the training images
+- sample_submission.csv - a sample submission file in the correct format
+
+### Other Important Information
+
+No special requirements are noted for this competition.

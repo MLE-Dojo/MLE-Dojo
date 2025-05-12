@@ -1,0 +1,150 @@
+### Description
+
+Join the challenge of detecting toxic comments while minimizing unintended model bias in this Kaggle competition. Organized by the Conversation AI team, a collaboration between Jigsaw and Google, this initiative aims to develop machine learning models that can accurately identify toxicity in online conversations—defined as any rude or disrespectful comment that could drive participants away from discussions.
+
+Building on last year's Toxic Comment Classification Challenge, this competition focuses on creating toxicity models that fairly operate across diverse conversations. Previous models exhibited bias by associating certain identities with toxicity, leading to misclassifications. Your task is to construct a model that not only identifies toxicity but also mitigates this unintended bias, particularly regarding identity mentions. By utilizing a specially labeled dataset, you will optimize a metric designed to measure and reduce bias, contributing to the development of fairer models in the industry.
+
+**Disclaimer:** The dataset may contain text that is profane, vulgar, or offensive.
+
+### Evaluation
+
+## Competition Evaluation
+
+This competition will use a newly developed metric that combines several submetrics to balance overall performance with various aspects of unintended bias.
+
+First, we'll define each submetric.
+
+### Overall AUC
+
+This is the ROC-AUC for the full evaluation set.
+
+### Bias AUCs
+
+To measure unintended bias, we again calculate the ROC-AUC, this time on three specific subsets of the test set for each identity, each capturing a different aspect of unintended bias. You can learn more about these metrics in Conversation AI's recent paper Nuanced Metrics for Measuring Unintended Bias with Real Data in Text Classification.
+
+Subgroup AUC: Here, we restrict the data set to only the examples that mention the specific identity subgroup. A low value in this metric means the model does a poor job of distinguishing between toxic and non-toxic comments that mention the identity.
+
+BPSN (Background Positive, Subgroup Negative) AUC: Here, we restrict the test set to the non-toxic examples that mention the identity and the toxic examples that do not. A low value in this metric means that the model confuses non-toxic examples that mention the identity with toxic examples that do not, likely meaning that the model predicts higher toxicity scores than it should for non-toxic examples mentioning the identity.
+
+BNSP (Background Negative, Subgroup Positive) AUC: Here, we restrict the test set to the toxic examples that mention the identity and the non-toxic examples that do not. A low value here means that the model confuses toxic examples that mention the identity with non-toxic examples that do not, likely meaning that the model predicts lower toxicity scores than it should for toxic examples mentioning the identity.
+
+### Generalized Mean of Bias AUCs
+
+To combine the per-identity Bias AUCs into one overall measure, we calculate their generalized mean as defined below:
+
+M_p(m_s) = \left(\frac{1}{N} \sum_{s=1}^{N} m_s^p\right)^\frac{1}{p}
+
+where:
+
+M_p  = the pth power-mean function
+
+m_s  = the bias metric m calculated for subgroup s
+
+N   = number of identity subgroups
+
+For this competition, we use a p value of -5 to encourage competitors to improve the model for the identity subgroups with the lowest model performance.
+
+### Final Metric
+
+We combine the overall AUC with the generalized mean of the Bias AUCs to calculate the final model score:
+
+score = w_0 AUC_{overall} + \sum_{a=1}^{A} w_a M_p(m_{s,a})
+
+where:
+
+A   = number of submetrics (3)
+
+m_{s,a}   = bias metric for identity subgroup s using submetric a
+
+w_a  = a weighting for the relative importance of each submetric; all four w values set to 0.25
+
+While the leaderboard will be determined by this single number, we highly recommend looking at the individual submetric results, as shown in this kernel, to guide you as you develop your models.
+
+## Submission File
+
+```
+id,prediction
+7000000,0.0
+7000001,0.0
+etc.
+```
+
+### Dataset Description
+
+Disclaimer: The dataset for this competition contains text that may be considered profane, vulgar, or offensive.
+
+UPDATE (Nov 18, 2019): The following files have been added post-competition close to facilitate ongoing research. See the File Description section for details.
+
+- test_public_expanded.csv
+- test_private_expanded.csv
+- toxicity_individual_annotations.csv
+- identity_individual_annotations.csv
+
+## Background
+
+At the end of 2017, the Civil Comments platform shut down and chose to make their ~2m public comments from their platform available in a lasting open archive so that researchers could understand and improve civility in online conversations for years to come. Jigsaw sponsored this effort and extended annotation of this data by human raters for various toxic conversational attributes.
+
+In the data supplied for this competition, the text of the individual comment is found in the comment_text column. Each comment in Train has a toxicity label (target), and models should predict the target toxicity for the Test data. This attribute (and all others) are fractional values which represent the fraction of human raters who believed the attribute applied to the given comment. For evaluation, test set examples with target >= 0.5 will be considered to be in the positive class (toxic).
+
+The data also has several additional toxicity subtype attributes. Models do not need to predict these attributes for the competition; they are included as an additional avenue for research. Subtype attributes are:
+
+- severe_toxicity
+- obscene
+- threat
+- insult
+- identity_attack
+- sexual_explicit
+
+Additionally, a subset of comments have been labelled with a variety of identity attributes, representing the identities that are mentioned in the comment. The columns corresponding to identity attributes are listed below. Only identities with more than 500 examples in the test set (combined public and private) will be included in the evaluation calculation. These identities are shown in bold.
+
+- male
+- female
+- transgender
+- other_gender
+- heterosexual
+- homosexual_gay_or_lesbian
+- bisexual
+- other_sexual_orientation
+- christian
+- jewish
+- muslim
+- hindu
+- buddhist
+- atheist
+- other_religion
+- black
+- white
+- asian
+- latino
+- other_race_or_ethnicity
+- physical_disability
+- intellectual_or_learning_disability
+- psychiatric_or_mental_illness
+- other_disability
+
+Note that the data contains different comments that can have the exact same text. Different comments that have the same text may have been labeled with different targets or subgroups.
+
+## Files
+
+- train.csv - the training set, which includes toxicity labels and subgroups
+- test.csv - the test set, which does not include toxicity labels or subgroups
+- sample_submission.csv - a sample submission file in the correct format
+
+The following files were added post-competition close, to use for additional research. Learn more here.
+
+- test_public_expanded.csv - The public leaderboard test set, including toxicity labels and subgroups. The competition target was a binarized version of the toxicity column, which can be easily reconstructed using a >=0.5 threshold.
+- test_private_expanded.csv - The private leaderboard test set, including toxicity labels and subgroups. The competition target was a binarized version of the toxicity column, which can be easily reconstructed using a >=0.5 threshold.
+- toxicity_individual_annotations.csv - The individual rater decisions for toxicity questions. Columns are:
+id - The comment id. Corresponds to id field in train.csv, test_public_labeled.csv, or test_private_labeled.csv.
+worker - The id of the individual annotator. These worker ids are shared between toxicity_individual_annotations.csv and identity_individual_annotations.csv.
+toxic - 1 if the worker said the comment was toxic, 0 otherwise.
+severe_toxic - 1 if the worker said the comment was severely toxic, 0 otherwise. Note that any comment that was considered severely toxic was also considered toxic.
+identity_attack, insult, obscene, sexual_explicit, threat - Toxicity subtype attributes. 1 if the worker said the comment exhibited each of these traits, 0 otherwise.
+- identity_individual_annotations.csv - The individual rater decisions for identity questions. Columns are:
+id - The comment id. Corresponds to id field in train.csv, test_public_labeled.csv, or test_private_labeled.csv.
+worker - The id of the individual annotator. These worker ids are shared between toxicity_individual_annotations.csv and toxicity_individual_annotations.csv.
+disability, gender, race_or_ethnicity, religion, sexual_orientation - The list of identities within this category that the rater noticed in the comment. Formatted as space-separated strings.
+
+### Other Important Information
+
+This is a Kernels-only competition, meaning all submissions must be made through Kernels. Ensure your kernel meets the specified runtime and access conditions to submit successfully.

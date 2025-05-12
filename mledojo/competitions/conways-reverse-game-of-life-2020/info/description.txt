@@ -1,0 +1,64 @@
+Description 
+This is a relaunch of a previous competition, Conway's Reverse Game of Life, with the following changes:
+- The grid size is larger (25 vs. 25) and the grid wraps around from top to bottom and left to right.
+- Submissions are solved forward by the appropriate number of steps so that any correct starting solution will achieve a maximum score.
+
+This article contains the stepping function that is used for this competition.
+
+Obligatory Disclaimer: A lot has changed since the original competition was launched 6 years ago. With the change from "exact starting point" to "any correct starting point", it is possible to get a perfect score. We just don't know how difficult that will be. Use it as a fun learning experience, and don't spoil it for others by posting perfect solutions!
+
+The Game of Life is a cellular automaton created by mathematician John Conway in 1970. The game consists of a board of cells that are either on or off. One creates an initial configuration of these on/off states and observes how it evolves. There are four simple rules to determine the next state of the game board, given the current state:
+- Overpopulation: If a living cell is surrounded by more than three living cells, it dies.
+- Stasis: If a living cell is surrounded by two or three living cells, it survives.
+- Underpopulation: If a living cell is surrounded by fewer than two living cells, it dies.
+- Reproduction: If a dead cell is surrounded by exactly three cells, it becomes a live cell.
+
+These simple rules result in many interesting behaviors and have been the focus of a large body of mathematics. As Wikipedia states:
+
+"Ever since its publication, Conway's Game of Life has attracted much interest because of the surprising ways in which the patterns can evolve. Life provides an example of emergence and self-organization. It is interesting for computer scientists, physicists, biologists, biochemists, economists, mathematicians, philosophers, generative scientists, and others to observe the way that complex patterns can emerge from the implementation of very simple rules. The game can also serve as a didactic analogy, used to convey the somewhat counter-intuitive notion that 'design' and 'organization' can spontaneously emerge in the absence of a designer. For example, philosopher and cognitive scientist Daniel Dennett has used the analogue of Conway's Life 'universe' extensively to illustrate the possible evolution of complex philosophical constructs, such as consciousness and free will, from the relatively simple set of deterministic physical laws governing our own universe."
+
+The emergence of order from simple rules begs an interesting question—what happens if we set time backwards?
+
+This competition is an experiment to see if machine learning (or optimization, or any method) can predict the game of life in reverse. Is the chaotic start of Life predictable from its orderly ends? We have created many games, evolved them, and provided only the end boards. You are asked to predict the starting board that resulted in each end board.
+
+This is a Code Competition. Refer to Code Requirements for details.
+
+Evaluation 
+You are evaluated on the mean absolute error of your predictions, stepped forward by the specified steps, and compared to the provided ending solution. In this case, this is equivalent to 1 − classification accuracy across all of the cells. You may only predict 0 (dead) or 1 (alive) for each cell.
+
+Submission File 
+For every game in the test set, your submission file should list the predicted starting board on a single row. Values are listed in a row-wise order. That is, if you want to predict a matrix:
+```
+1 2 3 4
+```
+the predicted row would be `(1,2,3,4)`. The submission file should contain a header and have the following format:
+```
+id, start_0, start_1, start_2, ..., start_624
+50000, 0, 0, 0, 0, 0, 0, ..., 0
+50001, 0, 0, 0, 0, 0, 0, ..., 0
+...
+```
+
+Dataset Description 
+We have provided 50,000 training games and 50,000 test games, whose starting board you must predict. Each board is 25x25, for a total of 625 cells per board. Values are listed in a row-wise order. You are free to create more training games if you desire.
+
+The provided variables are:
+- id: unique identifier of each game
+- delta: the number of steps between the start and stop boards
+- start_0: row 1, column 1 of the game's starting board
+- start_1: row 1, column 2 of the game's starting board
+…
+- stop_0: row 1, column 1 of the game's stopping board
+…
+
+Your test-set predictions should be the starting board at delta steps before the stopping board. The games were created by the following procedure:
+1. An initial board was chosen by filling the board with a random density between 1% full (mostly zeros) and 99% full (mostly ones).
+2. This initial board was evolved 5 steps. The starting board's state was recorded after the 5 "warmup steps". These are the values in the start variables.
+3. The starting board was then evolved delta steps. Delta was chosen to be uniformly random between 1 and 5. If the stopping board was empty, the game was discarded. The stopping board's state was then recorded. These are the values in the stop variables.
+
+FAQs 
+Why the need for warmup steps? The transition from an initial random board to the second step can be quite "nonlinear" and dramatic. For example, if a board is mostly alive at the first step, it will be mostly dead on the second. We allow the game to warm up for five steps in order to let the cells calm down and settle into a more "life-like" state.
+
+The Game of Life loses information over time. What gives? Correct, this is a many-to-one problem (many starting states can lead to the same stopping state). For example, many boards that are sparse at the start will end up in the same state (and you will see this in the data). However, over short time scales we expect this to be a minor issue. The largest step back in time in this competition is 5, which we hope is not so far that the degeneracy becomes an issue.
+
+Can I predict any valid state? Yes. Any starting state that achieves the ending state will achieve an optimal score.

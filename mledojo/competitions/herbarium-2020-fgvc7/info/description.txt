@@ -1,0 +1,111 @@
+### Description
+
+The Herbarium 2020 FGVC7 Challenge invites participants to identify vascular plant species from a diverse collection of herbarium specimens provided by the New York Botanical Garden (NYBG). This extensive dataset features over 1 million images representing more than 32,000 plant species, with a minimum of three specimens per species, and some species having over a hundred specimens. The dataset focuses exclusively on vascular land plants, including lycophytes, ferns, gymnosperms, and flowering plants, which play crucial roles in ecosystems and agriculture.
+
+The competition aims to develop accurate models for species identification, with the potential for these models to be applied to unnamed plant collections in the NYBG herbarium, evaluated by NYBG plant specialists.
+
+### Evaluation
+
+Submissions are evaluated using the macro F1 score.
+
+F1 is calculated as follows:
+
+F_1 = 2 * \frac{precision * recall}{precision + recall}
+
+where:
+
+precision = \frac{TP}{TP + FP}
+
+recall = \frac{TP}{TP + FN}
+
+In "macro" F1 a separate F1 score is calculated for each species value and then averaged.
+
+## Submission Format
+
+For each image Id, you should predict the corresponding image label ("category_id") in the Predicted column. The submission file should have the following format:
+
+```
+Id,Predicted
+0,0
+1,27
+2,42
+...
+```
+
+### Dataset Description
+
+# Data Overview
+
+The training and test set contain images of herbarium specimens from over 32,000 species of vascular plants. Each image features one specimen, with text and barcode labels blurred to conceal category information. The data is split approximately 80% for training and 20% for testing, ensuring each category has at least one instance in both datasets. The test set distribution differs slightly from the training set, with a maximum of 10 examples per species in the test set.
+
+## Dataset Details
+
+Images vary in dimensions, with a maximum size of 1000 pixels in the larger dimension, resized from the original resolution. All images are in JPEG format.
+
+## Dataset Format
+
+This dataset follows the COCO format with additional annotation fields. Alongside species category labels, region and supercategory information are provided. The training set metadata (train/metadata.json) and test set metadata (test/metadata.json) are structured as follows:
+
+```
+{
+  "annotations" : [annotation],
+  "categories" : [category],
+  "images" : [image],
+  "info" : info,
+  "licenses": [license],
+  "regions": [region]
+}
+
+info {
+  "year" : int,
+  "version" : str,
+  "url": str,
+  "description" : str,
+  "contributor" : str,
+  "date_created" : datetime
+}
+
+image {
+  "id" : int,
+  "width" : int,
+  "height" : int,
+  "file_name" : str,
+  "license" : int
+}
+
+annotation {
+  "id": int,
+  "image_id": int,
+  "category_id": int,
+  # Region where this specimen was collected.
+  "region_id": int
+}
+
+category {
+  "id" : int,
+  # Species name
+  "name" : str,
+  # We also provide the super-categories for each species.
+  "family": str,
+  "genus": str
+}
+
+region {
+  "id": int
+  "name": str
+}
+
+license {
+  "id": 1,
+  "name": str,
+  "url": str
+}
+```
+
+The training set images are organized in subfolders train/<subfolder1>/<subfolder2>/<image id>.jpg.
+
+The test set images are organized in subfolders test/<subfolder>/<image id>.jpg.
+
+### Other Important Information
+
+This competition is part of the FGVC7 workshop at CVPR 2020. Participants are encouraged to engage in the forum for any questions or issues regarding the dataset.

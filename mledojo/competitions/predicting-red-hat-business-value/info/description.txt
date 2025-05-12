@@ -1,0 +1,35 @@
+### Description
+
+Red Hat is leveraging its extensive behavioral data to enhance its customer engagement strategies. In this competition, participants are tasked with developing a classification algorithm to identify customers with the highest potential business value based on their characteristics and activities. By implementing a more effective prediction model, Red Hat aims to optimize resource allocation, ultimately driving business growth and improving customer service.
+
+### Evaluation
+
+Submissions are evaluated on area under the ROC curve between the predicted and the observed outcome.
+
+## Submission File
+
+For each activity_id in the test set, you must predict a probability for the 'outcome' variable, represented by a number between 0 and 1. The file should contain a header and have the following format:
+
+```
+activity_id,outcome
+act1_1,0
+act1_100006,0
+act1_100050,0
+etc.
+```
+
+### Dataset Description
+
+This competition utilizes two data files that can be merged to form a comprehensive dataset: a people file and an activity file. The people file includes unique individuals and their characteristics, with each row representing a distinct person identified by a unique people_id. The activity file details the unique activities performed by these individuals over time, with each row corresponding to a specific activity identified by a unique activity_id.
+
+The goal is to predict the potential business value of individuals based on their activities, indicated by a yes/no outcome field in the activity file, which reflects whether the individual achieved the outcome within a specified timeframe after the activity. The activity file categorizes activities into Type 1 and Type 2-7, with Type 1 activities having more associated characteristics (nine) compared to Type 2-7 activities (one). To create a predictive model, participants will likely need to join the two files using person_id as the key. All variables are categorical, except for 'char_38' in the people file, which is continuous.
+
+### Files
+
+The competition includes the following files:
+- `people.csv`: Contains unique individuals and their characteristics.
+- `activities.csv`: Contains unique activities performed by individuals.
+
+### Other Important Information
+
+Participants should be prepared to merge the two datasets effectively and handle categorical variables appropriately to build their predictive models.

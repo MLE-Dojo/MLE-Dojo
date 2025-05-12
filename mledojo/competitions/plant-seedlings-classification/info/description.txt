@@ -1,0 +1,58 @@
+### Description
+
+Can you distinguish between weed and crop seedlings? This skill is crucial for enhancing crop yields and promoting environmental stewardship. The Aarhus University Signal Processing group, in collaboration with the University of Southern Denmark, has released a dataset featuring images of approximately 960 unique plants across 12 species at various growth stages. This Kaggle competition aims to broaden the dataset's exposure, encourage experimentation with image recognition techniques, and foster the exchange of innovative ideas within the community.
+
+### Evaluation
+
+Submissions are evaluated on MeanFScore, which at Kaggle is actually a micro-averaged F1-score.
+
+Given positive/negative rates for each class k, the resulting score is computed this way:
+
+Precision_{micro} =  \frac{\sum_{k \in C} TP_k}{\sum_{k \in C} TP_k + FP_k}
+
+Recall_{micro} =  \frac{\sum_{k \in C} TP_k}{\sum_{k \in C} TP_k +  FN_k}
+
+F1-score is the harmonic mean of precision and recall
+
+MeanFScore = F1_{micro}= \frac{2 Precision_{micro} Recall_{micro}}{Precision_{micro} + Recall_{micro}}
+
+## Submission File
+
+For each file in the test set, you must predict a probability for the species variable. The file should contain a header and have the following format:
+
+```
+file,species
+0021e90e4.png,Maize
+003d61042.png,Sugar beet
+007b3da8b.png,Common wheat
+etc.
+```
+
+### Dataset Description
+
+You are provided with a training set and a test set of images of plant seedlings at various growth stages. Each image has a filename that serves as its unique ID. The dataset includes 12 plant species, and the competition's goal is to develop a classifier that can identify a plant's species from a photo. The species list is as follows:
+
+```
+Black-grass
+Charlock
+Cleavers
+Common Chickweed
+Common wheat
+Fat Hen
+Loose Silky-bent
+Maize
+Scentless Mayweed
+Shepherds Purse
+Small-flowered Cranesbill
+Sugar beet
+```
+
+## File descriptions
+
+- train.csv - the training set, with plant species organized by folder
+- test.csv - the test set, you need to predict the species of each image
+- sample_submission.csv - a sample submission file in the correct format
+
+### Other Important Information
+
+No special requirements are mentioned for this competition.

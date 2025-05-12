@@ -1,0 +1,35 @@
+### Description
+
+Since the inception of the Benz Patent Motor Car in 1886, Mercedes-Benz has been synonymous with automotive innovation, introducing key safety features like the crumple zone and airbag. As a leader in the premium car market, Daimler files nearly 2000 patents annually, offering customers a wide array of customizable options. To ensure the safety and reliability of each unique car configuration, Daimler has developed a sophisticated testing system. However, optimizing this system for numerous feature combinations is complex and time-consuming without advanced algorithms. This competition invites Kagglers to address the challenge of dimensionality and reduce the time cars spend on the test bench. Participants will utilize a dataset of various Mercedes-Benz car feature permutations to predict testing times, ultimately contributing to faster testing processes and lower carbon emissions while maintaining Daimler’s high standards.
+
+### Evaluation
+
+Submissions are evaluated on the R^2 value, also called the coefficient of determination.
+
+## Submission File
+
+For each 'ID' in the test set, you must predict the 'y' variable. The file should contain a header and have the following format:
+
+```
+ID,y  
+1,100  
+2,100.33  
+3,105.81  
+...
+```
+
+### Dataset Description
+
+This dataset contains an anonymized set of variables, each representing a custom feature in a Mercedes car. For example, a variable could be 4WD, added air suspension, or a head-up display. The ground truth is labeled ‘y’ and represents the time (in seconds) that the car took to pass testing for each variable.
+
+### Files
+
+Variables with letters are categorical. Variables with 0/1 are binary values.
+
+- train.csv - the training set
+- test.csv - the test set, you must predict the 'y' variable for the 'ID's in this file
+- sample_submission.csv - a sample submission file in the correct format
+
+### Other Important Information
+
+No special requirements are mentioned for this competition.

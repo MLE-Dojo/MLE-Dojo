@@ -1,0 +1,69 @@
+### Description
+
+The Herbarium 2022: Flora of North America is an initiative by the New York Botanical Garden, supported by the National Science Foundation, aimed at developing tools for identifying new plant species globally. This competition focuses on creating a comprehensive dataset that represents all known vascular plant taxa in North America, utilizing images sourced from 60 botanical institutions worldwide.
+
+In botany, a 'flora' serves as a complete record of plant species in a specific region. This year's dataset aims to replicate traditional botanical identification methods through artificial intelligence, marking a significant step towards leveraging AI in botanical research.
+
+The dataset features 1.05 million images of 15,501 vascular plants, covering over 90% of North America's documented taxa. It includes only vascular land plants—lycophytes, ferns, gymnosperms, and flowering plants—and is characterized by a long-tail distribution of images per taxon, ranging from seven to 100 images. The maximum number of images per taxon is capped to ensure a manageable training dataset for participants.
+
+### Evaluation
+Submissions are evaluated using the [macro F1 score]
+In "macro" F1 a separate F1 score is calculated for each `species` value and then averaged. #Submission Format For each image `Id`, you should predict the corresponding image label (`category_id`) in the `Predicted` column. 
+
+### Submission File
+
+The submission file should have the following format
+```
+Id,Predicted
+0,1
+1,27
+2,42
+...
+```
+
+
+### Dataset Description
+
+# Data Overview
+
+The training and test sets consist of images of herbarium specimens from 15,501 species of vascular plants, with each image containing one specimen. The text labels on the images have been blurred to maintain anonymity regarding category information.
+
+The data is split approximately 80% for training and 20% for testing, ensuring each category has at least one instance in both datasets. The training set features a maximum of 80 examples per species.
+
+# Dataset Details
+
+## Images
+
+Images vary in dimensions, with a maximum size of 1000 pixels in the larger dimension, and are provided in JPEG format.
+
+## Hierarchical Structure of Classes category_id
+
+The dataset includes a hierarchical taxonomic structure of category_id, organized into family, genus, and species levels. This structure resembles a directed graph, where families are root nodes and species are leaf nodes. Species names may repeat under different genera due to taxonomic naming conventions.
+
+## Phylogenetic Distances Among Genera
+
+This dataset uniquely includes pairwise phylogenetic distances among genera, allowing for analysis of the correlation between morphological features and taxonomic distances.
+
+## Dataset Format
+
+The dataset follows the COCO format with additional annotations. The training (train_metadata.json) and test (test_metadata.json) metadata files are structured as follows:
+
+```
+{ 
+  "annotations" : [annotation],
+  "categories" : [category],
+  "genera" : [genus],
+  "images" : [image],
+  "distances" : [distance],
+  "licenses" : [license],
+  "institutions" : [institution]
+}
+```
+
+### Files
+
+The training set images are organized in subfolders h22-train/images/<subfolder1>/<subfolder2>/<image_id>.jpg, where <subfolder1> and <subfolder2> are derived from the first three and last two digits of the image_id. The image_id combines <category_id> with unique identifiers for images within plant taxa. The test set images are located in subfolders test/images/<subfolder>/<image_id>.jpg, where <subfolder> corresponds to the integer division of the image_id by 1000.
+
+### Other Important Information
+
+This competition is part of the FGVC9 workshop at CVPR 2022. Participants are encouraged to engage in the forum for any questions or issues regarding the dataset.

@@ -1,0 +1,33 @@
+### Description
+
+The Camera Traps competition invites participants to tackle the challenge of classifying animal species in images captured by camera traps located worldwide. Biologists utilize these traps to monitor biodiversity and population density, and recent advancements have been made in automatic species classification. However, a key challenge remains: how to effectively train models that can generalize to new, unseen camera locations. This competition encourages the exploration of multimodal solutions by allowing competitors to utilize various datasets, including the WCS camera trap training set, iNaturalist data from 2017-2019, and Landsat 8 multispectral imagery. The goal is to accurately classify species in test images from different camera locations, where species overlap but are not identical.
+
+### Evaluation
+
+Submissions will be evaluated based on their categorization accuracy.
+
+### Submission File
+
+The submission format for the competition is a csv file with the following format:
+
+```
+Id,Category
+58857ccf-23d2-11e8-a6a3-ec086b02610b,1
+591e4006-23d2-11e8-a6a3-ec086b02610b,5
+```
+
+The Id column corresponds to the test image id. The Category is an integer value that indicates the class of the animal, or 0 to represent the absence of an animal.
+
+### Dataset Description
+
+# Data Overview
+
+The WCS training set comprises 217,959 images from 441 locations, while the WCS test set includes 62,894 images from 111 locations, totaling 552 locations globally. Participants may also utilize supplemental training data from the iNaturalist 2017, 2018, and 2019 datasets, with curated images mapped to iWildCam categories. Notably, Landsat-8 multispectral imagery is provided for each camera location, featuring patches collected between 2013 and 2019. Each patch is 200x200x9 pixels, covering 6 km² at a 30-meter resolution across 9 spectral bands. The data is available for download from the competition GitHub page.
+
+## Camera Trap Animal Detection Model
+
+A general animal detection model is also provided, which is a TensorFlow Faster-RCNN model with an Inception-Resnet-v2 backbone. Competitors can access the model and sample code for running the detector on images via the competition GitHub page.
+
+### Files
+
+The data can be downloaded from the competition GitHub page.

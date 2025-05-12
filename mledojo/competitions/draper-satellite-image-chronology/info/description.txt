@@ -1,0 +1,39 @@
+### Description
+
+Welcome to a groundbreaking competition where satellite imagery meets innovative analysis! As the number of satellites in orbit increases, we have the potential to capture daily images of nearly every location on Earth. However, the challenge lies in analyzing these subtle changes over time. In this competition, Draper presents a unique dataset of images taken at the same locations over five days. Participants are tasked with predicting the chronological order of these photos. Successfully accomplishing this could lead to significant advancements in commerce, science, and humanitarian efforts.
+
+### Evaluation
+
+Submissions are evaluated on the mean Spearman's correlation coefficient. To calculate this, the Spearman's rank correlation is computed for each set of 5 images. Identical predicted values are assigned fractional ranks equal to the average of their positions in the sorted values. These correlations are then averaged to create the score for the leaderboard.
+
+## Submission File
+
+For each set of 5 images, you should predict a space-delimited list of the correct day for each respective image. For example, "1,3 1 2 5 4" implies that for setId = 1, the image set1_1 occurred third, set1_2 occurred first, set1_3 occurred second, set1_4 occurred fifth, and set1_5 occurred fourth.
+
+The file should contain a header and have the following format:
+
+```
+setId,day
+1,1 2 3 4 5
+2,1 2 3 4 5
+3,1 2 3 4 5
+etc.
+```
+
+## Dataset Description
+
+This dataset features over one thousand high-resolution aerial photographs taken in southern California, serving as a close representation of satellite images. The images are organized into sets of five, each identified by the same setId, with each image captured on a different day. While the images cover similar areas, they are not perfectly aligned. The training set contains images in the correct chronological order, while the test set features scrambled images. Participants must reorder the scrambled images, a task that may prove challenging due to minimal daily changes in some locations and subtle indicators in others, such as vehicle movements or variations in water bodies. Both manual and computer-based analysis methods are permitted.
+
+## Files
+
+For convenience, we have provided both lossless, high-quality images (train/test) as well as the same images in a compressed jpeg format (train_sm/test_sm).
+
+- train - 8-bit tif images of the training set
+- train_sm - compressed (lossy) jpegs of the training set
+- test - 8-bit tif images of the test set
+- test_sm - compressed (lossy) jpegs of the training set
+- sample_submission.csv - a sample submission file in the correct format
+
+### Other Important Information
+
+Participants are encouraged to leverage both manual and automated analysis techniques to tackle the complexities of this competition.

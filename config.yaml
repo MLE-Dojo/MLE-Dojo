@@ -1,0 +1,23 @@
+# Configuration file for running Kaggle competition agents
+
+# Output directory for agent results and logs
+output_dir: "/home/output/"
+
+# Competition settings, will be overridden by args of run.py
+competition:
+  name: "titanic"
+  data_dir: "/home/data/"               
+
+# Environment settings
+env:
+  render_mode: "human"
+  gpu_device: 0
+  gpu_memory_limit: 32
+  execution_timeout: 10000
+  score_mode: "position"
+  max_steps: 10
+
+# Agent Type
+agent_type: "mle"
+
+

@@ -1,0 +1,34 @@
+Description  
+Kaggle competitions are incredibly fun and rewarding, but they can also be intimidating for people who are relatively new in their data science journey. In the past, we've launched many Playground competitions that are more approachable than our Featured competitions and thus, more beginner-friendly. 
+
+In order to have a more consistent offering of these competitions for our community, we're trying a new experiment in 2021. We'll be launching month-long tabular Playground competitions on the 1st of every month and continue the experiment as long as there's sufficient interest and participation. 
+
+The goal of these competitions is to provide a fun, and approachable for anyone, tabular dataset. These competitions will be great for people looking for something in between the Titanic Getting Started competition and a Featured competition. If you're an established competitions master or grandmaster, these probably won't be much of a challenge for you. We encourage you to avoid saturating the leaderboard. 
+
+For each monthly competition, we'll be offering Kaggle Merchandise for the top three teams. And finally, because we want these competitions to be more about learning, we're limiting team sizes to 3 individuals. 
+
+The dataset used for this competition is synthetic but based on a real dataset and generated using a CTGAN. The original dataset deals with predicting the amount of an insurance claim. Although the features are anonymized, they have properties relating to real-world features. 
+
+Good luck and have fun! 
+
+Getting Started  
+Check out this Starter Notebook which walks you through how to make your very first submission! For more ideas on how to improve your score, check out the Intro to Machine Learning and Intermediate Machine Learning courses on Kaggle Learn.
+
+Evaluation  
+Submissions are evaluated on area under the ROC curve between the predicted probability and the observed target. 
+
+Submission File  
+For each row in the test set, you must predict the probability of a binary target as described on the data tab, each on a separate row in the submission file. The file should contain a header and have the following format:  
+id,target  
+5,0.5  
+6,0.1  
+8,0.9  
+etc.
+
+Dataset Description  
+For this competition, you will be predicting a binary target based on a number of feature columns given in the data. All of the feature columns, cat0 - cat18 are categorical, and the feature columns cont0 - cont10 are continuous.
+
+Files  
+- train.csv - the training data with the target column  
+- test.csv - the test set; you will be predicting the target for each row in this file (the probability of the binary target)  
+- sample_submission.csv - a sample submission file in the correct format

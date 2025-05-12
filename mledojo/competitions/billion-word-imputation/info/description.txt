@@ -1,0 +1,32 @@
+### Description
+
+This competition challenges participants to utilize the billion-word benchmark corpus by Chelba et al. for a unique language modeling task. Instead of traditional language modeling, participants must develop a model that accurately predicts a missing word from sentences in the test set, where exactly one word has been removed. The scoring is based on edit distance, allowing for partial credit, making it a more engaging and feasible task within Kaggle's supervised ML framework. Note that the train/test split differs from the published version, so for full language models and perplexity scoring, the official corpus should be downloaded from the authors' website.
+
+### Evaluation
+
+Submissions are evaluated on the mean Levenshtein distance between the sentences you submit and the original sentences in the test set.
+
+Note: due to the size and computations necessary to score submissions for this competition, scoring may take 5-10 minutes, and possibly longer if there are other submissions in front of yours. Please be patient!
+
+## Submission File
+
+Your submission file should contain the sentence id and a predicted sentence. To prevent parsing issues, you should use double quotes to escape the sentence text and two double quotes ("") for double quotes within a sentence. Note that test.csv is a valid submission file itself.
+
+The file should contain a header and have the following format:
+
+```
+id,"sentence"
+1,"Former Dodgers manager , the team 's undisputed top ambassador , is going strong at 83 and serving up one great story after another ."
+2,"8 parliamentary elections meant to restore democracy in this nuclear armed nation , a key ally against Islamic ."
+3,"Sales of drink are growing 37 per cent month-on-month from a small base ."
+etc...
+```
+
+## Dataset Description
+
+The data for this competition consists of a large corpus of English language sentences. Participants should use only the training set sentences to build their models. Each sentence in the test set has one word removed, chosen uniformly at random, and is never the first or last word (the last word is always a period). The goal is to submit the test sentences with the correct missing word in the correct location. Note that the train/test split used in this competition is different from the published version for language modeling. For full language models and perplexity scoring, please download the official corpus from the authors' website.
+
+## File descriptions
+
+- train.txt - the training set, contains a large collection of English language sentences
+- test.txt - the test set, contains a large number of sentences where one word has been removed

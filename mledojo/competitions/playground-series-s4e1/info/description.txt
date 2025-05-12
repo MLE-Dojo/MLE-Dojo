@@ -1,0 +1,18 @@
+Evaluation  
+Submissions are evaluated on the area under the ROC curve between the predicted probability and the observed target.
+
+Submission File  
+For each id in the test set, you must predict the probability for the target variable Exited. The file should contain a header and have the following format:  
+id, Exited  
+165034, 0.9  
+165035, 0.1  
+165036, 0.5  
+etc.
+
+Dataset Description  
+The dataset for this competition (both train and test) was generated from a deep learning model trained on the Bank Customer Churn Prediction dataset. Feature distributions are close to, but not exactly the same, as the original. Feel free to use the original dataset as part of this competition, both to explore differences as well as to see whether incorporating the original in training improves model performance.
+
+Files  
+- train.csv - the training dataset; Exited is the binary target  
+- test.csv - the test dataset; your objective is to predict the probability of Exited  
+- sample_submission.csv - a sample submission file in the correct format

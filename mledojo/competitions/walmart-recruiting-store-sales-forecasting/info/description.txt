@@ -1,0 +1,54 @@
+### Description
+
+In this engaging recruiting competition, participants are challenged to forecast weekly sales for various departments across 45 Walmart stores, utilizing historical sales data. The dataset includes strategic holiday markdown events, which significantly influence sales but are difficult to predict in terms of their impact on specific departments. This competition not only allows job-seekers to showcase their modeling skills to Walmart's hiring teams but also counts towards rankings and achievements. To be considered for an interview at Walmart, participants must check the box "Allow host to contact me" upon their first entry. Note that competitors must work individually and can only use the provided data for their predictions.
+
+### Evaluation
+
+This competition is evaluated on the weighted mean absolute error (WMAE):
+
+\textrm{WMAE} = \frac{1}{\sum{w_i}} \sum_{i=1}^n w_i | y_i - \hat{y}_i |
+
+where
+
+- n is the number of rows
+- \\( \hat{y}_i \\) is the predicted sales
+- \\( y_i \\) is the actual sales
+- \\( w_i \\) are weights. w = 5 if the week is a holiday week, 1 otherwise
+
+## Submission File
+
+For each row in the test set (store + department + date triplet), you should predict the weekly sales of that department. The Id column is formed by concatenating the Store, Dept, and Date with underscores (e.g. Store_Dept_2012-11-02). The file should have a header and looks like the following:
+
+```
+Id,Weekly_Sales
+1_1_2012-11-02,0
+1_1_2012-11-09,0
+1_1_2012-11-16,0
+...
+```
+
+### Dataset Description
+
+You are provided with historical sales data for 45 Walmart stores located in different regions. Each store contains a number of departments, and you are tasked with predicting the department-wide sales for each store. Additionally, Walmart runs several promotional markdown events throughout the year, particularly around major holidays such as the Super Bowl, Labor Day, Thanksgiving, and Christmas. The weeks including these holidays are weighted five times higher in the evaluation than non-holiday weeks, adding complexity to the modeling of markdown effects during these periods.
+
+- **stores.csv**: Contains anonymized information about the 45 stores, indicating the type and size of each store.
+- **train.csv**: Historical training data from 2010-02-05 to 2012-11-01, including fields such as Store, Dept, Date, Weekly_Sales, and IsHoliday.
+- **test.csv**: Identical to train.csv but with withheld weekly sales, requiring predictions for each store, department, and date triplet.
+- **features.csv**: Additional data related to store, department, and regional activity, including fields like Temperature, Fuel_Price, MarkDown1-5, CPI, Unemployment, and IsHoliday.
+
+For convenience, the four holidays fall within the following weeks in the dataset (not all holidays are in the data):
+- Super Bowl: 12-Feb-10, 11-Feb-11, 10-Feb-12, 8-Feb-13
+- Labor Day: 10-Sep-10, 9-Sep-11, 7-Sep-12, 6-Sep-13
+- Thanksgiving: 26-Nov-10, 25-Nov-11, 23-Nov-12, 29-Nov-13
+- Christmas: 31-Dec-10, 30-Dec-11, 28-Dec-12, 27-Dec-13
+
+### Files
+
+- **stores.csv**
+- **train.csv**
+- **test.csv**
+- **features.csv**
+
+### Other Important Information
+
+Participants must compete as individuals and can only utilize the provided data for their predictions.

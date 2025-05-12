@@ -1,0 +1,82 @@
+### Description
+
+The University of Melbourne is hosting a competition aimed at predicting the success of research grant applications, addressing the challenge of declining success rates in grant funding. With only 20-25% of applications being successful, the university seeks to develop a model that can identify which applications are likely to succeed, thereby optimizing the time spent on grant submissions. Participants will utilize a dataset with 249 features, including grant size, study area, and de-identified investigator information, to train their models on 8,707 applications from 2004 to 2008 and predict outcomes for 2,176 applications from 2009 and early 2010.
+
+### Evaluation
+
+Entries will be evaluated using the area under the receiver operator curve (AUC). AUC was first used by the American army after the attack on Pearl Harbour, to detect Japanese aircraft from radar signals.
+
+Today, it is a commonly used evaluation method for binary choice problems, which involve classifying an instance as either positive or negative (success or not in this competition). Its main advantages over other evaluation methods, such as the simpler misclassification error, are: 
+
+- It's insensitive to unbalanced datasets (datasets that have more installeds than not-installeds or vice versa).
+- For other evaluation methods, a user has to choose a cut-off point above which the target variable is part of the positive class (e.g. a logistic regression model returns any real number between 0 and 1 - the modeler might decide that predictions greater than 0.5 mean a positive class prediction while a prediction of less than 0.5 mean a negative class prediction). AUC evaluates entries at all cut-off points, giving better insight into how well the classifier is able to separate the two classes.
+
+- true positive - a positive instance that is correctly classified as positive;
+- false positive - a negative instance that is incorrectly classified as positive;
+- true negative - a negative instance that is correctly classified as negative;
+- false negative - a positive instance that is incorrectly classified as negative;
+
+|  |  | actual class | actual class |
+| --- | --- | --- | --- |
+|  |  | P | N |
+| predicted class | p | true positive | false positive |
+| predicted class | n | false negative | true negative |
+
+- Somebody who randomly guesses that 10 per cent of all radar signals point to planes. The false positive rate and the false alarm rate will be 10 per cent.
+- Somebody who randomly guesses that 90 per cent of all radar signals point to planes. The false positive rate and the false alarm rate will be 90 per cent.
+
+## Dataset Description
+
+This dataset includes 249 features (or predictors). Participants should use these variables to predict the target variable (or outcome), "Grant Status". A grant status of 1 represents a successful grant application, while a grant status of 0 represents an unsuccessful application. The training dataset, which participants use to build their models, is unimelb_training.csv. It contains 8,707 grant applications from late 2005 to 2008. The test dataset, unimelb_test.csv, contains 2,176 grant applications from 2009 to mid 2010. The grant status variable is withheld from the test dataset. Predictions should take the same format as unimelb_example.csv (a CSV file with 2,176 rows, a grant application ID in the first column and a probability of success - between 0 and 1 - in the second column). The university has provided the following features: Sponsor Code: an ID used to represent different sponsors; Grant Category Code: categorization of the sponsor (e.g. Australian competitive grants, cooperative research centre, industry); Contract Value Band: the grant's value (see key below); Start Date: the date the grant application was submitted; RFCD Code: research fields, courses and disciplines classification (see definitions); RFCD Percentage: if there are several RFCD codes that are relevant to a project; SEO Code: socio economic objective classification (see definitions); SEO Percentage: if there are several SEO codes that are relevant to a project; Person ID: the investigator's unique ID; Role: the investigator's role in the study; Year of Birth: the investigator's year of birth (rounded to the nearest five-year interval); Country of birth: the investigator's country of birth (often aggregated by continent); Home Language: the investigator's native language (classified into English and Other); Dept No: the investigator's department; Faculty No: the investigator's faculty; Grade Level: the investigator's level of seniority; No. of years in Uni at time of grant: the number of years the investigator had been at the University of Melbourne when the grant application was made; Number of Successful Grant: the number of successful grant applications the investigator had made; Number of Unsuccessful Grant: the number of unsuccessful grant applications the investigator had made; A: number of A journal articles; B: number of B journal articles; C: number of C journal articles. 
+
+Contract value band key:
+
+| From | To | Band Code |
+| --- | --- | --- |
+| 1 | 50000 | A |
+| 50001 | 100000 | B |
+| 100001 | 200000 | C |
+| 200001 | 300000 | D |
+| 300001 | 400000 | E |
+| 400001 | 500000 | F |
+| 500001 | 1000000 | G |
+| 1000001 | 2000000 | H |
+| 2000001 | 3000000 | I |
+| 3000001 | 4000000 | J |
+| 4000001 | 5000000 | K |
+| 5000001 | 6000000 | L |
+| 6000001 | 7000000 | M |
+| 7000001 | 8000000 | N |
+| 8000001 | 9000000 | O |
+| 9000001 | 10000000 | P |
+| 10000001 | 100000000 | Q |
+
+| The Americas | Argentina | Brazil | Chile | Colombia | Peru |
+| --- | --- | --- | --- | --- | --- |
+| Suriname | Cuba | El Salvador | Trinidad and Tobago |  |  |
+| Western Europe | Austria | Belgium | Cyprus | Denmark | France |
+| Germany | Greece | Italy | Netherlands | Norway |  |
+| Portugal | Spain | Sweden | Switzerland |  |  |
+| Eastern Europe | Czech Republic | Bulgaria | Hungary | Latvia |  |
+| Malta | Moldova | Poland | Russian Federation | Romania |  |
+| Slovakia | Bosnia and Herzegovina | Croatia | FYROM | Yugoslavia |  |
+| Africa and the Middle East | Cameroon | Ethiopia | Ghana | Kenya |  |
+| Mauritius | Nigeria | Swaziland | Uganda | Zimbabwe |  |
+| Egypt | Iran | Iraq | Israel | Lebanon |  |
+| Kuwait |  |  |  |  |  |
+| Asia Pacific | Bangladesh | Brunei | Myanmar | China |  |
+| Hong Kong | India | Indonesia | Maldives | Malaysia |  |
+| Pakistan | Philippines | Fiji | Japan | South Korea |  |
+| Singapore | Sri Lanka | Taiwan | Vietnam |  |  |
+| North America | Canada | USA |  |  |  |
+| Great Britain | England | Ireland | Northern Ireland | Scotland | Wales |
+
+### Files
+
+- unimelb_training.csv: Training dataset with 8,707 grant applications.
+- unimelb_test.csv: Test dataset with 2,176 grant applications.
+- unimelb_example.csv: Example submission format. 
+
+### Other Important Information
+
+Participants should ensure their models are capable of handling the provided features effectively and adhere to the submission format for predictions.

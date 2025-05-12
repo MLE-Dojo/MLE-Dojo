@@ -1,0 +1,49 @@
+### Description
+
+The Multi-modal Gesture Recognition Challenge, organized by ChaLearn in conjunction with ICMI 2013, focuses on recognizing gestures from 2D and 3D video data captured using Kinect. This competition leverages Kinect's capabilities, which include RGB images, depth images, and audio, to advance gesture recognition technology. Gesture recognition is crucial for various applications such as image/video indexing, video surveillance, and gaming, and poses significant challenges due to the complexity of visual cues and technical limitations.
+
+Participants are encouraged to explore topics such as multi-modal descriptors, fusion strategies, and applications of gesture recognition. The challenge will feature a quantitative evaluation of automatic gesture recognition using a dataset of approximately 15,000 Italian gestures performed by multiple users. The primary goal is to achieve user-independent continuous gesture recognition, focusing on a vocabulary of 20 Italian gestures while integrating audio information.
+
+Additionally, a live competition will showcase demos of applications based on multi-modal gesture recognition techniques, evaluated on multi-modality, technical quality, and applicability.
+
+### Evaluation
+
+The focus of the challenge is on “multiple instance, user independent learning” of gestures, which means learning to recognize gestures from several instances for each category performed by different users, drawn from a gesture vocabulary of 20 categories. A gesture vocabulary is a set of unique gestures, generally related to a particular task. In this challenge we will focus on the recognition of a vocabulary of 20 Italian cultural/anthropological signs.
+
+- Development phase: Create a learning system capable of learning from several training examples a gesture classification problem. Practice with development data (a large database of 8,500 labeled gestures is available) and submit predictions on-line on validation data (3,500 labeled gestures) to get immediate feed-back on the leaderboard. Recommended: towards the end of the development phase, submit your code for verification purpose.
+- Final evaluation phase: Make predictions on the new final evaluation data (3,500 gestures) revealed at the end of the development phase. The participants will have few days to train their systems and upload their predictions.
+
+- training data: fully labelled data that can be used for training and validation as desired. - validation data: a dataset formatted in a similar way as the final evaluation data that can be used to practice making submissions on the Kaggle platform. The results on validation data will show immediately as the "public score" on the leaderboard. - final evaluation data: the dataset that will be used to compute the final score (will be released shortly before the end of the challenge).
+
+### Submission File
+
+Id,Sequence
+0300,13 14 2 9 16 7 20 5 8 6 10 4 3 12 18 1 15 17 19 11
+0301,4 3 11 16 20 6 7 15 10 18 17 9 8 12 5 19 1 13 14 2
+...
+
+### Dataset Description
+
+The data is also available here.
+
+The focus of the challenge is on “multiple instance, user independent learning” of gestures, which means learning to recognize gestures from several instances for each category performed by different users, drawn from a gesture vocabulary of 20 categories. A gesture vocabulary is a set of unique gestures, generally related to a particular task. In this challenge we will focus on the recognition of a vocabulary of 20 Italian cultural/anthropological signs.
+
+### Files
+
+Both for the development and final evaluation phase, the data will have the same format. We provide several ZIP files for each dataset, each file containing all the files for one sequence. The name of the ZIP file is assumed as the sequence identifier (eg. Sample00001, Sample00002, ...), and all their related files start with this SessionID:
+
+- SessionID_audio: Audio file.
+- SessionID_color: Video file with the RGB information.
+- SessionID_depth: Video file with the Depth information
+- SessionID_user: Video file with the user segmentation information
+- SessionID_data: Matlab file with a structure called Video, with the sequence information:
+- NumFrames: Number of frames of the sequence
+- FrameRate: Frame rate of the sequence
+- MaxDepth: Maximum depth value for depth data
+- Frames: Skeleton information for each frame of the videos in Kinect format. More information is provided at the end of this section (Exporting the data).
+- Labels: Sequence gestures. It is only provided for the training data, on validation and test this field is empty. For each gesture, the initial frame, the last frame and its name are provided.
+- Please, note that we provide some Matlab scripts that work with the zipped file, therefore, we recommend to do not unzip the sequence files.
+
+### Other Important Information
+
+Participants should be prepared to create a learning system capable of recognizing gestures from multiple instances and users. The challenge emphasizes the importance of user-independent learning and the integration of audio data in gesture recognition.

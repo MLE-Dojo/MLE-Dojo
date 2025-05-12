@@ -1,0 +1,72 @@
+from typing import Any
+import pandas as pd
+import numpy as np
+from mledojo.metrics.base import CompetitionMetrics, InvalidSubmissionError
+from sklearn.metrics import log_loss
+
+class LlmClassificationFinetuningMetrics(CompetitionMetrics):
+    """Metric class for LLM Classification Finetuning competition evaluated using Log Loss."""
+    def __init__(self, value: str = "winner_model_a,winner_model_b,winner_tie", higher_is_better: bool = False):
+        super().__init__(higher_is_better)
+        self.value = value
+
+    def evaluate(self, y_true: pd.DataFrame, y_pred: pd.DataFrame) -> float:
+        # Convert id column (first column) to string type
+        y_true[y_true.columns[0]] = y_true[y_true.columns[0]].astype(str)
+        y_pred[y_pred.columns[0]] = y_pred[y_pred.columns[0]].astype(str)
+        # Sort both dataframes by the id column
+        y_true = y_true.sort_values(by=y_true.columns[0]).reset_index(drop=True)
+        y_pred = y_pred.sort_values(by=y_pred.columns[0]).reset_index(drop=True)
+        
+        # Define the target columns for multi-class log loss
+        target_cols = ["winner_model_a", "winner_model_b", "winner_tie"]
+        
+        # Extract ground truth probabilities and predictions
+        true_probs = y_true[target_cols].values
+        pred_probs = y_pred[target_cols].values
+
+        # Convert one-hot encoded ground truth into label indices
+        true_labels = np.argmax(true_probs, axis=1)
+        
+        # Calculate log loss with manual eps for numerical stability
+        eps = 1e-15
+        pred_probs = np.clip(pred_probs, eps, 1 - eps)
+        score = log_loss(true_labels, pred_probs)
+        return score
+
+    def validate_submission(self, submission: Any, ground_truth: Any) -> str:
+        if not isinstance(submission, pd.DataFrame):
+            raise InvalidSubmissionError("Submission must be a pandas DataFrame. Please provide a valid pandas DataFrame.")
+        if not isinstance(ground_truth, pd.DataFrame):
+            raise InvalidSubmissionError("Ground truth must be a pandas DataFrame. Please provide a valid pandas DataFrame.")
+
+        if len(submission) != len(ground_truth):
+            raise InvalidSubmissionError(
+                f"Number of rows in submission ({len(submission)}) does not match ground truth ({len(ground_truth)}). Please ensure both have the same number of rows."
+            )
+
+        # Convert the id column (first column) to string type
+        submission[submission.columns[0]] = submission[submission.columns[0]].astype(str)
+        ground_truth[ground_truth.columns[0]] = ground_truth[ground_truth.columns[0]].astype(str)
+        # Sort submission and ground truth by the id column
+        submission = submission.sort_values(by=submission.columns[0])
+        ground_truth = ground_truth.sort_values(by=ground_truth.columns[0])
+
+        # Check if the id columns are identical
+        if (submission[submission.columns[0]].values != ground_truth[ground_truth.columns[0]].values).any():
+            raise InvalidSubmissionError(
+                "The id column values do not match between submission and ground truth. Please ensure the first column values are identical."
+            )
+
+        required_cols = {ground_truth.columns[0], "winner_model_a", "winner_model_b", "winner_tie"}
+        sub_cols = set(submission.columns)
+
+        missing_cols = required_cols - sub_cols
+        extra_cols = sub_cols - required_cols
+
+        if missing_cols:
+            raise InvalidSubmissionError(f"Missing required columns in submission: {', '.join(missing_cols)}.")
+        if extra_cols:
+            raise InvalidSubmissionError(f"Extra unexpected columns found in submission: {', '.join(extra_cols)}.")
+
+        return "Submission is valid."

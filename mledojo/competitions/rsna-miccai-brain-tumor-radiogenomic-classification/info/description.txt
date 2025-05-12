@@ -1,0 +1,75 @@
+### Description
+
+Glioblastoma, the most common and aggressive form of brain cancer in adults, presents a dire prognosis with a median survival of less than a year. A key genetic marker, MGMT promoter methylation, has been identified as a favorable prognostic factor and a strong predictor of chemotherapy response. Traditionally, genetic analysis requires invasive tissue sampling, which can delay treatment decisions. This competition aims to develop a non-invasive method to predict the genetic subtype of glioblastoma using MRI scans, potentially reducing the need for surgeries and enabling tailored treatment strategies. By participating, you can contribute to improving the diagnosis and management of brain cancer, ultimately enhancing patient outcomes.
+
+### Evaluation
+
+Submissions are evaluated on the area under the ROC curve between the predicted probability and the observed target.
+
+## Submission File
+
+For each BraTS21ID in the test set, you must predict a probability for the target MGMT_value. The file should contain a header and have the following format:
+
+```
+BraTS21ID,MGMT_value
+00001,0.5
+00013,0.5
+00015,0.5
+etc.
+```
+
+### Dataset Description
+
+The competition data consists of three cohorts: Training, Validation (Public), and Testing (Private). Participants receive the Training and Validation cohorts, while the Testing cohort remains hidden. Each case is organized in a dedicated folder identified by a five-digit number, containing four sub-folders for each structural multi-parametric MRI (mpMRI) scan in DICOM format:
+
+- Fluid Attenuated Inversion Recovery (FLAIR)
+- T1-weighted pre-contrast (T1w)
+- T1-weighted post-contrast (T1Gd)
+- T2-weighted (T2)
+
+Exact folder structure:
+
+```
+Training/Validation/Testing
+│
+└─── 00000
+│   │
+│   └─── FLAIR
+│   │   │ Image-1.dcm
+│   │   │ Image-2.dcm
+│   │   │ ...
+│   │   
+│   └─── T1w
+│   │   │ Image-1.dcm
+│   │   │ Image-2.dcm
+│   │   │ ...
+│   │   
+│   └─── T1wCE
+│   │   │ Image-1.dcm
+│   │   │ Image-2.dcm
+│   │   │ ...
+│   │   
+│   └─── T2w
+│   │   │ Image-1.dcm
+│   │   │ Image-2.dcm
+│   │   │ .....
+│   
+└─── 00001
+│   │ ...
+│   
+│ ...   
+│   
+└─── 00002
+│   │ ...
+```
+
+### Files
+
+- train/ - folder containing the training files, with each top-level folder representing a subject. NOTE: Participants can exclude the following cases during training due to unexpected issues: [00109, 00123, 00709]. The testing dataset is confirmed to be free from such issues.
+- train_labels.csv - file containing the target MGMT_value for each subject in the training data (e.g., the presence of MGMT promoter methylation).
+- test/ - the test files, which use the same structure as train/; your task is to predict the MGMT_value for each subject in the test data. NOTE: the total size of the rerun test set (Public and Private) is approximately five times the size of the Public test set.
+- sample_submission.csv - a sample submission file in the correct format.
+
+### Other Important Information
+
+This competition is a code competition, and submissions must be made through Notebooks. Ensure your notebook meets the runtime and internet access requirements, and that your submission file is named submission.csv.

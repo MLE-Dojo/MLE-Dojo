@@ -1,0 +1,20 @@
+Evaluation  
+Submissions are evaluated using area under the ROC curve using the predicted probabilities and the ground truth targets. To calculate the final score, AUC is calculated for each of the 7 defect categories and then averaged. In other words, the score is the average of the individual AUC of each predicted column.
+
+Submission File  
+For each id in the test set, you must predict the probability for each of 7 defect categories: Pastry, Z_Scratch, K_Scatch, Stains, Dirtiness, Bumps, Other_Faults. The file should contain a header and have the following format:  
+```
+id,Pastry,Z_Scratch,K_Scatch,Stains,Dirtiness,Bumps,Other_Faults  
+19219,0.5,0.5,0.5,0.5,0.5,0.5,0.5  
+19220,0.5,0.5,0.5,0.5,0.5,0.5,0.5  
+19221,0.5,0.5,0.5,0.5,0.5,0.5,0.5
+etc.
+```
+
+Dataset Description  
+The dataset for this competition (both train and test) was generated from a deep learning model trained on the Steel Plates Faults dataset from UCI. Feature distributions are close to, but not exactly the same, as the original. Feel free to use the original dataset as part of this competition, both to explore differences as well as to see whether incorporating the original in training improves model performance.
+
+Files  
+- `train.csv` - the training dataset; there are 7 binary targets: Pastry, Z_Scratch, K_Scatch, Stains, Dirtiness, Bumps, Other_Faults
+- `test.csv` - the test dataset; your objective is to predict the probability of each of the 7 binary targets
+- `sample_submission.csv` - a sample submission file in the correct format

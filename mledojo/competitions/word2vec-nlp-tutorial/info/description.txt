@@ -1,0 +1,51 @@
+### Description
+
+Dive into the world of sentiment analysis with this engaging tutorial competition that leverages Google's Word2Vec, a deep-learning inspired method designed to capture the meaning and semantic relationships among words. This competition aims to enhance your understanding of sentiment analysis, a complex area in machine learning where language can be laden with sarcasm, ambiguity, and wordplay, often misleading both humans and machines. 
+
+Participants will explore how Word2Vec can be applied to sentiment analysis through a structured tutorial that unfolds in three parts: 
+
+1. **Basic Natural Language Processing**: The first part introduces essential NLP techniques for beginners.
+2. **Deep Learning for Text Understanding**: The subsequent sections focus on training a model using Word2Vec and utilizing the generated word vectors for sentiment analysis.
+
+The tutorial utilizes an IMDB sentiment analysis dataset comprising 100,000 multi-paragraph movie reviews, both positive and negative, to facilitate hands-on learning.
+
+### Evaluation
+
+## Metric
+
+Submissions are judged on area under the ROC curve.
+
+### Submission File
+
+You should submit a comma-separated file with 25,000 rows plus a header row. There should be 2 columns: "id" and "sentiment", which contain your binary predictions: 1 for positive reviews, 0 for negative reviews. For an example, see "sampleSubmission.csv" on the Data page.
+
+```
+id,sentiment
+123_45,0 
+678_90,1
+12_34,0
+...
+```
+
+### Dataset Description
+
+### Data Set
+
+The labeled data set consists of 50,000 IMDB movie reviews, specially selected for sentiment analysis. The sentiment of reviews is binary, meaning the IMDB rating < 5 results in a sentiment score of 0, and rating >=7 have a sentiment score of 1. No individual movie has more than 30 reviews. The 25,000 review labeled training set does not include any of the same movies as the 25,000 review test set. In addition, there are another 50,000 IMDB reviews provided without any rating labels.
+
+### File descriptions
+
+- labeledTrainData - The labeled training set. The file is tab-delimited and has a header row followed by 25,000 rows containing an id, sentiment, and text for each review.
+- testData - The test set. The tab-delimited file has a header row followed by 25,000 rows containing an id and text for each review. Your task is to predict the sentiment for each one.
+- unlabeledTrainData - An extra training set with no labels. The tab-delimited file has a header row followed by 50,000 rows containing an id and text for each review.
+- sampleSubmission - A comma-delimited sample submission file in the correct format.
+
+### Data fields
+
+- id - Unique ID of each review
+- sentiment - Sentiment of the review; 1 for positive reviews and 0 for negative reviews
+- review - Text of the review
+
+### Files
+
+Full tutorial code lives in this github repo.

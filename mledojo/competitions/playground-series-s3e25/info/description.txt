@@ -1,0 +1,20 @@
+Evaluation  
+Submissions are scored on the Median Absolute Error (MedAE). MedAE is defined as:  
+MedAE(y, ŷ) = median(|yi - ŷi|, … , |yn - ŷn|)  
+where ŷi is the predicted value and yi is the ground truth for each observation i.
+
+Submission File  
+For each id row in the test set, you must predict the value for the target Hardness. The file should contain a header and have the following format:  
+id, Hardness  
+10407, 4.647  
+10408, 4.647  
+10409, 4.647  
+etc.
+
+Dataset Description  
+The dataset for this competition (both train and test) was generated from a deep learning model trained on the Prediction of Mohs Hardness with Machine Learning dataset. Feature distributions are close to, but not exactly the same, as the original. Feel free to use the original dataset as part of this competition, both to explore differences as well as to see whether incorporating the original in training improves model performance.
+
+Files  
+train.csv - the training dataset; Hardness is the continuous target  
+test.csv - the test dataset; your objective is to predict the value of Hardness  
+sample_submission.csv - a sample submission file in the correct format

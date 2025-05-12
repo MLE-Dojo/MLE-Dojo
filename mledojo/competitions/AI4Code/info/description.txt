@@ -1,0 +1,62 @@
+### Description
+
+This competition invites participants to explore the intricate relationship between code and comments in Python notebooks by reconstructing the order of markdown cells based on the sequence of code cells. The challenge aims to enhance understanding of how natural language references code, which could lead to advancements in AI-assisted development tools.
+
+Research teams at Google and Alphabet are investigating innovative ways for machine learning to support software developers. Python notebooks, with their narrative format combining code and markdown comments, present a unique opportunity for this exploration. Insights gained from understanding the interplay between code and comments could improve data filtering, preprocessing pipelines, and the overall readability of notebooks.
+
+Participants will utilize a dataset of approximately 160,000 public Python notebooks from Kaggle, collaborating with X, the moonshot factory, to devise creative techniques for this task. Following the submission deadline, the performance of the submitted techniques will be evaluated on new, unseen notebooks, with the aim of influencing the future of notebook authorship.
+
+### Evaluation
+
+Predictions are evaluated by the Kendall tau correlation between predicted cell orders and ground truth cell orders accumulated across the entire collection of test set notebooks.
+
+Let S be the number of swaps of adjacent entries needed to sort the predicted cell order into the ground truth cell order. In the worst case, a predicted order for a notebook with n cells will need \frac{1}{2}n (n - 1) swaps to sort.
+
+We sum the number of swaps from your predicted cell order across the entire collection of test set notebooks, and similarly with the worst-case number of swaps. We then compute the Kendall tau correlation as:
+
+K = 1 - 4 \frac{\sum_i S_{i}}{\sum_i n_i(n_i - 1)}
+
+You may find a Python implementation in this notebook: Competition Metric - Kendall Tau Correlation.
+
+## Submission File
+
+For each id in the test set (representing a notebook), you must predict cell_order, the correct ordering of its cells in terms of the cell ids. The file should contain a header and have the following format:
+
+```
+id,cell_order
+0009d135ece78d,ddfd239c c6cd22db 1372ae9b ...
+0010483c12ba9b,54c7cab3 fe66203e 7844d5f8 ...
+0010a919d60e4f,aafc3d23 80e077ec b190ebb4 ...
+0028856e09c5b7,012c9d02 d22526d1 3ae7ece3 ...
+etc.
+```
+
+### Dataset Description
+
+The dataset consists of around 160,000 Jupyter notebooks from the Kaggle community, which are ideal for narrating with both code and natural language. Each notebook contains code cells and markdown cells, with the task being to predict the correct order of the markdown cells that have been shuffled.
+
+The selected notebooks meet specific criteria: they are publicly published under the Apache 2.0 license, contain at least one code and one markdown cell, are written in Python, and have had empty cells removed. 
+
+This competition is structured in two stages: the first stage involves a test set from a 90-day historical window, while the second stage will use notebooks from a future 90-day window to ensure fairness and prevent participants from accessing existing public notebooks.
+
+## Files
+
+- train/ - A folder containing about 140,000 JSON files, each corresponding to a notebook id. Each file includes the original order of code cells and shuffled markdown cells.
+- train_orders.csv - Contains the correct order of cells for each notebook in the train/ folder.
+  - id - The notebook in file {id}.json.
+  - cell_order - A space-delimited list of the correct cell ordering as per {id}.json.
+- train_ancestors.csv - Details the forking history of notebooks in the training set, identifying common origins.
+  - ancestor_id - Identifies sets of notebooks with a common ancestor.
+  - parent_id - Indicates the notebook from which the current notebook was forked.
+
+## Other Important Information
+
+This is a code competition, and submissions must be made through Notebooks. To activate the "Submit" button after a commit, the following conditions must be met:
+
+- CPU Notebook <= 9 hours run-time
+- GPU Notebook <= 9 hours run-time
+- Internet access disabled
+- Freely & publicly available external data is allowed, including pre-trained models
+- Submission file must be named submission.csv
+
+Refer to the Code Competition FAQ for submission details and the code debugging document for troubleshooting submission errors.

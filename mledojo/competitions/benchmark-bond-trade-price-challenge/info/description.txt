@@ -1,0 +1,50 @@
+### Description
+
+The Benchmark Bond Trade Price Challenge invites participants to predict the next trading price of US corporate bonds. Contestants will analyze bond characteristics such as current coupon, time to maturity, and a reference price from Benchmark Solutions, along with details from the previous 10 trades. This competition aims to bridge the gap in price transparency between equity and corporate bond trading, focusing on the trading dynamics and microstructure of individual bonds.
+
+### Evaluation
+
+Performance evaluation will be conducted using mean absolute error. Each observation will be weighted as indicated by the weight column. This weight is calculated as the square root of the time since the last observation, scaled so that the mean weight is 1.
+
+### Submission File
+
+For each observation, a contestant should provide the expected trade price. In the data section, please see random_forest_sample_submission.csv for an example submission. You can also examine the provided R code (random_forest_benchmark.r) which generates this example submission.
+
+### Dataset Description
+
+NOTE: The compressed files contain .csv versions of the training and test data. The .mat files are provided for MATLAB users as a convenience.
+
+US corporate bond trade data is provided. Each row includes trade details, some basic information about the traded bond, and information about the previous 10 trades. Contestants are asked to predict trade price.
+
+Column details:
+
+- id: The row id.
+- bond_id: The unique id of a bond to aid in timeseries reconstruction. (This column is only present in the train data)
+- trade_price: The price at which the trade occurred. (This is the column to predict in the test data)
+- weight: The weight of the row for evaluation purposes. This is calculated as the square root of the time since the last trade and then scaled so the mean is 1.
+- current_coupon: The coupon of the bond at the time of the trade.
+- time_to_maturity: The number of years until the bond matures at the time of the trade.
+- is_callable: A binary value indicating whether or not the bond is callable by the issuer.
+- reporting_delay: The number of seconds after the trade occurred that it was reported.
+- trade_size: The notional amount of the trade.
+- trade_type: 2=customer sell, 3=customer buy, 4=trade between dealers. We would expect customers to get worse prices on average than dealers.
+- curve_based_price: A fair price estimate based on implied hazard and funding curves of the issuer of the bond.
+- received_time_diff_last{1-10}: The time difference between the trade and that of the previous {1-10}.
+- trade_price_last{1-10}: The trade price of the last {1-10} trades.
+- trade_size_last{1-10}: The notional amount of the last {1-10} trades.
+- trade_type_last{1-10}: The trade type of the last {1-10} trades.
+- curve_based_price_last{1-10}: The curve based price of the last {1-10} trades.
+
+We have posted code using R's random forest package to create a benchmark. To handle missing values in some columns, the R code creates indicator variables for missing/non-missing and replaces the missing values with a number.
+
+### Files
+
+The competition provides the following files:
+- train.csv: The training dataset.
+- test.csv: The test dataset.
+- random_forest_sample_submission.csv: An example submission file.
+- random_forest_benchmark.r: R code for generating the example submission.
+
+### Other Important Information
+
+Participants are limited to one account and may submit a maximum of 2 entries per day, with up to 5 final submissions for judging. Team mergers are allowed, and there is no maximum team size.

@@ -1,0 +1,69 @@
+### Description
+
+In today's digital landscape, managing toxic and divisive content is a critical challenge for major platforms like Quora. This competition invites Kagglers to develop models that can effectively identify and flag insincere questions—those that are designed to provoke rather than seek genuine answers. Quora aims to maintain a safe environment for knowledge sharing, and your contributions will help enhance their existing machine learning and manual review processes. Join the fight against online negativity and support Quora's commitment to fostering respectful discourse.
+
+### Evaluation
+
+Submissions are evaluated on F1 Score between the predicted and the observed targets.
+
+## Submission File
+
+For each qid in the test set, you must predict whether the corresponding question_text is insincere (1) or not (0). Predictions should only be the integers 0 or 1. The file should contain a header and have the following format:
+
+```
+qid,prediction
+0000163e3ea7c7a74cd7,0
+00002bd4fb5d505b9161,0
+00007756b4a147d2b0b3,0
+...
+```
+
+## Kernel Submissions
+
+For this competition, you will make submissions directly from Kaggle Kernels. By adding your teammates as collaborators on a kernel, you can share and edit code privately with them. For more details, please visit the Kernels-FAQ for this competition.
+
+## Dataset Description
+
+In this competition, you will predict whether a question on Quora is sincere. An insincere question is one that aims to make a statement rather than seek genuine answers. Key indicators of insincerity include:
+
+- Non-neutral or exaggerated tone
+- Disparaging or inflammatory content
+- Lack of grounding in reality
+- Use of shocking sexual content without seeking genuine answers
+
+The training data consists of questions and their corresponding labels, indicating whether they are insincere (target = 1). Note that the dataset's distribution may not reflect the actual question distribution on Quora due to sampling and sanitization processes.
+
+## File descriptions
+
+- train.csv - the training set
+- test.csv - the test set
+- sample_submission.csv - A sample submission in the correct format
+- enbeddings/ - (see below)
+
+## Data fields
+
+- qid - unique question identifier
+- question_text - Quora question text
+- target - a question labeled "insincere" has a value of 1, otherwise 0
+
+This is a Kernels-only competition. The files in this Data section are downloadable for reference in Stage 1. Stage 2 files will only be available in Kernels and not available for download.
+
+## What will be available in the 2nd stage of the competition?
+
+In the second stage of the competition, we will re-run your selected Kernels. The following files will be swapped with new data:
+
+- test.csv - This will be swapped with the complete public and private test dataset. This file will have ~56k rows in stage 1 and ~376k rows in stage 2. The public leaderboard data remains the same for both versions. The file name will be the same (both test.csv) to ensure that your code will run.
+- sample_submission.csv - similar to test.csv, this will be changed from ~56k in stage 1 to ~376k rows in stage 2. The file name will remain the same.
+
+## Embeddings
+
+External data sources are not allowed for this competition. We are, though, providing a number of word embeddings along with the dataset that can be used in the models. These are as follows:
+
+- GoogleNews-vectors-negative300 - https://code.google.com/archive/p/word2vec/
+- glove.840B.300d - https://nlp.stanford.edu/projects/glove/
+- paragram_300_sl999 - https://cogcomp.org/page/resource_view/106
+- wiki-news-300d-1M - https://fasttext.cc/docs/en/english-vectors.html
+
+### Other Important Information
+
+This competition is a Kernels-only event, meaning all submissions must be made through Kaggle Kernels. Ensure you read the Kernels FAQ and data page thoroughly to understand the requirements and limitations.

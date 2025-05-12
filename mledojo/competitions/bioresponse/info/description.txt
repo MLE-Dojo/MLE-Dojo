@@ -1,0 +1,43 @@
+### Description
+
+The competition aims to develop a robust model that correlates molecular information with actual biological responses. Participants will work with a dataset in CSV format, where each row represents a molecule. The first column indicates whether the molecule elicited a biological response (1) or not (0), while the subsequent columns (d1 through d1776) contain normalized molecular descriptors that capture various characteristics of the molecules, such as size, shape, and elemental composition.
+
+### Evaluation
+
+Predicted probabilities that a molecule elicits a response are evaluated using the log loss metric.
+
+Log loss is defined as:
+
+\text{log loss}=-\frac{1}{N}\sum_{i=1}^Ny_i\log\left(\hat{y_i}\right)+\left(1-y_i\right)\log\left(1-\hat{y_i}\right),
+
+where \\(N\\) is the number of samples, 
+\\(\text{log}\\) is the natural logarithm, \\(\hat{y_i}\\) is the posterior probability that the
+\\(i^{th}\\) sample elicited a response, and
+\\(y_i\\) is the ground truth 
+(\\(y_i=1\\) means the molecule elicited a response, 
+\\(y_i=0\\) means that it did not).
+
+### Submission File
+
+MoleculeId,Activity
+1,1
+2,1
+3,0
+4,0
+...
+
+### Dataset Description
+
+The data is in the comma separated values (CSV) format. Each row in this data set represents a molecule. The first column contains experimental data describing a real biological response; the molecule was seen to elicit this response (1), or not (0). The remaining columns represent molecular descriptors (d1 through d1776), which are calculated properties that can capture some of the characteristics of the molecule, such as size, shape, or elemental constitution. The descriptor matrix has been normalized.
+
+### Files
+
+The dataset is provided in a single CSV file containing the molecular data.
+
+### Other Important Information
+
+- One account per participant is allowed; multiple accounts are prohibited.
+- Private sharing of code or data outside of teams is not permitted.
+- Team mergers are allowed, with no maximum team size.
+- A maximum of 2 entries can be submitted per day, with up to 5 final submissions for judging.
+- Scoring data will be withheld until a model is locked down.

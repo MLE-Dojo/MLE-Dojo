@@ -1,0 +1,47 @@
+### Description
+
+Home Depot is seeking Kagglers to enhance the shopping experience by developing a model that accurately predicts the relevance of search results. Customers expect quick and precise results for their home improvement needs, from simple tasks like installing a ceiling fan to complex kitchen remodels. Currently, human raters assess the effectiveness of search algorithms, a process that is slow and subjective. By minimizing human involvement in evaluating search relevance, Home Depot aims to accelerate the iteration process on their algorithms, ultimately improving customer satisfaction.
+
+### Evaluation
+
+Submissions are evaluated on the root mean squared error (RMSE).
+
+## Submission File
+
+For each id in the test set, you must predict a relevance. This is a real number in [1,3]. The file should contain a header and have the following format:
+
+```
+id,relevance
+1,1
+4,2
+5,3
+etc.
+```
+
+### Dataset Description
+
+This dataset includes various products and actual customer search terms from Home Depot's website. The goal is to predict a relevance score for the combinations of search terms and products. Ground truth labels were created by crowdsourcing the search/product pairs to multiple human raters. Relevance scores range from 1 (not relevant) to 3 (highly relevant). For instance, "AA battery" is highly relevant to AA batteries (3), mildly relevant to a cordless drill battery (2), and not relevant to a snow shovel (1). Each pair was evaluated by at least three raters, and the provided scores are the average of their ratings. Raters had access to product images but not to attributes, and specific instructions for the raters are included in relevance_instructions.docx.
+
+## File descriptions
+
+- train.csv - the training set, contains products, searches, and relevance scores
+- test.csv - the test set, contains products and searches. You must predict the relevance for these pairs.
+- product_descriptions.csv - contains a text description of each product. You may join this table to the training or test set via the product_uid.
+- attributes.csv - provides extended information about a subset of the products (typically representing detailed technical specifications). Not every product will have attributes.
+- sample_submission.csv - a file showing the correct submission format
+- relevance_instructions.docx - the instructions provided to human raters
+
+## Data fields
+
+- id - a unique Id field which represents a (search_term, product_uid) pair
+- product_uid - an id for the products
+- product_title - the product title
+- product_description - the text description of the product (may contain HTML content)
+- search_term - the search query
+- relevance - the average of the relevance ratings for a given id
+- name - an attribute name
+- value - the attribute's value
+
+### Other Important Information
+
+Participants should note that the test set includes both seen and unseen search terms, which adds complexity to the prediction task.

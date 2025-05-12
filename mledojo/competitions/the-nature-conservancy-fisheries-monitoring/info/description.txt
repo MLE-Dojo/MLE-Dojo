@@ -1,0 +1,56 @@
+### Description
+
+The Nature Conservancy is tackling the critical issue of illegal, unreported, and unregulated fishing practices that threaten marine ecosystems and local livelihoods, particularly in the Western and Central Pacific, where 60% of the world’s tuna is caught. To enhance monitoring of fishing activities, they are leveraging camera technology to gather extensive data, but the sheer volume of footage presents challenges for manual processing.
+
+This competition invites the Kaggle community to create algorithms that can automatically detect and classify various species of fish, including tunas and sharks, from video footage. By streamlining the video review process, participants will help improve data reliability and enable countries to focus on effective management and enforcement, ultimately benefiting ocean conservation efforts.
+
+Join us in harnessing machine learning to revolutionize our understanding and management of ocean resources.
+
+### Evaluation
+
+Submissions are evaluated using the multi-class logarithmic loss. Each image has been labeled with one true class. For each image, you must submit a set of predicted probabilities (one for every image). The formula is then,
+
+log loss = -\frac{1}{N}\sum_{i=1}^N\sum_{j=1}^My_{ij}\log(p_{ij}),
+
+where N is the number of images in the test set, M is the number of image class labels, \\(log\\) is the natural logarithm, \\(y_{ij}\\) is 1 if observation \\(i\\) belongs to class \\(j\\) and 0 otherwise, and \\(p_{ij}\\) is the predicted probability that observation \\(i\\) belongs to class \\(j\\).
+
+The submitted probabilities for a given image are not required to sum to one because they are rescaled prior to being scored (each row is divided by the row sum). In order to avoid the extremes of the log function, predicted probabilities are replaced with \\(max(min(p,1-10^{-15}),10^{-15})\\).
+
+### Submission File
+
+You must submit a csv file with the image file name, and a probability for each class.
+
+The 8 classes to predict are: 'ALB', 'BET', 'DOL', 'LAG', 'NoF', 'OTHER', 'SHARK','YFT'
+
+The order of the rows does not matter. The file must have a header and should look like the following:
+
+```
+image,ALB,BET,DOL,LAG,NoF,OTHER,SHARK,YFT
+img_00001.jpg,1,0,0,0,0,...,0
+img_00002.jpg,0.3,0.1,0.6,0,...,0
+...
+```
+
+### Dataset Description
+
+Warning: This data contains graphic contents that some may find disturbing. Please note that this competition is governed by the Competition Rules and this NDA.
+
+In this competition, The Nature Conservancy asks you to help them detect which species of fish appears on a fishing boat, based on images captured from boat cameras of various angles.
+
+Your goal is to predict the likelihood of fish species in each picture.
+
+Eight target categories are available in this dataset: Albacore tuna, Bigeye tuna, Yellowfin tuna, Mahi Mahi, Opah, Sharks, Other (meaning that there are fish present but not in the above categories), and No Fish (meaning that no fish is in the picture). Each image has only one fish category, except that there are sometimes very small fish in the pictures that are used as bait.
+
+The dataset was compiled by The Nature Conservancy in partnership with Satlink, Archipelago Marine Research, the Pacific Community, the Solomon Islands Ministry of Fisheries and Marine Resources, the Australia Fisheries Management Authority, and the governments of New Caledonia and Palau.
+
+### Files
+
+- train.zip - zipped folder of all train images. The train folders are organized by fish species labels.
+- test_stg1.zip - zipped folder of all test images in stage 1
+- test_stg2.zip - zipped folder of all test images in stage 2 (not available until the second stage of the competition)
+- sample_submission_stg1.csv - a sample submission file in the correct format
+- sample_submission_stg2.csv - a sample submission file in the correct format (not available until the second stage of the competition)
+
+### Other Important Information
+
+No special requirements are noted for this competition.

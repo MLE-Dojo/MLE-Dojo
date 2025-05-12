@@ -1,0 +1,36 @@
+### Description
+
+Housing costs represent a significant investment for consumers and developers alike. Sberbank, Russia’s oldest and largest bank, aims to alleviate uncertainty in realty pricing, enabling renters, developers, and lenders to make informed decisions. Despite the relative stability of the housing market in Russia, the volatile economy complicates price forecasting based on apartment characteristics. The intricate relationships between features like the number of bedrooms and location, combined with economic instability, necessitate advanced predictive models.
+
+In this competition, Sberbank invites Kagglers to create algorithms that leverage a wide array of features to predict realty prices. Participants will utilize a comprehensive dataset encompassing housing data and macroeconomic trends. The goal is to develop an accurate forecasting model that enhances customer confidence in a fluctuating economy.
+
+### Evaluation
+
+Submissions are evaluated on the RMSLE between their predicted prices and the actual data. The target variable, called price_doc in the training set, is the sale price of each property.
+
+## Submission File
+
+For each id in the test set, you must predict the price that the property sold for. The file should contain a header and have the following format:
+
+```
+id,price_doc
+30474,7118500.44
+30475,7118500.44
+30476,7118500.44
+etc.
+```
+
+### Dataset Description
+
+The aim of this competition is to predict the sale price of each property. The target variable is called price_doc in train.csv. The training data spans from August 2011 to June 2015, while the test set covers July 2015 to May 2016. The dataset also includes insights into the overall conditions of Russia's economy and finance sector, allowing participants to focus on generating precise price forecasts for individual properties without needing to predict broader economic trends.
+
+## Data Files
+
+- train.csv, test.csv: information about individual transactions. The rows are indexed by the "id" field, which refers to individual transactions (particular properties might appear more than once, in separate transactions). These files also include supplementary information about the local area of each property.
+- macro.csv: data on Russia's macroeconomy and financial sector (could be joined to the train and test sets on the "timestamp" column)
+- sample_submission.csv: an example submission file in the correct format
+- data_dictionary.txt: explanations of the fields available in the other data files
+
+### Other Important Information
+
+Update: please see the pinned discussion thread for some optional extra data, resolving an issue with some GIS features.

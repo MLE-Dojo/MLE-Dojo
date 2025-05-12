@@ -1,0 +1,45 @@
+### Description
+
+Cassava, a vital carbohydrate source in Africa, is predominantly cultivated by smallholder farmers who face significant challenges due to viral diseases that lead to poor yields. This competition aims to leverage data science to identify these diseases, enabling farmers to take timely action. Traditional disease detection methods are labor-intensive and costly, often requiring expert intervention. Given that many African farmers have access only to mobile-quality cameras and low-bandwidth internet, effective solutions must be adaptable to these constraints.
+
+Participants will work with a dataset of 21,367 labeled images collected in Uganda, primarily sourced from farmers and annotated by experts from the National Crops Resources Research Institute (NaCRRI) and Makerere University. The goal is to classify each cassava image into one of four disease categories or a fifth category for healthy leaves. By doing so, farmers can quickly identify and address diseased plants, potentially safeguarding their crops from irreversible damage.
+
+### Evaluation
+
+Submissions will be evaluated based on their categorization accuracy.
+
+### Submission File
+
+The submission format for the competition is a csv file with the following format:
+
+```
+image_id,label
+1000471002.jpg,4
+1000840542.jpg,4
+etc.
+```
+
+### Dataset Description
+
+This competition challenges participants to identify problems with cassava plants using images from relatively inexpensive cameras. The task involves distinguishing between various diseases that threaten the food supply in many African nations. Rapid automated diagnosis is crucial, as infected plants may need to be burned to prevent further spread.
+
+### Files
+
+[train/test]_images the image files. The full set of test images will only be available to your notebook when it is submitted for scoring. Expect to see roughly 15,000 images in the test set.
+
+train.csv
+
+- image_id the image file name.
+- label the ID code for the disease.
+
+sample_submission.csv A properly formatted sample submission, given the disclosed test set content.
+
+- image_id the image file name.
+- label the predicted ID code for the disease.
+
+
+label_num_to_disease_map.json The mapping between each disease code and the real disease name.
+
+### Other Important Information
+
+This is a Code Competition. Refer to Code Requirements for details.

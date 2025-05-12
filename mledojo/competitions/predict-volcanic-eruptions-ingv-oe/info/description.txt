@@ -1,0 +1,42 @@
+### Description
+
+Imagine if scientists could predict volcanic eruptions with the same accuracy as weather forecasts. Such advancements could save tens of thousands of lives by enabling timely evacuations and damage mitigation. Currently, scientists gauge "time to eruption" through seismic signals, but long-term predictions remain challenging. 
+
+Italy's Istituto Nazionale di Geofisica e Vulcanologia (INGV) is dedicated to enhancing our understanding of volcanic activity and minimizing associated risks. They monitor seismicity and active volcanoes around the clock, aiming to identify early precursors that signal impending eruptions.
+
+In this competition, you will leverage your data science expertise to predict the timing of the next volcanic eruption using a comprehensive geophysical dataset from sensors on active volcanoes. Your goal is to develop algorithms that can detect seismic waveform signatures indicative of an eruption's development. By improving the predictability of volcanic eruptions, your contributions could have a global impact, potentially saving countless lives through earlier evacuations.
+
+### Evaluation
+
+Submissions are evaluated on the mean absolute error (MAE) between the predicted loss and the actual loss.
+
+## Submission File
+
+For every id in the test set, you should predict the time until the next eruption. The file should contain a header and have the following format:
+
+```
+segment_id,time_to_eruption
+1,1
+2,2
+3,3
+etc.
+```
+
+### Dataset Description
+
+Detecting volcanic eruptions before they occur is a significant challenge. This competition provides readings from various seismic sensors around a volcano, tasking you with estimating the time until the next eruption. The data represents a classic signal processing problem that has resisted traditional methods.
+
+While identifying specific sensors may be possible, it is not in the spirit of the competition and does not further the scientific objectives. Please respect the importance of this issue and the effort of the INGV researchers by refraining from seeking additional metadata or information that would not be available in a real prediction scenario.
+
+### Files
+
+train.csv Metadata for the train files.
+
+- segment_id: ID code for the data segment. Matches the name of the associated data file.
+- time_to_eruption: The target value, the time until the next eruption.
+
+[train|test]/*.csv: the data files. Each file contains ten minutes of logs from ten different sensors arrayed around a volcano. The readings have been normalized within each segment to ensure they fall within the range of int16 values. If you are using the Pandas library, you may need to load the data as float32 due to the presence of some nulls.
+
+### Other Important Information
+
+No special requirements noted.

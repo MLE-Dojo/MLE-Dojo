@@ -1,0 +1,21 @@
+Evaluation  
+Submissions are evaluated using the R2 score.
+
+Submission File  
+For each id row in the test set, you must predict the value of the target, FloodProbability. The file should contain a header and have the following format: 
+```
+id,FloodProbability  
+1117957,0.5  
+1117958,0.5  
+1117959,0.5  
+etc.
+```
+
+Dataset Description  
+The dataset for this competition (both train and test) was generated from a deep learning model trained on the Flood Prediction Factors dataset. Feature distributions are close to, but not exactly the same, as the original. Feel free to use the original dataset as part of this competition, both to explore differences as well as to see whether incorporating the original in training improves model performance.  
+Note: This dataset is particularly well suited for visualizations, clustering, and general EDA. Show off your skills!
+
+Files  
+- train.csv - the training dataset; FloodProbability is the target  
+- test.csv - the test dataset; your objective is to predict the FloodProbability for each row  
+- sample_submission.csv - a sample submission file in the correct format

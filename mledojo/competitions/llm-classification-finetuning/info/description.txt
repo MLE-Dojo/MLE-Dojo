@@ -1,0 +1,54 @@
+### Description
+
+Large language models (LLMs) are becoming integral to our daily interactions, but ensuring their responses align with user preferences is essential for effective communication. This competition invites participants to address this challenge using real-world data from Chatbot Arena, where users compare responses from two anonymous LLMs and select their preferred answer. 
+
+Your objective is to predict which response users will favor in these head-to-head comparisons. This task is rooted in the concept of "reward models" or "preference models" in reinforcement learning from human feedback (RLHF). Previous studies have highlighted biases that can affect preference predictions, such as position bias, verbosity bias, and self-enhancement bias.
+
+We encourage you to apply various machine-learning techniques to develop a model that accurately predicts user preferences, contributing to the creation of LLMs that can customize responses to individual users, ultimately enhancing the user experience in AI-driven conversations.
+
+### Evaluation
+
+Submissions are evaluated on the log loss between the predicted probabilities and the ground truth values (with "eps=auto").
+
+### Submission File
+
+For each id in the test set, you must predict the probability for each target class. The file should contain a header and have the following format:
+
+```
+id,winner_model_a,winner_model_b,winner_tie
+ 136060,0.33,0,33,0.33
+ 211333,0.33,0,33,0.33
+ 1233961,0.33,0,33,0.33
+ etc
+```
+
+### Dataset Description
+
+The competition dataset consists of user interactions from the ChatBot Arena. In each interaction, a judge provides prompts to two different LLMs and indicates which model delivered the more satisfactory response. The goal is to predict the judges' preferences and assess the likelihood of a given prompt/response pair being chosen as the winner. The dataset includes 55K rows in the training set, with an expected 25,000 rows in the test set.
+
+### Files
+
+train.csv
+
+- id - A unique identifier for the row.
+- model_[a/b] - The identity of model_[a/b]. Included in train.csv but not test.csv.
+- prompt - The prompt that was given as an input (to both models).
+- response_[a/b] - The response from model_[a/b] to the given prompt.
+- winner_model_[a/b/tie] - Binary columns marking the judge's selection. The ground truth target column.
+
+test.csv
+
+- id
+- prompt
+- response_[a/b]
+
+sample_submission.csv A submission file in the correct format.
+
+- id
+- winner_model_[a/b/tie] - This is what is predicted from the test set.
+
+Note: the dataset for this competition contains text that may be considered profane, vulgar, or offensive.
+
+### Other Important Information
+
+This is a Code Competition. When your submission is scored, the example test data will be replaced with the full test set.

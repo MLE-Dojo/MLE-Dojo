@@ -1,0 +1,43 @@
+### Description
+
+This competition challenges participants to predict loan defaults and the associated losses. Unlike traditional binary classifications of good or bad counterparties, this approach integrates both the likelihood of default and the severity of losses. The goal is to bridge traditional banking practices, which focus on minimizing economic capital consumption, with asset management strategies that optimize risk for financial investors.
+
+### Evaluation
+
+This competition is evaluated on the mean absolute error (MAE):
+
+\textrm{MAE} = \frac{1}{n} \sum_{i=1}^n | y_i - \hat{y}_i |,
+
+where
+
+- n is the number of rows
+- \\( \hat{y}_i \\) is the predicted loss
+- \\( y_i \\) is the actual loss
+
+## Submission File
+
+For each row in the test set, you should predict the loss. The file should have a header and looks like the following:
+
+```
+id,loss
+118679,0
+118680,0
+118681,0
+...
+```
+
+### Dataset Description
+
+This dataset contains financial transaction records for individuals, featuring over 200,000 observations and nearly 800 features. Each observation is independent, indicating whether a default occurred and measuring the loss, which ranges from 0 to 100. The loss is normalized based on a notional value of 100, meaning a loss of 60 indicates a reimbursement of 40. If there was no default, the loss is 0. Missing feature values are retained to allow teams to utilize the full dataset and implement their own strategies for handling gaps. Some variables may be categorical (e.g., f776 and f777). The data has been standardized, de-trended, and anonymized, with the competition sponsor ensuring the removal of time-dimensionality, although training set observations are ordered chronologically while the test set is randomized.
+
+### Files
+
+The files included in this competition are:
+
+- train.csv
+- test.csv
+- sample_submission.csv
+
+### Other Important Information
+
+Participants should be aware that the competition emphasizes the integration of both default prediction and loss severity, requiring a nuanced approach to modeling.

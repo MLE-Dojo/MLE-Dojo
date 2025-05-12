@@ -1,0 +1,37 @@
+### Description
+
+In this year's Halloween playground competition, participants are invited to predict the authors of excerpts from the chilling works of Edgar Allan Poe, Mary Shelley, and HP Lovecraft. As you navigate through this spooky challenge, you'll have the opportunity to share your insights in the discussion forum and showcase your code in Kernels. Engaging contributions will be rewarded with cash prizes, so join the fun and help build a vibrant community!
+
+### Evaluation
+
+log loss = -\frac{1}{N}\sum_{i=1}^N\sum_{j=1}^My_{ij}\log(p_{ij}),
+
+where N is the number of observations in the test set, M is the number of class labels (3 classes),  \\(log\\) is the natural logarithm, \\(y_{ij}\\) is 1 if observation \\(i\\) belongs to class \\(j\\) and 0 otherwise, and \\(p_{ij}\\) is the predicted probability that observation \\(i\\) belongs to class \\(j\\).
+
+### Submission File
+
+```
+id,EAP,HPL,MWS
+id07943,0.33,0.33,0.33
+...
+```
+
+### Dataset Description
+
+The competition dataset features text from the public domain works of spooky authors: Edgar Allan Poe, HP Lovecraft, and Mary Shelley. The data was prepared by segmenting larger texts into sentences using CoreNLP's MaxEnt sentence tokenizer, which may result in some unusual sentence structures. Your goal is to accurately identify the author of the sentences in the test set.
+
+### Files
+
+- train.csv - the training set
+- test.csv - the test set
+- sample_submission.csv - a sample submission file in the correct format
+
+### Data fields
+
+- id - a unique identifier for each sentence
+- text - some text written by one of the authors
+- author - the author of the sentence (EAP: Edgar Allan Poe, HPL: HP Lovecraft; MWS: Mary Wollstonecraft Shelley)
+
+### Other Important Information
+
+This playground competition emphasizes fun and learning. While leaderboard scores do not earn points, participants are encouraged to share their code in Kernels and contribute to Discussions, with prizes available for both. Remember, the goal is to enjoy the experience and collaborate with others!

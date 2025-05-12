@@ -1,0 +1,51 @@
+### Description
+
+Drifting icebergs pose significant risks to navigation and activities along the East Coast of Canada. Traditional monitoring methods, such as aerial reconnaissance and shore-based support, are often impractical in remote areas with harsh weather conditions. As a solution, satellite monitoring has emerged as a viable option.
+
+Statoil, a global energy company, has partnered with C-CORE, which has over 30 years of experience utilizing satellite data and has developed a computer vision-based surveillance system. Statoil seeks innovative machine learning approaches to enhance the detection and differentiation of icebergs from ships, aiming to improve safety and reduce operational costs.
+
+In this competition, participants are tasked with creating an algorithm that automatically identifies whether a remotely sensed target is a ship or an iceberg. The advancements made in this challenge will contribute to safer working conditions in maritime environments.
+
+### Evaluation
+
+Submissions are evaluated on the log loss between the predicted values and the ground truth.
+
+# Submission File
+
+For each id in the test set, you must predict the probability that the image contains an iceberg (a number between 0 and 1). The file should contain a header and have the following format:
+
+```
+id,is_iceberg
+809385f7,0.5
+7535f0cd,0.4
+3aa99a38,0.9
+etc.
+```
+
+## Dataset Description
+
+In this competition, you will predict whether an image contains a ship or an iceberg. The labels are provided by human experts and geographic knowledge on the target. All the images are 75x75 images with two bands.
+
+# Data fields
+
+## train.json, test.json
+
+The data (train.json, test.json) is presented in json format. The files consist of a list of images, and for each image, you can find the following fields:
+
+- id - the id of the image
+- band_1, band_2 - the flattened image data. Each band has 75x75 pixel values in the list, so the list has 5625 elements. Note that these values are not the normal non-negative integers in image files since they have physical meanings - these are float numbers with unit being dB. Band 1 and Band 2 are signals characterized by radar backscatter produced from different polarizations at a particular incidence angle. The polarizations correspond to HH (transmit/receive horizontally) and HV (transmit horizontally and receive vertically). More background on the satellite imagery can be found here.
+- inc_angle - the incidence angle of which the image was taken. Note that this field has missing data marked as "na", and those images with "na" incidence angles are all in the training data to prevent leakage.
+- is_iceberg - the target variable, set to 1 if it is an iceberg, and 0 if it is a ship. This field only exists in train.json.
+
+Please note that we have included machine-generated images in the test set to prevent hand labeling. They are excluded in scoring.
+
+## sample_submission.csv
+
+The submission file in the correct format:
+
+- id - the id of the image
+- is_iceberg - your predicted probability that this image is iceberg.
+
+### Other Important Information
+
+Participants should be aware that the competition involves analyzing satellite radar data, which requires understanding of radar backscatter and image processing techniques. Familiarity with machine learning algorithms for classification tasks will be beneficial.

@@ -1,0 +1,2704 @@
+{
+    "mercedes-benz-greener-manufacturing": {
+        "host": "Daimler",
+        "participation": [
+            "8,609 Entrants",
+            "4,032 Participants",
+            "3,823 Teams",
+            "75,157 Submissions"
+        ],
+        "tags": [
+            "Automobiles and Vehicles",
+            "Regression",
+            "Tabular",
+            "R^2 score (coefficient of determination)"
+        ],
+        "title": "Mercedes-Benz Greener Manufacturing",
+        "href": "https://www.kaggle.com/competitions/mercedes-benz-greener-manufacturing",
+        "data_info": {
+            "files": "3 files",
+            "size": "351.45 kB",
+            "type": "zip",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "icr-identify-age-related-conditions": {
+        "host": "InVitro Cell Research",
+        "participation": [
+            "21,337 Entrants",
+            "7,327 Participants",
+            "6,430 Teams",
+            "57,333 Submissions"
+        ],
+        "tags": [
+            "Tabular",
+            "Binary Classification",
+            "Health",
+            "Weighted Multiclass Loss"
+        ],
+        "title": "ICR - Identifying Age-Related Conditions",
+        "href": "https://www.kaggle.com/competitions/icr-identify-age-related-conditions",
+        "data_info": {
+            "files": "4 files",
+            "size": "356.88 kB",
+            "type": "csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "kaggle-llm-science-exam": {
+        "host": "Kaggle",
+        "participation": [
+            "11,962 Entrants",
+            "3,299 Participants",
+            "2,664 Teams",
+            "57,886 Submissions"
+        ],
+        "tags": [
+            "Physics",
+            "NLP",
+            "MAP@{K}"
+        ],
+        "title": "Kaggle - LLM Science Exam",
+        "href": "https://www.kaggle.com/competitions/kaggle-llm-science-exam",
+        "data_info": {
+            "files": "3 files",
+            "size": "364.21 kB",
+            "type": "csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "kobe-bryant-shot-selection": {
+        "host": "Kaggle",
+        "participation": [
+            "1,416 Entrants",
+            "1,200 Participants",
+            "1,117 Teams",
+            "10,389 Submissions"
+        ],
+        "tags": [
+            "Basketball",
+            "Binary Classification",
+            "Tabular",
+            "Log Loss"
+        ],
+        "title": "Kobe Bryant Shot Selection",
+        "href": "https://www.kaggle.com/competitions/kobe-bryant-shot-selection",
+        "data_info": {
+            "files": "2 files",
+            "size": "708.3 kB",
+            "type": "zip",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "home-data-for-ml-course": {
+        "host": "Kaggle",
+        "participation": [
+            "192,322 Entrants",
+            "4,978 Participants",
+            "4,976 Teams",
+            "12,631 Submissions"
+        ],
+        "tags": [
+            "Mean Absolute Error"
+        ],
+        "title": "Housing Prices Competition for Kaggle Learn Users",
+        "href": "https://www.kaggle.com/competitions/home-data-for-ml-course",
+        "data_info": {
+            "files": "7 files",
+            "size": "1.15 MB",
+            "type": "csv, gz, txt",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "spooky-author-identification": {
+        "host": "Kaggle",
+        "participation": [
+            "5,322 Entrants",
+            "1,353 Participants",
+            "1,241 Teams",
+            "10,627 Submissions"
+        ],
+        "tags": [
+            "Multiclass Classification",
+            "Literature",
+            "Linguistics",
+            "Multiclass Loss"
+        ],
+        "title": "Spooky Author Identification",
+        "href": "https://www.kaggle.com/competitions/spooky-author-identification",
+        "data_info": {
+            "files": "3 files",
+            "size": "1.9 MB",
+            "type": "zip"
+        }
+    },
+    "liberty-mutual-group-property-inspection-prediction": {
+        "participation": [
+            "2,525 Entrants",
+            "2,358 Participants",
+            "2,232 Teams",
+            "45,786 Submissions"
+        ],
+        "tags": [
+            "Housing",
+            "Normalized Gini Index"
+        ],
+        "title": "Liberty Mutual Group: Property Inspection Prediction",
+        "href": "https://www.kaggle.com/competitions/liberty-mutual-group-property-inspection-prediction",
+        "data_info": {
+            "files": "3 files",
+            "size": "2 MB",
+            "type": "zip",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "movie-review-sentiment-analysis-kernels-only": {
+        "host": "Kaggle",
+        "participation": [
+            "3,071 Entrants",
+            "430 Participants",
+            "409 Teams",
+            "3,806 Submissions"
+        ],
+        "tags": [
+            "Text",
+            "Multiclass Classification",
+            "Categorization Accuracy"
+        ],
+        "title": "Movie Review Sentiment Analysis (Kernels Only)",
+        "href": "https://www.kaggle.com/competitions/movie-review-sentiment-analysis-kernels-only",
+        "data_info": {
+            "files": "3 files",
+            "size": "2.44 MB",
+            "type": "zip, csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "detecting-insults-in-social-commentary": {
+        "participation": [
+            "153 Entrants",
+            "50 Participants",
+            "50 Teams",
+            "173 Submissions"
+        ],
+        "tags": [
+            "Area Under Receiver Operating Characteristic Curve"
+        ],
+        "title": "Detecting Insults in Social Commentary",
+        "href": "https://www.kaggle.com/competitions/detecting-insults-in-social-commentary",
+        "data_info": {
+            "files": "6 files",
+            "size": "3.02 MB",
+            "type": "csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "walmart-recruiting-store-sales-forecasting": {
+        "host": "Walmart",
+        "participation": [
+            "1,074 Entrants",
+            "688 Participants",
+            "688 Teams",
+            "12,240 Submissions"
+        ],
+        "tags": [
+            "Time Series Analysis",
+            "Weighted Mean Absolute Error"
+        ],
+        "title": "Walmart Recruiting - Store Sales Forecasting",
+        "href": "https://www.kaggle.com/competitions/walmart-recruiting-store-sales-forecasting",
+        "data_info": {
+            "files": "5 files",
+            "size": "3.22 MB",
+            "type": "zip, csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "prudential-life-insurance-assessment": {
+        "participation": [
+            "3,098 Entrants",
+            "2,610 Participants",
+            "2,610 Teams",
+            "45,348 Submissions"
+        ],
+        "tags": [
+            "Tabular",
+            "QuadraticWeightedKappa"
+        ],
+        "title": "Prudential Life Insurance Assessment",
+        "href": "https://www.kaggle.com/competitions/prudential-life-insurance-assessment",
+        "data_info": {
+            "files": "3 files",
+            "size": "3.4 MB",
+            "type": "zip",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "llm-detect-ai-generated-text": {
+        "host": "The Learning Agency Lab",
+        "participation": [
+            "19,362 Entrants",
+            "5,264 Participants",
+            "4,358 Teams",
+            "110,052 Submissions"
+        ],
+        "tags": [
+            "Education",
+            "Primary and Secondary Schools",
+            "Binary Classification",
+            "Text Generation",
+            "Roc Auc Score"
+        ],
+        "title": "LLM - Detect AI Generated Text",
+        "href": "https://www.kaggle.com/competitions/llm-detect-ai-generated-text",
+        "data_info": {
+            "files": "4 files",
+            "size": "4.43 MB",
+            "type": "csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "unimelb": {
+        "participation": [
+            "228 Entrants",
+            "216 Participants",
+            "203 Teams",
+            "2,792 Submissions"
+        ],
+        "tags": [
+            "Area Under Receiver Operating Characteristic Curve"
+        ],
+        "title": "Predict Grant Applications",
+        "href": "https://www.kaggle.com/competitions/unimelb",
+        "data_info": {
+            "files": "3 files",
+            "size": "4.53 MB",
+            "type": "csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "nomad2018-predict-transparent-conductors": {
+        "host": "Kaggle",
+        "participation": [
+            "2,843 Entrants",
+            "944 Participants",
+            "878 Teams",
+            "13,192 Submissions"
+        ],
+        "tags": [
+            "Chemistry",
+            "Mean Columnwise Root Mean Squared Logarithmic Error"
+        ],
+        "title": "Nomad2018 Predicting Transparent Conductors",
+        "href": "https://www.kaggle.com/competitions/nomad2018-predict-transparent-conductors",
+        "data_info": {
+            "files": "5 files",
+            "size": "6.24 MB",
+            "type": "zip",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "amazon-employee-access-challenge": {
+        "participation": [
+            "2,073 Entrants",
+            "1,839 Participants",
+            "1,686 Teams",
+            "16,870 Submissions"
+        ],
+        "tags": [
+            "Area Under Receiver Operating Characteristic Curve"
+        ],
+        "title": "Amazon.com - Employee Access Challenge",
+        "href": "https://www.kaggle.com/competitions/amazon-employee-access-challenge",
+        "data_info": {
+            "files": "3 files",
+            "size": "6.39 MB",
+            "type": "csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "poker-rule-induction": {
+        "host": "Kaggle",
+        "participation": [
+            "308 Entrants",
+            "212 Participants",
+            "207 Teams",
+            "762 Submissions"
+        ],
+        "tags": [
+            "Multiclass Classification",
+            "Card Games",
+            "Tabular",
+            "Categorization Accuracy"
+        ],
+        "title": "Poker Rule Induction",
+        "href": "https://www.kaggle.com/competitions/poker-rule-induction",
+        "data_info": {
+            "files": "3 files",
+            "size": "8.3 MB",
+            "type": "zip",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "allstate-purchase-prediction-challenge": {
+        "host": "Allstate Insurance",
+        "participation": [
+            "2,581 Entrants",
+            "1,800 Participants",
+            "1,566 Teams",
+            "24,517 Submissions"
+        ],
+        "tags": [
+            "Categorization Accuracy"
+        ],
+        "title": "Allstate Purchase Prediction Challenge",
+        "href": "https://www.kaggle.com/competitions/allstate-purchase-prediction-challenge",
+        "data_info": {
+            "files": "3 files",
+            "size": "8.97 MB",
+            "type": "zip, csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "dont-call-me-turkey": {
+        "host": "Kaggle",
+        "participation": [
+            "1,053 Entrants",
+            "277 Participants",
+            "266 Teams",
+            "1,001 Submissions"
+        ],
+        "tags": [
+            "Binary Classification",
+            "Tabular",
+            "Animals",
+            "Area Under Receiver Operating Characteristic Curve"
+        ],
+        "title": "Don't call me turkey!",
+        "href": "https://www.kaggle.com/competitions/dont-call-me-turkey",
+        "data_info": {
+            "files": "3 files",
+            "size": "11.04 MB",
+            "type": "json, csv"
+        }
+    },
+    "GiveMeSomeCredit": {
+        "participation": [
+            "1,473 Entrants",
+            "996 Participants",
+            "924 Teams",
+            "7,722 Submissions"
+        ],
+        "tags": [
+            "Area Under Receiver Operating Characteristic Curve"
+        ],
+        "title": "Give Me Some Credit",
+        "href": "https://www.kaggle.com/competitions/GiveMeSomeCredit",
+        "data_info": {
+            "files": "4 files",
+            "size": "14.47 MB",
+            "type": "csv, xls",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "forest-cover-type-kernels-only": {
+        "host": "Kaggle",
+        "participation": [
+            "1,349 Entrants",
+            "377 Participants",
+            "358 Teams",
+            "3,499 Submissions"
+        ],
+        "tags": [
+            "Tabular",
+            "Forestry",
+            "Categorization Accuracy"
+        ],
+        "title": "Forest Cover Type (Kernels Only)",
+        "href": "https://www.kaggle.com/competitions/forest-cover-type-kernels-only",
+        "data_info": {
+            "files": "4 files",
+            "size": "15.38 MB",
+            "type": "zip",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "novozymes-enzyme-stability-prediction": {
+        "host": "Novozymes",
+        "participation": [
+            "12,670 Entrants",
+            "2,952 Participants",
+            "2,482 Teams",
+            "47,262 Submissions"
+        ],
+        "tags": [
+            "Chemistry",
+            "SpearmanR"
+        ],
+        "title": "Novozymes Enzyme Stability Prediction",
+        "href": "https://www.kaggle.com/competitions/novozymes-enzyme-stability-prediction",
+        "data_info": {
+            "files": "6 files",
+            "size": "16.39 MB",
+            "type": "csv, pdb",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "integer-sequence-learning": {
+        "host": "Kaggle",
+        "participation": [
+            "805 Entrants",
+            "308 Participants",
+            "284 Teams",
+            "1,368 Submissions"
+        ],
+        "tags": [
+            "Tabular",
+            "Categorization Accuracy"
+        ],
+        "title": "Integer Sequence Learning",
+        "href": "https://www.kaggle.com/competitions/integer-sequence-learning",
+        "data_info": {
+            "files": "3 files",
+            "size": "17.91 MB",
+            "type": "zip",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "random-acts-of-pizza": {
+        "host": "Kaggle",
+        "participation": [
+            "714 Entrants",
+            "503 Participants",
+            "462 Teams",
+            "3,570 Submissions"
+        ],
+        "tags": [
+            "Binary Classification",
+            "Text",
+            "Internet",
+            "Area Under Receiver Operating Characteristic Curve"
+        ],
+        "title": "Random Acts of Pizza",
+        "href": "https://www.kaggle.com/competitions/random-acts-of-pizza",
+        "data_info": {
+            "files": "5 files",
+            "size": "17.97 MB",
+            "type": "json, zip, csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "afsis-soil-properties": {
+        "participation": [
+            "1,435 Entrants",
+            "1,308 Participants",
+            "1,231 Teams",
+            "18,275 Submissions"
+        ],
+        "tags": [
+            "Mean Columnwise Root Mean Squared Error"
+        ],
+        "title": "Africa Soil Property Prediction Challenge ",
+        "href": "https://www.kaggle.com/competitions/afsis-soil-properties",
+        "data_info": {
+            "files": "3 files",
+            "size": "21.7 MB",
+            "type": "zip, csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "sberbank-russian-housing-market": {
+        "host": "Sberbank",
+        "participation": [
+            "10,513 Entrants",
+            "3,658 Participants",
+            "3,264 Teams",
+            "67,594 Submissions"
+        ],
+        "tags": [
+            "Banking",
+            "Housing",
+            "Regression",
+            "Tabular",
+            "Root Mean Squared Logarithmic Error"
+        ],
+        "title": "Sberbank Russian Housing Market",
+        "href": "https://www.kaggle.com/competitions/sberbank-russian-housing-market",
+        "data_info": {
+            "files": "5 files",
+            "size": "22.71 MB",
+            "type": "zip, txt",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "aerial-cactus-identification": {
+        "host": "Kaggle",
+        "participation": [
+            "4,987 Entrants",
+            "1,312 Participants",
+            "1,221 Teams",
+            "6,776 Submissions"
+        ],
+        "tags": [
+            "Earth and Nature",
+            "Image",
+            "Plants",
+            "Area Under Receiver Operating Characteristic Curve"
+        ],
+        "title": "Aerial Cactus Identification",
+        "href": "https://www.kaggle.com/competitions/aerial-cactus-identification",
+        "data_info": {
+            "files": "4 files",
+            "size": "25.4 MB",
+            "type": "zip, csv"
+        }
+    },
+    "crowdflower-weather-twitter": {
+        "host": "Figure Eight",
+        "participation": [
+            "402 Entrants",
+            "299 Participants",
+            "258 Teams",
+            "3,590 Submissions"
+        ],
+        "tags": [
+            "Root Mean Squared Error"
+        ],
+        "title": "Partly Sunny with a Chance of Hashtags",
+        "href": "https://www.kaggle.com/competitions/crowdflower-weather-twitter",
+        "data_info": {
+            "files": "4 files",
+            "size": "25.4 MB",
+            "type": "csv, txt",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "predicting-red-hat-business-value": {
+        "participation": [
+            "3,016 Entrants",
+            "2,398 Participants",
+            "2,260 Teams",
+            "33,554 Submissions"
+        ],
+        "tags": [
+            "Tabular",
+            "Business",
+            "Area Under Receiver Operating Characteristic Curve"
+        ],
+        "title": "Predicting Red Hat Business Value",
+        "href": "https://www.kaggle.com/competitions/predicting-red-hat-business-value",
+        "data_info": {
+            "files": "4 files",
+            "size": "26.74 MB",
+            "type": "zip",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "DontGetKicked": {
+        "participation": [
+            "832 Entrants",
+            "604 Participants",
+            "570 Teams",
+            "7,261 Submissions"
+        ],
+        "tags": [
+            "Gini Index"
+        ],
+        "title": "Don't Get Kicked!",
+        "href": "https://www.kaggle.com/competitions/DontGetKicked",
+        "data_info": {
+            "files": "6 files",
+            "size": "29.52 MB",
+            "type": "csv, zip, txt",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "battlefin-s-big-data-combine-forecasting-challenge": {
+        "participation": [
+            "554 Entrants",
+            "424 Participants",
+            "424 Teams",
+            "8,915 Submissions"
+        ],
+        "tags": [
+            "Mean Absolute Error"
+        ],
+        "title": "The Big Data Combine Engineered by BattleFin",
+        "href": "https://www.kaggle.com/competitions/battlefin-s-big-data-combine-forecasting-challenge",
+        "data_info": {
+            "files": "3 files",
+            "size": "30.23 MB",
+            "type": "csv, zip",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "bioresponse": {
+        "participation": [
+            "935 Entrants",
+            "791 Participants",
+            "698 Teams",
+            "8,819 Submissions"
+        ],
+        "tags": [
+            "Log Loss"
+        ],
+        "title": "Predicting a Biological Response",
+        "href": "https://www.kaggle.com/competitions/bioresponse",
+        "data_info": {
+            "files": "3 files",
+            "size": "31.06 MB",
+            "type": "csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "chaii-hindi-and-tamil-question-answering": {
+        "host": "Google",
+        "participation": [
+            "7,781 Entrants",
+            "1,148 Participants",
+            "943 Teams",
+            "18,727 Submissions"
+        ],
+        "tags": [
+            "Text",
+            "Languages",
+            "Custom Metric"
+        ],
+        "title": "chaii - Hindi and Tamil Question Answering",
+        "href": "https://www.kaggle.com/competitions/chaii-hindi-and-tamil-question-answering",
+        "data_info": {
+            "files": "3 files",
+            "size": "31.8 MB",
+            "type": "csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "nbme-score-clinical-patient-notes": {
+        "host": "National Board of Medical Examiners",
+        "participation": [
+            "13,398 Entrants",
+            "1,880 Participants",
+            "1,471 Teams",
+            "28,049 Submissions"
+        ],
+        "tags": [
+            "Text",
+            "Medicine",
+            "Education",
+            "NLP",
+            "Custom Metric"
+        ],
+        "title": "NBME - Score Clinical Patient Notes",
+        "href": "https://www.kaggle.com/competitions/nbme-score-clinical-patient-notes",
+        "data_info": {
+            "files": "5 files",
+            "size": "35.73 MB",
+            "type": "csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "leaf-classification": {
+        "host": "Kaggle",
+        "participation": [
+            "2,738 Entrants",
+            "1,684 Participants",
+            "1,595 Teams",
+            "13,060 Submissions"
+        ],
+        "tags": [
+            "Image",
+            "Multiclass Classification",
+            "Multiclass Loss"
+        ],
+        "title": "Leaf Classification",
+        "href": "https://www.kaggle.com/competitions/leaf-classification",
+        "data_info": {
+            "files": "4 files",
+            "size": "36.05 MB",
+            "type": "zip",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "20-newsgroups-ciphertext-challenge": {
+        "host": "Kaggle",
+        "participation": [
+            "1,595 Entrants",
+            "145 Participants",
+            "142 Teams",
+            "1,139 Submissions"
+        ],
+        "tags": [
+            "Multiclass Classification",
+            "Text",
+            "F-Score (Macro)"
+        ],
+        "title": "20 Newsgroups Ciphertext Challenge",
+        "href": "https://www.kaggle.com/competitions/20-newsgroups-ciphertext-challenge",
+        "data_info": {
+            "files": "3 files",
+            "size": "36.97 MB",
+            "type": "csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "rossmann-store-sales": {
+        "participation": [
+            "4,271 Entrants",
+            "3,735 Participants",
+            "3,298 Teams",
+            "70,114 Submissions"
+        ],
+        "tags": [
+            "Tabular",
+            "Time Series Analysis",
+            "Root Mean Square Percentage Error"
+        ],
+        "title": "Rossmann Store Sales",
+        "href": "https://www.kaggle.com/competitions/rossmann-store-sales",
+        "data_info": {
+            "files": "4 files",
+            "size": "39.85 MB",
+            "type": "csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "sf-crime": {
+        "host": "Kaggle",
+        "participation": [
+            "3,994 Entrants",
+            "2,859 Participants",
+            "2,331 Teams",
+            "18,370 Submissions"
+        ],
+        "tags": [
+            "Multiclass Classification",
+            "Tabular",
+            "Crime",
+            "Multiclass Loss"
+        ],
+        "title": "San Francisco Crime Classification",
+        "href": "https://www.kaggle.com/competitions/sf-crime",
+        "data_info": {
+            "files": "3 files",
+            "size": "45.24 MB",
+            "type": "zip",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "imaterialist-challenge-furniture-2018": {
+        "participation": [
+            "2,937 Entrants",
+            "569 Participants",
+            "426 Teams",
+            "5,214 Submissions"
+        ],
+        "tags": [
+            "MeanBestErrorAtK"
+        ],
+        "title": "iMaterialist Challenge (Furniture) at FGVC5",
+        "href": "https://www.kaggle.com/competitions/imaterialist-challenge-furniture-2018",
+        "data_info": {
+            "files": "4 files",
+            "size": "48.59 MB",
+            "type": "json, csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "word2vec-nlp-tutorial": {
+        "host": "Kaggle",
+        "participation": [
+            "1,574 Entrants",
+            "659 Participants",
+            "577 Teams",
+            "4,271 Submissions"
+        ],
+        "tags": [
+            "Text",
+            "Binary Classification",
+            "Movies and TV Shows",
+            "Area Under Receiver Operating Characteristic Curve"
+        ],
+        "title": "Bag of Words Meets Bags of Popcorn",
+        "href": "https://www.kaggle.com/competitions/word2vec-nlp-tutorial",
+        "data_info": {
+            "files": "4 files",
+            "size": "54.37 MB",
+            "type": "zip, csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "jigsaw-toxic-comment-classification-challenge": {
+        "host": "Jigsaw/Conversation AI",
+        "participation": [
+            "18,598 Entrants",
+            "5,372 Participants",
+            "4,539 Teams",
+            "92,230 Submissions"
+        ],
+        "tags": [
+            "Text",
+            "Mean Columnwise Area Under Receiver Operating Characteristic Curve"
+        ],
+        "title": "Toxic Comment Classification Challenge",
+        "href": "https://www.kaggle.com/competitions/jigsaw-toxic-comment-classification-challenge",
+        "data_info": {
+            "files": "4 files",
+            "size": "55.18 MB",
+            "type": "zip",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "denoising-dirty-documents": {
+        "host": "Kaggle",
+        "participation": [
+            "293 Entrants",
+            "167 Participants",
+            "161 Teams",
+            "798 Submissions"
+        ],
+        "tags": [
+            "Image",
+            "Root Mean Squared Error"
+        ],
+        "title": "Denoising Dirty Documents",
+        "href": "https://www.kaggle.com/competitions/denoising-dirty-documents",
+        "data_info": {
+            "files": "4 files",
+            "size": "58.81 MB",
+            "type": "zip",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "homesite-quote-conversion": {
+        "participation": [
+            "2,185 Entrants",
+            "1,916 Participants",
+            "1,755 Teams",
+            "36,264 Submissions"
+        ],
+        "tags": [
+            "Binary Classification",
+            "Tabular",
+            "Area Under Receiver Operating Characteristic Curve"
+        ],
+        "title": "Homesite Quote Conversion",
+        "href": "https://www.kaggle.com/competitions/homesite-quote-conversion",
+        "data_info": {
+            "files": "3 files",
+            "size": "65.13 MB",
+            "type": "zip",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "airbnb-recruiting-new-user-bookings": {
+        "host": "Airbnb",
+        "participation": [
+            "1,908 Entrants",
+            "1,458 Participants",
+            "1,458 Teams",
+            "20,753 Submissions"
+        ],
+        "tags": [
+            "Hotels and Accommodations",
+            "Recommender Systems",
+            "Tabular",
+            "NDCG@{K}"
+        ],
+        "title": "Airbnb New User Bookings",
+        "href": "https://www.kaggle.com/competitions/airbnb-recruiting-new-user-bookings",
+        "data_info": {
+            "files": "6 files",
+            "size": "67.85 MB",
+            "type": "zip",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "home-depot-product-search-relevance": {
+        "participation": [
+            "3,112 Entrants",
+            "2,551 Participants",
+            "2,123 Teams",
+            "35,492 Submissions"
+        ],
+        "tags": [
+            "Tabular",
+            "Root Mean Squared Error"
+        ],
+        "title": "Home Depot Product Search Relevance",
+        "href": "https://www.kaggle.com/competitions/home-depot-product-search-relevance",
+        "data_info": {
+            "files": "6 files",
+            "size": "72.93 MB",
+            "type": "zip, docx",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "facial-keypoints-detection": {
+        "host": "Kaggle",
+        "participation": [
+            "2,831 Entrants",
+            "208 Participants",
+            "175 Teams",
+            "1,220 Submissions"
+        ],
+        "tags": [
+            "Image",
+            "Root Mean Squared Error"
+        ],
+        "title": "Facial Keypoints Detection",
+        "href": "https://www.kaggle.com/competitions/facial-keypoints-detection",
+        "data_info": {
+            "files": "4 files",
+            "size": "80.86 MB",
+            "type": "zip, csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "nyc-taxi-trip-duration": {
+        "host": "Kaggle",
+        "participation": [
+            "7,013 Entrants",
+            "1,358 Participants",
+            "1,254 Teams",
+            "11,193 Submissions"
+        ],
+        "tags": [
+            "Tabular",
+            "Regression",
+            "Root Mean Squared Logarithmic Error"
+        ],
+        "title": "New York City Taxi Trip Duration",
+        "href": "https://www.kaggle.com/competitions/nyc-taxi-trip-duration",
+        "data_info": {
+            "files": "3 files",
+            "size": "89.91 MB",
+            "type": "zip",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "text-normalization-challenge-english-language": {
+        "host": "Google",
+        "participation": [
+            "3,876 Entrants",
+            "279 Participants",
+            "260 Teams",
+            "1,833 Submissions"
+        ],
+        "tags": [
+            "Linguistics",
+            "Languages",
+            "Text",
+            "Categorization Accuracy"
+        ],
+        "title": "Text Normalization Challenge - English Language",
+        "href": "https://www.kaggle.com/competitions/text-normalization-challenge-english-language",
+        "data_info": {
+            "files": "5 files",
+            "size": "95.51 MB",
+            "type": "zip",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "bnp-paribas-cardif-claims-management": {
+        "participation": [
+            "3,703 Entrants",
+            "3,283 Participants",
+            "2,920 Teams",
+            "54,337 Submissions"
+        ],
+        "tags": [
+            "Banking",
+            "Tabular",
+            "Binary Classification",
+            "Log Loss"
+        ],
+        "title": "BNP Paribas Cardif Claims Management",
+        "href": "https://www.kaggle.com/competitions/bnp-paribas-cardif-claims-management",
+        "data_info": {
+            "files": "3 files",
+            "size": "103.75 MB",
+            "type": "zip",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "wsdm-cup-multilingual-chatbot-arena": {
+        "host": "Chatbot Arena",
+        "participation": [
+            "4,037 Entrants",
+            "897 Participants",
+            "770 Teams",
+            "12,200 Submissions"
+        ],
+        "tags": [
+            "Languages",
+            "Text Conversation",
+            "Accuracy Score"
+        ],
+        "title": "WSDM Cup - Multilingual Chatbot Arena",
+        "href": "https://www.kaggle.com/competitions/wsdm-cup-multilingual-chatbot-arena",
+        "data_info": {
+            "files": "3 files",
+            "size": "113.98 MB",
+            "type": "parquet, csv"
+        }
+    },
+    "text-normalization-challenge-russian-language": {
+        "host": "Google",
+        "participation": [
+            "1,029 Entrants",
+            "175 Participants",
+            "162 Teams",
+            "872 Submissions"
+        ],
+        "tags": [
+            "Text",
+            "Linguistics",
+            "Languages",
+            "Categorization Accuracy"
+        ],
+        "title": "Text Normalization Challenge - Russian Language",
+        "href": "https://www.kaggle.com/competitions/text-normalization-challenge-russian-language",
+        "data_info": {
+            "files": "5 files",
+            "size": "125.87 MB",
+            "type": "zip",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "allstate-claims-severity": {
+        "host": "Allstate Insurance",
+        "participation": [
+            "4,158 Entrants",
+            "3,045 Participants",
+            "3,045 Teams",
+            "52,353 Submissions"
+        ],
+        "tags": [
+            "Regression",
+            "Tabular",
+            "Mean Absolute Error"
+        ],
+        "title": "Allstate Claims Severity",
+        "href": "https://www.kaggle.com/competitions/allstate-claims-severity",
+        "data_info": {
+            "files": "6 files",
+            "size": "142.87 MB",
+            "type": "csv, zip",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "yelp-recsys-2013": {
+        "participation": [
+            "711 Entrants",
+            "209 Participants",
+            "158 Teams",
+            "2,108 Submissions"
+        ],
+        "tags": [
+            "Root Mean Squared Error"
+        ],
+        "title": "RecSys2013: Yelp Business Rating Prediction",
+        "href": "https://www.kaggle.com/competitions/yelp-recsys-2013",
+        "data_info": {
+            "files": "7 files",
+            "size": "179.46 MB",
+            "type": "zip, csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "llm-classification-finetuning": {
+        "host": "Kaggle",
+        "participation": [
+            "2,969 Entrants",
+            "171 Participants",
+            "145 Teams",
+            "936 Submissions"
+        ],
+        "tags": [
+            "Languages",
+            "Text Conversation",
+            "Log Loss"
+        ],
+        "title": "LLM Classification Finetuning",
+        "href": "https://www.kaggle.com/competitions/llm-classification-finetuning",
+        "data_info": {
+            "files": "3 files",
+            "size": "184.19 MB",
+            "type": "csv"
+        }
+    },
+    "stumbleupon": {
+        "participation": [
+            "819 Entrants",
+            "624 Participants",
+            "624 Teams",
+            "7,486 Submissions"
+        ],
+        "tags": [
+            "Text",
+            "Tabular",
+            "Internet",
+            "Area Under Receiver Operating Characteristic Curve"
+        ],
+        "title": "StumbleUpon Evergreen Classification Challenge",
+        "href": "https://www.kaggle.com/competitions/stumbleupon",
+        "data_info": {
+            "files": "4 files",
+            "size": "196.18 MB",
+            "type": "tsv, zip, csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "the-winton-stock-market-challenge": {
+        "participation": [
+            "1,786 Entrants",
+            "829 Participants",
+            "829 Teams",
+            "10,717 Submissions"
+        ],
+        "tags": [
+            "Finance",
+            "Tabular",
+            "Weighted Mean Absolute Error"
+        ],
+        "title": "The Winton Stock Market Challenge",
+        "href": "https://www.kaggle.com/competitions/the-winton-stock-market-challenge",
+        "data_info": {
+            "files": "3 files",
+            "size": "213.13 MB",
+            "type": "zip",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "facebook-recruiting-iv-human-or-bot": {
+        "host": "Facebook",
+        "participation": [
+            "1,413 Entrants",
+            "983 Participants",
+            "983 Teams",
+            "13,546 Submissions"
+        ],
+        "tags": [
+            "Binary Classification",
+            "Tabular",
+            "Internet",
+            "Area Under Receiver Operating Characteristic Curve"
+        ],
+        "title": "Facebook Recruiting IV: Human or Robot?",
+        "href": "https://www.kaggle.com/competitions/facebook-recruiting-iv-human-or-bot",
+        "data_info": {
+            "files": "4 files",
+            "size": "260.68 MB",
+            "type": "zip, csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "the-icml-2013-whale-challenge-right-whale-redux": {
+        "participation": [
+            "181 Entrants",
+            "158 Participants",
+            "129 Teams",
+            "1,005 Submissions"
+        ],
+        "tags": [
+            "Area Under Receiver Operating Characteristic Curve"
+        ],
+        "title": "The ICML 2013 Whale Challenge - Right Whale Redux",
+        "href": "https://www.kaggle.com/competitions/the-icml-2013-whale-challenge-right-whale-redux",
+        "data_info": {
+            "files": "3 files",
+            "size": "293.14 MB",
+            "type": "zip, csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "statoil-iceberg-classifier-challenge": {
+        "host": "Statoil",
+        "participation": [
+            "9,779 Entrants",
+            "3,639 Participants",
+            "3,330 Teams",
+            "40,716 Submissions"
+        ],
+        "tags": [
+            "Binary Classification",
+            "Weather and Climate",
+            "Image",
+            "Log Loss"
+        ],
+        "title": "Statoil/C-CORE Iceberg Classifier Challenge",
+        "href": "https://www.kaggle.com/competitions/statoil-iceberg-classifier-challenge",
+        "data_info": {
+            "files": "3 files",
+            "size": "302.1 MB",
+            "type": "7z",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "flavours-of-physics-kernels-only": {
+        "participation": [
+            "564 Entrants",
+            "64 Participants",
+            "63 Teams",
+            "375 Submissions"
+        ],
+        "tags": [
+            "Custom Metric"
+        ],
+        "title": "Flavours of Physics: Finding \u03c4  \u2192  \u03bc\u03bc\u03bc (Kernels Only)",
+        "href": "https://www.kaggle.com/competitions/flavours-of-physics-kernels-only",
+        "data_info": {
+            "files": "5 files",
+            "size": "436.14 MB",
+            "type": "zip",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "tgs-salt-identification-challenge": {
+        "host": "TGS",
+        "participation": [
+            "18,191 Entrants",
+            "3,726 Participants",
+            "3,219 Teams",
+            "76,185 Submissions"
+        ],
+        "tags": [
+            "Geology",
+            "Image",
+            "Custom Metric"
+        ],
+        "title": "TGS Salt Identification Challenge",
+        "href": "https://www.kaggle.com/competitions/tgs-salt-identification-challenge",
+        "data_info": {
+            "files": "7 files",
+            "size": "483.07 MB",
+            "type": "zip, csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "linking-writing-processes-to-writing-quality": {
+        "host": "The Learning Agency Lab",
+        "participation": [
+            "7,209 Entrants",
+            "2,256 Participants",
+            "1,876 Teams",
+            "44,811 Submissions"
+        ],
+        "tags": [
+            "Education",
+            "NLP",
+            "Primary and Secondary Schools",
+            "Mean Squared Error"
+        ],
+        "title": "Linking Writing Processes to Writing Quality",
+        "href": "https://www.kaggle.com/competitions/linking-writing-processes-to-writing-quality",
+        "data_info": {
+            "files": "4 files",
+            "size": "485.71 MB",
+            "type": "csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "grupo-bimbo-inventory-demand": {
+        "participation": [
+            "3,058 Entrants",
+            "2,263 Participants",
+            "1,963 Teams",
+            "21,739 Submissions"
+        ],
+        "tags": [
+            "Tabular",
+            "Food",
+            "Root Mean Squared Logarithmic Error"
+        ],
+        "title": "Grupo Bimbo Inventory Demand",
+        "href": "https://www.kaggle.com/competitions/grupo-bimbo-inventory-demand",
+        "data_info": {
+            "files": "6 files",
+            "size": "502.44 MB",
+            "type": "zip",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "quora-question-pairs": {
+        "host": "Quora",
+        "participation": [
+            "13,937 Entrants",
+            "3,850 Participants",
+            "3,295 Teams",
+            "53,687 Submissions"
+        ],
+        "tags": [
+            "Text",
+            "Tabular",
+            "Linguistics",
+            "Internet",
+            "Log Loss"
+        ],
+        "title": "Quora Question Pairs",
+        "href": "https://www.kaggle.com/competitions/quora-question-pairs",
+        "data_info": {
+            "files": "4 files",
+            "size": "523.24 MB",
+            "type": "zip, csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "bigquery-geotab-intersection-congestion": {
+        "host": "Google BigQuery",
+        "participation": [
+            "4,218 Entrants",
+            "487 Participants",
+            "432 Teams",
+            "3,372 Submissions"
+        ],
+        "tags": [
+            "Tabular",
+            "Regression",
+            "Cities and Urban Areas",
+            "Geospatial Analysis",
+            "Root Mean Squared Error"
+        ],
+        "title": "BigQuery-Geotab Intersection Congestion",
+        "href": "https://www.kaggle.com/competitions/bigquery-geotab-intersection-congestion",
+        "data_info": {
+            "files": "6 files",
+            "size": "577.97 MB",
+            "type": "csv, md, json + 1 other",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "mlsp-2013-birds": {
+        "participation": [
+            "145 Entrants",
+            "107 Participants",
+            "79 Teams",
+            "991 Submissions"
+        ],
+        "tags": [
+            "Area Under Receiver Operating Characteristic Curve"
+        ],
+        "title": "MLSP 2013 Bird Classification Challenge",
+        "href": "https://www.kaggle.com/competitions/mlsp-2013-birds",
+        "data_info": {
+            "files": "5 files",
+            "size": "585.1 MB",
+            "type": "zip, pdf, txt",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "loan-default-prediction": {
+        "participation": [
+            "1,298 Entrants",
+            "832 Participants",
+            "672 Teams",
+            "10,670 Submissions"
+        ],
+        "tags": [
+            "Mean Absolute Error"
+        ],
+        "title": "Loan Default Prediction - Imperial College London",
+        "href": "https://www.kaggle.com/competitions/loan-default-prediction",
+        "data_info": {
+            "files": "3 files",
+            "size": "611.66 MB",
+            "type": "zip, csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "global-wheat-detection": {
+        "host": "University of Saskatchewan",
+        "participation": [
+            "15,345 Entrants",
+            "2,269 Participants",
+            "2,245 Teams",
+            "8,187 Submissions"
+        ],
+        "tags": [
+            "Image",
+            "Plants",
+            "Custom Metric"
+        ],
+        "title": "Global Wheat Detection ",
+        "href": "https://www.kaggle.com/competitions/global-wheat-detection",
+        "data_info": {
+            "files": "3434 files",
+            "size": "643.57 MB",
+            "type": "jpg, csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "whale-categorization-playground": {
+        "host": "Kaggle",
+        "participation": [
+            "4,016 Entrants",
+            "599 Participants",
+            "527 Teams",
+            "5,005 Submissions"
+        ],
+        "tags": [
+            "Image",
+            "Animals",
+            "MAP@{K}"
+        ],
+        "title": "Humpback Whale Identification Challenge",
+        "href": "https://www.kaggle.com/competitions/whale-categorization-playground",
+        "data_info": {
+            "files": "25461 files",
+            "size": "726.74 MB",
+            "type": "jpg, csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "dog-breed-identification": {
+        "host": "Kaggle",
+        "participation": [
+            "7,525 Entrants",
+            "1,405 Participants",
+            "1,280 Teams",
+            "8,708 Submissions"
+        ],
+        "tags": [
+            "Multiclass Classification",
+            "Animals",
+            "Image",
+            "Multiclass Loss"
+        ],
+        "title": "Dog Breed Identification",
+        "href": "https://www.kaggle.com/competitions/dog-breed-identification",
+        "data_info": {
+            "files": "20581 files",
+            "size": "750.43 MB",
+            "type": "jpg, csv"
+        }
+    },
+    "plant-pathology-2020-fgvc7": {
+        "host": "Fine-Grained Visual Categorization 7",
+        "participation": [
+            "5,542 Entrants",
+            "1,510 Participants",
+            "1,317 Teams",
+            "21,784 Submissions"
+        ],
+        "tags": [
+            "Image",
+            "Agriculture",
+            "Mean Columnwise Area Under Receiver Operating Characteristic Curve"
+        ],
+        "title": "Plant Pathology 2020 - FGVC7",
+        "href": "https://www.kaggle.com/competitions/plant-pathology-2020-fgvc7",
+        "data_info": {
+            "files": "3645 files",
+            "size": "823.79 MB",
+            "type": "jpg, csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "dogs-vs-cats-redux-kernels-edition": {
+        "host": "Kaggle",
+        "participation": [
+            "2,835 Entrants",
+            "1,334 Participants",
+            "1,314 Teams",
+            "9,449 Submissions"
+        ],
+        "tags": [
+            "Image",
+            "Animals",
+            "Binary Classification",
+            "Log Loss"
+        ],
+        "title": "Dogs vs. Cats Redux: Kernels Edition",
+        "href": "https://www.kaggle.com/competitions/dogs-vs-cats-redux-kernels-edition",
+        "data_info": {
+            "files": "3 files",
+            "size": "854.51 MB",
+            "type": "zip, csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "benchmark-bond-trade-price-challenge": {
+        "participation": [
+            "430 Entrants",
+            "316 Participants",
+            "263 Teams",
+            "2,778 Submissions"
+        ],
+        "tags": [
+            "Weighted Mean Absolute Error"
+        ],
+        "title": "Benchmark Bond Trade Price Challenge",
+        "href": "https://www.kaggle.com/competitions/benchmark-bond-trade-price-challenge",
+        "data_info": {
+            "files": "11 files",
+            "size": "910.54 MB",
+            "type": "csv, zip, mat + 2 others",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "pubg-finish-placement-prediction": {
+        "host": "Kaggle",
+        "participation": [
+            "14,965 Entrants",
+            "1,772 Participants",
+            "1,528 Teams",
+            "12,747 Submissions"
+        ],
+        "tags": [
+            "Video Games",
+            "Tabular",
+            "Mean Absolute Error"
+        ],
+        "title": "PUBG Finish Placement Prediction (Kernels Only)",
+        "href": "https://www.kaggle.com/competitions/pubg-finish-placement-prediction",
+        "data_info": {
+            "files": "3 files",
+            "size": "965.66 MB",
+            "type": "csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "petfinder-pawpularity-score": {
+        "host": "PetFinder.my",
+        "participation": [
+            "14,192 Entrants",
+            "4,334 Participants",
+            "3,537 Teams",
+            "47,037 Submissions"
+        ],
+        "tags": [
+            "Image",
+            "Root Mean Squared Error"
+        ],
+        "title": "PetFinder.my - Pawpularity Contest",
+        "href": "https://www.kaggle.com/competitions/petfinder-pawpularity-score",
+        "data_info": {
+            "files": "9923 files",
+            "size": "1.04 GB",
+            "type": "jpg, csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "champs-scalar-coupling": {
+        "host": "CHAMPS (CHemistry And Mathematics in Phase Space)",
+        "participation": [
+            "15,849 Entrants",
+            "3,296 Participants",
+            "2,737 Teams",
+            "47,719 Submissions"
+        ],
+        "tags": [
+            "Chemistry",
+            "Tabular",
+            "Regression",
+            "Custom Metric"
+        ],
+        "title": "Predicting Molecular Properties",
+        "href": "https://www.kaggle.com/competitions/champs-scalar-coupling",
+        "data_info": {
+            "files": "130798 files",
+            "size": "1.22 GB",
+            "type": "xyz, csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "avazu-ctr-prediction": {
+        "participation": [
+            "2,378 Entrants",
+            "1,896 Participants",
+            "1,602 Teams",
+            "30,979 Submissions"
+        ],
+        "tags": [
+            "Log Loss"
+        ],
+        "title": "Click-Through Rate Prediction",
+        "href": "https://www.kaggle.com/competitions/avazu-ctr-prediction",
+        "data_info": {
+            "files": "3 files",
+            "size": "1.28 GB",
+            "type": "gz",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "billion-word-imputation": {
+        "host": "Kaggle",
+        "participation": [
+            "301 Entrants",
+            "125 Participants",
+            "87 Teams",
+            "629 Submissions"
+        ],
+        "tags": [
+            "Text",
+            "Linguistics",
+            "Levenshtein Mean"
+        ],
+        "title": "Billion Word Imputation",
+        "href": "https://www.kaggle.com/competitions/billion-word-imputation",
+        "data_info": {
+            "files": "2 files",
+            "size": "1.7 GB",
+            "type": "zip",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "plant-seedlings-classification": {
+        "host": "Kaggle",
+        "participation": [
+            "2,992 Entrants",
+            "871 Participants",
+            "833 Teams",
+            "7,385 Submissions"
+        ],
+        "tags": [
+            "Plants",
+            "Image",
+            "Multiclass Classification",
+            "Custom Metric"
+        ],
+        "title": "Plant Seedlings Classification",
+        "href": "https://www.kaggle.com/competitions/plant-seedlings-classification",
+        "data_info": {
+            "files": "5545 files",
+            "size": "1.81 GB",
+            "type": "png, csv"
+        }
+    },
+    "shopee-product-matching": {
+        "host": "Shopee",
+        "participation": [
+            "16,388 Entrants",
+            "3,032 Participants",
+            "2,426 Teams",
+            "51,077 Submissions"
+        ],
+        "tags": [
+            "Image",
+            "Text",
+            "Retail and Shopping",
+            "Custom Metric"
+        ],
+        "title": "Shopee - Price Match Guarantee",
+        "href": "https://www.kaggle.com/competitions/shopee-product-matching",
+        "data_info": {
+            "files": "32418 files",
+            "size": "1.92 GB",
+            "type": "jpg, csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "AI4Code": {
+        "host": "Google and X",
+        "participation": [
+            "12,531 Entrants",
+            "1,257 Participants",
+            "1,135 Teams",
+            "1,648 Submissions"
+        ],
+        "tags": [
+            "NLP",
+            "Text",
+            "Computer Science",
+            "Custom Metric"
+        ],
+        "title": "Google AI4Code \u2013 Understand Code in Python Notebooks",
+        "href": "https://www.kaggle.com/competitions/AI4Code",
+        "data_info": {
+            "files": "139262 files",
+            "size": "2.16 GB",
+            "type": "json, csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "the-nature-conservancy-fisheries-monitoring": {
+        "host": "The Nature Conservancy",
+        "participation": [
+            "5,818 Entrants",
+            "554 Participants",
+            "2,293 Teams",
+            "2,059 Submissions"
+        ],
+        "tags": [
+            "Image",
+            "Multiclass Classification",
+            "Multiclass Loss"
+        ],
+        "title": "The Nature Conservancy Fisheries Monitoring",
+        "href": "https://www.kaggle.com/competitions/the-nature-conservancy-fisheries-monitoring",
+        "data_info": {
+            "files": "5 files",
+            "size": "2.27 GB",
+            "type": "zip, 7z",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "jigsaw-unintended-bias-in-toxicity-classification": {
+        "host": "Jigsaw/Conversation AI",
+        "participation": [
+            "16,710 Entrants",
+            "3,129 Participants",
+            "3,165 Teams",
+            "4,377 Submissions"
+        ],
+        "tags": [
+            "Text",
+            "NLP",
+            "Custom Metric"
+        ],
+        "title": "Jigsaw Unintended Bias in Toxicity Classification",
+        "href": "https://www.kaggle.com/competitions/jigsaw-unintended-bias-in-toxicity-classification",
+        "data_info": {
+            "files": "8 files",
+            "size": "2.38 GB",
+            "type": "csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "uw-madison-gi-tract-image-segmentation": {
+        "host": "UW Madison",
+        "participation": [
+            "8,504 Entrants",
+            "2,078 Participants",
+            "1,548 Teams",
+            "40,956 Submissions"
+        ],
+        "tags": [
+            "Image",
+            "Medicine",
+            "Dice3DHausdorff"
+        ],
+        "title": "UW-Madison GI Tract Image Segmentation ",
+        "href": "https://www.kaggle.com/competitions/uw-madison-gi-tract-image-segmentation",
+        "data_info": {
+            "files": "38496 files",
+            "size": "2.47 GB",
+            "type": "png, csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "ashrae-energy-prediction": {
+        "host": "ASHRAE",
+        "participation": [
+            "19,059 Entrants",
+            "4,342 Participants",
+            "3,614 Teams",
+            "39,402 Submissions"
+        ],
+        "tags": [
+            "Tabular",
+            "Energy",
+            "Root Mean Squared Logarithmic Error"
+        ],
+        "title": "ASHRAE - Great Energy Predictor III",
+        "href": "https://www.kaggle.com/competitions/ashrae-energy-prediction",
+        "data_info": {
+            "files": "6 files",
+            "size": "2.61 GB",
+            "type": "csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "stanford-covid-vaccine": {
+        "host": "Stanford University",
+        "participation": [
+            "6,411 Entrants",
+            "1,839 Participants",
+            "1,636 Teams",
+            "35,806 Submissions"
+        ],
+        "tags": [
+            "Biology",
+            "Biotechnology",
+            "Coronavirus",
+            "Public Health",
+            "Custom Metric"
+        ],
+        "title": "OpenVaccine: COVID-19 mRNA Vaccine Degradation Prediction",
+        "href": "https://www.kaggle.com/competitions/stanford-covid-vaccine",
+        "data_info": {
+            "files": "6273 files",
+            "size": "2.68 GB",
+            "type": "npy, csv, json",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "acquire-valued-shoppers-challenge": {
+        "participation": [
+            "1,826 Entrants",
+            "1,162 Participants",
+            "949 Teams",
+            "25,192 Submissions"
+        ],
+        "tags": [
+            "Area Under Receiver Operating Characteristic Curve"
+        ],
+        "title": "Acquire Valued Shoppers Challenge",
+        "href": "https://www.kaggle.com/competitions/acquire-valued-shoppers-challenge",
+        "data_info": {
+            "files": "5 files",
+            "size": "3.07 GB",
+            "type": "gz",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "facebook-recruiting-iii-keyword-extraction": {
+        "host": "Facebook",
+        "participation": [
+            "1,079 Entrants",
+            "366 Participants",
+            "366 Teams",
+            "2,663 Submissions"
+        ],
+        "tags": [
+            "Custom Metric"
+        ],
+        "title": "Facebook Recruiting III - Keyword Extraction",
+        "href": "https://www.kaggle.com/competitions/facebook-recruiting-iii-keyword-extraction",
+        "data_info": {
+            "files": "3 files",
+            "size": "3.19 GB",
+            "type": "zip, csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "invasive-species-monitoring": {
+        "participation": [
+            "2,025 Entrants",
+            "526 Participants",
+            "511 Teams",
+            "4,239 Submissions"
+        ],
+        "tags": [
+            "Image",
+            "Plants",
+            "Area Under Receiver Operating Characteristic Curve"
+        ],
+        "title": "Invasive Species Monitoring",
+        "href": "https://www.kaggle.com/competitions/invasive-species-monitoring",
+        "data_info": {
+            "files": "4 files",
+            "size": "3.35 GB",
+            "type": "7z, zip",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "kuzushiji-recognition": {
+        "host": "ROIS-DS Center for Open Data in the Humanities",
+        "participation": [
+            "5,264 Entrants",
+            "338 Participants",
+            "293 Teams",
+            "2,652 Submissions"
+        ],
+        "tags": [
+            "Image",
+            "Multiclass Classification",
+            "History",
+            "Japan",
+            "Custom Metric"
+        ],
+        "title": "Kuzushiji Recognition",
+        "href": "https://www.kaggle.com/competitions/kuzushiji-recognition",
+        "data_info": {
+            "files": "5 files",
+            "size": "4.51 GB",
+            "type": "csv, zip",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "nfl-player-contact-detection": {
+        "host": "The National Football League",
+        "participation": [
+            "6,945 Entrants",
+            "1,334 Participants",
+            "939 Teams",
+            "12,559 Submissions"
+        ],
+        "tags": [
+            "Health",
+            "Football",
+            "Video",
+            "Tabular",
+            "Matthews correlation coefficient"
+        ],
+        "title": "1st and Future - Player Contact Detection",
+        "href": "https://www.kaggle.com/competitions/nfl-player-contact-detection",
+        "data_info": {
+            "files": "734 files",
+            "size": "5.01 GB",
+            "type": "mp4, csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "bengaliai-cv19": {
+        "host": "Bengali.AI",
+        "participation": [
+            "10,997 Entrants",
+            "2,623 Participants",
+            "2,059 Teams",
+            "38,927 Submissions"
+        ],
+        "tags": [
+            "Image",
+            "Multiclass Classification",
+            "Weighted Categorization Accuracy"
+        ],
+        "title": "Bengali.AI Handwritten Grapheme Classification",
+        "href": "https://www.kaggle.com/competitions/bengaliai-cv19",
+        "data_info": {
+            "files": "14 files",
+            "size": "5.18 GB",
+            "type": "parquet, csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "new-york-city-taxi-fare-prediction": {
+        "host": "Google Cloud",
+        "participation": [
+            "8,119 Entrants",
+            "1,566 Participants",
+            "1,483 Teams",
+            "20,088 Submissions"
+        ],
+        "tags": [
+            "Regression",
+            "Tabular",
+            "Root Mean Squared Error"
+        ],
+        "title": "New York City Taxi Fare Prediction",
+        "href": "https://www.kaggle.com/competitions/new-york-city-taxi-fare-prediction",
+        "data_info": {
+            "files": "4 files",
+            "size": "5.7 GB",
+            "type": "csv, rtf",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "cassava-leaf-disease-classification": {
+        "host": "Makerere University AI Lab",
+        "participation": [
+            "16,929 Entrants",
+            "4,792 Participants",
+            "3,900 Teams",
+            "81,524 Submissions"
+        ],
+        "tags": [
+            "Image",
+            "Multiclass Classification",
+            "Plants",
+            "Categorization Accuracy"
+        ],
+        "title": "Cassava Leaf Disease Classification",
+        "href": "https://www.kaggle.com/competitions/cassava-leaf-disease-classification",
+        "data_info": {
+            "files": "21418 files",
+            "size": "6.19 GB",
+            "type": "jpg, tfrec, csv + 1 other",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "quora-insincere-questions-classification": {
+        "host": "Quora",
+        "participation": [
+            "16,328 Entrants",
+            "1,726 Participants",
+            "4,037 Teams",
+            "2,506 Submissions"
+        ],
+        "tags": [
+            "Text",
+            "Binary Classification",
+            "Custom Metric"
+        ],
+        "title": "Quora Insincere Questions Classification",
+        "href": "https://www.kaggle.com/competitions/quora-insincere-questions-classification",
+        "data_info": {
+            "files": "4 files",
+            "size": "6.56 GB",
+            "type": "csv, zip",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "histopathologic-cancer-detection": {
+        "host": "Kaggle",
+        "participation": [
+            "7,224 Entrants",
+            "1,347 Participants",
+            "1,149 Teams",
+            "20,132 Submissions"
+        ],
+        "tags": [
+            "Cancer",
+            "Medicine",
+            "Research",
+            "Area Under Receiver Operating Characteristic Curve"
+        ],
+        "title": "Histopathologic Cancer Detection",
+        "href": "https://www.kaggle.com/competitions/histopathologic-cancer-detection",
+        "data_info": {
+            "files": "277485 files",
+            "size": "7.76 GB",
+            "type": "tif, csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "bms-molecular-translation": {
+        "host": "Bristol-Myers Squibb",
+        "participation": [
+            "10,411 Entrants",
+            "1,171 Participants",
+            "874 Teams",
+            "10,237 Submissions"
+        ],
+        "tags": [
+            "Chemistry",
+            "Image",
+            "Levenshtein Mean"
+        ],
+        "title": "Bristol-Myers Squibb \u2013 Molecular Translation",
+        "href": "https://www.kaggle.com/competitions/bms-molecular-translation",
+        "data_info": {
+            "files": "4040294 files",
+            "size": "8.87 GB",
+            "type": "png, csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "aptos2019-blindness-detection": {
+        "host": "Asia Pacific Tele-Ophthalmology Society (APTOS)",
+        "participation": [
+            "15,357 Entrants",
+            "3,507 Participants",
+            "2,928 Teams",
+            "71,433 Submissions"
+        ],
+        "tags": [
+            "Image",
+            "Multiclass Classification",
+            "Medicine",
+            "Healthcare",
+            "QuadraticWeightedKappa"
+        ],
+        "title": "APTOS 2019 Blindness Detection",
+        "href": "https://www.kaggle.com/competitions/aptos2019-blindness-detection",
+        "data_info": {
+            "files": "5593 files",
+            "size": "10.22 GB",
+            "type": "png, csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "ranzcr-clip-catheter-line-classification": {
+        "host": "Royal Australian & NZ College of Radiologists",
+        "participation": [
+            "8,335 Entrants",
+            "1,854 Participants",
+            "1,547 Teams",
+            "28,112 Submissions"
+        ],
+        "tags": [
+            "Image",
+            "Multilabel Classification",
+            "Mean Columnwise Area Under Receiver Operating Characteristic Curve"
+        ],
+        "title": "RANZCR CLiP - Catheter and Line Position Challenge",
+        "href": "https://www.kaggle.com/competitions/ranzcr-clip-catheter-line-classification",
+        "data_info": {
+            "files": "33699 files",
+            "size": "13.13 GB",
+            "type": "jpg, tfrec, csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "plant-pathology-2021-fgvc8": {
+        "host": "FineGrainedVisualCat",
+        "participation": [
+            "4,449 Entrants",
+            "854 Participants",
+            "625 Teams",
+            "10,184 Submissions"
+        ],
+        "tags": [
+            "Image",
+            "Plants",
+            "Custom Metric"
+        ],
+        "title": "Plant Pathology 2021 - FGVC8 ",
+        "href": "https://www.kaggle.com/competitions/plant-pathology-2021-fgvc8",
+        "data_info": {
+            "files": "18637 files",
+            "size": "16.1 GB",
+            "type": "jpg, csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "smartphone-decimeter-2022": {
+        "host": "Google",
+        "participation": [
+            "4,598 Entrants",
+            "684 Participants",
+            "573 Teams",
+            "10,270 Submissions"
+        ],
+        "tags": [
+            "Geospatial Analysis",
+            "Signal Processing",
+            "Research",
+            "Tabular",
+            "Mobile and Wireless",
+            "Custom Metric"
+        ],
+        "title": "Google Smartphone Decimeter Challenge 2022",
+        "href": "https://www.kaggle.com/competitions/smartphone-decimeter-2022",
+        "data_info": {
+            "files": "1168 files",
+            "size": "22.9 GB",
+            "type": "csv, txt, nmea + 4 others",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "multi-modal-gesture-recognition": {
+        "participation": [
+            "103 Entrants",
+            "75 Participants",
+            "53 Teams",
+            "242 Submissions"
+        ],
+        "tags": [
+            "Custom Metric"
+        ],
+        "title": "Multi-modal Gesture Recognition",
+        "href": "https://www.kaggle.com/competitions/multi-modal-gesture-recognition",
+        "data_info": {
+            "files": "12 files",
+            "size": "23.23 GB",
+            "type": "gz, csv, 7z + 1 other",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "osic-pulmonary-fibrosis-progression": {
+        "host": "Open Source Imaging Consortium (OSIC)",
+        "participation": [
+            "17,224 Entrants",
+            "2,530 Participants",
+            "2,097 Teams",
+            "44,505 Submissions"
+        ],
+        "tags": [
+            "Image",
+            "Healthcare",
+            "Laplace Log Likelihood"
+        ],
+        "title": "OSIC Pulmonary Fibrosis Progression",
+        "href": "https://www.kaggle.com/competitions/osic-pulmonary-fibrosis-progression",
+        "data_info": {
+            "files": "34290 files",
+            "size": "23.99 GB",
+            "type": "dcm, csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "freesound-audio-tagging-2019": {
+        "host": "Freesound",
+        "participation": [
+            "5,039 Entrants",
+            "520 Participants",
+            "880 Teams",
+            "677 Submissions"
+        ],
+        "tags": [
+            "Audio",
+            "Weighted Label Ranking Average Precision"
+        ],
+        "title": "Freesound Audio Tagging 2019",
+        "href": "https://www.kaggle.com/competitions/freesound-audio-tagging-2019",
+        "data_info": {
+            "files": "6 files",
+            "size": "26.15 GB",
+            "type": "zip, csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "hms-harmful-brain-activity-classification": {
+        "host": "Harvard Medical School",
+        "participation": [
+            "17,133 Entrants",
+            "3,507 Participants",
+            "2,767 Teams",
+            "62,509 Submissions"
+        ],
+        "tags": [
+            "Tabular",
+            "Research",
+            "Signal Processing",
+            "Healthcare",
+            "Kullback Leibler Divergence"
+        ],
+        "title": "HMS - Harmful Brain Activity Classification ",
+        "href": "https://www.kaggle.com/competitions/hms-harmful-brain-activity-classification",
+        "data_info": {
+            "files": "28463 files",
+            "size": "26.4 GB",
+            "type": "parquet, pdf, csv"
+        }
+    },
+    "hotel-id-2021-fgvc8": {
+        "host": "FineGrainedVisualCat",
+        "participation": [
+            "1,612 Entrants",
+            "129 Participants",
+            "92 Teams",
+            "1,083 Submissions"
+        ],
+        "tags": [
+            "Image",
+            "Public Safety",
+            "MAP@{K}"
+        ],
+        "title": "Hotel-ID to Combat Human Trafficking 2021 - FGVC8",
+        "href": "https://www.kaggle.com/competitions/hotel-id-2021-fgvc8",
+        "data_info": {
+            "files": "97559 files",
+            "size": "26.65 GB",
+            "type": "jpg, csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "imet-2020-fgvc7": {
+        "host": "Fine-Grained Visual Categorization 7",
+        "participation": [
+            "1,157 Entrants",
+            "123 Participants",
+            "96 Teams",
+            "980 Submissions"
+        ],
+        "tags": [
+            "F-Score Beta (Micro)"
+        ],
+        "title": "iMet Collection 2020 - FGVC7",
+        "href": "https://www.kaggle.com/competitions/imet-2020-fgvc7",
+        "data_info": {
+            "files": "168080 files",
+            "size": "29.46 GB",
+            "type": "png, csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "predict-volcanic-eruptions-ingv-oe": {
+        "host": "National Institute of Geophysics and Volcanology",
+        "participation": [
+            "5,286 Entrants",
+            "760 Participants",
+            "620 Teams",
+            "9,202 Submissions"
+        ],
+        "tags": [
+            "Signal Processing",
+            "Geology",
+            "Physics",
+            "Mean Absolute Error"
+        ],
+        "title": "INGV - Volcanic Eruption Prediction",
+        "href": "https://www.kaggle.com/competitions/predict-volcanic-eruptions-ingv-oe",
+        "data_info": {
+            "files": "8953 files",
+            "size": "31.25 GB",
+            "type": "csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "airbus-ship-detection": {
+        "host": "Airbus",
+        "participation": [
+            "15,412 Entrants",
+            "1,104 Participants",
+            "878 Teams",
+            "12,475 Submissions"
+        ],
+        "tags": [
+            "Image",
+            "IntersectionOverUnionObjectSegmentationBeta"
+        ],
+        "title": "Airbus Ship Detection Challenge",
+        "href": "https://www.kaggle.com/competitions/airbus-ship-detection",
+        "data_info": {
+            "files": "208164 files",
+            "size": "31.41 GB",
+            "type": "jpg, csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "alaska2-image-steganalysis": {
+        "host": "Troyes University of Technology",
+        "participation": [
+            "5,208 Entrants",
+            "1,322 Participants",
+            "1,095 Teams",
+            "20,918 Submissions"
+        ],
+        "tags": [
+            "Custom Metric"
+        ],
+        "title": "ALASKA2 Image Steganalysis",
+        "href": "https://www.kaggle.com/competitions/alaska2-image-steganalysis",
+        "data_info": {
+            "files": "305001 files",
+            "size": "32.27 GB",
+            "type": "jpg, csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "hubmap-kidney-segmentation": {
+        "host": "InnovationDigi",
+        "participation": [
+            "14,809 Entrants",
+            "1,625 Participants",
+            "1,200 Teams",
+            "34,699 Submissions"
+        ],
+        "tags": [
+            "Image",
+            "Health",
+            "Biology",
+            "Dice"
+        ],
+        "title": "HuBMAP - Hacking the Kidney",
+        "href": "https://www.kaggle.com/competitions/hubmap-kidney-segmentation",
+        "data_info": {
+            "files": "59 files",
+            "size": "32.97 GB",
+            "type": "json, tiff, csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "h-and-m-personalized-fashion-recommendations": {
+        "host": "H&M Group",
+        "participation": [
+            "25,177 Entrants",
+            "3,759 Participants",
+            "2,952 Teams",
+            "38,854 Submissions"
+        ],
+        "tags": [
+            "Recommender Systems",
+            "Retail and Shopping",
+            "MAP@{K}"
+        ],
+        "title": "H&M Personalized Fashion Recommendations",
+        "href": "https://www.kaggle.com/competitions/h-and-m-personalized-fashion-recommendations",
+        "data_info": {
+            "files": "105104 files",
+            "size": "34.56 GB",
+            "type": "jpg, csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "draper-satellite-image-chronology": {
+        "participation": [
+            "680 Entrants",
+            "422 Participants",
+            "399 Teams",
+            "2,676 Submissions"
+        ],
+        "tags": [
+            "Image",
+            "MASpearmanR"
+        ],
+        "title": "Draper Satellite Image Chronology",
+        "href": "https://www.kaggle.com/competitions/draper-satellite-image-chronology",
+        "data_info": {
+            "files": "3441 files",
+            "size": "36.07 GB",
+            "type": "tif, jpeg, csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "vesuvius-challenge-ink-detection": {
+        "host": "Vesuvius Challenge",
+        "participation": [
+            "11,328 Entrants",
+            "1,514 Participants",
+            "1,249 Teams",
+            "25,968 Submissions"
+        ],
+        "tags": [
+            "Image Segmentation",
+            "History",
+            "Image Text Recognition",
+            "DiceFBeta"
+        ],
+        "title": "Vesuvius Challenge - Ink Detection",
+        "href": "https://www.kaggle.com/competitions/vesuvius-challenge-ink-detection",
+        "data_info": {
+            "files": "340 files",
+            "size": "37.02 GB",
+            "type": "tif, png, csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "iwildcam-2019-fgvc6": {
+        "host": "Fine-Grained Visual Categorization",
+        "participation": [
+            "2,388 Entrants",
+            "389 Participants",
+            "336 Teams",
+            "2,201 Submissions"
+        ],
+        "tags": [
+            "Image",
+            "Multiclass Classification",
+            "F-Score (Macro)"
+        ],
+        "title": "iWildCam 2019 - FGVC6",
+        "href": "https://www.kaggle.com/competitions/iwildcam-2019-fgvc6",
+        "data_info": {
+            "files": "5 files",
+            "size": "46.68 GB",
+            "type": "csv, zip",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "herbarium-2020-fgvc7": {
+        "host": "Fine-Grained Visual Categorization 7",
+        "participation": [
+            "2,082 Entrants",
+            "192 Participants",
+            "153 Teams",
+            "1,386 Submissions"
+        ],
+        "tags": [
+            "Image",
+            "Plants",
+            "F-Score (Macro)"
+        ],
+        "title": "Herbarium 2020 - FGVC7",
+        "href": "https://www.kaggle.com/competitions/herbarium-2020-fgvc7",
+        "data_info": {
+            "files": "1169042 files",
+            "size": "63.16 GB",
+            "type": "jpg, json, csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "cdiscount-image-classification-challenge": {
+        "host": "Cdiscount",
+        "participation": [
+            "6,206 Entrants",
+            "751 Participants",
+            "626 Teams",
+            "5,848 Submissions"
+        ],
+        "tags": [
+            "Multiclass Classification",
+            "Categorization Accuracy"
+        ],
+        "title": "Cdiscount\u2019s Image Classification Challenge",
+        "href": "https://www.kaggle.com/competitions/cdiscount-image-classification-challenge",
+        "data_info": {
+            "files": "5 files",
+            "size": "78.12 GB",
+            "type": "bson, csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "inaturalist-2019-fgvc6": {
+        "host": "Fine-Grained Visual Categorization",
+        "participation": [
+            "1,413 Entrants",
+            "248 Participants",
+            "213 Teams",
+            "1,457 Submissions"
+        ],
+        "tags": [
+            "MeanBestErrorAtK"
+        ],
+        "title": "iNaturalist 2019 at FGVC6",
+        "href": "https://www.kaggle.com/competitions/inaturalist-2019-fgvc6",
+        "data_info": {
+            "files": "6 files",
+            "size": "87.76 GB",
+            "type": "json, gz, csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "icecube-neutrinos-in-deep-ice": {
+        "host": "IceCube Neutrino Observatory",
+        "participation": [
+            "6,437 Entrants",
+            "901 Participants",
+            "812 Teams",
+            "11,206 Submissions"
+        ],
+        "tags": [
+            "Tabular",
+            "Astronomy",
+            "Physics",
+            "MeanAngularError"
+        ],
+        "title": "IceCube - Neutrinos in Deep Ice",
+        "href": "https://www.kaggle.com/competitions/icecube-neutrinos-in-deep-ice",
+        "data_info": {
+            "files": "665 files",
+            "size": "117.18 GB",
+            "type": "parquet, csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "iwildcam-2020-fgvc7": {
+        "host": "Fine-Grained Visual Categorization 7",
+        "participation": [
+            "2,287 Entrants",
+            "152 Participants",
+            "121 Teams",
+            "1,449 Submissions"
+        ],
+        "tags": [
+            "Multiclass Classification",
+            "Biology",
+            "Categorization Accuracy"
+        ],
+        "title": "iWildCam 2020 - FGVC7",
+        "href": "https://www.kaggle.com/competitions/iwildcam-2020-fgvc7",
+        "data_info": {
+            "files": "280857 files",
+            "size": "118.59 GB",
+            "type": "jpg, json, csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "siim-covid19-detection": {
+        "host": "Society for Imaging Informatics in Medicine (SIIM)",
+        "participation": [
+            "17,964 Entrants",
+            "1,786 Participants",
+            "1,305 Teams",
+            "32,307 Submissions"
+        ],
+        "tags": [
+            "Image",
+            "Multilabel Classification",
+            "Custom Metric"
+        ],
+        "title": "SIIM-FISABIO-RSNA COVID-19 Detection",
+        "href": "https://www.kaggle.com/competitions/siim-covid19-detection",
+        "data_info": {
+            "files": "7600 files",
+            "size": "128.51 GB",
+            "type": "dcm, csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "rsna-miccai-brain-tumor-radiogenomic-classification": {
+        "host": "Radiological Society of North America",
+        "participation": [
+            "12,847 Entrants",
+            "1,958 Participants",
+            "1,555 Teams",
+            "27,466 Submissions"
+        ],
+        "tags": [
+            "Image",
+            "Binary Classification",
+            "Healthcare",
+            "Area Under Receiver Operating Characteristic Curve"
+        ],
+        "title": "RSNA-MICCAI Brain Tumor Radiogenomic Classification",
+        "href": "https://www.kaggle.com/competitions/rsna-miccai-brain-tumor-radiogenomic-classification",
+        "data_info": {
+            "files": "400116 files",
+            "size": "136.85 GB",
+            "type": "dcm, csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "seti-breakthrough-listen": {
+        "host": "Berkeley SETI Research Center",
+        "participation": [
+            "8,089 Entrants",
+            "979 Participants",
+            "768 Teams",
+            "17,367 Submissions"
+        ],
+        "tags": [
+            "Astronomy",
+            "Signal Processing",
+            "Science and Technology",
+            "Area Under Receiver Operating Characteristic Curve"
+        ],
+        "title": "SETI Breakthrough Listen - E.T. Signal Search",
+        "href": "https://www.kaggle.com/competitions/seti-breakthrough-listen",
+        "data_info": {
+            "files": "186011 files",
+            "size": "156.02 GB",
+            "type": "npy, csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "herbarium-2021-fgvc8": {
+        "host": "FineGrainedVisualCat",
+        "participation": [
+            "1,403 Entrants",
+            "108 Participants",
+            "80 Teams",
+            "573 Submissions"
+        ],
+        "tags": [
+            "Image",
+            "Plants",
+            "F-Score (Macro)"
+        ],
+        "title": "Herbarium 2021 - Half-Earth Challenge - FGVC8",
+        "href": "https://www.kaggle.com/competitions/herbarium-2021-fgvc8",
+        "data_info": {
+            "files": "2500782 files",
+            "size": "161.9 GB",
+            "type": "jpg, json, csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "herbarium-2022-fgvc9": {
+        "host": "Fine-Grained Visual Categorization",
+        "participation": [
+            "2,496 Entrants",
+            "174 Participants",
+            "134 Teams",
+            "1,534 Submissions"
+        ],
+        "tags": [
+            "Plants",
+            "Image",
+            "F-Score (Macro)"
+        ],
+        "title": "Herbarium 2022 - FGVC9",
+        "href": "https://www.kaggle.com/competitions/herbarium-2022-fgvc9",
+        "data_info": {
+            "files": "1050182 files",
+            "size": "163.17 GB",
+            "type": "jpg, json, csv",
+            "license": "Subject to Competition Rules"
+        }
+    },
+    "vinbigdata-chest-xray-abnormalities-detection": {
+        "host": "Vingroup Big Data Institute",
+        "participation": [
+            "11,736 Entrants",
+            "1,697 Participants",
+            "1,275 Teams",
+            "29,249 Submissions"
+        ],
+        "tags": [
+            "Image",
+            "Healthcare",
+            "Custom Metric"
+        ],
+        "title": "VinBigData Chest X-ray Abnormalities Detection",
+        "href": "https://www.kaggle.com/competitions/vinbigdata-chest-xray-abnormalities-detection",
+        "data_info": {
+            "files": "18002 files",
+            "size": "205.96 GB",
+            "type": "dicom, csv",
+            "license": "Subject to Competition Rules"
+        }
+    }
+}

@@ -1,0 +1,81 @@
+from typing import Any
+import pandas as pd
+import numpy as np
+from mledojo.metrics.base import CompetitionMetrics, InvalidSubmissionError
+
+class PortoSeguroSafeDriverPredictionMetrics(CompetitionMetrics):
+    """
+    Metric class for Porto Seguro Safe Driver Prediction competition using Normalized Gini Coefficient.
+    """
+    def __init__(self, value: str = "target", higher_is_better: bool = True):
+        super().__init__(higher_is_better)
+        self.value = value
+
+    def _gini(self, actual: np.ndarray, pred: np.ndarray) -> float:
+        # Order the actual values based on the descending order of predictions
+        order = np.argsort(-pred)
+        actual_sorted = actual[order]
+        total_losses = actual_sorted.sum()
+        if total_losses == 0:
+            return 0.0
+        # Cumulative sum of actual sorted values
+        cum_actual = np.cumsum(actual_sorted)
+        # Sum of cumulative actual values normalized by total losses
+        gini_sum = cum_actual.sum() / total_losses
+        # Adjust by subtracting the reference value
+        gini_sum -= (len(actual_sorted) + 1) / 2.0
+        return gini_sum / len(actual_sorted)
+
+    def evaluate(self, y_true: pd.DataFrame, y_pred: pd.DataFrame) -> float:
+        # Ensure the id column (first column) is of string type and sort both DataFrames by it
+        y_true[y_true.columns[0]] = y_true[y_true.columns[0]].astype(str)
+        y_pred[y_pred.columns[0]] = y_pred[y_pred.columns[0]].astype(str)
+        y_true = y_true.sort_values(by=y_true.columns[0]).reset_index(drop=True)
+        y_pred = y_pred.sort_values(by=y_pred.columns[0]).reset_index(drop=True)
+        
+        # Extract actual target values and predictions
+        actual = y_true[self.value].to_numpy()
+        pred = y_pred[self.value].to_numpy()
+
+        # Compute the Gini for the predictions and the perfect model (actual vs actual)
+        gini_pred = self._gini(actual, pred)
+        gini_actual = self._gini(actual, actual)
+        
+        # Avoid division by zero in case of no positive cases
+        if gini_actual == 0:
+            return 0.0
+
+        normalized_gini = gini_pred / gini_actual
+        return normalized_gini
+
+    def validate_submission(self, submission: Any, ground_truth: Any) -> str:
+        if not isinstance(submission, pd.DataFrame):
+            raise InvalidSubmissionError("Submission must be a pandas DataFrame. Please provide a valid pandas DataFrame.")
+        if not isinstance(ground_truth, pd.DataFrame):
+            raise InvalidSubmissionError("Ground truth must be a pandas DataFrame. Please provide a valid pandas DataFrame.")
+
+        if len(submission) != len(ground_truth):
+            raise InvalidSubmissionError(f"Number of rows in submission ({len(submission)}) does not match ground truth ({len(ground_truth)}). Please ensure both have the same number of rows.")
+
+        # Convert the id column (first column) to string and sort both DataFrames
+        submission[submission.columns[0]] = submission[submission.columns[0]].astype(str)
+        ground_truth[ground_truth.columns[0]] = ground_truth[ground_truth.columns[0]].astype(str)
+        submission = submission.sort_values(by=submission.columns[0]).reset_index(drop=True)
+        ground_truth = ground_truth.sort_values(by=ground_truth.columns[0]).reset_index(drop=True)
+
+        # Check if the id values match between submission and ground truth
+        if (submission[submission.columns[0]].values != ground_truth[ground_truth.columns[0]].values).any():
+            raise InvalidSubmissionError("First column values do not match between submission and ground truth. Please ensure the first column values are identical.")
+
+        sub_cols = set(submission.columns)
+        true_cols = set(ground_truth.columns)
+
+        missing_cols = true_cols - sub_cols
+        extra_cols = sub_cols - true_cols
+
+        if missing_cols:
+            raise InvalidSubmissionError(f"Missing required columns in submission: {', '.join(missing_cols)}.")
+        if extra_cols:
+            raise InvalidSubmissionError(f"Extra unexpected columns found in submission: {', '.join(extra_cols)}.")
+
+        return "Submission is valid."

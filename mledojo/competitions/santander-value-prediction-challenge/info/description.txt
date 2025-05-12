@@ -1,0 +1,40 @@
+Description:
+
+According to Epsilon research, 80% of customers are more likely to do business with you if you provide personalized service. Banking is no exception. The digitalization of everyday lives means that customers expect services to be delivered in a personalized and timely manner… and often before they´ve even realized they need the service.
+
+In their 3rd Kaggle competition, Santander Group aims to go a step beyond recognizing that there is a need to provide a customer a financial service and intends to determine the amount or value of the customer's transaction. This means anticipating customer needs in a more concrete, but also simple and personal way. With so many choices for financial services, this need is greater now than ever before.
+
+In this competition, Santander Group is asking Kagglers to help them identify the value of transactions for each potential customer. This is a first step that Santander needs to nail in order to personalize their services at scale.
+
+Evaluation:
+
+The evaluation metric for this competition is Root Mean Squared Logarithmic Error. The RMSLE is calculated as:
+\[
+\epsilon = \sqrt{\frac{1}{n} \sum_{i=1}^n (\log(p_i + 1) - \log(a_i + 1))^2 }
+\]
+Where:
+\(\epsilon\) is the RMSLE value (score),
+\(n\) is the total number of observations in the (public/private) data set,
+\(p_i\) is your prediction of target, and
+\(a_i\) is the actual target for \(i\).
+\(\log(x)\) is the natural logarithm of \(x\).
+
+Submission File:
+
+For every row in the test.csv, submission files should contain two columns: ID and target. The ID corresponds to the column of that ID in the test.tsv. The file should contain a header and have the following format:
+```
+ID,target
+000137c73,5944923.322036332
+00021489f,5944923.322036332
+0004d7953,5944923.322036332
+etc.
+```
+
+Dataset Description:
+
+You are provided with an anonymized dataset containing numeric feature variables, the numeric target column, and a string ID column. The task is to predict the value of the target column in the test set.
+
+File descriptions:
+- train.csv - the training set
+- test.csv - the test set
+- sample_submission.csv - a sample submission file in the correct format

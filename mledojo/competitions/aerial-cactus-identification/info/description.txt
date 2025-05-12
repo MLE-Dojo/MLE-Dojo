@@ -1,0 +1,34 @@
+### Description
+
+The competition focuses on evaluating the effects of climate change on biodiversity by quantifying the impact of human activities on protected natural areas. The VIGIA project, initiated by researchers in Mexico, aims to develop an autonomous surveillance system for these areas. A crucial first step is the identification of specific vegetation types, particularly a columnar cactus, in aerial imagery. Participants are challenged to create an algorithm that accurately identifies this cactus from aerial images. This is a kernels-only competition, requiring submissions via Kaggle Kernels.
+
+### Evaluation
+
+Submissions are evaluated on area under the ROC curve between the predicted probability and the observed target.
+
+## Submission File
+
+For each ID in the test set, you must predict a probability for the has_cactus variable. The file should contain a header and have the following format:
+
+```
+id,has_cactus
+000940378805c44108d287872b2f04ce.jpg,0.5
+0017242f54ececa4512b4d7937d1e21e.jpg,0.5
+001ee6d8564003107853118ab87df407.jpg,0.5
+etc.
+```
+
+### Dataset Description
+
+This dataset consists of numerous 32 x 32 thumbnail images depicting aerial photos of the columnar cactus (Neobuxbaumia tetetzo). The images have been resized by Kaggle for uniformity, with each file name corresponding to its unique ID. Participants must develop a classifier to determine whether an image contains a cactus.
+
+### Files
+
+- train/ - the training set images
+- test/ - the test set images (you must predict the labels of these)
+- train.csv - the training set labels, indicates whether the image has a cactus (has_cactus = 1)
+- sample_submission.csv - a sample submission file in the correct format
+
+### Other Important Information
+
+This competition is designed for the machine learning community to engage in a fun and practical challenge.

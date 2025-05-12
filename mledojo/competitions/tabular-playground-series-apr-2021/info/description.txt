@@ -1,0 +1,81 @@
+Description
+Kaggle competitions are incredibly fun and rewarding, but they can also be intimidating for people who are relatively new in their data science journey. In the past, we've launched many Playground competitions that are more approachable than our Featured competitions and thus, more beginner-friendly.
+
+In order to have a more consistent offering of these competitions for our community, we're trying a new experiment in 2021. We'll be launching month-long tabular Playground competitions on the 1st of every month and continue the experiment as long as there's sufficient interest and participation.
+
+The goal of these competitions is to provide a fun, and approachable for anyone, tabular dataset. These competitions will be great for people looking for something in between the Titanic Getting Started competition and a Featured competition. If you're an established competitions master or grandmaster, these probably won't be much of a challenge for you. We encourage you to avoid saturating the leaderboard.
+
+For each monthly competition, we'll be offering Kaggle Merchandise for the top three teams. And finally, because we want these competitions to be more about learning, we're limiting team sizes to 3 individuals.
+
+The dataset used for this competition is synthetic but based on a real dataset (in this case, the actual Titanic data!) and generated using a CTGAN. The statistical properties of this dataset are very similar to the original Titanic dataset, but there's no way to "cheat" by using public labels for predictions. How well does your model perform on truly private test labels?
+
+Good luck and have fun!
+
+Getting Started
+Check out the original Titanic competition which walks you through how to build various models.
+
+For more ideas on how to improve your score, check out the Intro to Machine Learning and Intermediate Machine Learning courses on Kaggle Learn.
+
+Evaluation
+Goal
+Your task is to predict whether or not a passenger survived the sinking of the Synthanic (a synthetic, much larger dataset based on the actual Titanic dataset). For each PassengerId row in the test set, you must predict a 0 or 1 value for the Survived target.
+
+Your score is the percentage of passengers you correctly predict. This is known as accuracy.
+
+Submission File
+You should submit a csv file with exactly 100,000 rows plus a header row. Your submission will show an error if you have extra columns or extra rows. The file should have exactly 2 columns:
+- PassengerId (sorted in any order)
+- Survived (contains your binary predictions: 1 for survived, 0 for deceased)
+
+You can download an example submission file (sample_submission.csv) on the Data page:
+```
+PassengerId,Survived
+100000,0
+100001,1
+100002,0
+etc.
+```
+
+Dataset Description
+Overview
+The dataset used for this competition is synthetic but based on a real dataset (in this case, the actual Titanic data!) and generated using a CTGAN. The statistical properties of this dataset are very similar to the original Titanic dataset, but there's no way to "cheat" by using public labels for predictions. How well does your model perform on truly unseen data?
+
+The data has been split into two groups:
+- training set (train.csv)
+- test set (test.csv)
+
+The training set should be used to build your machine learning models. For the training set, we provide the outcome (also known as the “ground truth”) for each passenger. Your model will be based on “features” like passengers’ gender and class. You can also use feature engineering to create new features.
+
+The test set should be used to see how well your model performs on unseen data. For the test set, we do not provide the ground truth for each passenger. It is your job to predict these outcomes. For each passenger in the test set, use the model you trained to predict whether or not they survived the sinking of the Synthanic.
+
+Data Dictionary
+| Variable   | Definition                                | Key                                           |
+|------------|-------------------------------------------|-----------------------------------------------|
+| survival   | Survival                                  | 0 = No, 1 = Yes                               |
+| pclass     | Ticket class                              | 1 = 1st, 2 = 2nd, 3 = 3rd                     |
+| sex        | Sex                                       |                                               |
+| Age        | Age in years                              |                                               |
+| sibsp      | # of siblings/spouses aboard the Titanic  |                                               |
+| parch      | # of parents/children aboard the Titanic  |                                               |
+| ticket     | Ticket number                             |                                               |
+| fare       | Passenger fare                            |                                               |
+| cabin      | Cabin number                              |                                               |
+| embarked   | Port of Embarkation                       | C = Cherbourg, Q = Queenstown, S = Southampton|
+
+Variable Notes
+- pclass: A proxy for socio-economic status (SES)
+  - 1st = Upper
+  - 2nd = Middle
+  - 3rd = Lower
+
+- age: Age is fractional if less than 1. If the age is estimated, it is in the form of xx.5
+
+- sibsp: The dataset defines family relations in this way...
+  - Sibling = brother, sister, stepbrother, stepsister
+  - Spouse = husband, wife (mistresses and fiancés were ignored)
+
+- parch: The dataset defines family relations in this way...
+  - Parent = mother, father
+  - Child = daughter, son, stepdaughter, stepson
+
+Some children travelled only with a nanny, therefore parch=0 for them.

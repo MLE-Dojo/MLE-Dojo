@@ -1,0 +1,33 @@
+### Description
+
+Optical Character Recognition (OCR) transforms typewritten or handwritten documents into a digital format, making content editable, searchable, and shareable. However, many documents remain offline due to issues like coffee stains, faded spots, and wrinkles. This competition invites you to enhance the digitization process by applying machine learning techniques to a dataset of scanned images that require cleaning. Your goal is to remove the noise from these images, enabling easier access to valuable texts, such as rare mathematics books, for digital reading. To assist you, we've provided some initial scripts to kickstart your work with the dataset.
+
+### Evaluation
+
+Submissions are evaluated on the root mean squared error between the cleaned pixel intensities and the actual grayscale pixel intensities.
+
+## Submission File
+
+Form the submission file by melting each images into a set of pixels, assigning each pixel an id of image_row_col (e.g. 1_2_1 is image 1, row 2, column 1). Intensity values range from 0 (black) to 1 (white). The file should contain a header and have the following format:
+
+```
+id,value
+1_1_1,1
+1_2_1,1
+1_3_1,1
+etc.
+```
+
+### Dataset Description
+
+You are provided two sets of images, train and test. These images contain various styles of text, to which synthetic noise has been added to simulate real-world, messy artifacts. The training set includes the test without the noise (train_cleaned). You must create an algorithm to clean the images in the test set.
+
+### Files
+
+- train_cleaned: The training set containing clean images.
+- train_noisy: The training set containing noisy images.
+- test_noisy: The test set containing noisy images.
+
+### Other Important Information
+
+No special requirements are noted for this competition.

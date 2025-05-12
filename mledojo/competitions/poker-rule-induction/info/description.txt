@@ -1,0 +1,65 @@
+### Description
+
+Join the excitement of poker night, even if your friend bailed! In this competition, you will predict the best poker hand from a set of five playing cards, with each record representing a unique hand. The challenge lies in the importance of card order, leading to 480 possible Royal Flush hands and a staggering 311,875,200 potential hands overall. 
+
+The goal is to utilize machine learning for automatic rules induction, allowing you to learn the game's rules without pre-defined heuristics. Imagine being in a foreign land, unfamiliar with poker, and tasked with deriving the rules from a history of thousands of games. While it may be challenging to discover accurate classification rules, validating them is straightforward for humans. Your algorithm must strike a balance between generality and specificity to ensure broad applicability without frequent errors. For further insights, consider reviewing the paper by Cattral et al.
+
+This playground competition is a fantastic opportunity to enhance your machine learning skills. Step up to the data science poker table and get ready to ante up!
+
+### Evaluation
+
+Submissions are evaluated on the categorization accuracy (the percent of hands that you correctly classify).
+
+## Submission File
+
+Your submission file should predict the hand for each id in the test set. The file should contain a header and have the following format:
+
+```
+id,hand
+1,0
+2,0
+3,9
+...
+etc.
+```
+
+### Dataset Description
+
+You are provided with 25,010 poker hands in train.csv and 1,000,000 in test.csv. Each hand consists of five cards with a given suit and rank, drawn from a standard deck of 52. Suits and ranks are represented as ordinal categories:
+
+```
+S1 “Suit of card #1”
+Ordinal (1-4) representing {Hearts, Spades, Diamonds, Clubs}
+C1 “Rank of card #1”
+Numerical (1-13) representing (Ace, 2, 3, ... , Queen, King)
+...
+
+S5 “Suit of card #5”
+C5 “Rank of card #5”
+```
+
+Each row in the training set has the accompanying class label for the poker hand it comprises. The hands are omitted from the test set and must be predicted by participants. Hands are classified into the following ordinal categories:
+
+```
+0: Nothing in hand; not a recognized poker hand 
+1: One pair; one pair of equal ranks within five cards
+2: Two pairs; two pairs of equal ranks within five cards
+3: Three of a kind; three equal ranks within five cards
+4: Straight; five cards, sequentially ranked with no gaps
+5: Flush; five cards with the same suit
+6: Full house; pair + different rank three of a kind
+7: Four of a kind; four equal ranks within five cards
+8: Straight flush; straight + flush
+9: Royal flush; {Ace, King, Queen, Jack, Ten} + flush
+```
+
+Note that the Straight flush and Royal flush hands are not representative of the true domain because they have been over-sampled. The straight flush is 14.43 times more likely to occur in the training set, while the royal flush is 129.82 times more likely.
+
+### Files
+
+train.csv - Contains 25,010 poker hands for training.  
+test.csv - Contains 1,000,000 poker hands for testing.  
+
+### Other Important Information
+
+No special requirements are noted for participation in this competition.

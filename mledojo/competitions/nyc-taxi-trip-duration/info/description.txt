@@ -1,0 +1,56 @@
+### Description
+
+Join the Kaggle competition to predict the total ride duration of taxi trips in New York City using data from the NYC Taxi and Limousine Commission. This dataset includes essential variables such as pickup time, geo-coordinates, and passenger count. Unlike previous challenges, this competition emphasizes collaboration and learning, rewarding participants with cash prizes for publishing additional training data that others can utilize. Bi-weekly and final prizes will also be awarded for insightful kernels that contribute to the community.
+
+### Evaluation
+
+The evaluation metric for this competition is Root Mean Squared Logarithmic Error.
+
+The RMSLE is calculated as
+
+\epsilon = \sqrt{\frac{1}{n} \sum_{i=1}^n (\log(p_i + 1) - \log(a_i+1))^2 }
+
+Where:
+
+\\(\epsilon\\) is the RMSLE value (score)\\(n\\) is the total number of observations in the (public/private) data set,\\(p_i\\) is your prediction of trip duration, and\\(a_i\\) is the actual trip duration for \\(i\\). \\(\log(x)\\) is the natural logarithm of \\(x\\)
+
+## Submission File
+
+For every row in the dataset, submission files should contain two columns: id and trip_duration. The id corresponds to the column of that id in the test.csv. The file should contain a header and have the following format:
+
+```
+id,trip_duration
+id00001,978
+id00002,978
+id00003,978
+id00004,978
+etc.
+```
+
+### Dataset Description
+
+The competition dataset is based on the 2016 NYC Yellow Cab trip record data made available in Big Query on Google Cloud Platform. The data was originally published by the NYC Taxi and Limousine Commission (TLC). The data was sampled and cleaned for the purposes of this playground competition. Based on individual trip attributes, participants should predict the duration of each trip in the test set.
+
+### Files
+
+- train.csv - the training set (contains 1458644 trip records)
+- test.csv - the testing set (contains 625134 trip records)
+- sample_submission.csv - a sample submission file in the correct format
+
+## Data fields
+
+- id - a unique identifier for each trip
+- vendor_id - a code indicating the provider associated with the trip record
+- pickup_datetime - date and time when the meter was engaged
+- dropoff_datetime - date and time when the meter was disengaged
+- passenger_count - the number of passengers in the vehicle (driver entered value)
+- pickup_longitude - the longitude where the meter was engaged
+- pickup_latitude - the latitude where the meter was engaged
+- dropoff_longitude - the longitude where the meter was disengaged
+- dropoff_latitude - the latitude where the meter was disengaged
+- store_and_fwd_flag - This flag indicates whether the trip record was held in vehicle memory before sending to the vendor because the vehicle did not have a connection to the server - Y=store and forward; N=not a store and forward trip
+- trip_duration - duration of the trip in seconds
+
+### Other Important Information
+
+Participants are encouraged to share their datasets and insights through kernels and forum discussions to foster a collaborative environment.

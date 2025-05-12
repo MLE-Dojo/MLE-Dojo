@@ -1,0 +1,49 @@
+### Description
+
+Dive into the world of sentiment analysis with the Rotten Tomatoes movie review dataset, a rich corpus originally collected by Pang and Lee. This competition invites participants to label phrases on a five-point sentiment scale: negative, somewhat negative, neutral, somewhat positive, and positive. The challenge lies in navigating obstacles such as sentence negation, sarcasm, terseness, and language ambiguity. Hosted by Kaggle, this competition is designed for the machine learning community to engage in fun and practice, inspired by the pioneering work of Socher et al. Explore the accompanying website for source code, a live demo, and an online interface to aid in model training: http://nlp.stanford.edu/sentiment/.
+
+### Evaluation
+
+Submissions are evaluated on classification accuracy (the percent of labels that are predicted correctly) for every parsed phrase. The sentiment labels are:
+
+0 - negative  
+1 - somewhat negative  
+2 - neutral  
+3 - somewhat positive  
+4 - positive  
+
+## Submission Format
+
+For each phrase in the test set, predict a label for the sentiment. Your submission should have a header and look like the following:
+
+```
+PhraseId,Sentiment
+156061,2
+156062,2
+156063,2
+...
+```
+
+### Dataset Description
+
+The dataset consists of tab-separated files containing phrases from the Rotten Tomatoes dataset. The train/test split is preserved for benchmarking, with sentences shuffled from their original order. Each sentence is parsed into multiple phrases by the Stanford parser, each assigned a PhraseId, while sentences have a SentenceId. Repeated phrases are included only once.
+
+- train.tsv contains the phrases and their associated sentiment labels, along with a SentenceId for tracking.
+- test.tsv contains only phrases, requiring you to assign a sentiment label to each.
+
+The sentiment labels are:
+
+0 - negative  
+1 - somewhat negative  
+2 - neutral  
+3 - somewhat positive  
+4 - positive  
+
+### Files
+
+- train.tsv
+- test.tsv
+
+### Other Important Information
+
+No special requirements are noted for this competition.
