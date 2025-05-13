@@ -7,7 +7,7 @@
 </h1>
 
 <p align="center" style="font-family:'Segoe UI', Roboto, sans-serif; font-weight:bold; text-transform:uppercase;">
-  <a href="">
+  <a href="https://arxiv.org/abs/2505.07782">
     <img src="https://img.shields.io/badge/Arxiv-1706.03762-000000.svg?style=flat-square&logo=arxiv&logoColor=%23FFD700&labelColor=000000" height="28">
   </a>
   &nbsp;&nbsp;&nbsp;
