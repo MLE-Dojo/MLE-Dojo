@@ -3,7 +3,7 @@
 </p>
 
 <h1 align="center">
-  MLE-Dojo: Improving LLM Agents for Machine Learning Engineering in Interactive Environments
+  MLE-Dojo: Interactive Environments for Empowering LLM Agents in Machine Learning Engineering
 </h1>
 
 <p align="center" style="font-family:'Segoe UI', Roboto, sans-serif; font-weight:bold; text-transform:uppercase;">
