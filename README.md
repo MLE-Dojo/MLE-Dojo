@@ -281,7 +281,7 @@ We provide the all the [URLs](prepare/licenses.json) of specific rules and licen
 
 ## Citation
 
-If you find this useful, please cite:
+If you find this useful, you are more than welcome to cite:
 
 ```bibtex
 @misc{qiang2025mledojointeractiveenvironmentsempowering,
