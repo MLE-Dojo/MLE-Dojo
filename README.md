@@ -278,3 +278,19 @@ This code of project is licensed under the MIT License - see the [LICENSE](LICEN
 We adapt some of the data preparation codes from [DS Bench](https://github.com/liqiangjing/dsbench) and [MLE-Bench](https://github.com/openai/mle-bench).
 Different competitions may be governed by different licenses. Users are responsible for reviewing and complying with the specific license associated with each competition.
 We provide the all the [URLs](prepare/licenses.json) of specific rules and license for each competition. Please refer to the details.
+
+## Citation
+
+If you find this useful, please cite:
+
+```bibtex
+@misc{qiang2025mledojointeractiveenvironmentsempowering,
+  title={MLE-Dojo: Interactive Environments for Empowering LLM Agents in Machine Learning Engineering}, 
+  author={Rushi Qiang and Yuchen Zhuang and Yinghao Li and Dingu Sagar V K and Rongzhi Zhang and Changhao Li and Ian Shu-Hei Wong and Sherry Yang and Percy Liang and Chao Zhang and Bo Dai},
+  year={2025},
+  eprint={2505.07782},
+  archivePrefix={arXiv},
+  primaryClass={cs.LG},
+  url={https://arxiv.org/abs/2505.07782}, 
+}
+
