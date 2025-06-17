@@ -104,7 +104,7 @@ Here's a quick example to show how to interact with MLE-Dojo:
 
 ### 1. Import from `mledojo` and register
 ```python
-from mledojo.gym.competition import CompetitionRegistry
+from mledojo.gym.competition import CompetitionRegistry, CompInfo
 from mledojo.competitions import get_metric
 from mledojo.gym.env import KaggleEnvironment
 
@@ -113,6 +113,7 @@ data_dir = ...
 output_dir = ...
 
 # register the competition
+registry = CompetitionRegistry()
 registry.register(
     name=competition_name,
     data_dir=data_dir,  # "random-acts-of-pizza/data"
