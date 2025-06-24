@@ -20,6 +20,7 @@ import json
 import argparse
 import psutil
 import asyncio
+import time
 import logging
 import sys  # Import sys for stdout configuration
 from typing import Dict, Any, Tuple
@@ -78,7 +79,7 @@ async def run_openai_agent(
     """
     trajectory_file, fix_parse_error_file, cost_history_file = output_files
     action_left = config['env']['max_steps']
-    time_left = config['env']['execution_timeout']
+    execution_timeout = config['env']['execution_timeout']
     obs = None
 
     # Log model and task information
@@ -86,12 +87,19 @@ async def run_openai_agent(
     competition_name = config['competition']['name']
 
     logger.info(f"Starting OpenAI agent run. Model: {model_name}, Competition: {competition_name}")
-    logger.info(f"Max steps: {action_left}, Timeout: {time_left}s")
+    logger.info(f"Max steps: {action_left}, Timeout: {execution_timeout}s")
+
+    start_time = time.time()
 
     for i in range(action_left):
         step_num = i + 1
         logger.info(f"--- Step {step_num}/{action_left} ---") # Log step start
-        action, params = await agent.act(obs, action_left - i, time_left)
+        
+        # Calculate remaining time
+        elapsed_time = time.time() - start_time
+        time_left = max(0, execution_timeout - elapsed_time)
+        
+        action, params = await agent.act(obs, action_left - i, int(time_left))
         logger.info(f"Step {step_num}: Action received: {action}")
 
         if action == "Error":
@@ -113,6 +121,13 @@ async def run_openai_agent(
             
         obs, reward = env.step(action, **params)
         logger.info(f"Step {step_num}: Environment step executed. Reward: {reward}")
+        
+        # Check if time limit exceeded
+        elapsed_time = time.time() - start_time
+        if elapsed_time >= execution_timeout:
+            logger.warning(f"Time limit ({execution_timeout}s) exceeded after step {step_num}.")
+            break
+            
     logger.info("OpenAI agent run finished.")
 
 
@@ -134,7 +149,7 @@ def run_mle_agent(
     """
     trajectory_file, fix_parse_error_file, cost_history_file = output_files
     action_left = config['env']['max_steps']
-    time_left = config['env']['execution_timeout']
+    execution_timeout = config['env']['execution_timeout']
     obs = None
 
     # Log model and task information
@@ -142,12 +157,19 @@ def run_mle_agent(
     competition_name = config['competition']['name']
 
     logger.info(f"Starting MLE agent run. Model: {model_name}, Competition: {competition_name}")
-    logger.info(f"Max steps: {action_left}, Timeout: {time_left}s")
+    logger.info(f"Max steps: {action_left}, Timeout: {execution_timeout}s")
+
+    start_time = time.time()
 
     for i in range(action_left):
         step_num = i + 1
         logger.info(f"--- Step {step_num}/{action_left} ---") # Log step start
-        action, params = agent.act(obs, action_left - i, time_left)
+        
+        # Calculate remaining time
+        elapsed_time = time.time() - start_time
+        time_left = max(0, execution_timeout - elapsed_time)
+        
+        action, params = agent.act(obs, action_left - i, int(time_left))
         logger.info(f"Step {step_num}: Action received: {action}")
 
         if action == "Error":
@@ -169,6 +191,13 @@ def run_mle_agent(
             
         obs, reward = env.step(action, **params)
         logger.info(f"Step {step_num}: Environment step executed. Reward: {reward}")
+        
+        # Check if time limit exceeded
+        elapsed_time = time.time() - start_time
+        if elapsed_time >= execution_timeout:
+            logger.warning(f"Time limit ({execution_timeout}s) exceeded after step {step_num}.")
+            break
+            
     logger.info("MLE agent run finished.")
 
 
@@ -190,17 +219,27 @@ def run_aide_agent(
         config: Main configuration dictionary
     """
     steps = cfg.agent.get('steps', 20)
+    execution_timeout = config['env']['execution_timeout']
 
     # Log model and task information
     model_name = cfg.agent.code.get('model_name', 'Unknown model')
     competition_name = config['competition']['name']
 
     logger.info(f"Starting AIDE agent run. Model: {model_name}, Competition: {competition_name}")
-    logger.info(f"Total steps: {steps}")
+    logger.info(f"Total steps: {steps}, Timeout: {execution_timeout}s")
+
+    start_time = time.time()
 
     for i in range(steps):
         step_num = i + 1
         logger.info(f"--- AIDE Step {step_num}/{steps} ---") # Log step start
+        
+        # Check if time limit exceeded before starting step
+        elapsed_time = time.time() - start_time
+        if elapsed_time >= execution_timeout:
+            logger.warning(f"Time limit ({execution_timeout}s) exceeded before step {step_num}.")
+            break
+        
         # Create a wrapper function to adapt the gym._handle_execute_code output format
         def exec_callback(code: str) -> Any:
             """Execute code in the environment and return observation."""
@@ -234,17 +273,27 @@ def run_dummy_agent(
     """
     trajectory_file, fix_parse_error_file, cost_history_file = output_files
     action_left = config['env']['max_steps']
+    execution_timeout = config['env']['execution_timeout']
     obs = None
 
     # Log model and task information
     competition_name = config['competition']['name']
 
     logger.info(f"Starting Dummy agent run. Competition: {competition_name}")
-    logger.info(f"Max steps: {action_left}")
+    logger.info(f"Max steps: {action_left}, Timeout: {execution_timeout}s")
+
+    start_time = time.time()
 
     for i in range(action_left):
         step_num = i + 1
         logger.info(f"--- Step {step_num}/{action_left} ---") # Log step start
+        
+        # Check if time limit exceeded before starting step
+        elapsed_time = time.time() - start_time
+        if elapsed_time >= execution_timeout:
+            logger.warning(f"Time limit ({execution_timeout}s) exceeded before step {step_num}.")
+            break
+        
         action, params = agent.act(obs)
         logger.info(f"Step {step_num}: Action received: {action}")
 
@@ -263,6 +312,7 @@ def run_dummy_agent(
 
         obs, reward = env.step(action, **params)
         logger.info(f"Step {step_num}: Environment step executed. Reward: {reward}")
+        
     logger.info("Dummy agent run finished.")
 
 
