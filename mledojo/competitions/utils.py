@@ -383,7 +383,7 @@ def download_competition_data(comp_name, data_dir):
     # Make sure base directory exists
     os.makedirs(data_dir, exist_ok=True)
     
-    def download_dataset(comp_name):
+    def download_dataset(comp_name, data_dir):
         # Create folder for competition if it doesn't exist
         comp_dir = data_dir
         os.makedirs(comp_dir, exist_ok=True)
@@ -393,7 +393,7 @@ def download_competition_data(comp_name, data_dir):
         
         try:
             # Download competition data using kaggle CLI
-            subprocess.run(['kaggle', 'competitions', 'download', '-c', comp_name], check=True)
+            subprocess.run(['kaggle', 'competitions', 'download', '-c', comp_name, '-p', comp_dir], check=True)
             print(f"Successfully downloaded data for competition: {comp_name}")
             
                     
@@ -402,7 +402,7 @@ def download_competition_data(comp_name, data_dir):
         except Exception as e:
             print(f"Unexpected error for competition {comp_name}: {str(e)}")
 
-    download_dataset(comp_name)
+    download_dataset(comp_name, data_dir)
 
 logger = get_logger(__name__)
 
