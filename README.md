@@ -30,6 +30,10 @@ Built upon 200+ real-world Kaggle challenges. **MLE-Dojo** covers diverse, open-
   <img src="assets/overview.jpg" width="900" alt="MLE-Dojo" />
 </p>
 
+## News
+
+* [2025.06] Our Mle-Dojo has been featured by [GoPenAI](https://blog.gopenai.com/mle-dojo-training-a-new-breed-of-llm-agents-to-master-machine-learning-engineering-04485b6cb554) and [MarkTechPost](https://www.marktechpost.com/2025/05/15/georgia-tech-and-stanford-researchers-introduce-mle-dojo-a-gym-style-framework-designed-for-training-evaluating-and-benchmarking-autonomous-machine-learning-engineering-mle-agents/). Thanks!
+
 ## 🛠️ Experiment Setup
 
 ### Prerequisites
