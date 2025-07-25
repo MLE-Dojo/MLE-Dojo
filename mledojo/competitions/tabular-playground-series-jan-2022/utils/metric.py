@@ -4,7 +4,7 @@ import numpy as np
 from mledojo.metrics.base import CompetitionMetrics, InvalidSubmissionError
 
 class TabularPlaygroundSeriesJan2022Metrics(CompetitionMetrics):
-    def __init__(self, value: str = "num_sold", higher_is_better: bool = True):
+    def __init__(self, value: str = "num_sold", higher_is_better: bool = False):
         super().__init__(higher_is_better)
         self.value = value
 
