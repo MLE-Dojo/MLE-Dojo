@@ -107,11 +107,33 @@ def _load_module_from_path(module_name: str, file_path: Path) -> Optional[Any]:
             del sys.modules[module_name]
         return None
 
+# def get_metric(competition_name: str) -> Optional[Type]:
+#     """Gets the metric class for a specific competition."""
+#     info = get_competition_info(competition_name)
+#     if not info or not info.metric_py_path.is_file():
+#         return None
+
+#     # Create a unique but valid module name for importlib internal use
+#     internal_module_name = f"mledojo._loaded_competitions.{info.name.replace('-', '_')}.utils.metric"
+#     module = _load_module_from_path(internal_module_name, info.metric_py_path)
+
+#     if module:
+#         for name, obj in inspect.getmembers(module):
+#             # Adjust class check logic as needed (e.g., based on inheritance)
+#             if inspect.isclass(obj) and name != 'CompetitionMetrics':
+#                 return obj
+#         print(f"Warning: No suitable '*Metrics*' class found in {info.metric_py_path}", file=sys.stderr)
+#     return None
+
 def get_metric(competition_name: str) -> Optional[Type]:
     """Gets the metric class for a specific competition."""
     info = get_competition_info(competition_name)
     if not info or not info.metric_py_path.is_file():
         return None
+
+    import mledojo.metrics.base as base_module
+    sys.modules['mledojo.metrics.base'] = base_module
+    from mledojo.metrics.base import CompetitionMetrics
 
     # Create a unique but valid module name for importlib internal use
     internal_module_name = f"mledojo._loaded_competitions.{info.name.replace('-', '_')}.utils.metric"
@@ -119,10 +141,14 @@ def get_metric(competition_name: str) -> Optional[Type]:
 
     if module:
         for name, obj in inspect.getmembers(module):
-            # Adjust class check logic as needed (e.g., based on inheritance)
-            if inspect.isclass(obj) and name.endswith('Metrics') and name != 'CompetitionMetrics':
+            if (
+                inspect.isclass(obj)
+                and name != 'CompetitionMetrics'
+                and issubclass(obj, CompetitionMetrics)
+            ):
                 return obj
-        print(f"Warning: No suitable '*Metrics' class found in {info.metric_py_path}", file=sys.stderr)
+
+        print(f"Warning: No suitable '*Metrics*' class found in {info.metric_py_path}", file=sys.stderr)
     return None
 
 def get_prepare(competition_name: str) -> Optional[Callable]:
