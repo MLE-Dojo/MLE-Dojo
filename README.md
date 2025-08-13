@@ -64,7 +64,7 @@ Built upon 200+ real-world Kaggle challenges. **MLE-Dojo** covers diverse, open-
   pip install -e .
   ```
 
-**Faster with vs** (Recommended)
+**Faster with uv** (Recommended)
 ```bash
 pip install uv
 conda create -y -n mle-dojo python=3.11
