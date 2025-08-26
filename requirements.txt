@@ -52,14 +52,12 @@ soundfile
 audioread
 python-speech-features
 moviepy
-decord
 av
 einops
 torchaudio
 speechbrain
 openai-whisper
 opencv-python
-decord
 google-genai
 transformers
 scikit-image
